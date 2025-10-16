@@ -11,30 +11,17 @@
             "id": "b6db7e4fc875dfa4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "MangoHud Steam Setup.md",
-                "mode": "preview",
-                "source": false
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "MangoHud Steam Setup"
-            }
-          },
-          {
-            "id": "a926fa9fe7c8b5fa",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2025-10-12 15.28.06.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2025-10-12 15.28.06.excalidraw"
+              "icon": "diff",
+              "title": "Diff: workspace.json"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,11 +181,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a926fa9fe7c8b5fa",
+  "active": "b6db7e4fc875dfa4",
   "lastOpenFiles": [
-    "Excalidraw/Drawing 2025-10-12 15.28.06.excalidraw.md",
-    "Claude Code - Dangerously Skip Permissions Flag.md",
     "MangoHud Steam Setup.md",
+    "Claude Code - Dangerously Skip Permissions Flag.md",
+    "Excalidraw/Drawing 2025-10-12 15.28.06.excalidraw.md",
     "Untitled.md",
     "Excalidraw"
   ]
