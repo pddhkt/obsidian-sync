@@ -13,12 +13,12 @@
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
+                "aFile": ".obsidian/graph.json",
+                "bFile": ".obsidian/graph.json",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: workspace.json"
+              "title": "Diff: graph.json"
             }
           }
         ]
@@ -166,7 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,6 +183,7 @@
   },
   "active": "b6db7e4fc875dfa4",
   "lastOpenFiles": [
+    "WireGuard Tunnel Usage.md",
     "MangoHud Steam Setup.md",
     "Claude Code - Dangerously Skip Permissions Flag.md",
     "Excalidraw/Drawing 2025-10-12 15.28.06.excalidraw.md",
