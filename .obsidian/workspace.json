@@ -21,7 +21,8 @@
               "title": "WireGuard Tunnel Usage"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
