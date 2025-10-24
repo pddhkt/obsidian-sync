@@ -67,3 +67,11 @@
 - **RX (Receive):** Download traffic entering `ctint-linux`.
 - **TX (Transmit):** Upload traffic leaving `ctint-linux`.
 - Comparing both helps spot asymmetric usage and confirm tunnel activity.
+
+---
+>Run `sudo resolvconf -u` to regenerate
+   /etc/resolv.conf, then retry `sudo wg-quick up
+   ctint-linux`; this clears the signature mismatch so
+   WireGuard can add its DNS settings. Let me know if
+   the interface still fails afterward or if you see
+   additional errors.

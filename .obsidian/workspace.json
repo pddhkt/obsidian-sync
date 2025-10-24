@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7b274ea9ae6871b2",
+        "id": "c7f2298590c6dcd1",
         "type": "tabs",
         "children": [
           {
-            "id": "b6db7e4fc875dfa4",
+            "id": "fcbea06f2df8c07a",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "WireGuard Tunnel Usage.md",
-                "bFile": "WireGuard Tunnel Usage.md",
-                "aRef": ""
+                "file": "WireGuard Tunnel Usage.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: WireGuard Tunnel Usage"
+              "icon": "lucide-file",
+              "title": "WireGuard Tunnel Usage"
             }
           }
         ]
@@ -181,12 +181,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b6db7e4fc875dfa4",
+  "active": "fcbea06f2df8c07a",
   "lastOpenFiles": [
+    "NX Build Error - Daemon Reset Fix.md",
+    "Excalidraw/Drawing 2025-10-12 15.28.06.excalidraw.md",
     "WireGuard Tunnel Usage.md",
     "MangoHud Steam Setup.md",
     "Claude Code - Dangerously Skip Permissions Flag.md",
-    "Excalidraw/Drawing 2025-10-12 15.28.06.excalidraw.md",
     "Untitled.md",
     "Excalidraw"
   ]
