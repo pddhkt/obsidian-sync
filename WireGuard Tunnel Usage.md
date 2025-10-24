@@ -44,3 +44,26 @@
 - `systemctl restart wg-quick@ctint-linux`: reapply configuration by stopping then starting.
 - `systemctl enable wg-quick@ctint-linux`: auto-start the tunnel at boot (can undo with `disable`).
 - `systemctl status wg-quick@ctint-linux`: view current state and recent logs (`journalctl -u wg-quick@ctint-linux`).
+
+### Monitoring the Tunnel
+- Install TUI monitors:
+  ```bash
+  sudo pacman -S nload bmon
+  ```
+- View WireGuard-specific stats (handshakes, cumulative bytes):
+  ```bash
+  watch -n1 'sudo wg show ctint-linux'
+  ```
+- Check live throughput gauges:
+  ```bash
+  sudo nload ctint-linux
+  ```
+- Inspect history graphs and per-interval rates:
+  ```bash
+  sudo bmon -p ctint-linux
+  ```
+
+### RX vs TX Quick Reference
+- **RX (Receive):** Download traffic entering `ctint-linux`.
+- **TX (Transmit):** Upload traffic leaving `ctint-linux`.
+- Comparing both helps spot asymmetric usage and confirm tunnel activity.

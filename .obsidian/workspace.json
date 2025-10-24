@@ -13,12 +13,12 @@
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": ".obsidian/graph.json",
-                "bFile": ".obsidian/graph.json",
+                "aFile": "WireGuard Tunnel Usage.md",
+                "bFile": "WireGuard Tunnel Usage.md",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: graph.json"
+              "title": "Diff: WireGuard Tunnel Usage"
             }
           }
         ]
@@ -166,7 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 245.5
   },
   "left-ribbon": {
     "hiddenItems": {
