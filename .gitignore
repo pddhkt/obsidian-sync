@@ -1,0 +1,16 @@
+# Obsidian workspace files (device-specific, causes conflicts)
+.obsidian/workspace.json
+.obsidian/workspace
+.obsidian/workspace-mobile.json
+
+# Obsidian cache (regenerated automatically)
+.obsidian/cache
+
+# Obsidian plugins workspace (device-specific)
+.obsidian/plugins/*/data.json
+
+# macOS system files
+.DS_Store
+
+# Trash folder
+.trash/
