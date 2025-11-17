@@ -1,0 +1,36 @@
+# Cloudflare Containers Configuration Example
+# Place this file as wrangler.toml in your project root
+
+name = "your-app-name"
+compatibility_date = "2025-01-14"
+main = "src/index.ts"
+
+[observability]
+enabled = true
+
+# Container configuration
+[[containers]]
+max_instances = 10
+class_name = "YourContainer"  # Must match class in src/index.ts
+image = "registry.cloudflare.com/YOUR_ACCOUNT_ID/your-image:v1.0.1"
+
+[[durable_objects.bindings]]
+name = "YOUR_CONTAINER"  # Environment variable name
+class_name = "YourContainer"  # Must match [[containers]] class_name
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["YourContainer"]  # Must match class_name
+
+# Optional: Environment variables
+# [vars]
+# API_URL = "https://api.example.com"
+# NODE_ENV = "production"
+
+# Optional: Disable workers.dev domain
+# workers_dev = false
+
+# Optional: Custom routes
+# routes = [
+#   { pattern = "example.com/*", zone_name = "example.com" }
+# ]
