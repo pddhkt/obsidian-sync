@@ -14,3 +14,7 @@
 
 # Trash folder
 .trash/
+
+# Sensitive files
+ctint/tokens.md
+ctint/tts/uat deployment.md
