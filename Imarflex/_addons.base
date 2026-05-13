@@ -1,0 +1,62 @@
+filters:
+  and:
+    - type == "feature"
+    - tier == "addon"
+    - file.inFolder("Imarflex/features")
+formulas:
+  decision_icon: if(decision == "must-have", "🔒", if(decision == "suggested", "💡", if(decision == "decision-needed", "🟡", if(decision == "confirmed", "✅", if(decision == "declined", "❌", "")))))
+properties:
+  category:
+    displayName: Category
+  funnel-stage:
+    displayName: Funnel
+  decision:
+    displayName: Decision
+  setup-cost-hkd:
+    displayName: Setup (HKD)
+  monthly-cost-hkd:
+    displayName: Monthly (HKD)
+  metric:
+    displayName: Expected Metric
+  best-phase:
+    displayName: Best Phase
+views:
+  - type: table
+    name: Add-on Catalogue
+    order:
+      - file.name
+      - formula.decision_icon
+      - category
+      - funnel-stage
+      - setup-cost-hkd
+      - monthly-cost-hkd
+      - best-phase
+      - metric
+    summaries:
+      setup-cost-hkd: Sum
+      monthly-cost-hkd: Sum
+  - type: cards
+    name: Add-ons by Category
+    groupBy:
+      property: category
+      direction: ASC
+    order:
+      - file.name
+      - funnel-stage
+      - setup-cost-hkd
+      - monthly-cost-hkd
+      - metric
+  - type: table
+    name: ✅ Confirmed by Client
+    filters:
+      and:
+        - decision == "confirmed"
+    order:
+      - file.name
+      - category
+      - setup-cost-hkd
+      - monthly-cost-hkd
+      - best-phase
+    summaries:
+      setup-cost-hkd: Sum
+      monthly-cost-hkd: Sum

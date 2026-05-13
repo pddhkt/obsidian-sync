@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <rect width="1080" height="1080" fill="#8A1F1B"/>
+  <rect x="76" y="76" width="928" height="928" rx="34" fill="#FFFDF8"/>
+  <rect x="136" y="136" width="808" height="318" rx="28" fill="#F6F0E7"/>
+  <text x="184" y="256" font-family="Noto Sans CJK HK, sans-serif" font-size="76" font-weight="700" fill="#221F1C">想搵啱你</text>
+  <text x="184" y="354" font-family="Noto Sans CJK HK, sans-serif" font-size="76" font-weight="700" fill="#221F1C">屋企嘅型號？</text>
+  <text x="184" y="520" font-family="Noto Sans CJK HK, sans-serif" font-size="36" fill="#5F574E">用產品圖 + lifestyle 圖做輪播，最後一頁清楚帶 CTA。</text>
+  <rect x="184" y="640" width="336" height="96" rx="48" fill="#8A1F1B"/>
+  <text x="246" y="703" font-family="Noto Sans CJK HK, sans-serif" font-size="38" font-weight="700" fill="#FFFFFF">立即購買</text>
+  <rect x="548" y="640" width="348" height="96" rx="48" fill="#DEC29B"/>
+  <text x="602" y="703" font-family="Noto Sans CJK HK, sans-serif" font-size="38" font-weight="700" fill="#221F1C">WhatsApp 我哋</text>
+  <text x="184" y="890" font-family="Noto Sans CJK HK, sans-serif" font-size="28" fill="#756B60">Frame 4 / CTA</text>
+</svg>

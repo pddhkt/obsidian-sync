@@ -1,0 +1,103 @@
+filters:
+  and:
+    - type == "feature"
+    - file.inFolder("Imarflex/features")
+formulas:
+  tier_icon: if(tier == "base", "🟢 Base", if(tier == "addon", "🟠 Add-on", ""))
+  decision_icon: if(decision == "must-have", "🔒 Must-have", if(decision == "suggested", "💡 Suggested", if(decision == "decision-needed", "🟡 Decide", if(decision == "confirmed", "✅ Confirmed", if(decision == "declined", "❌ Declined", "")))))
+properties:
+  tier:
+    displayName: Tier
+  category:
+    displayName: Category
+  funnel-stage:
+    displayName: Funnel
+  decision:
+    displayName: Decision
+  priority:
+    displayName: Priority
+  phase:
+    displayName: Phase
+  setup-cost-hkd:
+    displayName: Setup (HKD)
+  monthly-cost-hkd:
+    displayName: Monthly (HKD)
+  metric:
+    displayName: Expected Metric
+  formula.tier_icon:
+    displayName: Tier
+  formula.decision_icon:
+    displayName: Decision
+views:
+  - type: table
+    name: All Features
+    groupBy:
+      property: decision
+      direction: ASC
+    order:
+      - file.name
+      - formula.tier_icon
+      - formula.decision_icon
+      - category
+      - funnel-stage
+      - priority
+      - phase
+      - setup-cost-hkd
+      - monthly-cost-hkd
+      - metric
+    sort:
+      - property: priority
+        direction: ASC
+  - type: table
+    name: 🔒 Must-Have (Foundation)
+    filters:
+      and:
+        - decision == "must-have"
+    groupBy:
+      property: category
+      direction: ASC
+    order:
+      - file.name
+      - category
+      - funnel-stage
+      - priority
+      - phase
+      - metric
+  - type: table
+    name: 💡 Suggested to Client
+    filters:
+      and:
+        - decision == "suggested"
+    groupBy:
+      property: tier
+      direction: ASC
+    order:
+      - file.name
+      - formula.tier_icon
+      - category
+      - funnel-stage
+      - priority
+      - setup-cost-hkd
+      - monthly-cost-hkd
+      - metric
+  - type: table
+    name: 🟡 Decisions Needed
+    filters:
+      and:
+        - decision == "decision-needed"
+    order:
+      - file.name
+      - category
+      - funnel-stage
+      - metric
+  - type: cards
+    name: By Funnel Stage
+    groupBy:
+      property: funnel-stage
+      direction: ASC
+    order:
+      - file.name
+      - formula.tier_icon
+      - formula.decision_icon
+      - category
+      - metric

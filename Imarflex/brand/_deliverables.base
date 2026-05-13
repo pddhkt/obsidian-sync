@@ -1,0 +1,63 @@
+filters:
+  and:
+    - type == "brand"
+    - file.inFolder("Imarflex/brand")
+formulas:
+  status_icon: if(status == "final", "✅", if(status == "in-progress", "🟡", if(status == "draft", "📝", if(status == "placeholder", "⬜", ""))))
+properties:
+  section:
+    displayName: Section
+  status:
+    displayName: Status
+  priority:
+    displayName: Priority
+views:
+  - type: table
+    name: All Deliverables
+    groupBy:
+      property: section
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icon
+      - status
+      - priority
+  - type: table
+    name: 📝 Drafted (content exists)
+    filters:
+      and:
+        - status == "draft"
+    groupBy:
+      property: section
+      direction: ASC
+    order:
+      - file.name
+      - priority
+  - type: table
+    name: ⬜ Placeholder (waiting on design)
+    filters:
+      and:
+        - status == "placeholder"
+    groupBy:
+      property: section
+      direction: ASC
+    order:
+      - file.name
+      - priority
+  - type: table
+    name: 🟡 In Progress
+    filters:
+      and:
+        - status == "in-progress"
+    order:
+      - file.name
+      - section
+      - priority
+  - type: table
+    name: ✅ Final
+    filters:
+      and:
+        - status == "final"
+    order:
+      - file.name
+      - section
