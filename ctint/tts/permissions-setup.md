@@ -11,15 +11,15 @@ ctint-mf-tts.{feature}.{action}
 
 ## Permission Strings (7 total)
 
-| Description                              | Permission                               |
-| ---------------------------------------- | ---------------------------------------- |
-| Access to TTS application                | `ctint-mf-tts.application.visit`         |
-| View voice prompts listing and details   | `ctint-mf-tts.voice-prompts.view`        |
-| Create, edit, generate TTS, upload audio | `ctint-mf-tts.voice-prompts.edit`        |
-| Publish draft to versioned release       | `ctint-mf-tts.voice-prompts.publish`     |
-| View User Replacements tab               | `ctint-mf-tts.special-words-user.view`   |
-| Edit user-defined pronunciations         | `ctint-mf-tts.special-words-user.edit`   |
-| View System Replacements tab             | `ctint-mf-tts.special-words-system.view` |
+| Description                              | Permission                               |     |
+| ---------------------------------------- | ---------------------------------------- | --- |
+| Access to TTS application                | `ctint-mf-tts.application.visit`         |     |
+| View voice prompts listing and details   | `ctint-mf-tts.voice-prompts.view`        |     |
+| Create, edit, generate TTS, upload audio | `ctint-mf-tts.voice-prompts.edit`        |     |
+| Publish draft to versioned release       | `ctint-mf-tts.voice-prompts.publish`     |     |
+| View User Replacements tab               | `ctint-mf-tts.special-words-user.view`   |     |
+| Edit user-defined pronunciations         | `ctint-mf-tts.special-words-user.edit`   |     |
+| View System Replacements tab             | `ctint-mf-tts.special-words-system.view` |     |
 
 ---
 

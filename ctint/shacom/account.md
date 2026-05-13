@@ -5,3 +5,10 @@ P@ssword1!
 
 
 ---
+
+### phone call section
+Username: 1011, 1012
+
+Password: 1234
+
+SIP Server: 20.255.60.46
