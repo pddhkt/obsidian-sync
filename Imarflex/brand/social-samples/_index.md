@@ -32,6 +32,7 @@ priority: high
 - [[carousel/carousel-irc20ih-gpt-image]]
 - [[carousel/carousel-air-fryer-gpt-image]]
 - [[carousel/carousel-air-fryer-editorial-board]]
+- [[carousel/carousel-fan-cool-air-diagram]]
 - [[carousel/carousel-irc20ih]] — legacy SVG-built draft
 social-samples/
 ├── product/      ← 產品攝影 reference (3-4 張預期)

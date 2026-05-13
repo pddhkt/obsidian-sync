@@ -24,6 +24,12 @@ Target: **1-2 carousels (multiple frames each)**
 - ![[carousel-air-fryer-editorial-frame3-steps.png|180]]
 - ![[carousel-air-fryer-editorial-frame4-cta.png|180]]
 
+- [[carousel-fan-cool-air-diagram]] — fan-focused cool-air diagram style using the same palette
+- ![[carousel-fan-cool-air-frame1-hook.png|180]]
+- ![[carousel-fan-cool-air-frame2-product.png|180]]
+- ![[carousel-fan-cool-air-frame3-benefits.png|180]]
+- ![[carousel-fan-cool-air-frame4-cta.png|180]]
+
 Legacy SVG-built draft: [[carousel-irc20ih]]
 
 Frame structure suggestion:
