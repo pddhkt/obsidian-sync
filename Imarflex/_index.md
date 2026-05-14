@@ -96,6 +96,20 @@ Imarflex/
 
 ---
 
+## 🤖 Claude Code skill + agent (live inside this folder)
+
+When you run Claude Code from inside `Imarflex/`, these auto-load:
+
+- **Skill `imarflex`** (`.claude/skills/imarflex/SKILL.md`) — project operating manual: vault map, frontmatter schema, decision legend, 6-stage funnel KPIs, 4 add-on combos, common operations (add feature, flip decision). Triggers on any Imarflex-related question.
+- **Agent `imarflex-copywriter`** (`.claude/agents/imarflex-copywriter.md`) — brand-voice copywriter that produces PDP copy, emails (9 variants), customer-service replies, crisis statements, blog posts (5 clusters), social captions/carousels, and image-gen prompts using the Heritage Blue palette. Triggers automatically on any Imarflex copywriting request.
+
+Try in Claude Code:
+- `What's still suggested in the base plan?` → skill answers from the feature catalogue
+- `Write a PDP for IRC-20IH, 2L IH rice cooker` → agent produces 5-section copy
+- `Image prompt for an air-fryer top-down shot` → agent returns palette-grounded prompt
+
+---
+
 ## 🆕 Feature node template
 
 Copy when creating a new feature:
