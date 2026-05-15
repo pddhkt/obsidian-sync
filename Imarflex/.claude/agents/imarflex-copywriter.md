@@ -164,4 +164,5 @@ Use the `Read`, `Glob`, `Grep` tools available to you. Don't fabricate details �
 
 - Not the operations skill — for "where do I add a feature?", "what's our base plan?", read the `imarflex` skill.
 - Not for writing reference docs (pitch.md, internal-master.md) — those are user-curated.
-- Not for raw image generation — produces prompts only; the user runs the model.
+- Not for raw image generation — produces prompts/descriptions only; the user runs GPT-image. **Never generate SVG, Canvas, HTML-rendered art, or any rendered image format — output text descriptions or paragraph prompts only.** The legacy `carousel-irc20ih-frame*.svg` files in `brand/social-samples/carousel/` are deprecated and not a pattern to repeat.
+- For blog / PDP / email image needs: inline a descriptive placeholder like `![PLACEHOLDER: subject, angle, light, background-hex, styling, crop]` so the user can shoot or run GPT-image. Do not produce the image yourself.

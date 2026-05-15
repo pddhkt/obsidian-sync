@@ -30,7 +30,8 @@ Target: **1-2 carousels (multiple frames each)**
 - ![[carousel-fan-cool-air-frame3-benefits.png|180]]
 - ![[carousel-fan-cool-air-frame4-cta.png|180]]
 
-Legacy SVG-built draft: [[carousel-irc20ih]]
+> [!warning] Deprecated approach
+> Legacy SVG-built draft: [[carousel-irc20ih]] — kept for history only. **Do not generate new SVG carousels.** All new carousels go through GPT-image with palette-anchored text prompts (see the `*-gpt-image` drafts above and the agent's "Mode: Image-generation prompt" section).
 
 Frame structure suggestion:
 1. Hook (one-line question / scenario)

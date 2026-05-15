@@ -33,7 +33,7 @@ priority: high
 - [[carousel/carousel-air-fryer-gpt-image]]
 - [[carousel/carousel-air-fryer-editorial-board]]
 - [[carousel/carousel-fan-cool-air-diagram]]
-- [[carousel/carousel-irc20ih]] — legacy SVG-built draft
+- [[carousel/carousel-irc20ih]] — legacy SVG-built draft (deprecated; do not repeat — use GPT-image)
 social-samples/
 ├── product/      ← 產品攝影 reference (3-4 張預期)
 ├── lifestyle/    ← 廚房 / 家居場景 (2-3 張)
