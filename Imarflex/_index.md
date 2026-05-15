@@ -76,6 +76,7 @@ Imarflex/
 ├── features/                ← ONE NODE PER FEATURE  (32 nodes)
 ├── funnel/                  ← 6 funnel-stage notes (with mermaid)
 ├── brand/                   ← 15 brand deliverables + social-samples/
+├── Brand Guideline/         ← final assets: Logos / Color Palettes / Moodboard
 ├── decisions/               ← open questions / decisions
 ├── reference/               ← the 4 long-form docs
 └── canvas/                  ← visual feature ↔ funnel maps
@@ -93,6 +94,7 @@ Imarflex/
 **「What hits the purchase stage?」** → [[_features.base]] → "By Funnel Stage" view
 **「Read the full strategy」** → [[reference/internal-master]]
 **「Brand voice / visual / content guidelines」** → [[brand/_index]]
+**「Final brand assets (logos / palette / moodboard)」** → [[Brand Guideline/README]]
 
 ---
 
@@ -143,6 +145,22 @@ metric: ""
 ## Reference
 - [[internal-master#section]]
 ```
+
+---
+
+## 🚧 Build status snapshot
+
+> Live sync against `~/Projects/personal/imarflex-app` (Next.js 16 + Payload CMS 3 + Airwallex + Resend + PostHog).
+> As of 2026-05-14:
+
+| Status | Count | Features |
+|---|---|---|
+| ✅ Shipped | 10 | admin-dashboard, back-in-stock-notify, blog-content, checkout-airwallex, customer-account, parts-finder, pdp-retail-links, posthog-analytics, stock-status-display, warranty-registration |
+| 🟡 In progress | 7 | accessibility, cross-sell-pdp, email-automation, search-meilisearch, security-baseline, seo-content-pack, trade-in-flow |
+| ⬜ Not started | 14 | ai-chatbot, ai-copywriting, first-visit-popup, live-chat, loyalty-system, monitoring-alerts, order-notification-center, product-bundles, promotional-engine, recently-viewed, referral-program, returns-system, reviews-system, subscription-products |
+| ➖ N/A (infra) | 1 | backup-dr |
+
+Filter live in [[_features.base]] → "🚧 Build Status" view.
 
 ---
 

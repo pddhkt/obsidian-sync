@@ -4,6 +4,7 @@ tier: addon
 category: content
 funnel-stage: [awareness]
 decision: suggested
+status: in-progress
 priority: low
 phase: 3
 best-phase: "同 [[blog-content]] 一齊"

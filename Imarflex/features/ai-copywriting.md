@@ -5,6 +5,7 @@ category: ops
 funnel-stage:
   - consideration
 decision: suggested
+status: not-started
 priority: medium
 phase: 3
 best-phase: Q2-Q3 (launch 後 SKU backlog)

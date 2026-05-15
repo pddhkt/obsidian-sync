@@ -4,6 +4,7 @@ tier: base
 category: ops
 funnel-stage: [repeat]
 decision: suggested
+status: not-started
 priority: medium
 phase: 1
 setup-cost-hkd: 0

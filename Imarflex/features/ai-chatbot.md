@@ -7,6 +7,7 @@ funnel-stage:
   - purchase
   - repeat
 decision: suggested
+status: not-started
 priority: medium
 phase: 2
 best-phase: Q1-Q2 早加

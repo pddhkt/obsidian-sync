@@ -4,6 +4,7 @@ tier: base
 category: commerce
 funnel-stage: [consideration, purchase]
 decision: suggested
+status: shipped
 priority: medium
 phase: 1
 setup-cost-hkd: 0

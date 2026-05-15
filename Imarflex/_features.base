@@ -5,6 +5,7 @@ filters:
 formulas:
   tier_icon: if(tier == "base", "🟢 Base", if(tier == "addon", "🟠 Add-on", ""))
   decision_icon: if(decision == "must-have", "🔒 Must-have", if(decision == "suggested", "💡 Suggested", if(decision == "decision-needed", "🟡 Decide", if(decision == "confirmed", "✅ Confirmed", if(decision == "declined", "❌ Declined", "")))))
+  status_icon: if(status == "shipped", "✅ Shipped", if(status == "in-progress", "🟡 In progress", if(status == "not-started", "⬜ Not started", if(status == "n-a", "➖ N/A", ""))))
 properties:
   tier:
     displayName: Tier
@@ -14,6 +15,8 @@ properties:
     displayName: Funnel
   decision:
     displayName: Decision
+  status:
+    displayName: Status
   priority:
     displayName: Priority
   phase:
@@ -28,6 +31,8 @@ properties:
     displayName: Tier
   formula.decision_icon:
     displayName: Decision
+  formula.status_icon:
+    displayName: Status
 views:
   - type: table
     name: All Features
@@ -38,6 +43,7 @@ views:
       - file.name
       - formula.tier_icon
       - formula.decision_icon
+      - formula.status_icon
       - category
       - funnel-stage
       - priority
@@ -58,10 +64,23 @@ views:
       direction: ASC
     order:
       - file.name
+      - formula.status_icon
       - category
       - funnel-stage
       - priority
       - phase
+      - metric
+  - type: table
+    name: 🚧 Build Status
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icon
+      - formula.decision_icon
+      - category
+      - priority
       - metric
   - type: table
     name: 💡 Suggested to Client
@@ -74,6 +93,7 @@ views:
     order:
       - file.name
       - formula.tier_icon
+      - formula.status_icon
       - category
       - funnel-stage
       - priority
@@ -87,6 +107,7 @@ views:
         - decision == "decision-needed"
     order:
       - file.name
+      - formula.status_icon
       - category
       - funnel-stage
       - metric
@@ -99,5 +120,6 @@ views:
       - file.name
       - formula.tier_icon
       - formula.decision_icon
+      - formula.status_icon
       - category
       - metric

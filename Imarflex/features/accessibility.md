@@ -4,6 +4,7 @@ tier: base
 category: ops
 funnel-stage: [awareness, interest, consideration, purchase]
 decision: must-have
+status: in-progress
 priority: medium
 phase: 1
 setup-cost-hkd: 0

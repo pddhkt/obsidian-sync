@@ -4,6 +4,7 @@ tier: addon
 category: content
 funnel-stage: [awareness]
 decision: suggested
+status: shipped
 priority: high
 phase: 2
 best-phase: "Q1 launch 即時開始"

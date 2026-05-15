@@ -5,6 +5,7 @@ category: retention
 funnel-stage:
   - advocacy
 decision: suggested
+status: not-started
 priority: high
 phase: 2
 best-phase: Q2-Q3

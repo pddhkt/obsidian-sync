@@ -4,6 +4,7 @@ tier: base
 category: retention
 funnel-stage: [purchase, repeat, advocacy]
 decision: must-have
+status: in-progress
 priority: high
 phase: 1
 setup-cost-hkd: 0

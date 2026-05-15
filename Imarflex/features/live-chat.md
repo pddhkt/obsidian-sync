@@ -6,6 +6,7 @@ funnel-stage:
   - consideration
   - purchase
 decision: suggested
+status: not-started
 priority: medium
 phase: 2
 best-phase: Q2 之後 (核心 funnel 穩定先)

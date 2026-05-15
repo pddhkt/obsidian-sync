@@ -4,6 +4,7 @@ tier: base
 category: conversion
 funnel-stage: [consideration]
 decision: suggested
+status: shipped
 priority: medium
 phase: 1
 setup-cost-hkd: 0

@@ -5,6 +5,7 @@ category: retention
 funnel-stage:
   - repeat
 decision: suggested
+status: not-started
 priority: medium
 phase: 3
 best-phase: Q3 (一年數據後)
