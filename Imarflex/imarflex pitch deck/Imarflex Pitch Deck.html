@@ -1,0 +1,3339 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<title>Imarflex 伊瑪牌 — 數碼銷售策略方案 v2</title>
+<link rel="stylesheet" href="tokens.css" />
+<script src="deck-stage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script type="application/json" id="speaker-notes">
+[
+  "好,多謝大家時間。今日呢個 deck 大概二十分鐘行一轉。核心訊息好簡單 — 伊瑪牌 50 年品牌底蘊、產品線完整,但網站作為銷售引擎,而家仲未發揮真正威力。今日我哋會講點樣將個官方網站,變成你哋最強嘅銷售資產。",
+  "每個品牌嘅終極目標係銷售。而 D2C 嘅銷售引擎,核心係官方網站 — 唔係 social,唔係 KOL,係網站本身。我哋嘅工作好清晰:Enhance the Online Marketing and Brand Image,等網站變成你哋嘅最強銷售資產。",
+  "你哋而家用 Shopline,launch 容易、入門低,係好嘅起點。但 template-based 平台限制咗網站本身能做到嘅事 — 設計細節、速度、SEO 上限、客戶 data 控制、深度功能整合  website嘅擁有權。下一步唔係換個更好嘅 SaaS,而係升級到一個你完全擁有、可以無限延伸嘅平台。",
+  "接住嘅三個 pillar — 外型、言行、行動 — 就係我哋會點樣為伊瑪牌打造呢個體驗。每個 pillar 都有清晰交付。",
+  "Pillar 1 外型 — Brand 嘅第一印象。客戶睇一眼就要 feel 到品牌個性。我哋交付完整設計系統、UI 標準、加埋俾 social team 用嘅 post 風格參考。視覺一致 = 品牌記得住 = 信任建立。",
+  "Brand system 唔係空講 — 完整 color palette、moodboard、photography style guide 已經做好。8 個 color token、4 個 mood direction(Japanese × HK daily)、material cues 全部 ready。一翻 brand book 就上手用。",
+  "Social team 嘅 reference 都已經整好 — carousel template、product shot、lifestyle 構圖、字體 overlay 規則。我哋唔負責發 post,但 social team 揀模板填內容,品牌一致性自動保住。",
+  "再睇多啲例子 — 同一個 4-frame template,套用喺風扇同電飯煲度。Hook → Product → Benefits → CTA 嘅結構,跨 SKU 都 work。Social team 唔使每次 reinvent layout,只需填內容。",
+  "Pillar 2 言行 — Brand 點講嘢。文字決定客戶讀完之後信唔信。我哋交付 tone of voice 指引、PDP 文案 framework、客服標準、crisis communication tone。一致嘅 voice = 品牌人格化 = emotional connection。  （言語）",
+  "Pillar 3 行動 — Brand 實際做緊咩。網站嘅功能、服務、SEO,直接驅動銷售。商業核心、Imarflex 獨有 features、conversion boosters、自動化、admin、SEO、數據分析,全部包含。透過數據分析改善唔同階段出現嘅情況",
+  "Funnel 視角:6 個階段,5 個我哋直接負責或者打基礎。最關鍵嘅係 — 倡導同認知形成 loop,等你嘅銷售引擎自動加速。唔係單向漏斗,係複利系統。",
+  "講完 funnel,我直接 demo 比你睇。左邊揀階段,右邊就會即場 load 真網站。認知去 blog 睇 SEO 入口、興趣去 homepage 睇 storytelling、考慮去 PDP 睇文案結構、購買去 cart 睇 checkout 流程、重複購買去 parts finder、倡導去 reviews 區。每段我會講 30 秒,邊講邊 click。",
+  "平台組成。Next.js 15 前端、Payload 一站式後台、Airwallex 本地支付、PostHog 數據、Meilisearch 中文搜尋。所有 data 喺自己 database。",
+  "服務範圍一頁睇晒。包嘅:platform build + Shopline migrate + 三大 pillar + 12 個月支援。可選 add-on:blog、reviews、loyalty、AI chatbot 等。唔包嘅:social 日常、付費廣告、KOL — 我哋可以介紹合作伙伴。",
+  "12 個月路線圖。Q1 打地基、Q2 優化轉換、Q3 平台增長、Q4 旺季衝刺。每季都有清晰目標。",
+  "成本對比,以每月營業額 20 萬計。Shopline 每月 2,499 蚊,自有平台 650 蚊。一年慳 22,000 蚊以上,加完整 ownership。",
+  "投資與時間表。Phase 1 設計開發 5–7 週,55,000–80,000 蚊。Phase 2 內容遷移上線 2–3 週,15,000–25,000 蚊。Phase 3 retainer 5,000–8,000 蚊月。Phase 1 + 2 總計 70,000–105,000 蚊。",
+  "預期成效。保守:轉換率升 10–20%、D2C 收入升 30–50%、重複購買率由近 0 升到 15–20%。進取:D2C 收入升 60–100%+。最大價值唔淨係銷售數字 — 而係你哋擁有一個會複利增長嘅資產。",
+  "Build status — 我哋唔係 PowerPoint 講功能,工程其實已經做緊。32 個 features,23 base + 9 add-on。10 個已經 ship 緊、7 個 in-progress、14 個 not started。Phase 1 一上 launch,基礎已經就位。",
+  "客戶需要提供 8 樣嘢 — 品牌素材、產品資料、配件清單、DNS、內容文案、Airwallex 商戶、現有保養數據、KPI baseline。",
+  "下一步:確認合作意向、訂金、提供素材、設計稿確認入開發階段。Pitch 後另約傾 add-on。多謝大家時間。"
+]
+</script>
+<style>
+  :root {
+    --type-display: 110px;
+    --type-title: 64px;
+    --type-subtitle: 44px;
+    --type-body: 32px;
+    --type-small: 26px;
+    --type-eyebrow: 18px;
+    --pad-top: 100px;
+    --pad-bottom: 100px;
+    --pad-x: 120px;
+    --gap-title: 56px;
+    --gap-item: 28px;
+
+    --ink: var(--soft-charcoal);
+    --ink-muted: var(--soft-charcoal-2);
+    --ink-faint: var(--soft-charcoal-3);
+    --paper: var(--rice-white);
+    --paper-2: var(--rice-white-2);
+    --beige: var(--clay-beige);
+    --beige-2: var(--clay-beige-2);
+    --blue: var(--heritage-blue);
+    --blue-2: var(--heritage-blue-2);
+    --blue-3: var(--heritage-blue-3);
+    --air: var(--cool-air);
+    --air-2: var(--cool-air-2);
+    --tint: var(--bg-tint);
+  }
+
+  html, body { margin: 0; background: #0c0d10; }
+
+  deck-stage section {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-tc), var(--font-sans);
+    box-sizing: border-box;
+    padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Universal slide chrome */
+  .chrome-tl, .chrome-br {
+    position: absolute;
+    font-family: var(--font-sans);
+    font-size: var(--type-eyebrow);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+  }
+  .chrome-tl { top: 56px; left: var(--pad-x); display: flex; align-items: center; gap: 18px; }
+  .chrome-tl::before {
+    content: "";
+    width: 28px; height: 1px; background: var(--blue);
+  }
+  .chrome-br { bottom: 56px; right: var(--pad-x); }
+
+  .eyebrow-tc {
+    font-family: var(--font-sans);
+    font-size: var(--type-eyebrow);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+
+  h1.slide-title, h2.slide-title {
+    font-family: var(--font-tc), var(--font-sans);
+    font-size: var(--type-title);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* Entry animations */
+  @keyframes riseIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+  @keyframes drawLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes slideRight { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: translateX(0); } }
+
+  deck-stage section[data-deck-active] [data-anim="rise"]   { animation: riseIn 700ms var(--ease) backwards; }
+  deck-stage section[data-deck-active] [data-anim="fade"]   { animation: fadeIn 900ms var(--ease) backwards; }
+  deck-stage section[data-deck-active] [data-anim="scale"]  { animation: scaleIn 800ms var(--ease) backwards; }
+  deck-stage section[data-deck-active] [data-anim="line"]   { transform-origin: left; animation: drawLine 900ms var(--ease) backwards; }
+  deck-stage section[data-deck-active] [data-anim="right"]  { animation: slideRight 700ms var(--ease) backwards; }
+
+  [data-d="1"]  { animation-delay: 80ms !important; }
+  [data-d="2"]  { animation-delay: 160ms !important; }
+  [data-d="3"]  { animation-delay: 240ms !important; }
+  [data-d="4"]  { animation-delay: 320ms !important; }
+  [data-d="5"]  { animation-delay: 400ms !important; }
+  [data-d="6"]  { animation-delay: 480ms !important; }
+  [data-d="7"]  { animation-delay: 560ms !important; }
+  [data-d="8"]  { animation-delay: 640ms !important; }
+  [data-d="9"]  { animation-delay: 720ms !important; }
+  [data-d="10"] { animation-delay: 800ms !important; }
+  [data-d="11"] { animation-delay: 880ms !important; }
+  [data-d="12"] { animation-delay: 960ms !important; }
+
+  /* ============== COVER ============== */
+  .cover {
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    padding: 0;
+  }
+  .cover-left {
+    padding: 110px var(--pad-x) 100px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    background: var(--paper);
+  }
+  .cover-brand { display: flex; align-items: center; gap: 24px; }
+  .cover-mark {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--blue); color: var(--paper-2);
+    display: grid; place-items: center;
+    font-family: var(--font-sans);
+    font-weight: 800; font-size: 28px; letter-spacing: 0.04em;
+  }
+  .cover-brand-tc { font-family: var(--font-tc); font-weight: 700; font-size: 28px; letter-spacing: 0.04em; color: var(--ink); }
+  .cover-brand-en {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .cover-title {
+    font-family: var(--font-tc);
+    font-weight: 700;
+    font-size: 92px;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .cover-title em { font-style: normal; color: var(--blue); }
+  .cover-sub {
+    font-size: 30px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin: 36px 0 0;
+    max-width: 760px;
+  }
+  .cover-meta {
+    display: flex; gap: 64px;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: var(--ink-faint);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .cover-meta strong { color: var(--ink); font-weight: 600; display: block; margin-top: 6px; font-size: 18px; letter-spacing: 0.04em; text-transform: none; font-family: var(--font-tc); }
+  .cover-right {
+    background: var(--blue);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-right::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background:
+      radial-gradient(circle at 30% 30%, var(--blue-3) 0%, transparent 45%),
+      radial-gradient(circle at 70% 70%, var(--clay-beige) 0%, transparent 30%),
+      var(--blue);
+    opacity: 0.85;
+    animation: slowDrift 30s linear infinite;
+  }
+  .cover-right-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(247,246,242,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(247,246,242,0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .cover-right-content {
+    position: absolute; inset: 0;
+    padding: 110px 90px;
+    color: var(--paper-2);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .cover-quote {
+    font-family: var(--font-tc);
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .cover-quote-mark {
+    font-size: 200px; line-height: 0.6; opacity: 0.3;
+    font-family: var(--font-sans);
+  }
+  .cover-arrow {
+    display: flex; align-items: center; gap: 16px;
+    font-family: var(--font-sans); font-size: 14px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .cover-arrow-line { width: 60px; height: 1px; background: currentColor; }
+
+  @keyframes slowDrift {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+
+  /* ============== GOAL slide ============== */
+  .goal-wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 96px;
+    margin-top: var(--gap-title);
+    align-items: center;
+  }
+  .goal-statement {
+    font-family: var(--font-tc);
+    font-size: 76px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .goal-statement em { font-style: normal; color: var(--blue); }
+  .goal-card {
+    background: var(--blue);
+    color: var(--paper-2);
+    border-radius: var(--radius-xl);
+    padding: 56px 56px 64px;
+    box-shadow: var(--shadow-3);
+  }
+  .goal-card-label {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--clay-beige);
+    font-weight: 700;
+    margin-bottom: 28px;
+  }
+  .goal-card-text {
+    font-family: var(--font-tc);
+    font-size: 36px;
+    line-height: 1.45;
+    margin: 0 0 32px;
+    color: var(--paper-2);
+    font-weight: 500;
+  }
+  .goal-card-text em { font-style: normal; color: var(--clay-beige); font-weight: 700; }
+  .goal-card-rule { height: 1px; background: rgba(247,246,242,0.25); margin: 32px 0; }
+  .goal-card-foot {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cool-air);
+    font-weight: 600;
+  }
+
+  /* ============== STARTING POINT vs WEBSITE ============== */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: var(--gap-title);
+  }
+  .col-card {
+    padding: 48px 48px;
+    border-radius: var(--radius-xl);
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+  }
+  .col-card.dim { background: var(--tint); border: 1px solid var(--rule); }
+  .col-card.bright {
+    background: var(--blue); color: var(--paper-2);
+    border: none; box-shadow: var(--shadow-3);
+  }
+  .col-card .col-label {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 24px;
+    opacity: 0.7;
+  }
+  .col-card.bright .col-label { color: var(--clay-beige); opacity: 1; }
+  .col-card h3 {
+    font-size: 40px; line-height: 1.2;
+    margin: 0 0 28px; font-weight: 700;
+    color: inherit; letter-spacing: -0.01em;
+  }
+  .col-card ul { list-style: none; padding: 0; margin: 0; }
+  .col-card li {
+    font-size: 22px;
+    line-height: 1.5;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+    color: inherit;
+  }
+  .col-card.bright li { border-top-color: rgba(247,246,242,0.18); opacity: 0.95; }
+  .col-card li:first-child { border-top: none; }
+
+  .start-foot {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    padding: 28px 40px;
+    background: var(--tint);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+    font-size: 24px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .start-foot em { font-style: normal; color: var(--blue); font-weight: 700; }
+
+  /* ============== HYPERFRAME MOTION SLIDE ============== */
+  .hyper-slide {
+    background: var(--blue);
+    color: var(--paper-2);
+    overflow: hidden;
+    padding: 0;
+  }
+  .hyper-slide .chrome-tl, .hyper-slide .chrome-br { color: rgba(247,246,242,0.5); z-index: 5; }
+  .hyper-slide .chrome-tl::before { background: var(--clay-beige); }
+  .hyper-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(247,246,242,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(247,246,242,0.06) 1px, transparent 1px);
+    background-size: 120px 120px;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 80%);
+  }
+  .hyper-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .hyper-orb.a {
+    width: 620px; height: 620px;
+    background: var(--clay-beige);
+    top: -160px; right: -120px;
+    animation: orbDrift 9s ease-in-out infinite;
+  }
+  .hyper-orb.b {
+    width: 540px; height: 540px;
+    background: var(--blue-3);
+    bottom: -160px; left: -80px;
+    animation: orbDrift 11s ease-in-out infinite reverse;
+  }
+  .hyper-orb.c {
+    width: 400px; height: 400px;
+    background: var(--cool-air);
+    top: 30%; left: 42%;
+    opacity: 0.4;
+    animation: orbDrift 13s ease-in-out infinite;
+  }
+  @keyframes orbDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%      { transform: translate(160px, -90px) scale(1.18); }
+    66%      { transform: translate(-120px, 110px) scale(0.88); }
+  }
+
+  /* GSAP-driven elements — starting states */
+  .hyper-scan {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: -280px;
+    width: 280px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(232,222,196,0.0) 25%,
+      rgba(232,222,196,0.28) 50%,
+      rgba(232,222,196,0.0) 75%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .hyper-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 920px; height: 920px;
+    margin: -460px 0 0 -460px;
+    border: 1px solid rgba(232,222,196,0.20);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .hyper-ring-inner {
+    position: absolute;
+    inset: 80px;
+    border: 1px dashed rgba(232,222,196,0.26);
+    border-radius: 50%;
+    will-change: transform;
+  }
+  .hyper-ring-dot {
+    position: absolute;
+    top: -8px; left: 50%;
+    width: 16px; height: 16px;
+    margin-left: -8px;
+    background: var(--clay-beige);
+    border-radius: 50%;
+    box-shadow: 0 0 28px var(--clay-beige), 0 0 60px rgba(232,222,196,0.5);
+  }
+
+  /* SVG connector lines between pillars */
+  .hyper-connector {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .hyper-connector path {
+    fill: none;
+    stroke: rgba(232,222,196,0.5);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 8;
+  }
+
+  .hyper-content {
+    position: relative; z-index: 2;
+    height: 100%;
+    padding: 100px var(--pad-x) 96px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 36px;
+    box-sizing: border-box;
+  }
+  .hyper-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--clay-beige);
+    font-weight: 700;
+  }
+  .hyper-title {
+    font-family: var(--font-tc);
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 16px 0 0;
+    color: var(--paper-2);
+  }
+  .hyper-title em { font-style: normal; color: var(--clay-beige); }
+
+  .hyper-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: stretch;
+  }
+  .hyper-pillar {
+    position: relative;
+    border: 1px solid rgba(247,246,242,0.22);
+    border-radius: var(--radius-xl);
+    padding: 44px 44px 48px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    min-height: 280px;
+    will-change: transform, opacity;
+    transition: border-color 0.6s ease, background 0.6s ease, box-shadow 0.6s ease;
+  }
+  .hyper-pillar.is-active {
+    border-color: rgba(232,222,196,0.85);
+    background: rgba(232,222,196,0.12);
+    box-shadow: 0 28px 70px -10px rgba(232,222,196,0.4);
+  }
+  .hyper-pillar-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--clay-beige);
+    transform: scaleX(0);
+    transform-origin: left;
+    will-change: transform;
+  }
+  .hyper-pillar-glow {
+    position: absolute;
+    top: 22px; right: 22px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--clay-beige);
+    opacity: 0.35;
+    will-change: opacity, box-shadow;
+  }
+  .hyper-pillar-num {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.24em;
+    color: var(--clay-beige);
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .hyper-pillar-name {
+    font-family: var(--font-tc);
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--paper-2);
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .hyper-pillar-en {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.32em;
+    color: var(--cool-air);
+    margin-top: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .hyper-pillar-rule {
+    height: 1px; background: rgba(247,246,242,0.24);
+    margin: 32px 0 28px;
+  }
+  .hyper-pillar-tag {
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--paper);
+    opacity: 0.92;
+    margin: 0;
+    flex: 1;
+  }
+
+  /* Particles — GSAP animates positions */
+  .hyper-particle {
+    position: absolute;
+    width: 8px; height: 8px;
+    background: var(--clay-beige);
+    border-radius: 50%;
+    opacity: 0.7;
+    box-shadow: 0 0 16px rgba(232,222,196,0.8);
+    will-change: transform;
+  }
+  .hyper-particle.x1 { top: 18%; left: 8%; }
+  .hyper-particle.x2 { top: 32%; right: 12%; }
+  .hyper-particle.x3 { bottom: 22%; left: 18%; }
+  .hyper-particle.x4 { bottom: 28%; right: 22%; }
+  .hyper-particle.x5 { top: 14%; left: 52%; opacity: 0.5; }
+
+  .hyper-orb { will-change: transform; }
+  /* Override CSS animation — GSAP drives orb drift */
+  .hyper-orb.a, .hyper-orb.b, .hyper-orb.c { animation: none; }
+
+  .hyper-foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    color: rgba(247,246,242,0.7);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .hyper-arrow {
+    display: inline-flex; align-items: center; gap: 14px;
+  }
+  .hyper-arrow-line {
+    width: 80px; height: 1px; background: var(--clay-beige);
+    animation: drawLine 900ms var(--ease) 800ms backwards;
+    transform-origin: left;
+  }
+
+  /* ============== PILLAR detail slides ============== */
+  .pillar-slide { padding-top: 100px; }
+  .pillar-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 40px;
+  }
+  .pillar-numwrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pillar-numlabel {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .pillar-num {
+    font-family: var(--font-sans);
+    font-size: 200px;
+    font-weight: 800;
+    line-height: 0.9;
+    color: var(--blue);
+    letter-spacing: -0.04em;
+  }
+  .pillar-titles {
+    border-left: 1px solid var(--rule-strong);
+    padding-left: 48px;
+    padding-bottom: 12px;
+  }
+  .pillar-tc {
+    font-family: var(--font-tc);
+    font-size: 92px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .pillar-en {
+    font-family: var(--font-sans);
+    font-size: 22px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 12px;
+    font-weight: 600;
+  }
+  .pillar-pull {
+    font-family: var(--font-tc);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    line-height: 1.4;
+    margin: 0 0 40px;
+    max-width: 1500px;
+  }
+  .pillar-pull em { font-style: normal; color: var(--blue); font-weight: 700; }
+
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .pillar-block {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    padding: 36px 36px 36px;
+    display: flex; flex-direction: column;
+    min-height: 320px;
+  }
+  .pillar-block.bright {
+    background: var(--blue);
+    color: var(--paper-2);
+    border: none;
+  }
+  .pillar-block.bright .pillar-block-label { color: var(--clay-beige); }
+  .pillar-block.bright .pillar-block-name { color: var(--paper-2); }
+  .pillar-block.bright .pillar-block-list li { color: var(--paper); border-top-color: rgba(247,246,242,0.18); opacity: 0.92; }
+  .pillar-block-label {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .pillar-block-name {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    color: var(--ink);
+  }
+  .pillar-block-name .new-tag {
+    display: inline-block;
+    background: var(--clay-beige);
+    color: var(--blue-2);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-weight: 700;
+  }
+  .pillar-block-list {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .pillar-block-list li {
+    font-size: 19px;
+    line-height: 1.5;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-muted);
+  }
+  .pillar-block-list li:first-child { border-top: none; }
+
+  /* ============== FUNNEL 6-stage with loop ============== */
+  .funnel-wrap {
+    margin-top: 48px;
+    position: relative;
+  }
+  .funnel {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+  }
+  .funnel-step {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    padding: 28px 24px 28px;
+    min-height: 360px;
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+  .funnel-step.us {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--paper-2);
+  }
+  .funnel-step.advocacy {
+    background: var(--clay-beige);
+    border-color: var(--clay-beige-2);
+  }
+  .funnel-num {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--blue);
+  }
+  .funnel-step.us .funnel-num { color: var(--clay-beige); }
+  .funnel-step.advocacy .funnel-num { color: var(--blue-2); }
+  .funnel-stage {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    line-height: 1.15;
+  }
+  .funnel-en {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .funnel-step.us .funnel-en { color: var(--cool-air); }
+  .funnel-step.advocacy .funnel-en { color: var(--blue-2); opacity: 0.7; }
+  .funnel-detail {
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    flex: 1;
+  }
+  .funnel-step.us .funnel-detail { color: var(--paper); opacity: 0.92; }
+  .funnel-step.advocacy .funnel-detail { color: var(--blue-2); }
+  .funnel-impact {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.05em;
+  }
+  .funnel-step.us .funnel-impact { color: var(--clay-beige); border-top-color: rgba(247,246,242,0.18); }
+  .funnel-step.advocacy .funnel-impact { color: var(--blue-2); border-top-color: rgba(30,75,122,0.2); }
+
+  /* Loop arrow */
+  .funnel-loop {
+    margin-top: 36px;
+    padding: 28px 40px;
+    background: var(--tint);
+    border: 1px dashed var(--rule-strong);
+    border-radius: var(--radius-xl);
+    display: flex; align-items: center; gap: 32px;
+  }
+  .funnel-loop-icon {
+    flex-shrink: 0;
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    display: grid; place-items: center;
+    color: var(--blue);
+    font-size: 32px;
+    font-weight: 800;
+    animation: loopRot 6s linear infinite;
+  }
+  @keyframes loopRot {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  .funnel-loop-text {
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .funnel-loop-text em { font-style: normal; color: var(--blue); font-weight: 700; }
+
+  /* ============== FUNNEL — LIVE DEMO ============== */
+  .funnel-demo-slide {
+    padding: 70px 80px 60px;
+  }
+  .funnel-demo-slide .chrome-tl { top: 40px; left: 80px; }
+  .funnel-demo-slide .chrome-br { bottom: 38px; right: 80px; }
+
+  .funnel-demo-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 26px;
+  }
+  .funnel-demo-head h2 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    max-width: 980px;
+  }
+  .funnel-demo-head .demo-hint {
+    flex-shrink: 0;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    text-align: right;
+    line-height: 1.5;
+  }
+  .funnel-demo-head .demo-hint b {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--paper-2);
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 6px;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+  }
+
+  .funnel-demo-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 28px;
+    height: calc(100% - 180px);
+  }
+
+  .funnel-stages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow: hidden;
+  }
+  .funnel-stages li {
+    cursor: pointer;
+    padding: 14px 18px 14px 22px;
+    border-left: 3px solid transparent;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    background: transparent;
+    transition: background var(--dur-quick) var(--ease),
+                border-color var(--dur-quick) var(--ease),
+                transform var(--dur-quick) var(--ease);
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: center;
+    gap: 4px 14px;
+  }
+  .funnel-stages li:hover {
+    background: var(--air-2);
+    border-left-color: var(--blue-3);
+  }
+  .funnel-stages li.active {
+    background: var(--paper-2);
+    border-left-color: var(--blue);
+    box-shadow: var(--shadow-1);
+  }
+  .funnel-stages li.active.advocacy-stage {
+    background: var(--clay-beige);
+    border-left-color: var(--blue-2);
+  }
+  .funnel-stages .stage-num {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    grid-row: 1 / span 2;
+    align-self: start;
+    padding-top: 2px;
+  }
+  .funnel-stages li.active .stage-num { color: var(--blue); }
+  .funnel-stages .stage-title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .funnel-stages .stage-en {
+    font-family: var(--font-sans);
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .funnel-stages li.active .stage-en { color: var(--blue-3); }
+  .funnel-stages .stage-sub {
+    grid-column: 2 / span 2;
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+  .funnel-stages .stage-arrow {
+    grid-row: 1;
+    grid-column: 3;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    border: 1px solid var(--rule-strong);
+    color: var(--ink-faint);
+    font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all var(--dur-quick) var(--ease);
+  }
+  .funnel-stages li.active .stage-arrow {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--paper-2);
+  }
+
+  .funnel-demo-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 0;
+  }
+
+  .demo-frame {
+    flex: 1;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--shadow-2);
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    position: relative;
+  }
+  .demo-frame-bar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 16px;
+    background: var(--paper-2);
+    border-bottom: 1px solid var(--rule);
+  }
+  .demo-frame-dots {
+    display: flex; gap: 6px;
+  }
+  .demo-frame-dots span {
+    width: 11px; height: 11px; border-radius: 50%;
+    background: var(--steam-grey-2);
+  }
+  .demo-frame-dots span:nth-child(1) { background: #E27D60; }
+  .demo-frame-dots span:nth-child(2) { background: #E8C547; }
+  .demo-frame-dots span:nth-child(3) { background: #6FB37F; }
+  .demo-frame-url {
+    flex: 1;
+    background: var(--bg-tint);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink-muted);
+    display: flex; align-items: center; gap: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .demo-frame-url::before {
+    content: "🔒";
+    font-size: 11px;
+    opacity: 0.7;
+  }
+  .demo-frame-url .url-host { color: var(--ink); font-weight: 500; }
+  .demo-frame-live {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-sans);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6FB37F;
+  }
+  .demo-frame-live::before {
+    content: "";
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #6FB37F;
+    box-shadow: 0 0 0 0 rgba(111, 179, 127, 0.6);
+    animation: liveDot 1.6s infinite;
+  }
+  @keyframes liveDot {
+    0%   { box-shadow: 0 0 0 0 rgba(111, 179, 127, 0.6); }
+    70%  { box-shadow: 0 0 0 8px rgba(111, 179, 127, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(111, 179, 127, 0); }
+  }
+
+  .demo-frame-stage {
+    flex: 1;
+    position: relative;
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .demo-frame-stage iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #fff;
+  }
+  .demo-frame-loading {
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--paper-2);
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    gap: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-quick) var(--ease);
+  }
+  .demo-frame-loading.is-on { opacity: 1; }
+  .demo-frame-loading::before {
+    content: "";
+    width: 14px; height: 14px;
+    border: 2px solid var(--rule-strong);
+    border-top-color: var(--blue);
+    border-radius: 50%;
+    animation: demoSpin 0.9s linear infinite;
+  }
+  @keyframes demoSpin { to { transform: rotate(360deg); } }
+
+  .demo-fallback {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: stretch;
+    background:
+      repeating-linear-gradient(45deg,
+        var(--paper-2) 0 14px,
+        var(--bg-tint) 14px 28px);
+    padding: 40px;
+  }
+  .demo-fallback.is-on { display: flex; }
+  .demo-fallback-card {
+    flex: 1;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    display: flex; flex-direction: column; justify-content: center;
+    box-shadow: var(--shadow-2);
+  }
+  .demo-fallback-card h4 {
+    font-size: 22px; margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .demo-fallback-card p {
+    font-size: 15px; color: var(--ink-muted); margin: 0 0 6px;
+    max-width: none;
+    font-family: var(--font-mono);
+  }
+
+  .demo-details {
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 14px;
+    height: 168px;
+  }
+  .demo-detail-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .demo-detail-card.impact { background: var(--blue); border-color: var(--blue); color: var(--paper-2); }
+  .demo-detail-card.impact .demo-detail-label { color: var(--clay-beige); }
+  .demo-detail-card .demo-detail-label {
+    font-family: var(--font-sans);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .demo-detail-card.items .demo-detail-label { color: var(--ink-faint); }
+  .demo-detail-card ul {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-direction: column;
+    gap: 5px;
+    flex: 1;
+  }
+  .demo-detail-card.impact li {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .demo-detail-card.impact li::before {
+    content: "↗";
+    color: var(--clay-beige);
+    font-weight: 700;
+  }
+  .demo-detail-card.items {
+    columns: 1;
+  }
+  .demo-detail-card.items ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 18px;
+  }
+  .demo-detail-card.items li {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--ink-muted);
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .demo-detail-card.items li::before {
+    content: "—";
+    color: var(--blue-3);
+    flex-shrink: 0;
+  }
+
+  /* ============== STACK ============== */
+  .stack-grid {
+    margin-top: var(--gap-title);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .stack-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    padding: 44px 40px;
+    min-height: 280px;
+    display: flex; flex-direction: column;
+  }
+  .stack-tag {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .stack-name {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--blue);
+    margin: 0 0 16px;
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+  .stack-desc {
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  /* ============== SCOPE ============== */
+  .scope-grid {
+    margin-top: var(--gap-title);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.85fr;
+    gap: 24px;
+  }
+  .scope-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    padding: 44px 40px;
+    display: flex; flex-direction: column;
+  }
+  .scope-card.included { background: var(--blue); color: var(--paper-2); border: none; box-shadow: var(--shadow-3); }
+  .scope-card.excluded { background: var(--tint); border: 1px dashed var(--rule-strong); }
+  .scope-label {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 14px;
+    opacity: 0.8;
+  }
+  .scope-card.included .scope-label { color: var(--clay-beige); opacity: 1; }
+  .scope-card h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 28px;
+    color: inherit;
+    line-height: 1.2;
+  }
+  .scope-card ul { list-style: none; padding: 0; margin: 0; }
+  .scope-card li {
+    font-size: 19px;
+    line-height: 1.5;
+    padding: 14px 0;
+    border-top: 1px solid var(--rule);
+    color: inherit;
+  }
+  .scope-card.included li { border-top-color: rgba(247,246,242,0.2); opacity: 0.95; }
+  .scope-card li:first-child { border-top: none; }
+  .scope-card.excluded li { color: var(--ink-muted); }
+
+  /* ============== ROADMAP ============== */
+  .roadmap {
+    margin-top: var(--gap-title);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-left: 4px solid var(--blue);
+  }
+  .road-step {
+    padding: 32px 36px 32px;
+    border-right: 1px solid var(--rule);
+    background: var(--paper);
+    position: relative;
+    min-height: 480px;
+    display: flex; flex-direction: column;
+  }
+  .road-step:last-child { border-right: none; }
+  .road-q {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .road-months {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--ink-faint);
+    letter-spacing: 0.16em;
+    margin-bottom: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .road-name {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  .road-list {
+    list-style: none; padding: 0; margin: 0 0 24px;
+    flex: 1;
+  }
+  .road-list li {
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    padding: 8px 0;
+  }
+  .road-goal {
+    margin-top: auto;
+    padding: 16px 18px;
+    background: var(--tint);
+    border-radius: var(--radius-md);
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--blue-2);
+    line-height: 1.4;
+  }
+
+  /* ============== COST COMPARE ============== */
+  .cost-compare {
+    margin-top: var(--gap-title);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .cost-card {
+    border-radius: var(--radius-xl);
+    padding: 56px 56px 56px;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+  }
+  .cost-card.win {
+    background: var(--blue);
+    color: var(--paper-2);
+    border: none;
+    box-shadow: var(--shadow-3);
+  }
+  .cost-tag {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+  .cost-card.win .cost-tag { color: var(--clay-beige); opacity: 1; }
+  .cost-name {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 32px;
+    color: inherit;
+    line-height: 1.2;
+  }
+  .cost-rows { list-style: none; padding: 0; margin: 0 0 28px; }
+  .cost-rows li {
+    display: flex; justify-content: space-between; gap: 24px;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 22px;
+    color: inherit;
+  }
+  .cost-card.win .cost-rows li { border-top-color: rgba(247,246,242,0.18); opacity: 0.92; }
+  .cost-rows li:first-child { border-top: none; }
+  .cost-rows .num { font-family: var(--font-sans); font-weight: 600; }
+  .cost-total {
+    margin-top: 8px;
+    padding-top: 24px;
+    border-top: 2px solid var(--rule-strong);
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .cost-card.win .cost-total { border-top-color: var(--clay-beige); }
+  .cost-total-label {
+    font-size: 20px; font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: inherit;
+    opacity: 0.7;
+  }
+  .cost-card.win .cost-total-label { opacity: 1; color: var(--clay-beige); }
+  .cost-total-num {
+    font-family: var(--font-sans);
+    font-size: 56px;
+    font-weight: 700;
+    color: inherit;
+    letter-spacing: -0.02em;
+  }
+  .cost-savings {
+    margin-top: 32px;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--blue);
+    border-left: 3px solid var(--blue);
+    padding-left: 24px;
+    line-height: 1.4;
+  }
+  .cost-card.win .cost-savings {
+    color: var(--clay-beige);
+    border-left-color: var(--clay-beige);
+  }
+
+  /* ============== INVESTMENT ============== */
+  .invest {
+    margin-top: var(--gap-title);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .invest-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    padding: 44px 40px 44px;
+    display: flex; flex-direction: column;
+    min-height: 480px;
+  }
+  .invest-phase {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    letter-spacing: 0.22em;
+    color: var(--blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .invest-time {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .invest-name {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  .invest-price {
+    font-family: var(--font-sans);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 28px;
+    letter-spacing: -0.01em;
+  }
+  .invest-price small { font-size: 16px; color: var(--ink-muted); font-weight: 500; letter-spacing: 0.04em; }
+  .invest-list { list-style: none; padding: 0; margin: 0; flex: 1; }
+  .invest-list li {
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 8px 0;
+    color: var(--ink-muted);
+  }
+  .invest-total {
+    margin-top: var(--gap-item);
+    padding: 32px 48px;
+    background: var(--blue);
+    color: var(--paper-2);
+    border-radius: var(--radius-xl);
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .invest-total-label { font-size: 24px; font-weight: 600; }
+  .invest-total-num {
+    font-family: var(--font-sans);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--clay-beige);
+    letter-spacing: -0.01em;
+  }
+
+  /* ============== OUTCOMES ============== */
+  .outcome-grid {
+    margin-top: var(--gap-title);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .outcome-card {
+    padding: 56px;
+    border-radius: var(--radius-xl);
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+  }
+  .outcome-card.aggressive {
+    background: var(--blue);
+    color: var(--paper-2);
+    border: none;
+  }
+  .outcome-tag {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+  .outcome-card.aggressive .outcome-tag { color: var(--clay-beige); opacity: 1; }
+  .outcome-card h3 {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0 0 32px;
+    color: inherit;
+  }
+  .outcome-list { list-style: none; padding: 0; margin: 0; }
+  .outcome-list li {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .outcome-card.aggressive .outcome-list li { border-top-color: rgba(247,246,242,0.18); }
+  .outcome-list li:first-child { border-top: none; }
+  .outcome-pct {
+    font-family: var(--font-sans);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.01em;
+  }
+  .outcome-card.aggressive .outcome-pct { color: var(--clay-beige); }
+  .outcome-text {
+    font-size: 20px;
+    line-height: 1.5;
+    color: inherit;
+  }
+  .outcome-quote {
+    margin-top: 40px;
+    padding: 32px 48px;
+    background: var(--tint);
+    border-left: 3px solid var(--blue);
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--ink);
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  }
+  .outcome-quote em { font-style: normal; color: var(--blue); font-weight: 700; }
+
+  /* ============== PROVIDE ============== */
+  .provide-grid {
+    margin-top: var(--gap-title);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .provide-card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    padding: 36px 32px;
+    min-height: 220px;
+    display: flex; flex-direction: column;
+  }
+  .provide-num {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: 0.22em;
+    margin-bottom: 16px;
+  }
+  .provide-name {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+  .provide-desc {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  /* ============== BRAND SHOWCASE ============== */
+  .brand-showcase {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+  .brand-showcase-card {
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--paper-2);
+    display: flex; flex-direction: column;
+    box-shadow: var(--shadow-1);
+  }
+  .brand-showcase-cap {
+    padding: 20px 28px 22px;
+    border-bottom: 1px solid var(--rule);
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .brand-showcase-cap .lab {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .brand-showcase-cap .tit {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+  .brand-showcase-img {
+    flex: 1;
+    background: var(--paper);
+    display: grid; place-items: center;
+    overflow: hidden;
+    min-height: 0;
+    padding: 24px;
+  }
+  .brand-showcase-img img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+  .brand-mood-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    background: var(--rule);
+    min-height: 0;
+  }
+  .brand-mood-grid > div {
+    background: var(--paper);
+    overflow: hidden;
+    position: relative;
+  }
+  .brand-mood-grid img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block;
+  }
+  .brand-mood-tag {
+    position: absolute;
+    left: 12px; bottom: 12px;
+    background: rgba(30,75,122,0.92);
+    color: var(--paper-2);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  /* ============== SOCIAL POSTS ============== */
+  .social-strip {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+  }
+  .social-tile {
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: var(--paper-2);
+    box-shadow: var(--shadow-1);
+    position: relative;
+  }
+  .social-tile img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    display: block;
+  }
+  .social-tile-cap {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: var(--paper-2);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 999px;
+    box-shadow: var(--shadow-1);
+  }
+  .social-tile-cap.dark {
+    background: var(--blue);
+    color: var(--paper-2);
+  }
+  .social-foot {
+    margin-top: 28px;
+    margin-bottom: 24px;
+    padding: 22px 32px;
+    background: var(--tint);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .social-foot em { font-style: normal; color: var(--blue); font-weight: 700; }
+
+  /* ============== SOCIAL POSTS — multi-row layout (II) ============== */
+  .social-row {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+  .social-row + .social-row {
+    margin-top: 18px;
+  }
+  .social-row-label {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--blue);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    display: flex; flex-direction: column; justify-content: center;
+    gap: 6px;
+  }
+  .social-row-label .lab {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .social-row-label .tit {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .social-row-label .sub {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.45;
+  }
+  .social-row-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .social-tile.lite {
+    box-shadow: var(--shadow-1);
+  }
+
+  /* ============== BUILD STATUS ============== */
+  .build-status {
+    margin-top: 36px;
+  }
+  .build-status-head {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .build-stat {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    padding: 24px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+  }
+  .build-stat.total { background: var(--blue); color: var(--paper-2); border: none; box-shadow: var(--shadow-3); }
+  .build-stat .build-stat-label {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .build-stat.total .build-stat-label { color: var(--clay-beige); }
+  .build-stat .build-stat-num {
+    font-family: var(--font-sans);
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .build-stat.total .build-stat-num { color: var(--paper-2); }
+  .build-stat.shipped .build-stat-num { color: #4F8A60; }
+  .build-stat.progress .build-stat-num { color: var(--blue); }
+  .build-stat.pending .build-stat-num { color: var(--ink-faint); }
+  .build-stat .build-stat-cap {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+  }
+  .build-stat.total .build-stat-cap { color: var(--cool-air); }
+
+  .build-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+  .build-col {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-xl);
+    padding: 24px 28px 28px;
+    min-height: 280px;
+  }
+  .build-col-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .build-col-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    display: inline-block;
+  }
+  .build-col.shipped .build-col-dot { background: #4F8A60; }
+  .build-col.progress .build-col-dot { background: var(--blue); }
+  .build-col.pending .build-col-dot { background: var(--steam-grey-2); border: 1px solid var(--rule-strong); }
+  .build-col-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.2;
+    flex: 1;
+  }
+  .build-col-count {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+  .build-col ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .build-col li {
+    font-size: 14.5px;
+    line-height: 1.45;
+    color: var(--ink-muted);
+    padding: 4px 0;
+  }
+  .build-col.shipped li { color: var(--ink); }
+  .build-foot {
+    margin-top: 22px;
+    margin-bottom: 32px;
+    padding: 18px 28px;
+    background: var(--tint);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .build-foot em { font-style: normal; color: var(--blue); font-weight: 700; }
+
+  /* ============== CLOSING ============== */
+  .closing {
+    background: var(--blue);
+    color: var(--paper-2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+  .closing-left {
+    padding: 110px 100px 100px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .closing-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--clay-beige);
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+  .closing-title {
+    font-family: var(--font-tc);
+    font-size: 88px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--paper-2);
+  }
+  .closing-mark { width: 72px; height: 1px; background: var(--clay-beige); margin: 56px 0; }
+  .closing-meta {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cool-air);
+    font-weight: 600;
+  }
+  .closing-meta strong { display: block; font-family: var(--font-tc); font-size: 22px; font-weight: 600; color: var(--paper-2); margin-top: 6px; letter-spacing: 0; text-transform: none; }
+  .closing-right {
+    padding: 110px 100px 100px;
+    border-left: 1px solid rgba(247,246,242,0.2);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .closing-steps {
+    list-style: none; padding: 0; margin: 0;
+    counter-reset: step;
+  }
+  .closing-steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 28px;
+    align-items: baseline;
+    padding: 28px 0;
+    border-top: 1px solid rgba(247,246,242,0.2);
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  .closing-steps li:first-child { border-top: none; padding-top: 0; }
+  .closing-steps li::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--font-sans);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--clay-beige);
+    letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080" theme="light">
+
+  <!-- 1 — Cover -->
+  <section data-label="01 封面" class="cover">
+    <div class="cover-left">
+      <div class="cover-brand" data-anim="fade" data-d="1">
+        <div class="cover-mark">IM</div>
+        <div>
+          <div class="cover-brand-tc">伊瑪牌 Imarflex</div>
+          <div class="cover-brand-en">EST. 1976 · HONG KONG</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow-tc" data-anim="rise" data-d="2" style="margin-bottom: 32px;">數碼銷售策略方案 · DIGITAL COMMERCE PROPOSAL</div>
+        <h1 class="cover-title" data-anim="rise" data-d="3">提升 Online<br/>Marketing 同<em>Brand<br/>Image</em>,<br/>釋放網站真正威力。</h1>
+        <p class="cover-sub" data-anim="rise" data-d="5">伊瑪牌 50 年品牌底蘊,產品線完整。今日傾點樣將官方網站,變成你哋最強嘅銷售資產。</p>
+      </div>
+      <div class="cover-meta" data-anim="fade" data-d="6">
+        <div>提交予 <strong>伊瑪牌管理層</strong></div>
+        <div>日期 <strong>2026 年</strong></div>
+        <div>版本 <strong>Pitch v2.0</strong></div>
+      </div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-right-grid"></div>
+      <div class="cover-right-content">
+        <div data-anim="fade" data-d="2">
+          <div class="cover-quote-mark">"</div>
+        </div>
+        <div class="cover-quote" data-anim="rise" data-d="4">Enhance the<br/>Online Marketing<br/>and Brand Image —<br/>等網站變成你哋<br/>嘅最強銷售資產。</div>
+        <div class="cover-arrow" data-anim="fade" data-d="7">
+          <span class="cover-arrow-line"></span>
+          <span>21 SLIDES · 26 MIN READ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 — Goal: Marketing & Sales -->
+  <section data-label="02 目標">
+    <div class="chrome-tl" data-anim="fade">01 · 目標</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">目標 · MARKETING AND SALES</div>
+    </div>
+    <div class="goal-wrap">
+      <h2 class="goal-statement" data-anim="rise" data-d="2">每個品牌嘅<br/>終極目標係<em>銷售</em>。<br/>而 D2C 嘅銷售引擎,<br/>核心係<em>官方網站</em>。</h2>
+      <div class="goal-card" data-anim="rise" data-d="4">
+        <div class="goal-card-label">核心訊息 · CORE MESSAGE</div>
+        <p class="goal-card-text">我哋嘅工作 — <em>Enhance the Online Marketing and Brand Image</em>,等網站變成你哋嘅最強銷售資產。</p>
+        <div class="goal-card-rule"></div>
+        <div class="goal-card-foot">伊瑪牌 50 年品牌底蘊 · 產品線完整 · 但網站仲未發揮真正威力</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 — Starting point vs website -->
+  <section data-label="03 起點 vs 體驗">
+    <div class="chrome-tl">02 · 起點</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">你而家嘅起點 vs 真正嘅 WEBSITE 體驗</div>
+      <h2 class="slide-title" style="margin-top: 28px;">Shopline 係好嘅起點 — 但 template 限制咗網站真正可以做到嘅事。</h2>
+    </div>
+    <div class="two-col">
+      <div class="col-card dim" data-anim="rise" data-d="2">
+        <div class="col-label">而家 · Shopline</div>
+        <h3>Template 平台</h3>
+        <ul>
+          <li>Launch 容易、入門低 — 好嘅起點</li>
+          <li>但設計細節、速度受 template 框死</li>
+          <li>SEO 上限明顯</li>
+          <li>客戶 data 部分屬於平台</li>
+          <li>深度功能整合好難</li>
+        </ul>
+      </div>
+      <div class="col-card bright" data-anim="rise" data-d="4">
+        <div class="col-label">下一步 · 自有平台</div>
+        <h3>完全擁有、無限延伸</h3>
+        <ul>
+          <li>1 秒以內 load,直接拉高轉換率</li>
+          <li>完全自訂嘅 brand experience</li>
+          <li>深度整合保養登記、配件、客服、analytics</li>
+          <li>完全擁有客戶 data,marketing 越做越精準</li>
+          <li>系統會隨時間複利增長 — 唔係靜態工具</li>
+        </ul>
+      </div>
+    </div>
+    <div class="start-foot" data-anim="rise" data-d="6">
+      <em>下一步 — </em>唔係換個更好嘅 SaaS,而係升級到一個你完全擁有、可以無限延伸嘅平台。接住嘅 3 個 pillar,就係我哋會點樣為伊瑪牌打造呢個體驗。
+    </div>
+  </section>
+
+  <!-- 4 — HYPERFRAME MOTION SLIDE: 3 Pillars -->
+  <section data-label="04 三大 Pillar 動態" class="hyper-slide">
+    <div class="hyper-grid-bg"></div>
+    <div class="hyper-ring"><div class="hyper-ring-inner"></div><div class="hyper-ring-dot"></div></div>
+    <div class="hyper-orb a"></div>
+    <div class="hyper-orb b"></div>
+    <div class="hyper-orb c"></div>
+    <div class="hyper-scan"></div>
+    <svg class="hyper-connector" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <path class="hyper-conn-1" d="M 695 700 Q 800 760 905 700" pathLength="1" />
+      <path class="hyper-conn-2" d="M 1135 700 Q 1240 760 1345 700" pathLength="1" />
+    </svg>
+    <span class="hyper-particle x1"></span>
+    <span class="hyper-particle x2"></span>
+    <span class="hyper-particle x3"></span>
+    <span class="hyper-particle x4"></span>
+    <span class="hyper-particle x5"></span>
+    <div class="chrome-tl">03 · Framework</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div class="hyper-content">
+      <div>
+        <div class="hyper-eyebrow">三大 PILLAR · OUR APPROACH</div>
+        <h2 class="hyper-title">由<em>外型</em>、<em>語言</em>,<br/>到<em>行動</em> — 三層串成一個銷售引擎。</h2>
+      </div>
+      <div class="hyper-pillars">
+        <div class="hyper-pillar p1">
+          <div class="hyper-pillar-bar"></div>
+          <div class="hyper-pillar-glow"></div>
+          <div class="hyper-pillar-num">01 / 03</div>
+          <div class="hyper-pillar-name">外型</div>
+          <div class="hyper-pillar-en">OUTFIT</div>
+          <div class="hyper-pillar-rule"></div>
+          <p class="hyper-pillar-tag">Brand 嘅第一印象。客戶睇一眼就要 feel 到品牌個性。</p>
+        </div>
+        <div class="hyper-pillar p2">
+          <div class="hyper-pillar-bar"></div>
+          <div class="hyper-pillar-glow"></div>
+          <div class="hyper-pillar-num">02 / 03</div>
+          <div class="hyper-pillar-name">語言</div>
+          <div class="hyper-pillar-en">VOICE</div>
+          <div class="hyper-pillar-rule"></div>
+          <p class="hyper-pillar-tag">Brand 點講嘢。文字決定客戶讀完之後信唔信。</p>
+        </div>
+        <div class="hyper-pillar p3">
+          <div class="hyper-pillar-bar"></div>
+          <div class="hyper-pillar-glow"></div>
+          <div class="hyper-pillar-num">03 / 03</div>
+          <div class="hyper-pillar-name">行動</div>
+          <div class="hyper-pillar-en">ACTIONS</div>
+          <div class="hyper-pillar-rule"></div>
+          <p class="hyper-pillar-tag">Brand 實際做緊咩。網站功能、服務、SEO 直接驅動銷售。</p>
+        </div>
+      </div>
+      <div class="hyper-foot">
+        <span class="hyper-arrow"><span class="hyper-arrow-line"></span><span>三層分別細看 →</span></span>
+        <span>FRAMEWORK · IMARFLEX × DELIVERY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 — Pillar 1: Outfit -->
+  <section data-label="05 Pillar 1 外型" class="pillar-slide">
+    <div class="chrome-tl">04 · Pillar 01</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div class="pillar-head" data-anim="rise">
+      <div class="pillar-numwrap">
+        <div class="pillar-numlabel">Pillar 01 / 03</div>
+        <div class="pillar-num">01</div>
+      </div>
+      <div class="pillar-titles">
+        <h2 class="pillar-tc">外型</h2>
+        <div class="pillar-en">OUTFIT — FIRST IMPRESSION</div>
+      </div>
+    </div>
+    <p class="pillar-pull" data-anim="rise" data-d="2">視覺一致 = 品牌記得住 = <em>信任建立</em>。一眼睇到就知係 Imarflex。</p>
+    <div class="pillar-grid">
+      <div class="pillar-block bright" data-anim="rise" data-d="3">
+        <div class="pillar-block-label">交付 · DELIVER</div>
+        <h3 class="pillar-block-name">設計系統 + Brand Guideline</h3>
+        <ul class="pillar-block-list">
+          <li>Logo usage、color palette、typography</li>
+          <li>Photography style guide(產品 + 生活)</li>
+          <li>Iconography、spacing system</li>
+          <li>Component library(Storybook)</li>
+        </ul>
+      </div>
+      <div class="pillar-block" data-anim="rise" data-d="4">
+        <div class="pillar-block-label">交付 · DELIVER</div>
+        <h3 class="pillar-block-name">UI 標準</h3>
+        <ul class="pillar-block-list">
+          <li>視覺一致性貫穿全網</li>
+          <li>Bento layout、卡片設計、節奏感</li>
+          <li>Mobile-first,觸控優先</li>
+          <li>Component preview — button、card、badge</li>
+        </ul>
+      </div>
+      <div class="pillar-block" data-anim="rise" data-d="5">
+        <div class="pillar-block-label">交付 · DELIVER</div>
+        <h3 class="pillar-block-name">社交 Post 風格參考<span class="new-tag">NEW</span></h3>
+        <ul class="pillar-block-list">
+          <li>俾 Imarflex social team 用嘅 reference 圖</li>
+          <li>攝影、構圖、字體 overlay 標準</li>
+          <li>我哋唔負責發 post,但俾 guideline 統一</li>
+          <li>3–4 張 mood 樣板</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5b — Brand System: live & delivered -->
+  <section data-label="06 Brand System">
+    <div class="chrome-tl">05 · Brand System</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">外型 · LIVE BRAND SYSTEM · DELIVERED</div>
+      <h2 class="slide-title" style="margin-top: 28px;">完整 brand book</h2>
+    </div>
+    <div class="brand-showcase">
+      <div class="brand-showcase-card" data-anim="rise" data-d="2">
+        <div class="brand-showcase-cap">
+          <div class="lab">01 · Color Palette · 8 tokens</div>
+          <div class="tit">Heritage Blue · Rice White · Clay Beige · Steam Grey</div>
+        </div>
+        <div class="brand-showcase-img">
+          <img src="assets/color-palette-overview.png" alt="Imarflex color palette overview" loading="lazy" />
+        </div>
+      </div>
+      <div class="brand-showcase-card" data-anim="rise" data-d="3">
+        <div class="brand-showcase-cap">
+          <div class="lab">02 · Moodboard · Japanese × HK Daily</div>
+          <div class="tit">Reliable · Warm · Local · Refined</div>
+        </div>
+        <div class="brand-mood-grid">
+          <div>
+            <img src="assets/moodboard-kitchen-morning.png" alt="HK kitchen morning rice cooker" loading="lazy" />
+            <span class="brand-mood-tag">早晨 · 廚房</span>
+          </div>
+          <div>
+            <img src="assets/moodboard-airfryer-food.png" alt="Air fryer food styling" loading="lazy" />
+            <span class="brand-mood-tag">產品 · 食物</span>
+          </div>
+          <div>
+            <img src="assets/moodboard-rice-cooker.png" alt="Rice cooker natural light" loading="lazy" />
+            <span class="brand-mood-tag">自然光</span>
+          </div>
+          <div>
+            <img src="assets/moodboard-airfryer-weeknight.png" alt="Weeknight air fryer" loading="lazy" />
+            <span class="brand-mood-tag">生活</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5c — Social Post Style (Pillar 1 deliverable in motion) -->
+  <section data-label="07 Social Post 風格">
+    <div class="chrome-tl">06 · Social Style</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">社交 POST 風格參考 · FOR SOCIAL TEAM</div>
+      <h2 class="slide-title" style="margin-top: 28px;">俾 Social team 用嘅 reference — 一致嘅構圖、字體、tone。</h2>
+    </div>
+    <div class="social-row">
+      <div class="social-row-label" data-anim="rise" data-d="2">
+        <div class="lab">01 · CAROUSEL</div>
+        <div class="tit">Air Fryer</div>
+        <div class="sub">4-frame · Hook → Product → Steps → CTA</div>
+      </div>
+      <div class="social-row-tiles" data-anim="rise" data-d="3">
+        <div class="social-tile lite">
+          <span class="social-tile-cap">01 · Hook</span>
+          <img src="assets/social-carousel-airfryer-1.png" alt="Air fryer carousel hook" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">02 · Product</span>
+          <img src="assets/social-carousel-airfryer-2.png" alt="Air fryer carousel product" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">03 · Steps</span>
+          <img src="assets/social-carousel-airfryer-3.png" alt="Air fryer carousel steps" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">04 · CTA</span>
+          <img src="assets/social-carousel-airfryer-4.png" alt="Air fryer carousel CTA" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <div class="social-row-label" data-anim="rise" data-d="4">
+        <div class="lab">REFERENCE · STAND-ALONE</div>
+        <div class="tit">Lifestyle & Product</div>
+        <div class="sub">非 carousel 用嘅單張參考 — 構圖、光線、tone</div>
+      </div>
+      <div class="social-row-tiles" data-anim="rise" data-d="5">
+        <div class="social-tile lite">
+          <span class="social-tile-cap dark">Lifestyle</span>
+          <img src="assets/social-lifestyle-rice.png" alt="HK kitchen rice cooker lifestyle" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap dark">Product</span>
+          <img src="assets/social-product-kettle.png" alt="Kettle product shot" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="social-foot" data-anim="rise" data-d="7" style="margin-top: 22px; margin-bottom: 24px;">
+      <em>第一組 — 焗炸鍋 carousel · 4 frames</em>。Hook → Product → Steps → CTA 嘅 4-frame template,可以套用喺任何產品 SKU。下一頁睇埋風扇同電飯煲嘅做法。
+    </div>
+  </section>
+
+  <!-- 5d — Social Post Style: more product examples -->
+  <section data-label="08 Social Post 風格 II">
+    <div class="chrome-tl">07 · Social Style II</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">同一套規則 · 跨產品線示範 · ACROSS SKUs</div>
+      <h2 class="slide-title" style="margin-top: 28px;">風扇、電飯煲 — 統一個模板。</h2>
+    </div>
+
+    <div class="social-row">
+      <div class="social-row-label" data-anim="rise" data-d="2">
+        <div class="lab">02 · CAROUSEL</div>
+        <div class="tit">Cool Air Fan</div>
+        <div class="sub">4-frame · Hook → Product → Benefits → CTA</div>
+      </div>
+      <div class="social-row-tiles" data-anim="rise" data-d="3">
+        <div class="social-tile lite">
+          <span class="social-tile-cap">01 · Hook</span>
+          <img src="assets/social-carousel-fan-1.png" alt="Cool air fan hook" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">02 · Product</span>
+          <img src="assets/social-carousel-fan-2.png" alt="Cool air fan product" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">03 · Benefits</span>
+          <img src="assets/social-carousel-fan-3.png" alt="Cool air fan benefits" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">04 · CTA</span>
+          <img src="assets/social-carousel-fan-4.png" alt="Cool air fan CTA" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <div class="social-row-label" data-anim="rise" data-d="4">
+        <div class="lab">03 · CAROUSEL</div>
+        <div class="tit">IH Rice Cooker</div>
+        <div class="sub">同一個 4-frame 結構 · 旗艦級 SKU</div>
+      </div>
+      <div class="social-row-tiles" data-anim="rise" data-d="5">
+        <div class="social-tile lite">
+          <span class="social-tile-cap">01 · Hook</span>
+          <img src="assets/social-carousel-ricecooker-1.png" alt="Rice cooker hook" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">02 · Product</span>
+          <img src="assets/social-carousel-ricecooker-2.png" alt="Rice cooker product" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">03 · Benefit</span>
+          <img src="assets/social-carousel-ricecooker-3.png" alt="Rice cooker benefit" loading="lazy" />
+        </div>
+        <div class="social-tile lite">
+          <span class="social-tile-cap">04 · CTA</span>
+          <img src="assets/social-carousel-ricecooker-4.png" alt="Rice cooker CTA" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="social-foot" data-anim="rise" data-d="7" style="margin-top: 22px; margin-bottom: 24px;">
+      <em>一套模板,跨 SKU 套用</em> — 風扇、電飯煲、焗炸鍋全部用同一個 4-frame structure。Social team 唔需要每次 reinvent layout,只需填內容。
+    </div>
+  </section>
+
+  <!-- 6 — Pillar 2: Voice -->
+  <section data-label="09 Pillar 2 言行" class="pillar-slide">
+    <div class="chrome-tl">08 · Pillar 02</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div class="pillar-head" data-anim="rise">
+      <div class="pillar-numwrap">
+        <div class="pillar-numlabel">Pillar 02 / 03</div>
+        <div class="pillar-num">02</div>
+      </div>
+      <div class="pillar-titles">
+        <h2 class="pillar-tc">語言</h2>
+        <div class="pillar-en">VOICE — TONE THAT BUILDS TRUST</div>
+      </div>
+    </div>
+    <p class="pillar-pull" data-anim="rise" data-d="2">一致嘅 voice = 品牌人格化 = <em>客戶 emotional connection</em>。</p>
+    <div class="pillar-grid">
+      <div class="pillar-block bright" data-anim="rise" data-d="3">
+        <div class="pillar-block-label">交付 · DELIVER</div>
+        <h3 class="pillar-block-name">Tone of Voice 指引</h3>
+        <ul class="pillar-block-list">
+          <li>5 個品牌個性形容詞 — 可靠、溫暖、專業、貼地、日式精緻</li>
+          <li>3 個 anti-pattern — 避免過份 hype、術語、官腔</li>
+          <li>Do / Don't 文案例子</li>
+          <li>雙語規則</li>
+        </ul>
+      </div>
+      <div class="pillar-block" data-anim="rise" data-d="4">
+        <div class="pillar-block-label">交付 · DELIVER</div>
+        <h3 class="pillar-block-name">內容 Framework</h3>
+        <ul class="pillar-block-list">
+          <li>PDP 文案 template — Hook → Benefit → Spec → Trust</li>
+          <li>Email tone(交易 vs 營銷分開)</li>
+          <li>客服回覆語氣標準</li>
+          <li>產品命名規則 — SKU 標題格式統一</li>
+        </ul>
+      </div>
+      <div class="pillar-block" data-anim="rise" data-d="5">
+        <div class="pillar-block-label">交付 · DELIVER</div>
+        <h3 class="pillar-block-name">Crisis Communication Tone<span class="new-tag">NEW</span></h3>
+        <ul class="pillar-block-list">
+          <li>產品問題 / 大批延遲 / 退款爭議 / Social 負評</li>
+          <li>4 種情況 framework</li>
+          <li>出事嗰陣有得跟,唔使臨急想點答</li>
+          <li>Mini-flowchart 形式</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 — Pillar 3: Actions -->
+  <section data-label="10 Pillar 3 行動" class="pillar-slide">
+    <div class="chrome-tl">09 · Pillar 03</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div class="pillar-head" data-anim="rise">
+      <div class="pillar-numwrap">
+        <div class="pillar-numlabel">Pillar 03 / 03</div>
+        <div class="pillar-num">03</div>
+      </div>
+      <div class="pillar-titles">
+        <h2 class="pillar-tc">行動</h2>
+        <div class="pillar-en">ACTIONS — FEATURES THAT DRIVE SALES</div>
+      </div>
+    </div>
+    <p class="pillar-pull" data-anim="rise" data-d="2">Features + Services + SEO = <em>系統性嘅銷售引擎</em>。<strong style="color: var(--blue);">23 個 base feature</strong> 分四組,每個都計到數,每個都優化得到。</p>
+    <div class="pillar-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="pillar-block" data-anim="rise" data-d="3" style="min-height: 380px;">
+        <div class="pillar-block-label">01 · 商業核心 · 5 項</div>
+        <h3 class="pillar-block-name" style="font-size: 24px;">Commerce Core</h3>
+        <ul class="pillar-block-list">
+          <li>200+ SKU 全線網店</li>
+          <li>PDP + 零售連結(豐澤 / 百老匯)</li>
+          <li>自建 checkout · Airwallex</li>
+          <li>客戶帳戶 + 訂單追蹤</li>
+          <li>退換系統(自助 + admin)</li>
+        </ul>
+      </div>
+      <div class="pillar-block bright" data-anim="rise" data-d="4" style="min-height: 380px;">
+        <div class="pillar-block-label">02 · IMARFLEX 獨有 · 3 項</div>
+        <h3 class="pillar-block-name" style="font-size: 24px;">Unique Features</h3>
+        <ul class="pillar-block-list">
+          <li>找配件工具(型號 → 配件)</li>
+          <li>保養登記 + 22 個月 retention loop</li>
+          <li>Trade-in 舊機回收 flow</li>
+          <li style="opacity: 0.7;">— 200+ SKU 的真正護城河</li>
+        </ul>
+      </div>
+      <div class="pillar-block" data-anim="rise" data-d="5" style="min-height: 380px;">
+        <div class="pillar-block-label">03 · 轉換引擎 · 7 項</div>
+        <h3 class="pillar-block-name" style="font-size: 24px;">Conversion Boosters</h3>
+        <ul class="pillar-block-list">
+          <li>庫存狀態顯示</li>
+          <li>缺貨通知 back-in-stock</li>
+          <li>「一齊買埋」cross-sell PDP</li>
+          <li>產品 bundle / 套裝</li>
+          <li>Promotional engine(BF / 旺季)</li>
+          <li>首訪 email popup</li>
+          <li>Recently viewed</li>
+        </ul>
+      </div>
+      <div class="pillar-block" data-anim="rise" data-d="6" style="min-height: 380px;">
+        <div class="pillar-block-label">04 · 自動化 + SEO + OPS · 7 項</div>
+        <h3 class="pillar-block-name" style="font-size: 24px;">Auto · SEO · Data</h3>
+        <ul class="pillar-block-list">
+          <li>Email 自動化 · 8 trigger(Resend)</li>
+          <li>Order notification center</li>
+          <li>Admin dashboard(Payload)</li>
+          <li>PostHog · 6 個 dashboard</li>
+          <li>SEO · Schema / Sitemap / CWV</li>
+          <li>301 redirect migration</li>
+          <li>Security · A11y · Monitoring</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 — Funnel 6 stages with loop -->
+  <section data-label="11 顧客旅程 6 階段">
+    <div class="chrome-tl">10 · Funnel</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">全部串起 · FUNNEL VIEW</div>
+      <h2 class="slide-title" style="margin-top: 28px;">6 個階段,5 個我哋直接負責或者打基礎。</h2>
+    </div>
+    <div class="funnel-wrap">
+      <div class="funnel">
+        <div class="funnel-step us" data-anim="rise" data-d="2">
+          <div class="funnel-num">01 / 06</div>
+          <div class="funnel-stage">認知</div>
+          <div class="funnel-en">AWARENESS</div>
+          <div class="funnel-detail">我搵緊家電 / 我未聽過 Imarflex。SEO 技術基礎、CWV、speed 滿分。</div>
+          <div class="funnel-impact">+ 50% organic</div>
+        </div>
+        <div class="funnel-step us" data-anim="rise" data-d="3">
+          <div class="funnel-num">02 / 06</div>
+          <div class="funnel-stage">興趣</div>
+          <div class="funnel-en">INTEREST</div>
+          <div class="funnel-detail">呢個品牌好似有性格。Bento、heritage 視覺、「由大阪到深水埗」storytelling。</div>
+          <div class="funnel-impact">Bounce − 20%</div>
+        </div>
+        <div class="funnel-step us" data-anim="rise" data-d="4">
+          <div class="funnel-num">03 / 06</div>
+          <div class="funnel-stage">考慮</div>
+          <div class="funnel-en">CONSIDERATION</div>
+          <div class="funnel-detail">點解揀 Imarflex?清晰 PDP、benefit-driven 文案、retail links、Trade-in、保養信任。</div>
+          <div class="funnel-impact">ATC + 25%</div>
+        </div>
+        <div class="funnel-step us" data-anim="rise" data-d="5">
+          <div class="funnel-num">04 / 06</div>
+          <div class="funnel-stage">購買</div>
+          <div class="funnel-en">PURCHASE</div>
+          <div class="funnel-detail">OK 落單啦,順唔順?Cart drawer、自建 checkout、Airwallex 多種付款。</div>
+          <div class="funnel-impact">CR + 20–40%</div>
+        </div>
+        <div class="funnel-step us" data-anim="rise" data-d="6">
+          <div class="funnel-num">05 / 06</div>
+          <div class="funnel-stage">重複購買</div>
+          <div class="funnel-en">RETENTION</div>
+          <div class="funnel-detail">需要配件 / 想換新機。找配件工具、保養登記、Email 自動化、loyalty。</div>
+          <div class="funnel-impact">Repeat 0% → 15–20%</div>
+        </div>
+        <div class="funnel-step advocacy" data-anim="rise" data-d="7">
+          <div class="funnel-num">06 / 06</div>
+          <div class="funnel-stage">倡導</div>
+          <div class="funnel-en">ADVOCACY</div>
+          <div class="funnel-detail">我用得好,推介俾朋友。Reviews、Referral、UGC 機制,持續累積。</div>
+          <div class="funnel-impact">Referral 5–10%</div>
+        </div>
+      </div>
+      <div class="funnel-loop" data-anim="rise" data-d="9">
+        <div class="funnel-loop-icon">↻</div>
+        <div class="funnel-loop-text">倡導 → 認知 — 口碑形成新一輪認知。<em>唔係單向漏斗,係複利系統</em>。三大 pillar 貫穿每個階段,每個 touchpoint 都係品牌 + 銷售嘅雙重投資。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 — Funnel × Live Demo (interactive iframe) -->
+  <section data-label="12 即場 demo" class="funnel-demo-slide">
+    <div class="chrome-tl">11 · Live Demo</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div class="funnel-demo-head" data-anim="rise">
+      <div>
+        <div class="eyebrow-tc">FUNNEL × LIVE DEMO</div>
+        <h2>每個階段,Click 一下就睇到我哋整咗咩。</h2>
+      </div>
+      <div class="demo-hint"><b>TIP</b>左邊揀階段 → 右邊即場 load 真網站</div>
+    </div>
+
+    <div class="funnel-demo-grid">
+      <ul class="funnel-stages" id="funnel-stage-list">
+        <li data-stage="awareness" data-url="https://imarflex-app.vercel.app/blog" class="active">
+          <span class="stage-num">01</span>
+          <span class="stage-title">認知 <span class="stage-en">Awareness</span></span>
+          <span class="stage-arrow">→</span>
+          <span class="stage-sub">客戶 Google 緊「電飯煲推薦」</span>
+        </li>
+        <li data-stage="interest" data-url="https://imarflex-app.vercel.app/">
+          <span class="stage-num">02</span>
+          <span class="stage-title">興趣 <span class="stage-en">Interest</span></span>
+          <span class="stage-arrow">→</span>
+          <span class="stage-sub">第一次落 homepage,值得睇下</span>
+        </li>
+        <li data-stage="consideration" data-url="https://imarflex-app.vercel.app/products/iaf-30e-air-fryer">
+          <span class="stage-num">03</span>
+          <span class="stage-title">考慮 <span class="stage-en">Consideration</span></span>
+          <span class="stage-arrow">→</span>
+          <span class="stage-sub">PDP — 點解揀 Imarflex?</span>
+        </li>
+        <li data-stage="purchase" data-url="https://imarflex-app.vercel.app/cart">
+          <span class="stage-num">04</span>
+          <span class="stage-title">購買 <span class="stage-en">Purchase</span></span>
+          <span class="stage-arrow">→</span>
+          <span class="stage-sub">Cart drawer + 自建 checkout</span>
+        </li>
+        <li data-stage="retention" data-url="https://imarflex-app.vercel.app/parts-finder">
+          <span class="stage-num">05</span>
+          <span class="stage-title">重複購買 <span class="stage-en">Retention</span></span>
+          <span class="stage-arrow">→</span>
+          <span class="stage-sub">配件、保養、Email 自動化</span>
+        </li>
+        <li data-stage="advocacy" data-url="https://imarflex-app.vercel.app/products/iaf-30e-air-fryer#reviews" class="advocacy-stage">
+          <span class="stage-num">06</span>
+          <span class="stage-title">倡導 <span class="stage-en">Advocacy</span></span>
+          <span class="stage-arrow">→</span>
+          <span class="stage-sub">Reviews + Referral + UGC</span>
+        </li>
+      </ul>
+
+      <div class="funnel-demo-main">
+        <div class="demo-frame">
+          <div class="demo-frame-bar">
+            <div class="demo-frame-dots"><span></span><span></span><span></span></div>
+            <div class="demo-frame-url">
+              <span class="url-host">imarflex-app.vercel.app</span><span id="demo-url-path">/blog</span>
+            </div>
+            <div class="demo-frame-live">Live</div>
+          </div>
+          <div class="demo-frame-stage">
+            <iframe
+              id="demo-iframe"
+              src="about:blank"
+              data-initial-src="https://imarflex-app.vercel.app/blog"
+              title="Imarflex live demo"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+            ></iframe>
+            <div class="demo-frame-loading is-on" id="demo-loading">Loading imarflex-app.vercel.app …</div>
+            <div class="demo-fallback" id="demo-fallback">
+              <div class="demo-fallback-card">
+                <h4>Live demo 暫時 embed 唔到</h4>
+                <p>// imarflex-app.vercel.app 嘅 X-Frame-Options / CSP 未開放呢個 origin。</p>
+                <p>// Pre-pitch 要喺 next.config.js 設 frame-ancestors,或者切換做 6 張 screenshot backup。</p>
+                <p>// 而家可以喺另一個 tab 直接 demo:<a href="https://imarflex-app.vercel.app/" target="_blank" rel="noopener">↗ 開喺新分頁</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-details">
+          <div class="demo-detail-card impact">
+            <div class="demo-detail-label">預期影響 / Expected Impact</div>
+            <ul id="demo-impact-list"></ul>
+          </div>
+          <div class="demo-detail-card items">
+            <div class="demo-detail-label">我哋整咗咩 / What we built</div>
+            <ul id="demo-items-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 — Stack -->
+  <section data-label="13 平台組成">
+    <div class="chrome-tl">12 · Stack</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">平台組成 · TECH STACK</div>
+      <h2 class="slide-title" style="margin-top: 28px;">六層 best-in-class 工具,一個自有平台。</h2>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card" data-anim="rise" data-d="2">
+        <div class="stack-tag">前端</div>
+        <h3 class="stack-name">Next.js 16</h3>
+        <p class="stack-desc">1 秒以內 load、SEO ready、mobile-first、完全自訂 UI。</p>
+      </div>
+      <div class="stack-card" data-anim="rise" data-d="3">
+        <div class="stack-tag">電商 + 內容後台</div>
+        <h3 class="stack-name">Payload CMS 3</h3>
+        <p class="stack-desc">產品、訂單、客戶、內容,一個 admin。Marketing team 自主編輯,所有 data 喺自己 database。</p>
+      </div>
+      <div class="stack-card" data-anim="rise" data-d="4">
+        <div class="stack-tag">支付</div>
+        <h3 class="stack-name">Airwallex</h3>
+        <p class="stack-desc">FPS、AlipayHK、WeChat Pay、信用卡、分期 — 本地支付齊全。</p>
+      </div>
+      <div class="stack-card" data-anim="rise" data-d="5">
+        <div class="stack-tag">數據 + 增長</div>
+        <h3 class="stack-name">PostHog</h3>
+        <p class="stack-desc">Funnel tracking、session replay、A/B testing、feature flags。</p>
+      </div>
+      <div class="stack-card" data-anim="rise" data-d="6">
+        <div class="stack-tag">電郵基建</div>
+        <h3 class="stack-name">Resend</h3>
+        <p class="stack-desc">交易 email + 8 個生命週期 trigger,棄單追回、保養提醒、win-back。</p>
+      </div>
+      <div class="stack-card" data-anim="rise" data-d="7">
+        <div class="stack-tag">搜尋</div>
+        <h3 class="stack-name">Meilisearch</h3>
+        <p class="stack-desc">中文搜尋優化、即時 predictive — 打錯字都搵到。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 — Scope -->
+  <section data-label="14 服務範圍">
+    <div class="chrome-tl">13 · 範圍</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">服務範圍 · SCOPE OF WORK</div>
+      <h2 class="slide-title" style="margin-top: 28px;">
+</h2>
+    </div>
+    <div class="scope-grid">
+      <div class="scope-card included" data-anim="rise" data-d="2">
+        <div class="scope-label">✓ 包括</div>
+        <h3>核心交付</h3>
+        <ul>
+          <li>完整 platform build(Next.js + Payload + Airwallex + PostHog + Meilisearch)</li>
+          <li>由 Shopline 完整 migrate(產品、客戶、訂單、SEO 排名)</li>
+          <li>三大 pillar 全套交付:Outfit + Voice 指引 + Actions 全部 features</li>
+          <li>12 個月 launch 後支援(維護、CRO、A/B test)</li>
+          <li>完整顧客生命週期 email 自動化</li>
+          <li>PostHog 6 個儀表板</li>
+          <li>Admin training</li>
+        </ul>
+      </div>
+      <div class="scope-card" data-anim="rise" data-d="3">
+        <div class="scope-label" style="color: var(--blue);">+ 可選 ADD-ON · 7 項</div>
+        <h3 style="color: var(--blue);">擴展功能</h3>
+        <ul>
+          <li>Reviews 系統 · 免費</li>
+          <li>Referral program </li>
+          <li>Loyalty / 積分 </li>
+          <li>Live chat   $1k setup</li>
+          <li>AI Chatbot  $1k setup</li>
+          <li>SEO content pack </li>
+          <li>Blog 內容創作 </li>
+          <li style="color: var(--ink-faint); padding-top: 12px;">— Pitch 後另外詳談 —</li>
+        </ul>
+      </div>
+      <div class="scope-card excluded" data-anim="rise" data-d="4">
+        <div class="scope-label">— 不包</div>
+        <h3 style="color: var(--ink-muted);">外部執行</h3>
+        <ul>
+          <li>Social media 日常運營</li>
+          <li>付費廣告投放管理</li>
+          <li>KOL / PR 對接</li>
+          <li style="color: var(--ink-faint); padding-top: 24px;">— 可介紹合作伙伴 —</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 — Roadmap -->
+  <section data-label="15 12 個月路線圖">
+    <div class="chrome-tl">14 · Roadmap</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">12 個月路線圖 · ROADMAP</div>
+      <h2 class="slide-title" style="margin-top: 28px;">由打地基到旺季衝刺。</h2>
+    </div>
+    <div class="roadmap">
+      <div class="road-step" data-anim="right" data-d="2">
+        <div class="road-q">Q1</div>
+        <div class="road-months">第 1–3 個月</div>
+        <h3 class="road-name">打地基</h3>
+        <ul class="road-list">
+          <li>· 由 Shopline 完整 migrate</li>
+          <li>· 上線 Next.js + Payload</li>
+          <li>· 建立 Outfit + Voice 指引</li>
+          <li>· SEO 技術基礎</li>
+          <li>· PostHog 設定</li>
+          <li>· Email 自動化第一階段</li>
+        </ul>
+        <div class="road-goal">無縫切換,銷售 0 損失,基礎數據開始記錄。</div>
+      </div>
+      <div class="road-step" data-anim="right" data-d="3">
+        <div class="road-q">Q2</div>
+        <div class="road-months">第 4–6 個月</div>
+        <h3 class="road-name">優化轉換</h3>
+        <ul class="road-list">
+          <li>· Top 5 PDP 做 CRO 實驗</li>
+          <li>· Checkout flow 優化</li>
+          <li>· 保養登記轉化率優化</li>
+          <li>· A/B test PDP / hero</li>
+          <li>· 推薦邏輯優化</li>
+        </ul>
+        <div class="road-goal">轉換率比 Shopline 升 20–40%。</div>
+      </div>
+      <div class="road-step" data-anim="right" data-d="4">
+        <div class="road-q">Q3</div>
+        <div class="road-months">第 7–9 個月</div>
+        <h3 class="road-name">平台增長</h3>
+        <ul class="road-list">
+          <li>· 加深 add-on(視 budget)</li>
+          <li>· 個人化推薦</li>
+          <li>· 進階 funnel 分析</li>
+          <li>· 產品 bundle 同 upsell flow</li>
+        </ul>
+        <div class="road-goal">重複購買率 15–20%,AOV 升 15%。</div>
+      </div>
+      <div class="road-step" data-anim="right" data-d="5">
+        <div class="road-q">Q4</div>
+        <div class="road-months">第 10–12 個月</div>
+        <h3 class="road-name">旺季衝刺</h3>
+        <ul class="road-list">
+          <li>· 旺季 campaign(BF、聖誕、新年)</li>
+          <li>· 旺季 bundle</li>
+          <li>· 全力 CRM reactivate</li>
+          <li>· Year 2 計劃</li>
+        </ul>
+        <div class="road-goal">旺季月 D2C 收入升 50–100%+。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 — Cost compare -->
+  <section data-label="16 成本對比">
+    <div class="chrome-tl">15 · Cost</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">平台運行成本對比 · PLATFORM COST</div>
+      <h2 class="slide-title" style="margin-top: 28px;">每月平台支出對比 — 以營業額 HK$200,000 / 月計。</h2>
+    </div>
+    <div class="cost-compare">
+      <div class="cost-card" data-anim="rise" data-d="2">
+        <div class="cost-tag" style="color: var(--ink-muted);">而家 · CURRENT</div>
+        <h3 class="cost-name">Shopline</h3>
+        <ul class="cost-rows">
+          <li><span>月費</span><span class="num">HK$899</span></li>
+          <li><span>交易佣金 0.8%</span><span class="num">HK$1,600</span></li>
+        </ul>
+        <div class="cost-total">
+          <span class="cost-total-label">每月支出</span>
+          <span class="cost-total-num">$2,499</span>
+        </div>
+        <div class="cost-savings" style="color: var(--ink-muted); border-color: var(--rule-strong);">每年:HK$29,988</div>
+      </div>
+      <div class="cost-card win" data-anim="rise" data-d="4">
+        <div class="cost-tag">未來 · OWN STACK</div>
+        <h3 class="cost-name">Payload Stack</h3>
+        <ul class="cost-rows">
+          <li><span>全部 hosting + service</span><span class="num">~$650</span></li>
+          <li><span>交易佣金</span><span class="num">$0</span></li>
+        </ul>
+        <div class="cost-total">
+          <span class="cost-total-label">每月支出</span>
+          <span class="cost-total-num">~$650</span>
+        </div>
+        <div class="cost-savings">每年慳 HK$22,000+,加完整 ownership。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 — Investment -->
+  <section data-label="17 投資與時間表">
+    <div class="chrome-tl">16 · Investment</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">投資與時間表 · INVESTMENT & TIMELINE</div>
+      <h2 class="slide-title" style="margin-top: 28px;">三個階段,由 launch 到持續優化。</h2>
+    </div>
+    <div class="invest">
+      <div class="invest-card" data-anim="rise" data-d="2">
+        <div class="invest-phase">Phase 1</div>
+        <div class="invest-time">5–7 週</div>
+        <h3 class="invest-name">設計、開發與整合</h3>
+        <div class="invest-price">HK$40,000</div>
+        <ul class="invest-list">
+          <li>· UI/UX 設計</li>
+          <li>· Next.js + Payload 全棧開發</li>
+          <li>· 配件專區 + 找配件工具</li>
+          <li>· 保養登記 + 退換系統</li>
+          <li>· Airwallex 支付閘道</li>
+          <li>· PostHog + 搜尋 + 認證</li>
+          <li>· SEO 設定、響應式設計</li>
+        </ul>
+      </div>
+      <div class="invest-card" data-anim="rise" data-d="3">
+        <div class="invest-phase">Phase 2</div>
+        <div class="invest-time">2–3 週</div>
+        <h3 class="invest-name">內容遷移與上線</h3>
+        <div class="invest-price">HK$10,000</div>
+        <ul class="invest-list">
+          <li>· 由 Shopline 完整 migrate</li>
+          <li>· 301 redirect 全套(SEO 保命)</li>
+          <li>· 配件型號配對</li>
+          <li>· 完整 email 自動化 setup</li>
+          <li>· 上線測試 + 性能優化</li>
+        </ul>
+      </div>
+      <div class="invest-card" data-anim="rise" data-d="4">
+        <div class="invest-phase">Phase 3 · 可選</div>
+        <div class="invest-time">12 個月</div>
+        <h3 class="invest-name">優化 + 持續支援</h3>
+        <div class="invest-price">HK$1,000 / 月 retainer</div>
+        <ul class="invest-list">
+          <li>
+</li>
+          <li>· 月度 reporting</li>
+          <li>· 季度 strategy review</li>
+          <li>· 維護 + 安全更新</li>
+          <li>· 4–8 小時月度修改</li>
+          <li style="color: var(--ink-faint); padding-top: 12px;">— 不選 retainer 可按需收費 —</li>
+        </ul>
+      </div>
+    </div>
+    <div class="invest-total" data-anim="rise" data-d="5" style="margin-bottom: 32px;">
+      <span class="invest-total-label">Phase 1 + 2 總計</span>
+      <span class="invest-total-num">HK$50,000</span>
+    </div>
+  </section>
+
+  <!-- 14 — Outcomes -->
+  <section data-label="18 預期成效">
+    <div class="chrome-tl">17 · Outcomes</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">12 個月預期成效 · 12-MONTH OUTCOMES</div>
+      <h2 class="slide-title" style="margin-top: 28px;">兩條情境,實實在在嘅數字。</h2>
+    </div>
+    <div class="outcome-grid">
+      <div class="outcome-card" data-anim="rise" data-d="2">
+        <div class="outcome-tag" style="color: var(--ink-muted);">保守估計 · CONSERVATIVE</div>
+        <h3>基線情境</h3>
+        <ul class="outcome-list">
+          <li><span class="outcome-pct">+10–20%</span><span class="outcome-text">轉換率(網站速度大幅提升)</span></li>
+          <li><span class="outcome-pct">+30–50%</span><span class="outcome-text">D2C 收入升幅</span></li>
+          <li><span class="outcome-pct">×N</span><span class="outcome-text">Email list 翻幾倍</span></li>
+          <li><span class="outcome-pct">15–20%</span><span class="outcome-text">重複購買率(由近 0%)</span></li>
+        </ul>
+      </div>
+      <div class="outcome-card aggressive" data-anim="rise" data-d="4">
+        <div class="outcome-tag">進取估計 · AGGRESSIVE</div>
+        <h3>最佳情境</h3>
+        <ul class="outcome-list">
+          <li><span class="outcome-pct">+60%</span><span class="outcome-text">D2C 收入升幅</span></li>
+          <li><span class="outcome-pct">#1</span><span class="outcome-text">SEO organic 變第一渠道</span></li>
+          <li><span class="outcome-pct">∞</span><span class="outcome-text">配件變持續高毛利收入</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="outcome-quote" data-anim="rise" data-d="6">
+      最大價值唔淨係銷售數字 — 而係<em>你哋擁有一個會複利增長嘅資產</em>。Data 越積越多、SEO 越累積越強、客戶關係越深。
+    </div>
+  </section>
+
+  <!-- 15.5 — Build Status -->
+  <section data-label="19 Build Status">
+    <div class="chrome-tl">18 · Build Status</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">建造現況 · BUILD STATUS · 2026 Q2</div>
+      <h2 class="slide-title" style="margin-top: 28px;">
+</h2>
+    </div>
+    <div class="build-status">
+      <div class="build-status-head">
+        <div class="build-stat total" data-anim="rise" data-d="2">
+          <div>
+            <div class="build-stat-label">總共 · Total</div>
+            <div class="build-stat-num">32</div>
+          </div>
+          <div class="build-stat-cap">23 base + 9 add-on</div>
+        </div>
+        <div class="build-stat shipped" data-anim="rise" data-d="3">
+          <div>
+            <div class="build-stat-label">✓ 已 SHIP</div>
+            <div class="build-stat-num">10</div>
+          </div>
+          <div class="build-stat-cap">Production-ready</div>
+        </div>
+        <div class="build-stat progress" data-anim="rise" data-d="4">
+          <div>
+            <div class="build-stat-label">○ 開發中</div>
+            <div class="build-stat-num">7</div>
+          </div>
+          <div class="build-stat-cap">In progress · Phase 1</div>
+        </div>
+        <div class="build-stat pending" data-anim="rise" data-d="5">
+          <div>
+            <div class="build-stat-label">— 排期</div>
+            <div class="build-stat-num">14</div>
+          </div>
+          <div class="build-stat-cap">Phase 2 / 3 / add-on</div>
+        </div>
+      </div>
+
+      <div class="build-table">
+        <div class="build-col shipped" data-anim="rise" data-d="6">
+          <div class="build-col-head">
+            <span class="build-col-dot"></span>
+            <span class="build-col-title">✓ 已 Ship</span>
+            <span class="build-col-count">10 項</span>
+          </div>
+          <ul>
+            <li>Admin dashboard(Payload)</li>
+            <li>Customer account</li>
+            <li>Checkout · Airwallex</li>
+            <li>PDP + retail links</li>
+            <li>Parts finder</li>
+            <li>Warranty registration</li>
+            <li>Stock status display</li>
+            <li>Back-in-stock notify</li>
+            <li>PostHog analytics</li>
+            <li>Blog content engine</li>
+          </ul>
+        </div>
+        <div class="build-col progress" data-anim="rise" data-d="7">
+          <div class="build-col-head">
+            <span class="build-col-dot"></span>
+            <span class="build-col-title">○ 開發中</span>
+            <span class="build-col-count">7 項</span>
+          </div>
+          <ul>
+            <li>Email automation · 8 trigger</li>
+            <li>Meilisearch 中文搜尋</li>
+            <li>Cross-sell PDP</li>
+            <li>Trade-in flow</li>
+            <li>SEO content pack</li>
+            <li>Accessibility(WCAG 2.1 AA)</li>
+            <li>Security baseline</li>
+          </ul>
+        </div>
+        <div class="build-col pending" data-anim="rise" data-d="8">
+          <div class="build-col-head">
+            <span class="build-col-dot"></span>
+            <span class="build-col-title">— 排期 / Add-on</span>
+            <span class="build-col-count">14 項</span>
+          </div>
+          <ul>
+            <li>Reviews system · Referral program</li>
+            <li>Loyalty system · Subscription</li>
+            <li>AI chatbot · Live chat</li>
+            <li>Product bundles · Promotional engine</li>
+            <li>First-visit popup · Recently viewed</li>
+            <li>Returns system · Order notification</li>
+            <li>Monitoring & alerts · AI copywriting</li>
+          </ul>
+        </div>
+      </div>
+      <div class="build-foot" data-anim="rise" data-d="9">
+        Stack(Next.js 16 · Payload CMS 3 · Airwallex · Resend · PostHog)已經 run 緊。<em>Phase 1 launch 一上線,基礎已經就位</em> — 唔係由零開始 build,係由半成品衝刺去 launch。
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 — Provide -->
+  <section data-label="20 客戶需提供">
+    <div class="chrome-tl">19 · Inputs</div>
+    <div class="chrome-br">IMARFLEX</div>
+    <div data-anim="rise">
+      <div class="eyebrow-tc">客戶需提供 · WHAT WE NEED FROM YOU</div>
+    </div>
+    <div class="provide-grid">
+      <div class="provide-card" data-anim="rise" data-d="2">
+        <div class="provide-num">01</div>
+        <div class="provide-name">品牌素材</div>
+        <p class="provide-desc">Logo、色彩、字型偏好</p>
+      </div>
+      <div class="provide-card" data-anim="rise" data-d="3">
+        <div class="provide-num">02</div>
+        <div class="provide-name">產品資料</div>
+        <p class="provide-desc">圖片、描述、CSV</p>
+      </div>
+      <div class="provide-card" data-anim="rise" data-d="4">
+        <div class="provide-num">03</div>
+        <div class="provide-name">配件清單</div>
+        <p class="provide-desc">同型號配對關係</p>
+      </div>
+      <div class="provide-card" data-anim="rise" data-d="5">
+        <div class="provide-num">04</div>
+        <div class="provide-name">網域 DNS</div>
+        <p class="provide-desc">DNS 管理權</p>
+      </div>
+      <div class="provide-card" data-anim="rise" data-d="6">
+        <div class="provide-num">05</div>
+        <div class="provide-name">內容文案</div>
+        <p class="provide-desc">關於我們、政策、FAQ</p>
+      </div>
+      <div class="provide-card" data-anim="rise" data-d="7">
+        <div class="provide-num">06</div>
+        <div class="provide-name">Airwallex</div>
+        <p class="provide-desc">商戶帳戶</p>
+      </div>
+      <div class="provide-card" data-anim="rise" data-d="8">
+        <div class="provide-num">07</div>
+        <div class="provide-name">保養數據</div>
+        <p class="provide-desc">現有保養登記(如有)</p>
+      </div>
+      <div class="provide-card" data-anim="rise" data-d="9">
+        <div class="provide-num">08</div>
+        <div class="provide-name">Shopline KPI</div>
+        <p class="provide-desc">訪客 / CR / AOV / 月銷售</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16 — Closing -->
+  <section data-label="21 下一步" class="closing">
+    <div class="closing-left">
+      <div>
+        <div class="closing-eyebrow" data-anim="fade" data-d="1">下一步 · NEXT STEPS</div>
+        <h2 class="closing-title" data-anim="rise" data-d="2">由 Shopline,<br/>到屬於伊瑪牌<br/>嘅銷售引擎。</h2>
+      </div>
+      <div data-anim="fade" data-d="6">
+        <div class="closing-mark"></div>
+        <div class="closing-meta">
+          <div>聯絡<strong>67592810 · pddhkt@gmail.com</strong></div>
+          <div style="margin-top: 24px;">提案有效期<strong>30 日</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="closing-right">
+      <ol class="closing-steps">
+        <li data-anim="right" data-d="2">確認合作意向,安排啟動會議</li>
+        <li data-anim="right" data-d="3">支付 50% 訂金</li>
+        <li data-anim="right" data-d="4">提供品牌素材、產品資料、配件清單</li>
+        <li data-anim="right" data-d="5">設計稿確認 → 進入開發階段</li>
+        <li data-anim="right" data-d="6">Pitch 後另約傾 add-on(獨立 doc 詳細討論)</li>
+      </ol>
+    </div>
+  </section>
+
+</deck-stage>
+
+<script>
+(function () {
+  // Wait for GSAP and DOM
+  function init() {
+    if (typeof gsap === 'undefined') { return setTimeout(init, 80); }
+    const slide = document.querySelector('section[data-label="04 三大 Pillar 動態"]');
+    if (!slide) return;
+
+    let masterTl = null;
+    let ambientTl = null;
+
+    function buildAmbient() {
+      const tl = gsap.timeline();
+
+      // Scan beam — single sweep across
+      gsap.fromTo(slide.querySelector('.hyper-scan'),
+        { x: -280 },
+        { x: 1920, duration: 5.5, ease: 'none' }
+      );
+
+      // Outer ring rotation — one quarter turn, then settle
+      gsap.to(slide.querySelector('.hyper-ring'),
+        { rotation: 90, duration: 6, ease: 'power2.out', transformOrigin: '50% 50%' }
+      );
+      // Inner dashed ring counter-rotates — one quarter turn
+      gsap.to(slide.querySelector('.hyper-ring-inner'),
+        { rotation: -90, duration: 5, ease: 'power2.out', transformOrigin: '50% 50%' }
+      );
+
+      // Orb drift — one drift, then hold
+      gsap.to(slide.querySelector('.hyper-orb.a'),
+        { x: 160, y: -90, scale: 1.18, duration: 5, ease: 'sine.inOut' });
+      gsap.to(slide.querySelector('.hyper-orb.b'),
+        { x: -120, y: 110, scale: 0.88, duration: 6, ease: 'sine.inOut' });
+      gsap.to(slide.querySelector('.hyper-orb.c'),
+        { x: 80, y: -60, scale: 1.1, duration: 7, ease: 'sine.inOut' });
+
+      // Particles — single float, then hold
+      slide.querySelectorAll('.hyper-particle').forEach((p, i) => {
+        gsap.to(p, {
+          x: 60 + (i % 2 ? -1 : 1) * 30,
+          y: -80 - i * 8,
+          duration: 4 + i * 0.6,
+          ease: 'sine.inOut'
+        });
+      });
+
+      // Pillar cascade — runs ONCE after entry, then settles
+      const pillars = slide.querySelectorAll('.hyper-pillar');
+      pillars.forEach((p, i) => {
+        const bar = p.querySelector('.hyper-pillar-bar');
+        const glow = p.querySelector('.hyper-pillar-glow');
+        const t = gsap.timeline({ delay: 1.8 + i * 1.2 });
+        t.to(p, { y: -10, duration: 0.6, ease: 'power2.out' })
+         .to(bar, { scaleX: 1, duration: 0.7, ease: 'power3.out' }, 0)
+         .to(glow, { opacity: 1, scale: 1.4, boxShadow: '0 0 28px 8px rgba(232,222,196,0.85)', duration: 0.5, ease: 'power2.out' }, 0.1)
+         .add(() => p.classList.add('is-active'), 0)
+         .to(p, { y: 0, duration: 0.8, ease: 'power2.inOut' }, '+=1.0')
+         .to(bar, { scaleX: 0.4, duration: 0.6, ease: 'power2.in' }, '<')
+         .to(glow, { opacity: 0.6, scale: 1, boxShadow: '0 0 12px 2px rgba(232,222,196,0.4)', duration: 0.5, ease: 'power2.in' }, '<');
+        // Note: NOT removing is-active — pillars stay highlighted in their settled state
+      });
+
+      // Connector dashes — single stream along path
+      const conns = slide.querySelectorAll('.hyper-connector path');
+      conns.forEach((c) => {
+        gsap.set(c, { strokeDasharray: '6 8', strokeDashoffset: 0 });
+        gsap.to(c, { strokeDashoffset: -28, duration: 1.6, ease: 'none' });
+      });
+
+      return tl;
+    }
+
+    function buildEntry() {
+      const tl = gsap.timeline();
+
+      tl.set(slide.querySelectorAll('.hyper-pillar'), { y: 60, opacity: 0, scale: 0.96 })
+        .set(slide.querySelector('.hyper-title'), { y: 40, opacity: 0 })
+        .set(slide.querySelector('.hyper-eyebrow'), { y: 20, opacity: 0 })
+        .set(slide.querySelectorAll('.hyper-connector path'), { drawSVG: 0, opacity: 0 });
+
+      tl.to(slide.querySelector('.hyper-eyebrow'), { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' }, 0.1)
+        .to(slide.querySelector('.hyper-title'), { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }, 0.25)
+        .to(slide.querySelectorAll('.hyper-pillar'), {
+            y: 0, opacity: 1, scale: 1,
+            duration: 0.9, ease: 'power3.out',
+            stagger: 0.18
+          }, 0.6)
+        .to(slide.querySelectorAll('.hyper-connector path'), {
+            opacity: 1, duration: 0.5, ease: 'power2.out'
+          }, 1.4);
+
+      return tl;
+    }
+
+    function play() {
+      if (masterTl) masterTl.kill();
+      gsap.killTweensOf(slide.querySelectorAll('.hyper-scan, .hyper-ring, .hyper-ring-inner, .hyper-orb, .hyper-particle, .hyper-pillar, .hyper-pillar-bar, .hyper-pillar-glow, .hyper-connector path, .hyper-title, .hyper-eyebrow'));
+      slide.querySelectorAll('.hyper-pillar').forEach(p => p.classList.remove('is-active'));
+      masterTl = buildEntry();
+      ambientTl = buildAmbient();
+    }
+
+    function stop() {
+      if (masterTl) masterTl.kill();
+      gsap.killTweensOf(slide.querySelectorAll('.hyper-scan, .hyper-ring, .hyper-ring-inner, .hyper-orb, .hyper-particle, .hyper-pillar, .hyper-pillar-bar, .hyper-pillar-glow, .hyper-connector path'));
+    }
+
+    // Trigger on slide activation
+    const obs = new MutationObserver(() => {
+      if (slide.hasAttribute('data-deck-active')) play();
+      else stop();
+    });
+    obs.observe(slide, { attributes: true, attributeFilter: ['data-deck-active'] });
+
+    if (slide.hasAttribute('data-deck-active')) play();
+  }
+  init();
+})();
+</script>
+
+<script>
+/* ============== FUNNEL × LIVE DEMO interactivity ============== */
+(function () {
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+  ready(function () {
+    const slide = document.querySelector('section[data-label="12 即場 demo"]');
+    if (!slide) return;
+    const list      = slide.querySelector('#funnel-stage-list');
+    const iframe    = slide.querySelector('#demo-iframe');
+    const urlPath   = slide.querySelector('#demo-url-path');
+    const loading   = slide.querySelector('#demo-loading');
+    const fallback  = slide.querySelector('#demo-fallback');
+    const impactUL  = slide.querySelector('#demo-impact-list');
+    const itemsUL   = slide.querySelector('#demo-items-list');
+    if (!list || !iframe) return;
+
+    const stageData = {
+      awareness: {
+        impact: ['Organic traffic +50%', '品牌搜尋 +30%'],
+        items: ['SEO 技術基礎(schema、sitemap)', 'Core Web Vitals 滿分', '1 秒以內 load', 'Blog SEO(可選 add-on)']
+      },
+      interest: {
+        impact: ['Bounce rate −20%', 'Session duration +40%'],
+        items: ['視覺一致性系統', 'Heritage storytelling', 'Bento 視覺節奏', '由大阪到深水埗 narrative']
+      },
+      consideration: {
+        impact: ['Add-to-cart rate +25%'],
+        items: ['PDP 文案 framework', 'Reviews 系統(add-on)', 'Retail links', '保養 + Trade-in 信任']
+      },
+      purchase: {
+        impact: ['CR +20–40%', '棄單率 −15%'],
+        items: ['自建 checkout', 'Airwallex 多種付款', 'Cart drawer + 免運進度條', 'Mobile-first', 'Meilisearch 中文搜尋']
+      },
+      retention: {
+        impact: ['重複購買率 0% → 15–20%', 'LTV +50%'],
+        items: ['找配件工具', '保養登記 retention', 'Email 自動化(8 trigger)', '22 個月保養到期提醒', 'Loyalty(add-on)']
+      },
+      advocacy: {
+        impact: ['Referral revenue 5–10%', 'Reviews 持續累積'],
+        items: ['Reviews 系統(add-on)', 'Referral(add-on / Email)', 'UGC + social share', 'Email 自動邀請寫 review']
+      }
+    };
+
+    function setDetails(stage) {
+      const d = stageData[stage];
+      if (!d) return;
+      impactUL.innerHTML = d.impact.map(x => `<li>${x}</li>`).join('');
+      itemsUL.innerHTML  = d.items.map(x => `<li>${x}</li>`).join('');
+    }
+
+    function setUrlChrome(url) {
+      try {
+        const u = new URL(url);
+        urlPath.textContent = u.pathname + u.search + u.hash;
+      } catch (e) {
+        urlPath.textContent = '';
+      }
+    }
+
+    let loadTimer = null;
+    let didLoadOnce = false;
+
+    function showLoading(on) {
+      loading.classList.toggle('is-on', !!on);
+    }
+    function showFallback(on) {
+      fallback.classList.toggle('is-on', !!on);
+    }
+
+    iframe.addEventListener('load', function () {
+      didLoadOnce = true;
+      showLoading(false);
+      // We can't read iframe.contentDocument across origins. If the load event
+      // fires we trust it loaded. If embedding is blocked, the load event still
+      // fires but the document is empty — we'll surface fallback only when the
+      // user explicitly opts in via `?demoFallback=1` for safety in pitch.
+      if (new URLSearchParams(location.search).get('demoFallback') === '1') {
+        showFallback(true);
+      }
+    });
+
+    function navigate(url) {
+      showFallback(false);
+      showLoading(true);
+      clearTimeout(loadTimer);
+      // Hard timeout — if iframe never reports load in 12s, suggest fallback.
+      loadTimer = setTimeout(function () {
+        showLoading(false);
+      }, 12000);
+      iframe.src = url;
+      setUrlChrome(url);
+    }
+
+    list.addEventListener('click', function (e) {
+      const li = e.target.closest('li[data-stage]');
+      if (!li) return;
+      list.querySelectorAll('li').forEach(x => x.classList.remove('active'));
+      li.classList.add('active');
+      const stage = li.dataset.stage;
+      const url   = li.dataset.url;
+      setDetails(stage);
+      navigate(url);
+    });
+
+    // Initial state — populate details, but DEFER iframe load until slide is active
+    // (saves bandwidth and avoids slowing down deck startup).
+    setDetails('awareness');
+    setUrlChrome(iframe.dataset.initialSrc || 'https://imarflex-app.vercel.app/blog');
+
+    function maybeLoadInitial() {
+      if (didLoadOnce || iframe.src !== 'about:blank' && iframe.src !== window.location.href) return;
+      const initial = iframe.dataset.initialSrc;
+      if (initial) navigate(initial);
+    }
+
+    // Watch deck-active so we lazy-load iframe only when slide is shown.
+    const obs = new MutationObserver(function () {
+      if (slide.hasAttribute('data-deck-active')) maybeLoadInitial();
+    });
+    obs.observe(slide, { attributes: true, attributeFilter: ['data-deck-active'] });
+    if (slide.hasAttribute('data-deck-active')) maybeLoadInitial();
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -11,7 +11,7 @@ status: not-started
 priority: medium
 phase: 2
 best-phase: Q1-Q2 早加
-setup-cost-hkd: 3000
+setup-cost-hkd: 2000
 monthly-cost-hkd: 500
 depends-on: []
 metric: Conversion +5-10%, 客服人手 -50-70%

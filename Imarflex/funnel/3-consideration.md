@@ -48,7 +48,7 @@ PDP 文案、reviews(add-on)、retail links、Trade-in flow、相容配件查詢
 - [[reviews-system]] — PDP rating + SEO rich snippets
 - [[ai-chatbot]] — 24/7 答產品 / 配件問題
 - [[live-chat]] — 高價 SKU hand-hold
-- [[ai-copywriting]] — PDP 文案統一 + 上架快
+- [[content-production]] — PDP 文案統一 + 上架快
 
 ## Reference
 - [[internal-master#5-platform-features]]

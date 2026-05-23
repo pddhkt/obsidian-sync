@@ -1,14 +1,12 @@
 filters:
   and:
     - type == "feature"
+    - tier == "base"
     - file.inFolder("Imarflex/features")
 formulas:
-  tier_icon: if(tier == "base", "🟢 Base", if(tier == "addon", "🟠 Add-on", ""))
-  decision_icon: if(decision == "must-have", "🔒 Must-have", if(decision == "suggested", "💡 Suggested", if(decision == "decision-needed", "🟡 Decide", if(decision == "confirmed", "✅ Confirmed", if(decision == "declined", "❌ Declined", "")))))
+  decision_icon: if(decision == "must-have", "🔒 Must-have", if(decision == "confirmed", "✅ Confirmed", if(decision == "decision-needed", "🟡 Decide", if(decision == "declined", "❌ Declined", ""))))
   status_icon: if(status == "shipped", "✅ Shipped", if(status == "in-progress", "🟡 In progress", if(status == "not-started", "⬜ Not started", if(status == "n-a", "➖ N/A", ""))))
 properties:
-  tier:
-    displayName: Tier
   category:
     displayName: Category
   funnel-stage:
@@ -21,55 +19,29 @@ properties:
     displayName: Priority
   phase:
     displayName: Phase
-  setup-cost-hkd:
-    displayName: Setup (HKD)
-  monthly-cost-hkd:
-    displayName: Monthly (HKD)
   metric:
     displayName: Expected Metric
-  formula.tier_icon:
-    displayName: Tier
   formula.decision_icon:
     displayName: Decision
   formula.status_icon:
     displayName: Status
 views:
   - type: table
-    name: All Features
-    groupBy:
-      property: decision
-      direction: ASC
-    order:
-      - file.name
-      - formula.tier_icon
-      - formula.decision_icon
-      - formula.status_icon
-      - category
-      - funnel-stage
-      - priority
-      - phase
-      - setup-cost-hkd
-      - monthly-cost-hkd
-      - metric
-    sort:
-      - property: priority
-        direction: ASC
-  - type: table
-    name: 🔒 Must-Have (Foundation)
-    filters:
-      and:
-        - decision == "must-have"
+    name: All Foundation Features
     groupBy:
       property: category
       direction: ASC
     order:
       - file.name
+      - formula.decision_icon
       - formula.status_icon
-      - category
       - funnel-stage
       - priority
       - phase
       - metric
+    sort:
+      - property: priority
+        direction: ASC
   - type: table
     name: 🚧 Build Status
     groupBy:
@@ -81,24 +53,22 @@ views:
       - formula.decision_icon
       - category
       - priority
+      - phase
       - metric
   - type: table
-    name: 💡 Suggested to Client
+    name: 🔒 Must-Have
     filters:
       and:
-        - decision == "suggested"
+        - decision == "must-have"
     groupBy:
-      property: tier
+      property: category
       direction: ASC
     order:
       - file.name
-      - formula.tier_icon
       - formula.status_icon
-      - category
       - funnel-stage
       - priority
-      - setup-cost-hkd
-      - monthly-cost-hkd
+      - phase
       - metric
   - type: table
     name: 🟡 Decisions Needed
@@ -110,6 +80,7 @@ views:
       - formula.status_icon
       - category
       - funnel-stage
+      - priority
       - metric
   - type: cards
     name: By Funnel Stage
@@ -118,8 +89,8 @@ views:
       direction: ASC
     order:
       - file.name
-      - formula.tier_icon
       - formula.decision_icon
       - formula.status_icon
       - category
+      - priority
       - metric

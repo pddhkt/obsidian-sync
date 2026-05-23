@@ -1,0 +1,169 @@
+/* HK Daily / Heritage Blue — Tokens
+ *
+ * A second design system alongside the Persimmon & Indigo brand foundation.
+ * Modern HK-daily aesthetic — Heritage Blue against Rice White and Clay Beige,
+ * bilingual nav, glass header, blue-tinted shadows.
+ * Built to map cleanly onto shadcn primitives + Tailwind.
+ *
+ * Drop this stylesheet into any HTML file. Tokens are exposed as CSS vars
+ * AND mapped onto shadcn-style semantic names (--background, --foreground,
+ * --primary, --card, --ring, etc) so consumers can use either.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+:root {
+  /* ── Palette (raw tokens) ───────────────────────────────────── */
+  --heritage-blue:    #1E4B7A;   /* primary / brand */
+  --heritage-blue-2:  #163A5F;   /* deeper primary */
+  --heritage-blue-3:  #2C5F8F;   /* lighter primary */
+
+  --rice-white:       #F7F6F2;   /* background */
+  --rice-white-2:     #FFFFFF;   /* cards / popovers */
+
+  --clay-beige:       #E7D7C1;   /* warm accent */
+  --clay-beige-2:     #D9C5A6;   /* warm accent (deeper) */
+
+  --steam-grey:       #DCE1E6;   /* neutral surface */
+  --steam-grey-2:     #C5CCD3;   /* neutral surface (deeper) */
+
+  --soft-charcoal:    #3C3F42;   /* foreground / text */
+  --soft-charcoal-2:  #5A5E62;   /* muted text */
+  --soft-charcoal-3:  #8A8E92;   /* subtle text */
+
+  --cool-air:         #BFD7E6;   /* cool accent */
+  --cool-air-2:       #DCE9F1;   /* secondary surface */
+
+  --bg-tint:          #F0EBE3;   /* muted surface */
+  --rule:             #E5E1D9;   /* borders */
+  --rule-strong:      #C8C2B5;   /* strong borders */
+
+  /* ── Semantic mapping (shadcn-friendly) ──────────────────────── */
+  --background:           var(--rice-white);
+  --foreground:           var(--soft-charcoal);
+  --card:                 var(--rice-white-2);
+  --card-foreground:      var(--soft-charcoal);
+  --popover:              var(--rice-white-2);
+  --popover-foreground:   var(--soft-charcoal);
+  --primary:              var(--heritage-blue);
+  --primary-foreground:   var(--rice-white-2);
+  --secondary:            var(--cool-air-2);
+  --secondary-foreground: var(--heritage-blue-2);
+  --accent:               var(--heritage-blue);
+  --accent-foreground:    var(--rice-white-2);
+  --muted:                var(--bg-tint);
+  --muted-foreground:     var(--soft-charcoal-2);
+  /* Destructive — oklch matches codebase (src/app/(storefront)/globals.css) */
+  --destructive:          oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--rice-white-2);
+  --border:               var(--rule);
+  --input:                var(--rule);
+  --ring:                 var(--heritage-blue);
+  --sidebar:              var(--rice-white-2);
+
+  /* ── Type ────────────────────────────────────────────────────── */
+  --font-sans:  'Plus Jakarta Sans', 'Noto Sans TC', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --font-tc:    'Noto Sans TC', system-ui, sans-serif;
+  --font-mono:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --t-eyebrow: 0.59375rem;  /* 9.5px tracked uppercase EN micro-caption */
+  --t-nav:     0.84375rem;  /* 13.5px TC nav */
+  --t-xs:      0.75rem;
+  --t-sm:      0.875rem;
+  --t-base:    1rem;
+  --t-lg:      1.125rem;
+  --t-xl:      1.375rem;
+  --t-2xl:     1.75rem;
+  --t-3xl:     2.25rem;
+  --t-4xl:     3rem;
+  --t-5xl:     4rem;
+
+  /* ── Radii — base 6px, scaled ────────────────────────────────── */
+  --radius:     6px;
+  --radius-sm:  3.6px;   /* 0.6× */
+  --radius-md:  4.8px;   /* 0.8× */
+  --radius-lg:  6px;     /* 1× — default for buttons */
+  --radius-xl:  8.4px;   /* 1.4× — cards */
+  --radius-2xl: 10.8px;  /* 1.8× */
+  --radius-3xl: 13.2px;  /* 2.2× */
+  --radius-4xl: 15.6px;  /* 2.6× — fully pill against 6px base */
+
+  /* ── Shadows — heritage-blue-tinted, never black ─────────────── */
+  --shadow-1: 0 1px 2px rgba(30, 75, 122, 0.04);
+  --shadow-2: 0 2px 6px rgba(30, 75, 122, 0.04), 0 12px 32px rgba(30, 75, 122, 0.06);
+  --shadow-3: 0 4px 12px rgba(30, 75, 122, 0.08), 0 24px 48px rgba(30, 75, 122, 0.10);
+
+  /* ── Motion ──────────────────────────────────────────────────── */
+  --ease:      cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-quick: 180ms;
+  --dur-base:  280ms;
+  --dur-soft:  360ms;
+
+  /* ── Spacing (Tailwind-native, exposed for clarity) ──────────── */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+}
+
+/* ── Element defaults ─────────────────────────────────────────── */
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--t-base);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--foreground);
+  margin: 0 0 0.4em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+h1 { font-size: var(--t-5xl); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: var(--t-4xl); font-weight: 700; letter-spacing: -0.02em; }
+h3 { font-size: var(--t-3xl); }
+h4 { font-size: var(--t-2xl); }
+h5 { font-size: var(--t-xl); }
+h6 { font-size: var(--t-lg); }
+
+p {
+  margin: 0 0 1em;
+  color: var(--foreground);
+  text-wrap: pretty;
+  max-width: 64ch;
+}
+
+small, .caption {
+  font-size: var(--t-xs);
+  color: var(--soft-charcoal-3);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--soft-charcoal-3);
+}
+
+a {
+  color: var(--heritage-blue);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-quick) var(--ease);
+}
+a:hover { color: var(--heritage-blue-2); }
+
+hr { border: 0; height: 1px; background: var(--rule); margin: var(--s-6) 0; }
+
+::selection { background: color-mix(in oklab, var(--heritage-blue) 20%, transparent); color: var(--foreground); }
+
+code, pre, kbd, samp { font-family: var(--font-mono); font-size: 0.92em; }

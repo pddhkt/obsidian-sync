@@ -61,6 +61,7 @@ flowchart LR
 - [[internal-master]] — internal master spec (full)
 - [[add-ons-discussion]] — 8 add-ons in detail
 - [[funnel-demo-spec]] — HTML/iframe demo spec for the pitch deck
+- [[online-marketing/_index]] — SEO / topic research / blog / Instagram / Facebook operating workspace
 
 ---
 
@@ -76,6 +77,7 @@ Imarflex/
 ├── features/                ← ONE NODE PER FEATURE  (32 nodes)
 ├── funnel/                  ← 6 funnel-stage notes (with mermaid)
 ├── brand/                   ← 15 brand deliverables + social-samples/
+├── online-marketing/        ← SEO research, content calendar, social workflow, reports
 ├── Brand Guideline/         ← final assets: Logos / Color Palettes / Moodboard
 ├── decisions/               ← open questions / decisions
 ├── reference/               ← the 4 long-form docs

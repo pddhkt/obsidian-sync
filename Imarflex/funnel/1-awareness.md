@@ -33,7 +33,7 @@ SEO 基礎、blog SEO、Core Web Vitals、speed
 - [[accessibility]] — a11y 影響 organic ranking
 
 ### 🟠 Add-ons
-- [[blog-content]] — 持續寫 blog,6-12 個月後成 top channel
+- [[content-production]] — 持續寫 blog,6-12 個月後成 top channel
 - [[seo-content-pack]] — 季度 keyword research + AI 草稿
 
 ## Reference

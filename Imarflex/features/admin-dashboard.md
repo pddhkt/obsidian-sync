@@ -7,10 +7,10 @@ decision: must-have
 status: shipped
 priority: high
 phase: 1
-setup-cost-hkd: 0
-monthly-cost-hkd: 0
+setup-cost-hkd:
+monthly-cost-hkd:
 depends-on: []
-metric: "Imarflex staff productivity"
+metric: Imarflex staff productivity
 ---
 
 # 管理員後台 Dashboard

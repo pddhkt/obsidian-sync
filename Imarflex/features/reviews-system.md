@@ -10,7 +10,7 @@ status: not-started
 priority: high
 phase: 2
 best-phase: Q2 launch 後
-setup-cost-hkd: 1000
+setup-cost-hkd: 0
 monthly-cost-hkd: 0
 depends-on:
   - email-automation

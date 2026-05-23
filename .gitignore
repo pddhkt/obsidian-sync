@@ -15,6 +15,9 @@
 # Trash folder
 .trash/
 
+# Claude Code git worktrees (not vault content)
+.claude/worktrees/
+
 # Sensitive files
 ctint/tokens.md
 ctint/tts/uat deployment.md
