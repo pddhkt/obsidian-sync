@@ -51,6 +51,7 @@ flowchart LR
 
 | Folder | 放咩 | 例子 |
 |---|---|---|
+| [[business-focus/_readme|business-focus]] | 每月 / 每季方向(research 前定) | `2026-q2-focus.md`、`2026-05-focus.md` |
 | [[research-inbox/_readme|research-inbox]] | 未整理資料 | 客戶問題、competitor link、SERP screenshot note |
 | [[seo-research/_readme|seo-research]] | Keyword、SERP、GSC、site search 整理 | `2026-Q3-air-fryer-keywords.md` |
 | [[content-briefs/_readme|content-briefs]] | 已決定要做嘅 topic brief | `air-fryer-shrimp-toast-brief.md` |
@@ -62,6 +63,7 @@ flowchart LR
 
 | 節奏 | 要做咩 | 輸出 |
 |---|---|---|
+| Monthly / Quarterly | research 前定 business focus | [[business-focus/_readme|business-focus]] note |
 | Weekly | 收集 customer / search / competitor signals | 5-10 個 raw topic notes |
 | Weekly | 排下週 blog / IG / FB | 1 個 weekly content plan |
 | Monthly | 選 4-8 個 priority topics | Content calendar + briefs |

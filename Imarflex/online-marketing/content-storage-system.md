@@ -16,6 +16,7 @@ tags:
 
 | Folder | Purpose | Move out when |
 |---|---|---|
+| [[business-focus/_readme|business-focus]] | 每月 / 每季方向(research 前定) | Period 完結後 archive |
 | [[research-inbox/_readme|research-inbox]] | 未整理 raw material | 已 scoring / merged into topic |
 | [[seo-research/_readme|seo-research]] | Keyword、SERP、GSC、site search、competitor research | 變成 content brief |
 | [[content-briefs/_readme|content-briefs]] | Approved / candidate content briefs | 已 published |
@@ -29,6 +30,7 @@ Use simple lowercase file names:
 
 | Type | Pattern | Example |
 |---|---|---|
+| Business focus | `yyyy-qx-focus.md` / `yyyy-mm-focus.md` | `2026-q2-focus.md`、`2026-05-focus.md` |
 | Raw research | `yyyy-mm-dd-topic-source.md` | `2026-06-03-air-fryer-whatsapp.md` |
 | SEO research | `yyyy-qx-topic-keywords.md` | `2026-q3-rice-cooker-keywords.md` |
 | Content brief | `topic-brief.md` | `air-fryer-shrimp-toast-brief.md` |
@@ -87,6 +89,7 @@ tags:
 
 ## Storage rule
 
+- If it is the month / quarter direction, store in [[business-focus/_readme]]
 - If it is a raw idea, store in [[research-inbox/_readme]]
 - If it has keyword / SERP evidence, store in [[seo-research/_readme]]
 - If it has title, outline, CTA, and channel plan, store in [[content-briefs/_readme]]

@@ -14,15 +14,15 @@ Topic research 目標唔係「諗多啲題目」,而係搵到同 Imarflex 生意
 
 ## 1. 先定 business focus
 
-每次 research 前,先寫低今個月 / 今季最重要嘅方向。
+每次 research 前,先寫低今個月 / 今季最重要嘅方向,寫入 [[business-focus/_readme|business-focus]](`yyyy-mm-focus.md` / `yyyy-qx-focus.md`)。Topic scoring(Step 4)嗰陣用返呢個方向對「Business relevance」。
 
-| 問題 | 例子 |
-|---|---|
-| 今季要推邊個 category? | 電飯煲、氣炸鍋、風扇 |
-| 有冇新品 / 清貨 / 高 margin SKU? | IRC-20IH、IAF 系列 |
-| 客戶最近問得最多係咩? | 保養、配件、容量、清潔 |
-| 有冇季節性需求? | 夏天風扇、農曆年前廚房電器 |
-| 內容最後要導去邊? | PDP、collection、WhatsApp、warranty、parts finder |
+| 問題                        | 例子                                            |
+| ------------------------- | --------------------------------------------- |
+| 今季要推邊個 category?          | 電飯煲、氣炸鍋、風扇                                    |
+| 有冇新品 / 清貨 / 高 margin SKU? | IRC-20IH、IAF 系列                               |
+| 客戶最近問得最多係咩?               | 保養、配件、容量、清潔                                   |
+| 有冇季節性需求?                  | 夏天風扇、農曆年前廚房電器                                 |
+| 內容最後要導去邊?                 | PDP、collection、WhatsApp、warranty、parts finder |
 
 ## 2. Gather signals
 
