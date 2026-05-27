@@ -49,15 +49,15 @@ flowchart LR
 
 ## Storage folders
 
-| Folder | 放咩 | 例子 |
-|---|---|---|
-| [[business-focus/_readme|business-focus]] | 每月 / 每季方向(research 前定) | `2026-q2-focus.md`、`2026-05-focus.md` |
-| [[research-inbox/_readme|research-inbox]] | 未整理資料 | 客戶問題、competitor link、SERP screenshot note |
-| [[seo-research/_readme|seo-research]] | Keyword、SERP、GSC、site search 整理 | `2026-Q3-air-fryer-keywords.md` |
-| [[content-briefs/_readme|content-briefs]] | 已決定要做嘅 topic brief | `air-fryer-shrimp-toast-brief.md` |
-| [[published-content/_readme|published-content]] | 已發佈內容紀錄 | Blog URL、IG post、FB post |
-| [[assets/_readme|assets]] | 圖片、caption draft、creative reference | Blog image brief、carousel copy |
-| [[reports/_readme|reports]] | Weekly / monthly / quarterly review | GSC review、social report |
+| Folder | Link | 放咩 | 例子 |
+|---|---|---|---|
+| `business-focus` | [[business-focus/_readme]] | 每月 / 每季方向(research 前定) | `2026-q2-focus.md`、`2026-05-focus.md` |
+| `research-inbox` | [[research-inbox/_readme]] | 未整理資料 | 客戶問題、competitor link、SERP screenshot note |
+| `seo-research` | [[seo-research/_readme]] | Keyword、SERP、GSC、site search 整理 | `2026-Q3-air-fryer-keywords.md` |
+| `content-briefs` | [[content-briefs/_readme]] | 已決定要做嘅 topic brief | `air-fryer-shrimp-toast-brief.md` |
+| `published-content` | [[published-content/_readme]] | 已發佈內容紀錄 | Blog URL、IG post、FB post |
+| `assets` | [[assets/_readme]] | 圖片、caption draft、creative reference | Blog image brief、carousel copy |
+| `reports` | [[reports/_readme]] | Weekly / monthly / quarterly review | GSC review、social report |
 
 ## Operating cadence
 

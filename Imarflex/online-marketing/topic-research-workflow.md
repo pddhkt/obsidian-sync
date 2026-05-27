@@ -10,11 +10,33 @@ tags:
 
 # Topic Research Workflow
 
-Topic research 目標唔係「諗多啲題目」,而係搵到同 Imarflex 生意、產品、客戶問題、搜尋需求有關嘅題目。
+Topic research 目標唔係「諗多啲題目」,而係搵到同 Imarflex 生意、產品、客戶問題、搜尋需求有關嘅題目。Workflow 由 **Step 0(市場掃描)**起跳,確保每次 focus 都有外部 market input,唔係淨係靠「client 想 sell 咩 + 季節」推出嚟。
+
+## 0. Market intelligence scan
+
+每次寫 monthly / quarterly business focus 之前,先做一次 macro 市場掃描。呢步**唔需要 client data**(所有 source 都係公開),output 係 5-10 條 bullet,寫入 focus doc 嘅 `## Market context` section,做 Step 1 嘅 input。
+
+| Source | 用嚟答 | Cadence |
+|---|---|---|
+| Google Trends(HK 地區) | 邊個 category / keyword 升 / 跌 | Quarterly |
+| HKTVmall / 豐澤 / 百老匯 / 實惠 bestseller | 邊個 SKU / sub-category 啱啱熱 | 8-week rolling |
+| 小紅書 / 抖音(HK) | 文化 / lifestyle cluster(例:細廚房、宿舍家電) | Quarterly |
+| 競品新品(Panasonic HK / Toshiba HK / Sharp HK / Tiger / Zojirushi / Iris Ohyama) | 大牌押咩注、撞咗 Imarflex 邊個 SKU | Monthly |
+| HK media(U Lifestyle / Mill MK / FashionOne / Yahoo Style HK) | 邊類 listicle / review 正在 trend | Monthly |
+| LIHKG / Reddit r/HongKong 家電 / 煮食 thread | 真實討論、痛點 trend | Monthly |
+| Amazon JP / TW bestseller | 領先指標(日系家電通常 JP / TW 先紅 6-12 個月) | Quarterly |
+| Industry report(GfK / Euromonitor / HKPC 等) | 大盤 category sizing(optional / paid) | Quarterly |
+
+詳細 playbook 同 output template 喺 `imarflex-market-scan` skill;用 `imarflex-market-scout` agent 走一次完成 quarterly full scan / monthly refresh。
+
+> [!important]
+> Step 0 同 Step 2 唔好混淆。
+> - **Step 0(Market scan)= Macro / strategic** — 答「押邊個 category」,output 5-10 bullet 入 focus doc 嘅 `## Market context`
+> - **Step 2(Signal gather)= Tactical / topic-level** — 答「呢個 category 寫咩 blog / IG / FB」,output raw topic notes 入 `research-inbox/`
 
 ## 1. 先定 business focus
 
-每次 research 前,先寫低今個月 / 今季最重要嘅方向,寫入 [[business-focus/_readme|business-focus]](`yyyy-mm-focus.md` / `yyyy-qx-focus.md`)。Topic scoring(Step 4)嗰陣用返呢個方向對「Business relevance」。
+每次 research 前,先寫低今個月 / 今季最重要嘅方向,寫入 [[business-focus/_readme|business-focus]](`yyyy-mm-focus.md` / `yyyy-qx-focus.md`)。Topic scoring(Step 4)嗰陣用返呢個方向對「Business relevance」。**寫之前先睇 Step 0 嘅 market-scan output**,將 5-10 bullet 入 `## Market context` section。
 
 | 問題                        | 例子                                            |
 | ------------------------- | --------------------------------------------- |
