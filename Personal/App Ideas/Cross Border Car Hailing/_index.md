@@ -41,12 +41,15 @@ aliases:
 ```
 Cross Border Car Hailing/
 ├── _index.md                  <- project home
+├── teammate-overview.md       <- visual team briefing (diagrams + image prompts)
+├── app-summary.md             <- full functional spec summary
 ├── product-logic.md           <- what the app needs to understand
 ├── interfaces.md              <- customer app, driver app, admin support
 ├── mvp.md                     <- first useful release
 ├── data-model.md              <- business entities and relationships
 ├── payment-and-cancellation.md <- Stripe charge, refund, cancellation fee
 ├── architecture-and-cloud.md  <- KMP, backend, cloud, Mainland questions
+├── tech-decisions.md          <- open infra decisions for the next meeting
 └── open-questions.md          <- questions to answer before implementation
 ```
 
@@ -54,6 +57,7 @@ Cross Border Car Hailing/
 
 | Area | Why the app needs it |
 |---|---|
+| [[teammate-overview|Teammate overview]] | Visual, plain-language briefing of stack + behaviour for the team (with AI image prompts). |
 | [[product-logic#Booking models|Booking models]] | Defines reservation, instant booking, and bidding behavior. |
 | [[product-logic#Fare and pricing engine|Fare engine]] | Prevents unclear pricing, driver disputes, and refund confusion. |
 | [[product-logic#Dispatch and driver matching|Dispatch rules]] | Decides which drivers can receive which trips. |
@@ -63,6 +67,7 @@ Cross Border Car Hailing/
 | [[data-model|Data model]] | Gives the backend and app a shared language. |
 | [[payment-and-cancellation|Payment and cancellation]] | Defines Stripe charge-at-booking, refund, and cancellation fee rules. |
 | [[architecture-and-cloud|Architecture and cloud]] | Decides KMP structure, backend services, maps, payments, and Tencent Cloud scope. |
+| [[tech-decisions|Tech decisions]] | Open infra decisions (hosting, iOS/Android distribution, ICP) for the next meeting. |
 | [[open-questions|Open questions]] | Keeps unresolved product/business decisions visible. |
 
 ## Recommended v1 stance

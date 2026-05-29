@@ -225,8 +225,9 @@ Driver/vehicle verification, document expiry tracking, fare rule editor, service
 ## 6. Non-functional + architecture
 
 - **Mobile** — KMP shared modules: `auth`, `booking`, `pricing`, `driver-offers`, `trip-state`, `profile`, `payments`, `notifications`, `localization`, `map-provider`, `api-client`. Native UI + native AMap SDK per platform.
-- **Backend modules** — auth, customer, driver, vehicle/document, booking, pricing, dispatch, offer-ranking, payment, trip-tracking, notification, support, admin, audit.
-- **Cloud (v1)** — HK / global hosting is acceptable for v1. Mainland deployment only if legal/network/distribution forces it. Hybrid kept as an option.
+- **Backend modules** — auth, customer, driver, vehicle/document, booking, pricing, dispatch, offer-ranking, payment, trip-tracking, notification, support, admin, audit. Runtime leaning Ktor (Kotlin) to share the domain module with KMP — to confirm; see [[tech-decisions]].
+- **Data store** — PostgreSQL + PostGIS (PostGIS for service-area, route, and location queries).
+- **Cloud (v1)** — HK / global hosting is acceptable for v1. Mainland deployment only if legal/network/distribution forces it. Hybrid kept as an option. Server hosting location and iOS/Android app distribution (incl. possible ICP / 备案) are still open — see [[tech-decisions]].
 - **Business rules in backend config**, not mobile — fare rates, route support, vehicle classes, reservation discount, ranking weights, Stripe rules, cancellation rules, driver eligibility, border crossings, map provider selection, notification templates.
 
 ## 7. Out of MVP
@@ -240,15 +241,17 @@ Fully automatic instant dispatch, showing every bid to customer, real-time price
 - Bank-transfer process for weekly driver payout.
 - Address normalization across EN / TC / SC.
 - Final legal naming for required cross-border permits.
-- Whether Mainland cloud deployment becomes mandatory post-validation.
+- **Infrastructure decisions** — server hosting location, iOS/Android app distribution, ICP / 备案, China entity, backend runtime, and v1 real-time scope. Tracked in [[tech-decisions]].
 
 ## 9. Related notes
 
 - [[_index]]
+- [[teammate-overview]]
 - [[product-logic]]
 - [[interfaces]]
 - [[mvp]]
 - [[data-model]]
 - [[payment-and-cancellation]]
 - [[architecture-and-cloud]]
+- [[tech-decisions]]
 - [[open-questions]]
