@@ -36,38 +36,53 @@ tags:
 
 ### 目的
 
-Macro 興趣趨勢:邊個 category / keyword 喺香港搜尋量過去 12 個月 / 5 年點變、季節 peak 喺幾月、有冇 inflection。
+Macro 興趣趨勢:邊個 category / keyword 喺香港搜尋量過去 30 日 / 12 個月 / 5 年點變、季節 peak 喺幾月、有冇 inflection、有咩 Related Rising sub-query。
 
-### URL / 工具
+### Working access pattern(2026-05-27 confirmed)
 
-```
-https://trends.google.com/trends/explore?geo=HK&q={keyword}
-```
+> [!success] Playwright CLI(agent-browser)work — WebFetch 唔得
+> 2026-05-27 retest confirmed:**agent-browser CLI**(Playwright isolated Chromium)成功 fetch `/explore` + `/trending` 兩個 endpoint,WebFetch 仲係 return JS shell 攞唔到實際數據。 落地用 agent-browser,WebFetch 完全 deprecated 喺呢個 source。
 
-或者:
+**Two endpoints, two different signals:**
 
-```
-https://trends.google.com/trends/explore?date=today 12-m&geo=HK&q={keyword}
-https://trends.google.com/trends/explore?date=today 5-y&geo=HK&q={keyword}
-```
-
-Compare mode(最多 5 個 keyword):
-
-```
-https://trends.google.com/trends/explore?geo=HK&q={kw1},{kw2},{kw3}
-```
-
-### 必查 keyword(對齊 Imarflex category)
-
-| Category | 主 keyword | 對比 keyword |
+| Endpoint | URL pattern | 用嚟答 |
 |---|---|---|
-| 電飯煲 | 電飯煲、IH 電飯煲、降糖電飯煲 | Panasonic SR-CX、Toshiba RC、Tiger 電飯煲 |
-| 氣炸鍋 | 氣炸鍋、空氣炸鍋 | Philips airfryer、Tefal 氣炸 |
-| 風扇 | 風扇、座地扇、水冷扇、無葉風扇 | USB 風扇 |
-| 抽濕機 | 抽濕機、除濕機 | Mitsubishi 抽濕、Panasonic 抽濕 |
-| 多功能煲 | 多功能煲、壓力煲、Instant Pot | — |
-| 滅蚊燈 | 滅蚊燈、捕蚊燈、誘蚊燈 | — |
-| 暖風機 | 暖風機、陶瓷暖風機 | — |
+| `/explore` | `https://trends.google.com/trends/explore?geo=HK&q={kw}&date=today%201-m` | 邊個 keyword 喺 HK 30 日點 trend、related Rising / Top 10 |
+| `/trending` | `https://trends.google.com/trending?geo=HK` | HK realtime trending-now(celebrity / news / event,有 category filter)|
+
+**Concrete agent-browser sequence**(per seed):
+
+```bash
+agent-browser open "https://trends.google.com/trends/explore?geo=HK&q={kw_urlencoded}&date=today%201-m"
+agent-browser wait 3000                    # 等 chart render
+agent-browser snapshot                      # 拎 30-day time series + Related Rising 1-5
+agent-browser scroll down 1200              # 落 Related Queries
+agent-browser snapshot                      # Related Rising 6-10 + Related Top + Topics
+agent-browser click @{next_button_ref}      # 翻頁 if needed
+sleep 30                                    # 30 秒 sleep 防 IP-level 429
+```
+
+Compare mode(最多 5 個 keyword):`https://trends.google.com/trends/explore?geo=HK&q={kw1},{kw2},...,{kw5}&date=today%2012-m`
+
+### Default = 30-day window first(NOT 12-month)
+
+`?date=today 1-m` 比 default(12-month)觸發 lighter rate limit。 30-day 行得通先;12-month / 5-year query 只喺需要 seasonal pattern confirmation 嗰陣用(eg 風扇旺季 5-9 月);queries quoted of 5-year 嗰陣分批,每批之間 sleep ≥ 60 秒。
+
+### Seed keyword list
+
+完整 24-seed list(9 category + 5 brand + 5 comparison + 5 long-tail problem)→ `references/seed-list-hk.md`。 唔好 ad-hoc 寫 keyword 入 scan,跟 seed list 確保 quarter-over-quarter 可比。
+
+### Realtime trending-now sweep(separate workflow)
+
+每月一次 5 分鐘 sweep `https://trends.google.com/trending?geo=HK`,用 category filter check:
+
+- Food and Drink
+- Hobbies and Leisure
+- Technology
+- Health
+- Shopping
+
+大部分 month return nothing relevant for Imarflex;value 喺**catch trend 爆發嘅嗰個月**(heatwave week → 風扇 spike、viral 食譜 → 氣炸鍋 spike、Mother's Day → 電飯煲 spike — 2026-05-10 已 confirmed 過 peak 100)。
 
 ### 點 read inflection point
 
@@ -90,16 +105,24 @@ https://trends.google.com/trends/explore?geo=HK&q={kw1},{kw2},{kw3}
 - Pandemic / 新聞 event 引起嘅 spike(eg 颱風後抽濕機)→ 標 ⚠️ "event-driven",唔當 structural
 - Keyword 太低基數(< 25 baseline)→ Google Trends 數據 noisy,標 ⚠️
 
-### Fallback — 429 / JS-only / fetch failure
+### Fallback — 429 / fetch failure
 
-Google Trends 嘅 chart 係 JS-rendered,WebFetch 喺多數 environment 攞唔到實際 % 數據,亦會週期性 return HTTP 429 Too Many Requests。**Trends 係「best-effort、經常 unavailable」,唔係「guaranteed」signal**。
+Agent-browser(Playwright)work 大多數時候,但 IP-level rate limit 仲可以 trigger,尤其連續 quick query 嗰陣。 處理方式:
 
 | 失敗模式 | 處理 |
 |---|---|
-| HTTP 429 | 所有由呢個 source 嚟嘅 `%` / direction bullet 自動 downgrade 做 ⚠️。Retry ≥ 24 小時後;或者請 user paste Trends screenshot,agent 由圖讀數 |
-| JS-only(WebFetch return shell)| 同上 — ⚠️ data-quality flag,raw notes 寫低「Trends WebFetch returned JS shell」 |
-| Keyword baseline < 25 | ⚠️ data-noisy,即使有數都標 |
-| Full scan 失敗 | Raw notes 寫「Source 1 fetch failed @ {timestamp}」。**唔可以 fabricate %**。可以借助 Source 5(HK media listicle)+ Source 7(Amazon JP)嘅 editorial / leading-indicator signal 補位,但要明確標 ⚠️ 同講明「proxy for Trends not available」 |
+| HTTP 429 喺 `/explore` | (a) 等 60 秒 retry 同條 query;(b) 仲係 429 → fallback 去 `/trending?geo=HK` 攞 realtime signal(雖然唔等價);(c) 重啟 agent-browser session(`agent-browser close` then 重 open);(d) 全部失敗 → 嗰條 seed 嘅 bullet 自動 ⚠️ data-unavailable,記入 scan output 嘅 sources-used block。 唔好 fabricate % |
+| `/explore` 12-month 持續 429 但 30-day work | Default 用 30-day,12-month signal 標 ⚠️「awaiting 12-m retest next scan」 |
+| `/trending` work 但 `/explore` 唔得 | 攞 trending-now category filter(Food/Drink / Hobbies / Technology / Health / Shopping)做 partial scan,寫 ⚠️「explore unavailable,trending-only this scan」|
+| Keyword baseline < 25 | ⚠️ data-noisy,即使有數都標。 通常 model number(eg IRC-20IH)會踩呢個 |
+| 完全 fetch 失敗(agent-browser 唔通)| Raw notes 寫「Source 1 agent-browser failed @ {timestamp}」+ 用 Source 5(HK media listicle)+ Source 7(Amazon JP)做 proxy,但要明確標 ⚠️「proxy for Trends not available」|
+
+> [!important] Rate-limit anti-pattern
+> ❌ 連續 quick query 唔 sleep — 多 query 嗰陣會被 IP-level 429 鎖
+> ✅ Per-query 30 秒 sleep(seed-list-hk.md 嘅 run protocol)
+> ✅ 連續 ≥ 10 queries 之後加 1 次 60 秒 cooldown
+
+`agent-browser` 失敗時,**唔好**改用 `browser-use` 或 raw playwright 重試 — 2026-04 / 2026-05 eval confirm 三個 tool 都 share 同一個 IP-level rate limit window,換 tool 唔解決問題。 真係 trigger 咗 → 等 ≥ 60 分鐘 cooldown,或 fall back 落 `/trending` endpoint。
 
 > [!danger] Anti-pattern
 > ❌ **唔好用 WebSearch 喺 listicle 上面攞「升 X%」呢類數,當做 Trends 數據**。Listicle 嘅「推介」/「熱賣」≠ search-volume trend %。Listicle 屬於 Source 5,唔係 Source 1。

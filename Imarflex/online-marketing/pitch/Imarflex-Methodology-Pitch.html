@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>Imarflex 伊瑪牌 — Online Marketing Methodology</title>
+<style>
+:root {
+  --heritage-blue: #1E4B7A;
+  --heritage-blue-2: #163A5F;
+  --heritage-blue-3: #2C5F8F;
+  --rice-white: #F7F6F2;
+  --rice-white-2: #FFFFFF;
+  --clay-beige: #E7D7C1;
+  --clay-beige-2: #D9C5A6;
+  --steam-grey: #DCE1E6;
+  --steam-grey-2: #C5CCD3;
+  --soft-charcoal: #3C3F42;
+  --soft-charcoal-2: #5A5E62;
+  --soft-charcoal-3: #8A8E92;
+  --cool-air: #BFD7E6;
+  --cool-air-2: #DCE9F1;
+  --bg-tint: #F0EBE3;
+  --rule: #E5E1D9;
+  --rule-strong: #C8C2B5;
+  --accent-warn: #C7383E;
+  --accent-ok: #2C7A4D;
+}
+
+@page {
+  size: 297mm 210mm;  /* A4 landscape */
+  margin: 0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans HK", "Noto Sans CJK HK", "PingFang HK", "Hiragino Sans GB", "Source Han Sans HK", "Microsoft YaHei", sans-serif;
+  color: var(--soft-charcoal);
+  background: var(--rice-white);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.slide {
+  width: 297mm;
+  height: 210mm;
+  page-break-after: always;
+  break-after: page;
+  position: relative;
+  overflow: hidden;
+  padding: 18mm 22mm;
+  background: var(--rice-white);
+}
+
+.slide:last-child { page-break-after: auto; break-after: auto; }
+
+/* === Cover & full-bleed slides === */
+.slide.cover, .slide.fullbleed {
+  padding: 0;
+  background: var(--soft-charcoal);
+}
+
+.slide.cover .bg, .slide.fullbleed .bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.slide.cover .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 38mm 0 0;
+  text-align: right;
+}
+
+.slide.cover h1 {
+  font-size: 56px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: var(--heritage-blue-2);
+  line-height: 1.1;
+  margin-bottom: 14px;
+  text-shadow: 0 1px 24px rgba(247, 246, 242, 0.7);
+}
+
+.slide.cover h1 .accent {
+  color: var(--heritage-blue);
+  font-weight: 500;
+  display: block;
+}
+
+.slide.cover .sub {
+  font-size: 18px;
+  color: var(--soft-charcoal);
+  font-weight: 400;
+  margin-bottom: 32px;
+  text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
+}
+
+.slide.cover .meta {
+  font-size: 12px;
+  color: var(--soft-charcoal-2);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
+}
+
+/* === Closing slide variant === */
+.slide.closing .overlay {
+  background: linear-gradient(180deg, rgba(247,246,242,0.85) 0%, rgba(247,246,242,0.4) 50%, transparent 70%);
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+  padding-top: 22mm;
+}
+
+.slide.closing h1 {
+  font-size: 44px;
+  font-weight: 300;
+  color: var(--heritage-blue-2);
+  margin-bottom: 18px;
+}
+
+.slide.closing .sub {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 36px;
+}
+
+.slide.closing .contact {
+  background: var(--rice-white-2);
+  border: 1px solid var(--rule);
+  padding: 18px 30px;
+  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--soft-charcoal-2);
+}
+.slide.closing .contact strong {
+  color: var(--heritage-blue);
+  font-size: 15px;
+}
+
+/* === Standard slide layouts === */
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--heritage-blue);
+  font-weight: 500;
+  padding: 4px 10px;
+  background: var(--cool-air-2);
+  border-radius: 3px;
+  margin-bottom: 14px;
+}
+
+.slide h2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--heritage-blue-2);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.slide .lede {
+  font-size: 15px;
+  color: var(--soft-charcoal-2);
+  margin-bottom: 20px;
+  max-width: 200mm;
+  line-height: 1.55;
+}
+
+.slide.split { display: grid; grid-template-columns: 1fr 1.4fr; gap: 22mm; padding: 18mm 22mm; }
+.slide.split .col-image { display: flex; align-items: center; justify-content: center; }
+.slide.split .col-image img { width: 100%; height: auto; max-height: 145mm; object-fit: cover; border-radius: 4px; }
+.slide.split .col-text { display: flex; flex-direction: column; justify-content: center; }
+
+.slide.split.reverse { grid-template-columns: 1.4fr 1fr; }
+.slide.split.reverse .col-image { order: 2; }
+.slide.split.reverse .col-text { order: 1; }
+
+.slide.banner-top .banner {
+  margin: -18mm -22mm 14mm -22mm;
+  height: 75mm;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide.banner-top .banner img { width: 100%; height: 100%; object-fit: cover; }
+
+/* === Tables === */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  margin-top: 12px;
+}
+
+.tbl th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--heritage-blue-2);
+  padding: 10px 12px;
+  background: var(--bg-tint);
+  border-bottom: 2px solid var(--rule-strong);
+  font-size: 11.5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tbl td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  font-size: 12.5px;
+}
+
+.tbl td.num, .tbl th.num { text-align: center; font-variant-numeric: tabular-nums; }
+
+.tbl.compact td { padding: 6px 10px; font-size: 11.5px; }
+
+/* === Cards / Blocks === */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+  background: var(--rice-white-2);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+.card .num { font-size: 28px; font-weight: 500; color: var(--heritage-blue); line-height: 1; margin-bottom: 6px; }
+.card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--soft-charcoal-3); margin-bottom: 6px; }
+.card .title { font-size: 14px; font-weight: 500; color: var(--soft-charcoal); margin-bottom: 4px; }
+.card .body { font-size: 12px; color: var(--soft-charcoal-2); line-height: 1.5; }
+
+.card.accent { background: var(--cool-air-2); border-color: var(--cool-air); }
+.card.warm { background: var(--clay-beige); border-color: var(--clay-beige-2); }
+.card.ok { border-left: 3px solid var(--accent-ok); }
+.card.warn { border-left: 3px solid var(--accent-warn); }
+
+/* === Diagram (workflow) === */
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+.workflow .step {
+  background: var(--rice-white-2);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--heritage-blue);
+  border-radius: 4px;
+  padding: 10px 8px 10px 8px;
+  font-size: 10.5px;
+  text-align: center;
+  position: relative;
+}
+.workflow .step .num { font-size: 22px; color: var(--heritage-blue); font-weight: 500; line-height: 1; margin-bottom: 4px; }
+.workflow .step .lbl { font-size: 10.5px; color: var(--soft-charcoal); font-weight: 500; margin-bottom: 2px; line-height: 1.25; }
+.workflow .step .desc { font-size: 9.5px; color: var(--soft-charcoal-2); line-height: 1.3; margin-top: 4px; }
+.workflow .step.aux { border-top-color: var(--clay-beige-2); }
+.workflow .step.aux .num { color: var(--clay-beige-2); }
+
+.skills-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 18px;
+  font-size: 10.5px;
+}
+.skills-row .pill {
+  background: var(--cool-air-2);
+  border: 1px solid var(--cool-air);
+  padding: 7px 10px;
+  border-radius: 16px;
+  text-align: center;
+  color: var(--heritage-blue-2);
+  font-weight: 500;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10px;
+}
+
+/* === Pills / chips === */
+.chip {
+  display: inline-block;
+  font-size: 10.5px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--steam-grey);
+  color: var(--soft-charcoal-2);
+  margin-right: 4px;
+}
+.chip.ok { background: #dff0e3; color: var(--accent-ok); }
+.chip.warn { background: #fbe4e6; color: var(--accent-warn); }
+.chip.info { background: var(--cool-air-2); color: var(--heritage-blue); }
+
+/* === Page chrome === */
+.footer {
+  position: absolute;
+  bottom: 8mm;
+  left: 22mm;
+  right: 22mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9.5px;
+  color: var(--soft-charcoal-3);
+  letter-spacing: 0.5px;
+}
+
+.kicker-num { color: var(--soft-charcoal-3); font-size: 10px; letter-spacing: 1px; }
+
+/* Inline emphasis */
+.hl-blue { color: var(--heritage-blue); font-weight: 500; }
+.hl-warm { color: #8B5A2B; font-weight: 500; }
+.muted { color: var(--soft-charcoal-2); }
+
+.kv { display: flex; gap: 6px; align-items: baseline; font-size: 12.5px; margin: 4px 0; }
+.kv .k { color: var(--soft-charcoal-3); font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; min-width: 65px; }
+.kv .v { color: var(--soft-charcoal); }
+
+ul.tight { margin: 8px 0; padding-left: 16px; }
+ul.tight li { font-size: 12.5px; margin-bottom: 4px; line-height: 1.5; }
+
+.score-big {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.score-big .num { font-size: 42px; font-weight: 500; color: var(--heritage-blue); line-height: 1; }
+.score-big .denom { font-size: 18px; color: var(--soft-charcoal-3); }
+.score-big .label { font-size: 11px; color: var(--soft-charcoal-2); margin-left: 8px; text-transform: uppercase; letter-spacing: 1px; }
+
+.callout {
+  background: var(--clay-beige);
+  border-left: 4px solid var(--heritage-blue);
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--soft-charcoal);
+  border-radius: 0 4px 4px 0;
+}
+.callout .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--heritage-blue); font-weight: 500; display: block; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- ====== Slide 1 — Cover ====== -->
+<section class="slide cover">
+  <img class="bg" src="images/imarflex-pitch-01-cover.png" alt="">
+  <div class="overlay">
+    <div class="meta">2026 · Pitch Methodology Deck</div>
+    <h1>
+      Imarflex 伊瑪牌
+      <span class="accent">Online Marketing<br>Methodology</span>
+    </h1>
+    <div class="sub">7-step workflow built for HK home-appliance DTC<br>in the 2026 AI-search era.</div>
+    <div class="meta">Prepared 2026-05-30</div>
+  </div>
+</section>
+
+<!-- ====== Slide 2 — The problem ====== -->
+<section class="slide">
+  <span class="eyebrow">01 · The problem we're solving</span>
+  <h2>HK home-appliance brands face three structural shifts at once.</h2>
+  <p class="lede">Mid-size HK brands like Imarflex sit between mainland low-cost entrants and locked-in Japanese mindshare. 2026 changes the rules in three directions — all at the same time.</p>
+
+  <div class="card-grid" style="margin-top:24px">
+    <div class="card warn">
+      <div class="label">Shift 1 · AI search</div>
+      <div class="num">38%</div>
+      <div class="title">AI Overview citation rate from top-10 Google rankers</div>
+      <div class="body">Down from 76% in mid-2025 (Wellows 2026). Good Google SEO no longer guarantees AI search visibility. 37% of product discovery now starts in AI interfaces.</div>
+    </div>
+    <div class="card warn">
+      <div class="label">Shift 2 · SERP capture</div>
+      <div class="num">0</div>
+      <div class="title">Imarflex appearances in HK 2026 IH listicles</div>
+      <div class="body">Across ElecBoy, Beauty Review 360, HK01 — SERP locked by Panasonic, Zojirushi, Toshiba, Tiger, Philips. Brand mindshare gap is structural.</div>
+    </div>
+    <div class="card warn">
+      <div class="label">Shift 3 · New entrants</div>
+      <div class="num">5+</div>
+      <div class="title">Competitor IH brands going Breakout in HK Q2 2026</div>
+      <div class="body">Cuckoo, 美的, 松井, tefal, 小米 IH all Breakout in same 30-day Trends window. Price-war is unwinnable — needs depth + DTC moat play.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Our response</span>
+    A 7-step workflow that <strong>refuses to chase volume</strong> — picks one hero per category via discipline, ships AEO-formatted content that AI engines will cite, builds DTC moat (warranty + parts) that retailers can't copy.
+  </div>
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>2 / 17</span></div>
+</section>
+
+<!-- ====== Slide 3 — Workflow diagram ====== -->
+<section class="slide">
+  <span class="eyebrow">02 · Methodology at a glance</span>
+  <h2>The 7-step workflow — each step has a skill, an agent, and a hard rule set.</h2>
+  <p class="lede">Macro market scan → category bet → topic discovery → scoring → AEO format check → brief → production. Each step refuses to ship if its hard rule fails.</p>
+
+  <div class="workflow">
+    <div class="step"><div class="num">0</div><div class="lbl">Market intelligence scan</div><div class="desc">7 sources, 24 seeds, quarterly cadence</div></div>
+    <div class="step"><div class="num">1</div><div class="lbl">Business focus</div><div class="desc">Quarter thesis + monthly bets</div></div>
+    <div class="step"><div class="num">2</div><div class="lbl">Gather signals</div><div class="desc">Weekly Monday sweep, 8 sources</div></div>
+    <div class="step"><div class="num">3</div><div class="lbl">Topic capture</div><div class="desc">9-field structured note</div></div>
+    <div class="step"><div class="num">4</div><div class="lbl">Topic scoring</div><div class="desc">6-factor rubric, ≥24/30 wins</div></div>
+    <div class="step aux"><div class="num">4.5</div><div class="lbl">AEO format audit</div><div class="desc">5-axis rubric, ≥13/15 to publish</div></div>
+    <div class="step"><div class="num">5</div><div class="lbl">Brief authoring</div><div class="desc">Production-ready spec + schema</div></div>
+    <div class="step"><div class="num">6</div><div class="lbl">Production</div><div class="desc">Blog, PDP, IG, FB, Reel, WhatsApp</div></div>
+  </div>
+
+  <div style="margin-top:22px"><span class="kicker-num">5 SKILLS + 5 AGENTS</span></div>
+  <div class="skills-row">
+    <div class="pill">imarflex-market-scan</div>
+    <div class="pill">imarflex-business-focus</div>
+    <div class="pill">imarflex-signal-gather</div>
+    <div class="pill">imarflex-aeo</div>
+    <div class="pill">imarflex-copywriter</div>
+  </div>
+
+  <div class="callout" style="margin-top:18px">
+    <span class="label">What this means in practice</span>
+    Each skill is a written manual the AI agents read every time. Each agent runs the step interactively with you. Hard rules (LIHKG-internal-only, no fabricated citations, no false schema) are enforced by the skill files themselves — not just team norms.
+  </div>
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>3 / 17</span></div>
+</section>
+
+<!-- ====== Slide 4 — Verdict vs 2026 industry ====== -->
+<section class="slide">
+  <span class="eyebrow">03 · Verdict vs 2026 industry</span>
+  <h2>Three pillars ahead of industry. Three pillars added in this build.</h2>
+  <p class="lede">Benchmarked 2026-05-27 against 16 reputable 2025-2026 industry sources (Brafton, Digital Applied, Wellows, Inspired Monks, Sequenzy, Meltwater, Marketing-Interactive, Yotpo, Shopify, McKinsey, others).</p>
+
+  <div class="card-grid cols-2" style="margin-top:18px">
+    <div class="card ok">
+      <div class="label">Ahead of industry</div>
+      <ul class="tight">
+        <li><strong>Topic-cluster + business-focus first</strong> — Brafton 2026: "5-8 pillar topics that map to product categories"</li>
+        <li><strong>Hero-SKU concentration + 6-dim rubric</strong> — Triple Whale: "hero products as atomic unit of business"</li>
+        <li><strong>Evidence-marker discipline + Step 0 macro scan</strong> — Digital Applied: "author identity influences page-level authority"</li>
+        <li><strong>LIHKG-internal-only hard rule</strong> — March 2026 E-E-A-T update penalises unsourced claims</li>
+        <li><strong>DTC moat = warranty + parts + WhatsApp</strong> — Volt'n'Vector: "serviceability as a feature is winning"</li>
+        <li><strong>BOFU bias in content decision</strong> — SEL: "60-80% of output goes to bottom-/mid-funnel in AI-search era"</li>
+      </ul>
+    </div>
+    <div class="card warn">
+      <div class="label">Added in this build (May 2026)</div>
+      <ul class="tight">
+        <li><strong>AEO / GEO optimisation</strong> — built as <code>imarflex-aeo</code> skill + auditor agent on 2026-05-27. Closes the 37% AI-discovery gap.</li>
+        <li><strong>Working Google Trends access pattern</strong> — Playwright CLI via agent-browser, 24-seed list, rate-limit operational rules. Replaces previous "best-effort, often unavailable" state.</li>
+        <li><strong>Capacity-phrase reframe</strong> — Trends compare retest proved capacity-phrase SEO has zero HK volume. Content angle pivoted to generic-funnel + family-size argument.</li>
+      </ul>
+      <div style="font-size:11px; color: var(--soft-charcoal-2); margin-top:14px; font-style: italic;">
+        Designed-not-yet-built: lifecycle (email + WhatsApp), KOL programme, Reel/Short copywriter extension. Phase-2 priorities.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>4 / 17</span></div>
+</section>
+
+<!-- ====== Slide 5 — Step 0 ====== -->
+<section class="slide split">
+  <div class="col-image">
+    <img src="images/imarflex-pitch-02-market-scan.png" alt="">
+  </div>
+  <div class="col-text">
+    <span class="eyebrow">Step 0 · Market intelligence scan</span>
+    <h2>Before we bet on a category, we look outside the building.</h2>
+    <p class="lede">Quarterly macro scan of 7 public sources. Distils ~480 keyword signals into a 5-10 bullet "Market context" block that feeds Step 1.</p>
+
+    <div class="kv"><span class="k">Sources</span><span class="v">Google Trends HK · HKTVmall/豐澤/Broadway bestsellers · Competitor SKU launches (Pana/Toshiba/Tiger) · HK media editorial · LIHKG sentiment (internal-only) · Amazon JP/TW · 小紅書 (opt-in)</span></div>
+    <div class="kv"><span class="k">Cadence</span><span class="v">Quarterly full (~2h) + monthly light refresh (~20min) + ad-hoc trigger (~30min)</span></div>
+    <div class="kv"><span class="k">Output</span><span class="v">5-10 distilled bullets, marker + source + implication → paste into Step 1 focus doc</span></div>
+    <div class="kv"><span class="k">Pitch use</span><span class="v">All default sources public — no client access needed</span></div>
+
+    <div class="callout">
+      <span class="label">Why this exists</span>
+      Without Step 0, focus inherits all of client's blindspots — the workflow becomes "what client wants × season", a closed loop. Step 0 is the antidote.
+    </div>
+  </div>
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>5 / 17</span></div>
+</section>
+
+<!-- ====== Slide 6 — Step 0 case study: Trends iteration ====== -->
+<section class="slide">
+  <span class="eyebrow">Step 0 · Case study</span>
+  <h2>Trends iteration journey — why we don't accept "tool failed" as final state.</h2>
+  <p class="lede">Real timeline from our Q2 build. Demonstrates how the workflow gets better when initial fetch fails.</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:18%">Date</th><th style="width:42%">Action</th><th>Result</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2026-05-23</td><td>First Q2 scan attempt via WebFetch + 3 browser-automation tools</td><td><span class="chip warn">HTTP 429</span> on all 3 tools — IP-level rate limit. Marked "best-effort, often unavailable".</td></tr>
+      <tr><td>2026-05-27</td><td>Re-tested agent-browser CLI (Playwright) with <code>?date=today 1-m</code> (30-day window instead of default 12-month)</td><td><span class="chip ok">SUCCESS</span> — full 30-day series + Related Rising 10 queries for 電飯煲 HK</td></tr>
+      <tr><td>2026-05-27</td><td>Captured rising queries: <strong>panasonic 電飯煲 內膽</strong> Breakout, <strong>小米 IH 電飯煲</strong> Breakout, plus cuckoo / 美的 / 松井 / tefal — all entering same window</td><td><span class="chip info">3 Q2 decisions strengthened, 1 thesis flagged for cross-check</span></td></tr>
+      <tr><td>2026-05-30</td><td>Compare test: 電飯煲 vs 迷你 電飯煲 vs 2L 電飯煲 — to validate capacity-gap thesis</td><td>Generic 電飯煲 = avg 63, 迷你 = avg 1, 2L = avg 1. <strong>HK users don't search by capacity phrase.</strong></td></tr>
+      <tr><td>2026-05-30</td><td>Thesis reframed: capacity gap is <strong>product-shelf gap</strong> (real), not <strong>search-demand gap</strong> (zero). Content angle pivot.</td><td><span class="chip ok">IRC-20IH score 16/18 → 17/18</span> — Demand axis upgraded with confidence</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card-grid" style="margin-top:18px">
+    <div class="card accent">
+      <div class="title">Codified into the skill</div>
+      <div class="body">Working access pattern documented in <code>sources-public.md</code>. 24-seed HK list saved as <code>seed-list-hk.md</code>. Rate-limit operational rules in <code>cadence-and-triggers.md</code>.</div>
+    </div>
+    <div class="card accent">
+      <div class="title">Workflow principle exposed</div>
+      <div class="body">When demand signal looks weak, check whether the <strong>phrase</strong> is wrong, not just the <strong>concept</strong>. Trends is a seed-expansion tool, not idea-discovery.</div>
+    </div>
+    <div class="card accent">
+      <div class="title">Pitch-stage implication</div>
+      <div class="body">Methodology is the deliverable. At pitch we show <strong>how we'd iterate</strong> — not just the final answer. Client sees the discipline.</div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>6 / 17</span></div>
+</section>
+
+<!-- ====== Slide 7 — Step 1 banner ====== -->
+<section class="slide banner-top">
+  <div class="banner">
+    <img src="images/imarflex-pitch-03-business-focus.png" alt="">
+  </div>
+  <span class="eyebrow">Step 1 · Business focus</span>
+  <h2>One hero per category. Discipline of choice, not enthusiasm.</h2>
+  <p class="lede">Two-level model: Quarter focus = thesis (categories + DTC moats). Monthly focus = bet placement (this month's promo, content, diff from quarter). Both anchored by 6-dim hero SKU rubric.</p>
+
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card">
+      <div class="label">Quarter focus</div>
+      <div class="title">Thesis (changes every 3 months)</div>
+      <div class="body">Categories to push · hero SKUs per category · DTC moats · season arc · evergreen pillars. Output: <code>yyyy-qx-focus.md</code></div>
+    </div>
+    <div class="card">
+      <div class="label">Monthly focus</div>
+      <div class="title">Bet placement (changes monthly)</div>
+      <div class="body">This month's actual promo · SKUs being pushed · content being shipped · <strong>diff from quarter</strong> reconciliation table · <strong>out of scope this month</strong> list (mandatory). Output: <code>yyyy-mm-focus.md</code></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Mandatory monthly sections</span>
+    <strong>Diff from quarter focus</strong> + <strong>Out of scope this month</strong> exist to catch silent-drop bugs. Example real case: Q2 focus pushed 抽濕機, monthly silently dropped it. Audit caught it. New rule enforces visible decision.
+  </div>
+
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>7 / 17</span></div>
+</section>
+
+<!-- ====== Slide 8 — Q2 hero SKU scoring example ====== -->
+<section class="slide split reverse">
+  <div class="col-text">
+    <span class="eyebrow">Step 1 · Q2 case study</span>
+    <h2>IRC-20IH hero scoring — transparent reasoning, auto-DQ rule.</h2>
+    <p class="lede">Q2 2026 worked example. Every hero candidate scored 1-3 on 6 axes. Any axis = 1 → auto-DQ regardless of total.</p>
+
+    <div style="margin: 20px 0;">
+      <div class="score-big">
+        <span class="num">17</span><span class="denom">/ 18</span>
+        <span class="label">IRC-20IH<br>✅ HERO</span>
+      </div>
+    </div>
+
+    <table class="tbl compact">
+      <thead><tr><th>Axis</th><th class="num">Score</th><th>Reasoning</th></tr></thead>
+      <tbody>
+        <tr><td>M×I (margin × inv)</td><td class="num">2 ⚠️</td><td>Placeholder pending real margin from client</td></tr>
+        <tr><td>Demand</td><td class="num">3 ✅</td><td>Mother's Day peak 100 + 中容量 family-size moment</td></tr>
+        <tr><td>Diff</td><td class="num">3 ✅</td><td>Product-shelf gap + 日工藝 + DTC moat</td></tr>
+        <tr><td>Content readiness</td><td class="num">3 ✅</td><td>Buying-guide + carousel already drafted</td></tr>
+        <tr><td>DTC moat fit</td><td class="num">3 ✅</td><td>2-yr warranty + parts-finder anchor</td></tr>
+        <tr><td>Brand safety</td><td class="num">3 ✅</td><td>No reliability concerns surfaced</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:14px">
+      <span class="label">DQ in action — same quarter</span>
+      <strong>降糖 IH (generic)</strong> = Diff axis 1 → auto-DQ. 5+ competitors selling identical 35% sugar reduction. Door reopens only when Imarflex finds specific USP.
+    </div>
+  </div>
+  <div class="col-image">
+    <img src="../../blog/samples/images/buying-guide-rice-cooker-hero.png" alt="">
+  </div>
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>8 / 17</span></div>
+</section>
+
+<!-- ====== Slide 9 — Steps 2-4 signal + scoring ====== -->
+<section class="slide">
+  <span class="eyebrow">Steps 2-4 · Signal → capture → scoring</span>
+  <h2>Weekly sweep → 9-field topic capture → 6-factor rubric → priority calendar.</h2>
+  <p class="lede">Q2 2026-05-30 sample: 5 IH topics surfaced from Trends + media + retailer signals. Scored. Winner picked for Step 5 brief.</p>
+
+  <table class="tbl compact" style="margin-top:14px">
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th class="num">Biz</th>
+        <th class="num">Demand</th>
+        <th class="num">Intent</th>
+        <th class="num">Fit</th>
+        <th class="num">Repurp</th>
+        <th class="num">Rank</th>
+        <th class="num">Total</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background: var(--cool-air-2);">
+        <td><strong>1. 電飯煲 容量 點揀</strong></td>
+        <td class="num">5</td><td class="num">5</td><td class="num">4</td><td class="num">5</td><td class="num">5</td><td class="num">4</td>
+        <td class="num"><strong>28</strong></td>
+        <td><span class="chip ok">✅ Next calendar</span></td>
+      </tr>
+      <tr style="background: var(--cool-air-2);">
+        <td><strong>2. panasonic 電飯煲 內膽 邊度買</strong></td>
+        <td class="num">5</td><td class="num">4</td><td class="num">5</td><td class="num">5</td><td class="num">4</td><td class="num">5</td>
+        <td class="num"><strong>28</strong></td>
+        <td><span class="chip ok">✅ Day-1 post-engagement</span></td>
+      </tr>
+      <tr style="background: var(--cool-air-2);">
+        <td>3. 電飯煲 母親節 / 父親節 送禮</td>
+        <td class="num">5</td><td class="num">5</td><td class="num">5</td><td class="num">4</td><td class="num">4</td><td class="num">4</td>
+        <td class="num"><strong>27</strong></td>
+        <td><span class="chip ok">✅ Timed: mid-June for 父親節</span></td>
+      </tr>
+      <tr>
+        <td>4. 小米 IH vs 主流 (defensive)</td>
+        <td class="num">4</td><td class="num">4</td><td class="num">4</td><td class="num">3</td><td class="num">3</td><td class="num">4</td>
+        <td class="num">22</td>
+        <td><span class="chip">Backlog Q3</span></td>
+      </tr>
+      <tr>
+        <td>5. 內膽 清潔 + 替換 (retention)</td>
+        <td class="num">4</td><td class="num">3</td><td class="num">3</td><td class="num">5</td><td class="num">5</td><td class="num">4</td>
+        <td class="num">24</td>
+        <td><span class="chip">Bundle with #2</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top:14px">
+    <span class="label">Winner pick + tie-breaker logic</span>
+    Topic 1 + Topic 2 tied at 28/30. <strong>Topic 1 wins for next brief</strong> — funnels generic 電飯煲 traffic (largest pool), ships pitch-stage without parts-finder backend dependency. Topic 2 = Day-1 priority once parts-finder deploys.
+  </div>
+
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>9 / 17</span></div>
+</section>
+
+<!-- ====== Slide 10 — Step 4.5 AEO ====== -->
+<section class="slide split">
+  <div class="col-image">
+    <img src="images/imarflex-pitch-04-aeo-audit.png" alt="">
+  </div>
+  <div class="col-text">
+    <span class="eyebrow">Step 4.5 · AEO format audit</span>
+    <h2>Get cited by ChatGPT, Perplexity, Claude — not just ranked by Google.</h2>
+    <p class="lede">5-axis rubric. Pass threshold 13/15. Auto-DQ if any axis = 1 + content involves health/safety/electrical.</p>
+
+    <table class="tbl compact">
+      <thead><tr><th>Axis</th><th>What it tests</th></tr></thead>
+      <tbody>
+        <tr><td>Passage-Q&A</td><td>Every H2 is user-phrased question; ≤ 50字 direct-answer first</td></tr>
+        <tr><td>Schema markup</td><td>Article + Product + FAQPage + HowTo where applicable; no false structured facts</td></tr>
+        <tr><td>Author identity</td><td>Named author + credentials + LinkedIn (no generic 編輯部 for YMYL)</td></tr>
+        <tr><td>Statement-fact</td><td>Every concrete claim has number + source URL + date</td></tr>
+        <tr><td>Freshness</td><td>Publish + dateModified + review cadence</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="label">Why it matters now</span>
+      Wellows 2026: Top-10 Google rankers held 76% of AI Overview citations in mid-2025, only 38% by early 2026. Ranking and citation are <strong>decoupling</strong>. AEO is the new optimisation surface.
+    </div>
+  </div>
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>10 / 17</span></div>
+</section>
+
+<!-- ====== Slide 11 — AEO case study ====== -->
+<section class="slide">
+  <span class="eyebrow">Step 4.5 · Case study</span>
+  <h2>Real audit on existing IH buying-guide blog — 8/15, rewrite needed.</h2>
+  <p class="lede">Content predates AEO skill. Editorially strong (brand voice ✅, SEO keyword targeting ✅) but doesn't meet 2026 AEO standards. Shows the delta from 2024-era SEO to 2026-era AEO.</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 18px; margin-top: 14px;">
+    <div>
+      <div class="score-big" style="margin-bottom: 10px">
+        <span class="num">8</span><span class="denom">/ 15</span>
+        <span class="label" style="color: var(--accent-warn)">❌ Rewrite<br>+ Axis 3 DQ-borderline</span>
+      </div>
+      <table class="tbl compact">
+        <thead><tr><th>Axis</th><th class="num">Score</th></tr></thead>
+        <tbody>
+          <tr><td>Passage-Q&A structure</td><td class="num">2 ⚠️</td></tr>
+          <tr><td>Schema markup</td><td class="num">1 ❌</td></tr>
+          <tr><td>Author identity</td><td class="num">1 🚨</td></tr>
+          <tr><td>Statement-fact pairing</td><td class="num">2 ⚠️</td></tr>
+          <tr><td>Freshness signal</td><td class="num">2 ⚠️</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <strong style="color: var(--heritage-blue-2);">7-issue fix list</strong>
+      <ul class="tight">
+        <li><strong>H2 structure</strong> — rewrite all H2 as user-phrased questions, ≤ 50字 direct-answer first</li>
+        <li><strong>Missing schema</strong> — spec Article + Product (IRC-20IH) + FAQPage</li>
+        <li><strong>Missing FAQ section</strong> — add H2「常見問題」+ 5 Q&A mirrored to FAQPage schema</li>
+        <li><strong>Generic author</strong> — client must provide named author + credential (Day-1 ask)</li>
+        <li><strong>Unsourced stats</strong> — 「50年」, 「IH滲透率 80%」, 「鍋身 >2mm」 all need source URLs</li>
+        <li><strong>Health-angle DQ trigger</strong> — 糖尿病 mention + generic author = DQ; fix via named author OR remove mention</li>
+        <li><strong>Freshness signals</strong> — add dateModified + review cadence</li>
+      </ul>
+      <div class="callout" style="margin-top:10px">
+        <span class="label">Why this demonstrates value</span>
+        Same blog was "publish-ready" by 2024 SEO standards. AEO audit surfaces the 7 changes that separate "ranks on Google" from "gets cited by AI engines". Both matter in 2026.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>11 / 17</span></div>
+</section>
+
+<!-- ====== Slide 12 — Step 5-6 production ====== -->
+<section class="slide split reverse">
+  <div class="col-text">
+    <span class="eyebrow">Steps 5-6 · Brief → production</span>
+    <h2>One topic, multiple channel outputs — all from one brief.</h2>
+    <p class="lede">Brief = production spec with AEO requirements baked in. <code>imarflex-copywriter</code> agent then ships per-channel outputs from the same source.</p>
+
+    <table class="tbl compact">
+      <thead><tr><th>Channel</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td>Blog (zh-HK)</td><td>1,200-1,500字, AEO-formatted, Q&A H2s, FAQ section, schema spec</td></tr>
+        <tr><td>Instagram</td><td>8-slide carousel script + image briefs</td></tr>
+        <tr><td>Facebook</td><td>Hook + link post</td></tr>
+        <tr><td>Reel / Short</td><td>15-30s script (design-only currently, copywriter extension TBD)</td></tr>
+        <tr><td>WhatsApp</td><td>Consultation bot script with branching logic</td></tr>
+        <tr><td>PDP</td><td>Hero copy + spec table + FAQ</td></tr>
+        <tr><td>Email lifecycle</td><td>Trigger flow (post-engagement only)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:14px">
+      <span class="label">Brand voice enforcement</span>
+      Copywriter agent reads <code>brand/voice-tone-of-voice.md</code> every run. 5 adjectives (可靠 · 溫暖 · 專業 · 貼地 · 日式精緻). 3 anti-patterns. Output blocked if voice check fails.
+    </div>
+  </div>
+  <div class="col-image">
+    <img src="../../blog/samples/images/recipe-air-fryer-shrimp-toast-char-siu-hero.png" alt="">
+  </div>
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>12 / 17</span></div>
+</section>
+
+<!-- ====== Slide 13 — Citation simulation ====== -->
+<section class="slide">
+  <span class="eyebrow">Step 4.5 · Measurement</span>
+  <h2>Citation simulation — how we measure AI-search visibility lift.</h2>
+  <p class="lede">12 standardized prompts × 4 LLM engines = 48-cell baseline matrix. Monthly cadence. Tracks delta over time. Manual collection — automated runs misrepresent consumer experience.</p>
+
+  <div class="card-grid cols-4" style="margin-top: 18px">
+    <div class="card">
+      <div class="label">Cluster 1</div>
+      <div class="title">Category discovery</div>
+      <div class="body">3 prompts, Imarflex unbranded.<br><em>"香港邊個牌子嘅 IH 電飯煲最值得買?"</em></div>
+    </div>
+    <div class="card">
+      <div class="label">Cluster 2</div>
+      <div class="title">Brand discovery</div>
+      <div class="body">3 prompts, Imarflex named.<br><em>"伊瑪牌 IH 電飯煲 點解 港人鍾意?"</em></div>
+    </div>
+    <div class="card">
+      <div class="label">Cluster 3</div>
+      <div class="title">SKU-specific (BOFU)</div>
+      <div class="body">3 prompts, high intent.<br><em>"IRC-20IH 好唔好用?啱咩家庭?"</em></div>
+    </div>
+    <div class="card">
+      <div class="label">Cluster 4</div>
+      <div class="title">DTC moat</div>
+      <div class="body">3 prompts, differentiator.<br><em>"伊瑪牌 保養 點 登記?"</em></div>
+    </div>
+  </div>
+
+  <div style="margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
+    <div>
+      <strong style="color: var(--heritage-blue-2);">Recording matrix per engine</strong>
+      <ul class="tight">
+        <li><span class="chip ok">✅</span> Imarflex in top 3 of answer</li>
+        <li><span class="chip">⚠️ pos N</span> Mentioned at position 4-10</li>
+        <li><span class="chip">❌</span> No mention</li>
+        <li><span class="chip warn">🚨</span> Mentioned with hallucination — content opportunity</li>
+      </ul>
+    </div>
+    <div>
+      <strong style="color: var(--heritage-blue-2);">Expected pitch-stage baseline</strong>
+      <ul class="tight">
+        <li>Likely 5-15 / 48 mentions (mid-size HK brand, limited training data)</li>
+        <li>Cluster 2 (brand discovery) strongest — model has some knowledge once you name brand</li>
+        <li>Cluster 1 (unbranded) weakest — defaults to top-of-mind brands</li>
+        <li>SKU hallucinations expected in Cluster 3 — directly addressable via AEO content</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Pitch promise</span>
+    <strong>Methodology demo only at pitch.</strong> No commitment to lift %. Week 1 of engagement = real baseline run. Wellows 2026 data suggests AI engines show citation pattern shift in 2-4 weeks post-publish — faster than traditional SEO (3-6 months).
+  </div>
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>13 / 17</span></div>
+</section>
+
+<!-- ====== Slide 14 — Hard rules ====== -->
+<section class="slide">
+  <span class="eyebrow">04 · Hard rules — enforced by the skill files, not just team norms</span>
+  <h2>Three rules we won't break, even when asked.</h2>
+  <p class="lede">Rules mirrored across multiple skills + agent files + persistent memory. Multi-layer enforcement means consistent behaviour session-to-session, agent-to-agent.</p>
+
+  <div class="card-grid" style="margin-top: 22px">
+    <div class="card warm">
+      <div class="num">1</div>
+      <div class="title">LIHKG / Reddit / 論壇 sentiment stays internal</div>
+      <div class="body" style="margin-top: 6px">
+        Never enters brief, blog, PDP, social, pitch deck, or any client-facing deliverable. Aggregate sentiment only (eg「過去 90 日 N 條 thread 提及痛點 X」). Brand-self mentions (Imarflex) only — competitor brand sentiment never surfaces.
+        <br><br>
+        <strong>Why:</strong> Legal risk (quoting users without consent). E-E-A-T penalty (Google March 2026). Brand 信譽 risk if competitor sentiment used as marketing ammunition.
+      </div>
+    </div>
+    <div class="card warm">
+      <div class="num">2</div>
+      <div class="title">No fabricated citations or false schema facts</div>
+      <div class="body" style="margin-top: 6px">
+        Every claim has URL + date + source. AEO auditor rejects content with "according to X report" but no URL. Schema declares only what PDP actually supports — no fake <code>aggregateRating</code>, no stale prices, no false stock status.
+        <br><br>
+        <strong>Why:</strong> Google penalty for false structured data. Brand 信譽. LLM hallucination amplifies false claims into AI-search answers — at scale.
+      </div>
+    </div>
+    <div class="card warm">
+      <div class="num">3</div>
+      <div class="title">Pitch-stage honesty — no lift commitments before measurement</div>
+      <div class="body" style="margin-top: 6px">
+        At pitch stage we show <strong>methodology</strong>, not promises. ⚠️-heavy in scan output is normal (no client data yet). No "we'll lift your traffic X%" — we show how we'd measure, then measure honestly.
+        <br><br>
+        <strong>Why:</strong> Trust. Client can verify methodology rigour pre-engagement. Removes incentive to fabricate baselines.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>14 / 17</span></div>
+</section>
+
+<!-- ====== Slide 15 — Differentiators ====== -->
+<section class="slide">
+  <span class="eyebrow">05 · Differentiators vs generic 2026 agency playbook</span>
+  <h2>What you get that you wouldn't from a competent generalist.</h2>
+
+  <table class="tbl" style="margin-top: 18px">
+    <thead>
+      <tr><th style="width: 18%">Area</th><th style="width: 38%">Generic 2026 agency</th><th>Our workflow</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Topic discovery</strong></td>
+        <td>Keyword volume → topic. Chase Search Console wins.</td>
+        <td>Business focus + macro scan → topic. Volume only sanity-checks intent.</td>
+      </tr>
+      <tr>
+        <td><strong>Hero SKU</strong></td>
+        <td>All-of-catalog promoted equally.</td>
+        <td>1 hero per category, 6-dim rubric scored, auto-DQ on any axis = 1.</td>
+      </tr>
+      <tr>
+        <td><strong>Evidence discipline</strong></td>
+        <td>Implicit. Sources cited inconsistently.</td>
+        <td>✅ / ⚠️ marker on every claim. ⚠️ items auto-map to Day-1 ask checklist.</td>
+      </tr>
+      <tr>
+        <td><strong>Forum / community signal</strong></td>
+        <td>Quoted in client-facing decks for "consumer voice".</td>
+        <td>LIHKG / Reddit internal-only. Hard rule. Mirrored across 3 skills + 2 memory files.</td>
+      </tr>
+      <tr>
+        <td><strong>AEO / AI search</strong></td>
+        <td>Bolt-on or absent. Treated as future concern.</td>
+        <td>Step 4.5 with dedicated rubric + auditor agent. Citation simulation methodology.</td>
+      </tr>
+      <tr>
+        <td><strong>Pitch deliverable</strong></td>
+        <td>Slide deck of "what we'd do".</td>
+        <td>Working artifacts — focus doc, signal sweep, brief, AEO audit, sample blog audit, simulation protocol.</td>
+      </tr>
+      <tr>
+        <td><strong>Cycle visibility</strong></td>
+        <td>Monthly report after the fact.</td>
+        <td>Quarter thesis → monthly diff → weekly signal → daily AEO audit. Every step has artifact + audit trail.</td>
+      </tr>
+      <tr>
+        <td><strong>Pitch-to-engagement transition</strong></td>
+        <td>Re-scope and redo work post-signing.</td>
+        <td>Upgrade ⚠️ to ✅ as client data arrives. Same machine, same artifacts.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>15 / 17</span></div>
+</section>
+
+<!-- ====== Slide 16 — Day-1 client asks ====== -->
+<section class="slide">
+  <span class="eyebrow">06 · Day-1 onboarding asks</span>
+  <h2>Every ⚠️ in our pitch maps to a specific Day-1 ask.</h2>
+  <p class="lede">No surprise scope creep. The ⚠️ count <em>is</em> the onboarding checklist. Provide these on Day 1 and we upgrade to ✅ immediately, no re-work.</p>
+
+  <table class="tbl" style="margin-top: 14px">
+    <thead><tr><th style="width: 25%">Category</th><th>Day-1 ask</th><th style="width: 18%">Unblocks</th></tr></thead>
+    <tbody>
+      <tr><td><strong>SKU codes</strong></td><td>Real SKU codes per priority category (placeholder IRC-20IH used pitch-side)</td><td>Hero scoring M×I axis</td></tr>
+      <tr><td><strong>Margin / inventory</strong></td><td>Per-SKU monthly margin + sustained-stock status</td><td>Hero rubric → priority ranking</td></tr>
+      <tr><td><strong>Promo schedule</strong></td><td>Forward 90-day promo + clearance roadmap</td><td>Monthly focus + content timing</td></tr>
+      <tr><td><strong>Search Console</strong></td><td>GSC export — top queries, CTR, position 8-20 quick-wins</td><td>Replaces ⚠️ workflow-FAQ assumptions</td></tr>
+      <tr><td><strong>Site search</strong></td><td>Meilisearch / on-site search log — last 90 days</td><td>Captures real user wording vs assumed</td></tr>
+      <tr><td><strong>WhatsApp</strong></td><td>Sample 30 days of customer-service conversations (anonymised)</td><td>FAQ topics + consultation bot script</td></tr>
+      <tr><td><strong>PostHog / analytics</strong></td><td>Blog → PDP funnel + content engagement</td><td>Step 4 scoring "Search demand" axis</td></tr>
+      <tr><td><strong>AEO authorship</strong></td><td>Named author with credentials + LinkedIn URL per content piece</td><td>AEO Axis 3 → 3/3, neutralises DQ</td></tr>
+      <tr><td><strong>Engineering</strong></td><td>Backend platform confirmation (Shopify / Shopline / custom)</td><td>Schema deployment route</td></tr>
+      <tr><td><strong>Review system</strong></td><td>Existing review data, if any</td><td>Review schema markup (only if real)</td></tr>
+      <tr><td><strong>Legal review</strong></td><td>Authorisation to mention competitor brands by SKU model name</td><td>Comparison content + defensive positioning</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">What this represents</span>
+    Onboarding is bounded and concrete. <strong>11 specific data hand-offs</strong> — not a vague "we need access to your stack". Each item has a clear unblock target.
+  </div>
+
+  <div class="footer"><span>Imarflex · Online Marketing Methodology</span><span>16 / 17</span></div>
+</section>
+
+<!-- ====== Slide 17 — Closing ====== -->
+<section class="slide cover closing">
+  <img class="bg" src="images/imarflex-pitch-05-closing.png" alt="">
+  <div class="overlay">
+    <div class="meta">Ready when you are.</div>
+    <h1>Let's begin together.</h1>
+    <div class="sub">A real, working marketing operation already running for your category — waiting to upgrade ⚠️ to ✅ on Day 1.</div>
+
+    <div class="contact">
+      <strong>Imarflex Online Marketing Pitch · 2026-05-30</strong>
+      <span>Methodology: <code>reference/methodology-summary.md</code></span>
+      <span>Live Q2 focus: <code>online-marketing/business-focus/2026-q2-focus.md</code></span>
+      <span>Skills + agents: <code>.claude/skills/</code> + <code>.claude/agents/</code></span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

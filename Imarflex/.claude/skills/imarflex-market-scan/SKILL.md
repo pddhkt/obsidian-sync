@@ -216,10 +216,11 @@ business-focus doc 結構:
 
 ## Reference files
 
-- `references/sources-public.md` — sources playbook(default 6 + 小紅書 opt-in)(URL、search pattern、inflection 讀法、capture mapping、stale-URL fallback)
+- `references/sources-public.md` — sources playbook(default 6 + 小紅書 opt-in)(URL、search pattern、inflection 讀法、capture mapping、stale-URL fallback、agent-browser working access pattern for Google Trends)
+- `references/seed-list-hk.md` — Google Trends HK 24-seed list(9 category + 5 brand + 5 comparison + 5 long-tail problem)+ run protocol。 跑 Source 1 嗰陣跟呢 list,唔好 ad-hoc 寫 keyword
 - `references/sources-paid.md` — source 8(industry reports)— 點時用、用乜、client 未 subscribe 時嘅 request line
 - `references/scan-output-template.md` — 5-10 bullet output format + 4 個 worked example(風扇 / 氣炸鍋 / IH 電飯煲 / 抽濕機)
-- `references/cadence-and-triggers.md` — quarterly / monthly / ad-hoc 三種 cadence 嘅 rule + noise filter threshold
+- `references/cadence-and-triggers.md` — quarterly / monthly / ad-hoc 三種 cadence 嘅 rule + noise filter threshold + rate-limit operational rules
 
 ## Companion agent
 

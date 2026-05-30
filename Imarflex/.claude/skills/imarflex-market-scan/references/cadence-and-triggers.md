@@ -78,10 +78,22 @@ tags:
 | Pattern | Threshold | 點處理 |
 |---|---|---|
 | 升勢 | 12 個月 vs baseline +50% 以上 OR 5 年首次 break baseline | ✅ |
+| 30-day single peak ≥ 90(out of 100) | 拎 calendar 對:有冇對應 cultural moment(eg 母親節 5 月)| ✅ if 對得返,seasonal-bound;⚠️ if 完全 unexplained |
+| Related Rising — Breakout | 任何 emerging brand / SKU spec / problem term 喺 Breakout | ✅ priority — 直接喺 raw notes,標明係 brand entry / commoditisation / parts-replacement intent |
+| Related Rising — +N% | +50% 以上 持續多 query 出現同 cluster | ✅;單 query <+50% → ⚠️ |
 | 跌勢 | 12 個月 vs baseline -30% 以上 持續 ≥ 6 個月 | ⚠️(可能 category 萎縮)|
 | Single-month spike | < +50% 單月升 | ❌ noise,唔記 |
 | Event-driven spike | 颱風 / 新聞 / KOL 事件 | 標 ⚠️ "event-driven",唔當 structural |
-| Low baseline | Keyword baseline < 25(Google Trends scale)| Data noisy,標 ⚠️ data quality |
+| Low baseline | Keyword baseline < 25(Google Trends scale)| Data noisy,標 ⚠️ data quality;常見於 model number(eg IRC-20IH)|
+
+> [!warning] Rate-limit operational rules
+> Default fetch tool = agent-browser(Playwright)。 詳細 working pattern + fallback 喺 `sources-public.md` §1。 跑 seed list 嗰陣:
+>
+> - Per-query 30 秒 sleep — non-negotiable
+> - Default `?date=today 1-m`(30-day)— 12-month / 5-year 只喺需要 seasonal confirmation 用,分批 + 60 秒 cooldown
+> - 連續 ≥ 10 queries 加 1 次 60 秒 cooldown
+> - 唔好換 tool(agent-browser ↔ browser-use ↔ raw playwright)重試同條 429 — 三者 share IP-level rate limit window
+> - 真係鎖死 → wait ≥ 60 分鐘,或 fallback 去 `/trending?geo=HK` 攞 partial signal,嗰啲 bullet 自動 ⚠️
 
 ### Source 2 — Retailer bestseller
 

@@ -10,25 +10,29 @@ tags:
 # 2026 Q2 Business Focus
 
 > [!warning] 證據程度
-> ✅ 有實據:自家網店 2026-04 promo snapshot(風扇 / 抽濕機 / 滅蚊燈)、產品線、已寫好嘅 3 篇 sample blog、香港季節、[[2026-q2-market-scan-demo|Q2 market scan]] 嘅 HK 媒體 + 競品 SKU 數據。
-> ⚠️ 未有實據:GSC query、site search、WhatsApp log、實際清貨 / margin / 庫存 SKU、Google Trends(scan 嗰陣 429)。
-> ⚠️ **「降糖 IH 健康角度」已由 ✅ 降做 ⚠️** — 見 Market context,Toshiba RC-10IRPH + Thanko 都已採用 35% sugar reduction,**呢個 angle 已 commoditised**,要另搵 specific USP。
+> ✅ 有實據:自家網店 2026-04 promo snapshot(風扇 / 抽濕機 / 滅蚊燈)、產品線、已寫好嘅 3 篇 sample blog、香港季節、[[2026-q2-market-scan-demo|Q2 market scan]] 嘅 HK 媒體 + 競品 SKU 數據、**Google Trends HK 30-day series + Related Rising queries(via Playwright CLI,2026-05-27 retrieval)**。
+> ⚠️ 未有實據:GSC query、site search、WhatsApp log、實際清貨 / margin / 庫存 SKU。
+> ⚠️ **「降糖 IH 健康角度」已由 ✅ 降做 ⚠️** — 見 Market context,Toshiba RC-10IRPH + Thanko 都已採用 35% sugar reduction,**呢個 angle 已 commoditised**,要另搵 specific USP(Trends 2026-05-27 retest 確認:低糖 電飯煲 仍 Breakout,但同期 cuckoo / 美的 / 松井 / tefal / 小米 IH 全部 Breakout — IH 細分 5+ 競品同時押,price war 唔可贏)。
 
 > 季節背景:Q2(4–6 月)香港由回南 / 雨季行入夏天,風扇旺季啟動、潮濕未退,煮食轉「唔想開火焗熱」角度。
 
 ## Market context(Step 0 output,from [[2026-q2-market-scan-demo]])
 
-> Scan 用 6 sources(小紅書 pitch-stage 不可靠暫排除)。7 條 distilled bullet,2 ✅ + 5 ⚠️ — 反映 pitch-stage fetch 限制,但已足夠校正 Q2 重要決策。
+> Scan 用 7 sources(Google Trends 2026-05-27 retry + 2026-05-30 compare retest via Playwright CLI 成功;小紅書排除)。11 條 distilled bullet,9 ✅ + 2 ⚠️ — Trends retry + 容量 compare retest 後 ✅ 比例進一步上升,Q2 中容量 thesis 由 ⚠️ 升 ✅(reframed 為 product-shelf gap)。
 
 - ⚠️ HK 媒體一致將 IH 用 6-dim 選購框架(容量 / 加熱 / 內膽 / control / preset / 耗電)— ElecBoy、YOHO、Beauty Review 360 同期出 → Imarflex IH content 必跟呢 6 軸 frame,SEO 同 reader mental model 對齊
 - ✅ **HK retailer + 媒體 IH listicle 完全缺少 Imarflex** — 跨 ElecBoy / Beauty Review 360 / HK01 listicle 由 Panasonic / Zojirushi / Philips / Toshiba / Tiger 鎖位 → Imarflex IH brand mindshare 弱,**Q2/Q3 唔好打 IH 主流 price war**,要用 technical-depth buying guide + 健康角度切入
-- ✅ **降糖 / 低糖 IH 已係 HK SKU-level standard,唔再係 differentiator** — Toshiba RC-10IRPH(35% sugar reduction)+ Thanko 已上 HK retailer + 入 2026 buying guide → Imarflex 「降糖 IH」需要**比 35% 更具體 USP**(米種 / 內膽科技 / 食療 angle),否則 commodity 化
-- ⚠️ Panasonic / Toshiba IH SKU 集中 0.45–1.0L mini/小家庭 range → IRC-20IH(2L)+ IRC-22KS(2.2L)喺**中容量 1.5–2.2L gap** 有未飽和位(待 Amazon JP 容量分佈確定)
+- ✅ **降糖 / 低糖 IH 已係 HK SKU-level standard,唔再係 differentiator** — Toshiba RC-10IRPH(35% sugar reduction)+ Thanko 已上 HK retailer + 入 2026 buying guide;Trends 2026-05-27 retest「低糖 電飯煲」仍 Breakout 但已係 5+ brand 同時押 → Imarflex 「降糖 IH」需要**比 35% 更具體 USP**(米種 / 內膽科技 / 食療 angle),否則 commodity 化
+- ✅ **「中容量 IH 1.5-2.2L」係 product-shelf gap,唔係 search-demand gap** — Trends 2026-05-30 compare retest 確認 HK 用戶**幾乎唔以容量字眼搜尋電飯煲**(「迷你 電飯煲」/「2L 電飯煲」/「大容量 電飯煲」30-day average 全部 ≤ 1,vs generic「電飯煲」= 63)。Implication:Imarflex 中容量 SKU 嘅 advantage 唔係「滿足隱藏 search demand」,而係「**generic 電飯煲 searcher 落 retailer 後,Pana/Toshiba 主流 0.45-1.0L mini SKU 唔啱 3-5 人家庭 use case**」。Content angle 改為「**電飯煲 容量 點揀**」/「**幾多人食邊個容量**」,**唔好**寫「2L 電飯煲」之類 capacity-phrase SEO(零搜尋量)。 Source: [trends.google.com compare](https://trends.google.com/trends/explore?geo=HK&q=%E9%9B%BB%E9%A3%AF%E7%85%B2,%E8%BF%B7%E4%BD%A0+%E9%9B%BB%E9%A3%AF%E7%85%B2,2L+%E9%9B%BB%E9%A3%AF%E7%85%B2&date=today%201-m)
 - ✅ **HK 風扇 2026 mainstream 係循環扇 + 手提扇,水冷扇缺席媒體** — HK01 10 款:6 循環 + 3 bladeless + 1 standing + **0 水冷扇**;YOHO 14 款手提扇 listicle 全 portable → Q2 風扇 hero **唔好押水冷扇**,改押 **循環扇 + 手提扇**
 - ✅ **HK 風扇 baseline expectation = DC 馬達 + 靜音 dB + 全方位 oscillation**(Iris PCF-SC15T、Rasonic、Panasonic、Sommer DC 重複出現)→ Imarflex 風扇 content 必對齊 dB + DC + oscillation 三軸
 - ⚠️ **(internal-only)Imarflex 冷風機(ICF-140R)reliability 喺 LIHKG 有負評累積** — Q2 主推風扇時**避免冷風機做 hero**,改推遙控立式 / 無葉 / USB mini;或主動以「2 年保養登記」hero up 應對
+- ✅ **Google Trends HK「電飯煲」過去 30 日(2026-04-27 至 05-27)peak 100 喺 5 月 10 日**(Mother's Day weekend gift-driven spike;次 peak 5 月 25 日 = 85,潛在父親節 pre-buying)→ Q2 IH push 對齊母親節 + 父親節 gifting cycle,buying-guide blog 必須 5 月初 publish。 Source: [trends.google.com/explore?q=電飯煲&geo=HK&date=today 1-m](https://trends.google.com/trends/explore?geo=HK&q=%E9%9B%BB%E9%A3%AF%E7%85%B2&date=today%201-m)
+- ✅ **Google Trends Related Rising 2026-05-27 retest「小米 IH 電飯煲」Breakout** — 內地科技品牌進入 HK IH 細分 → 直接壓 IRC-20IH price band(預計 entry-level 低於 HKD 1,000),Q3 監察 HKTVmall / 豐澤上架時機 + price war 風險。 Source: [trends.google.com/explore?q=小米 ih 電飯煲&geo=HK&date=today 1-m](https://trends.google.com/trends/explore?geo=HK&q=%E5%B0%8F%E7%B1%B3+ih+%E9%9B%BB%E9%A3%AF%E7%85%B2&date=today%201-m)
+- ✅ **Google Trends Related Rising 2026-05-27 retest「panasonic 電飯煲 內膽」Breakout** — 用家主動搵 inner-pot replacement,**直接 validate Imarflex parts-finder 做 DTC moat**(唔再係 vanity feature,係 real intent 對應)→ Q2 content 必有 1 篇「邊度買 Imarflex 電飯煲內膽」FAQ + PDP parts-finder banner 升級。 Source: [trends.google.com/explore?q=panasonic 電飯煲 內膽&geo=HK&date=today 1-m](https://trends.google.com/trends/explore?geo=HK&q=panasonic+%E9%9B%BB%E9%A3%AF%E7%85%B2+%E5%85%A7+%E8%86%BD&date=today%201-m)
+- ✅ **Google Trends Related Rising IH category 競品 5+ 同時 Breakout 過去 30 日:cuckoo、美的、松井、tefal、小米 IH、home deluxe**(全部 Breakout 或 +60%+)→ HK IH 細分今季多競品同時押,**confirms 我哋 Q2 唔押 IH price war 嘅決定**;改打 technical depth + DTC moat(2 年保養 + parts-finder)+ 中容量 gap
 
-> 詳細 source-by-source audit trail 喺 [[2026-q2-market-scan-demo]]。Google Trends 429、HKTVmall SPA、小紅書 login wall 影響量化 % 數據可信度。
+> 詳細 source-by-source audit trail 喺 [[2026-q2-market-scan-demo]]。Google Trends 2026-05-27 retry 成功(Playwright CLI;working access pattern 已寫入 `imarflex-market-scan` skill);HKTVmall SPA、小紅書 login wall 仲影響其他 source 嘅量化 %。
 
 ## 今季要推邊個 category?
 
@@ -45,7 +49,7 @@ tags:
 
 #### IH 電飯煲
 
-- **IRC-20IH(2L IH)— 16/18 ✅ HERO** — M×I ⚠️2 / Demand ✅2 / Diff ✅3(中容量 1.5–2.2L gap + 日工藝 + DTC moat)/ Content ✅3(buying guide + carousel 已備)/ DTC ✅3 / Brand ✅3 — Q2 主推。Reasoning:scan 確認 Pana / Toshiba IH 集中喺 0.45–1.0L mini,中容量未飽和。
+- **IRC-20IH(2L IH,placeholder SKU code — client confirm 為主)— 17/18 ✅ HERO** — M×I ⚠️2 / **Demand ✅3**(generic 電飯煲 + 5 月 Mother's Day peak 100 + 中容量 product-shelf gap 對應 3-5 人家庭 decision moment)/ Diff ✅3(product-shelf gap + 日工藝 + DTC moat)/ Content ✅3(buying guide + carousel 已備)/ DTC ✅3 / Brand ✅3 — Q2 主推。Reasoning:Trends 2026-05-30 compare retest 確認 capacity-phrase SEO 零量,demand 全部 funnel through generic「電飯煲」+ 母親節 gifting spike。
 - **降糖 IH 一般 SKU — ❌ DQ** — Diff ❌1(commoditised:Toshiba RC-10IRPH 35% reduction + Thanko 已標準化)。要 push 必須先有 Imarflex-specific USP(米種 / 內膽塗層 / 食療配方 / 中醫 angle)再 re-score。
 - **IRC-22KS(4-in-1 multi-cooker 2.2L)— 13/18 Secondary** — M×I ⚠️2 / Demand ⚠️2(小紅書「香港細廚房家電」cluster 升緊但 ⚠️ leading indicator)/ Diff ✅2 / Content ❌1(冇 sample) / DTC ✅3 / Brand ✅3 — Q2 supporting SKU。要升 hero 要加 ≥ 1 篇 content sample + GSC / search demand confirm。
 
