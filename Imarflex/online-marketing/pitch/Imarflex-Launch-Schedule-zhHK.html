@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>Imarflex 伊瑪牌 — 上線時間表 + 6 個月 SEO 計劃</title>
+<style>
+:root {
+  --heritage-blue: #1E4B7A;
+  --heritage-blue-2: #163A5F;
+  --heritage-blue-3: #2C5F8F;
+  --rice-white: #F7F6F2;
+  --rice-white-2: #FFFFFF;
+  --clay-beige: #E7D7C1;
+  --clay-beige-2: #D9C5A6;
+  --steam-grey: #DCE1E6;
+  --steam-grey-2: #C5CCD3;
+  --soft-charcoal: #3C3F42;
+  --soft-charcoal-2: #5A5E62;
+  --soft-charcoal-3: #8A8E92;
+  --cool-air: #BFD7E6;
+  --cool-air-2: #DCE9F1;
+  --bg-tint: #F0EBE3;
+  --rule: #E5E1D9;
+  --rule-strong: #C8C2B5;
+  --accent-warn: #C7383E;
+  --accent-ok: #2C7A4D;
+}
+
+@page { size: 297mm 210mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: "PingFang HK", "Noto Sans HK", "Noto Sans CJK HK", "Source Han Sans HK", "Hiragino Sans HK", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--soft-charcoal);
+  background: var(--rice-white);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.slide {
+  width: 297mm;
+  height: 210mm;
+  page-break-after: always;
+  break-after: page;
+  position: relative;
+  overflow: hidden;
+  padding: 18mm 22mm;
+  background: var(--rice-white);
+}
+.slide:last-child { page-break-after: auto; break-after: auto; }
+
+.slide.cover, .slide.fullbleed { padding: 0; background: var(--soft-charcoal); }
+.slide.cover .bg, .slide.fullbleed .bg {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+}
+.slide.cover .overlay {
+  position: absolute; inset: 0; z-index: 1;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-end;
+  padding: 0 38mm 0 0; text-align: right;
+}
+.slide.cover h1 {
+  font-size: 50px; font-weight: 300; letter-spacing: -1px;
+  color: var(--heritage-blue-2); line-height: 1.15; margin-bottom: 14px;
+  text-shadow: 0 1px 24px rgba(247, 246, 242, 0.7);
+}
+.slide.cover h1 .accent { color: var(--heritage-blue); font-weight: 500; display: block; }
+.slide.cover .sub {
+  font-size: 18px; color: var(--soft-charcoal); font-weight: 400; margin-bottom: 32px;
+  text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
+}
+.slide.cover .meta {
+  font-size: 12px; color: var(--soft-charcoal-2); letter-spacing: 1.5px; text-transform: uppercase;
+  text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
+}
+
+.slide.closing .overlay {
+  background: linear-gradient(180deg, rgba(247,246,242,0.88) 0%, rgba(247,246,242,0.45) 50%, transparent 72%);
+  align-items: center; text-align: center; justify-content: flex-start; padding-top: 20mm;
+}
+.slide.closing h1 { font-size: 40px; font-weight: 300; color: var(--heritage-blue-2); margin-bottom: 16px; }
+.slide.closing .sub { font-size: 17px; max-width: 640px; margin: 0 auto 30px; color: var(--soft-charcoal); }
+.slide.closing .contact {
+  background: var(--rice-white-2); border: 1px solid var(--rule); padding: 16px 28px;
+  border-radius: 8px; display: inline-flex; flex-direction: column; gap: 6px;
+  font-size: 13px; color: var(--soft-charcoal-2);
+}
+.slide.closing .contact strong { color: var(--heritage-blue); font-size: 15px; }
+
+.eyebrow {
+  display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--heritage-blue); font-weight: 500; padding: 4px 10px;
+  background: var(--cool-air-2); border-radius: 3px; margin-bottom: 14px;
+}
+.slide h2 {
+  font-size: 27px; font-weight: 500; color: var(--heritage-blue-2);
+  margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.3;
+}
+.slide .lede {
+  font-size: 14px; color: var(--soft-charcoal-2); margin-bottom: 16px;
+  max-width: 230mm; line-height: 1.7;
+}
+
+.tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 12px; }
+.tbl th {
+  text-align: left; font-weight: 500; color: var(--heritage-blue-2);
+  padding: 9px 12px; background: var(--bg-tint);
+  border-bottom: 2px solid var(--rule-strong);
+  font-size: 11.5px; letter-spacing: 0.5px;
+}
+.tbl td { padding: 6px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 12px; line-height: 1.5; }
+.tbl td.c, .tbl th.c { text-align: center; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl tr.prep td { background: #F4EFE6; }
+.tbl tr.milestone-row td { background: var(--cool-air-2); }
+.tbl .mlabel { font-weight: 600; color: var(--heritage-blue); white-space: nowrap; }
+.tbl .mlabel small { display:block; font-weight: 400; color: var(--soft-charcoal-3); font-size: 10px; letter-spacing: .5px; }
+
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+.card { background: var(--rice-white-2); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; }
+.card.accent { background: var(--cool-air-2); border-color: var(--cool-air); }
+.card.warm { background: var(--clay-beige); border-color: var(--clay-beige-2); }
+.card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--soft-charcoal-3); margin-bottom: 8px; }
+.card .ttl { font-size: 16px; font-weight: 500; color: var(--heritage-blue-2); margin-bottom: 10px; }
+.card ul.tight { margin: 6px 0 0; padding-left: 16px; }
+.card ul.tight li { font-size: 12px; margin-bottom: 5px; line-height: 1.55; color: var(--soft-charcoal); }
+.card .src { margin-top: 10px; font-size: 9.5px; color: var(--soft-charcoal-3); font-family: ui-monospace, Menlo, monospace; }
+
+.callout {
+  background: var(--clay-beige); border-left: 4px solid var(--heritage-blue);
+  padding: 9px 14px; margin-top: 9px;
+  font-size: 12.5px; color: var(--soft-charcoal); border-radius: 0 4px 4px 0;
+}
+.callout .label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--heritage-blue); font-weight: 500; display: block; margin-bottom: 4px;
+}
+.callout.warn { background: #fbe8e9; border-left-color: var(--accent-warn); }
+.callout.warn .label { color: var(--accent-warn); }
+
+.footer {
+  position: absolute; bottom: 8mm; left: 22mm; right: 22mm;
+  display: flex; justify-content: space-between;
+  font-size: 9.5px; color: var(--soft-charcoal-3); letter-spacing: 0.5px;
+}
+.hl-blue { color: var(--heritage-blue); font-weight: 500; }
+.muted { color: var(--soft-charcoal-2); }
+.nowrap { white-space: nowrap; }
+
+/* ====== Gantt ====== */
+.gantt { position: relative; margin-top: 36px; }
+.ghead, .grow { display: grid; grid-template-columns: 172px 1fr; align-items: center; }
+.grow { margin-bottom: 7px; }
+.glabel { font-size: 11.5px; color: var(--soft-charcoal); text-align: right; padding-right: 14px; font-weight: 600; line-height: 1.25; }
+.glabel .sub { display: block; font-size: 9px; color: var(--soft-charcoal-3); font-weight: 400; letter-spacing: .3px; }
+.gtrack { position: relative; display: grid; }
+.ghead .gtrack { grid-template-columns: repeat(7, 1fr); height: 22px; margin-bottom: 6px; }
+.ghead .gtrack .m { text-align: center; font-size: 10.5px; color: var(--heritage-blue-2); font-weight: 600; border-left: 1px solid var(--rule-strong); letter-spacing: .5px; padding-top: 3px; }
+.grow .gtrack { grid-template-columns: repeat(28, 1fr); height: 24px;
+  background-image: repeating-linear-gradient(90deg, var(--rule) 0, var(--rule) 1px, transparent 1px, transparent calc(100% / 7)); }
+.bar { grid-row: 1; min-width: 0; align-self: center; height: 18px; border-radius: 3px; display: flex; align-items: center; justify-content: center;
+  padding: 0 7px; font-size: 9.5px; line-height: 1; white-space: nowrap; overflow: hidden; font-weight: 600; }
+.blab { grid-row: 1; align-self: center; font-size: 10px; color: var(--soft-charcoal); padding-left: 9px; white-space: nowrap; font-weight: 500; position: relative; z-index: 6; }
+.blab .muted { font-weight: 400; }
+.bar.client { background: var(--clay-beige-2); color: var(--soft-charcoal); }
+.bar.work { background: var(--heritage-blue); color: #fff; }
+.bar.workalt { background: var(--heritage-blue-3); color: #fff; }
+.bar.prep { background: var(--clay-beige); color: var(--soft-charcoal); border: 1px solid var(--clay-beige-2); }
+.bar.trial { background: linear-gradient(90deg, var(--heritage-blue), var(--heritage-blue-3)); color: #fff; justify-content: center; letter-spacing: .3px; }
+.bar.phase2 { background: repeating-linear-gradient(45deg, var(--steam-grey) 0 6px, var(--steam-grey-2) 6px 12px); color: var(--soft-charcoal-2); border: 1px dashed var(--soft-charcoal-3); font-weight: 500; }
+.bar .out { color: var(--soft-charcoal-2); font-weight: 500; padding-left: 7px; }
+
+.goline { position: absolute; top: 30px; bottom: 6px; left: calc(172px + (100% - 172px) * 0.07143); width: 0; border-left: 2px dashed var(--heritage-blue); z-index: 4; }
+.goflag { position: absolute; top: -24px; left: calc(172px + (100% - 172px) * 0.07143); transform: translateX(-50%);
+  background: var(--accent-ok); color: #fff; font-size: 9.5px; padding: 3px 9px; border-radius: 11px; white-space: nowrap; z-index: 6; font-weight: 600; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 18px; font-size: 10.5px; color: var(--soft-charcoal-2); }
+.legend .item { display: inline-flex; align-items: center; gap: 6px; }
+.legend .sw { width: 16px; height: 11px; border-radius: 2px; display: inline-block; }
+.sw.client { background: var(--clay-beige-2); }
+.sw.work { background: var(--heritage-blue); }
+.sw.prep { background: var(--clay-beige); border: 1px solid var(--clay-beige-2); }
+.sw.trial { background: linear-gradient(90deg, var(--heritage-blue), var(--heritage-blue-3)); }
+.sw.phase2 { background: repeating-linear-gradient(45deg, var(--steam-grey) 0 4px, var(--steam-grey-2) 4px 8px); border: 1px dashed var(--soft-charcoal-3); }
+.sw.go { background: var(--accent-ok); }
+</style>
+</head>
+<body>
+
+<!-- ====== Slide 1 — Cover ====== -->
+<section class="slide cover">
+  <img class="bg" src="images/imarflex-pitch-01-cover.png" alt="">
+  <div class="overlay">
+    <div class="meta">2026 · 落地時間表</div>
+    <h1>
+      Imarflex 伊瑪牌
+      <span class="accent">上線時間表<br>+ 6 個月 SEO 計劃</span>
+    </h1>
+    <div class="sub">由網站微調到 6 個月內容引擎,<br>一張時間表睇晒邊樣行先、邊樣並行。</div>
+    <div class="meta">假設 7 月 1 日開始 · 2026-06-01 製作</div>
+  </div>
+</section>
+
+<!-- ====== Slide 2 — Combined Gantt ====== -->
+<section class="slide">
+  <span class="eyebrow">01 · 總時間表</span>
+  <h2>一張圖睇晒 —— 7 月內搞掂上線,SEO 引擎喺開門前已經熱身。</h2>
+  <p class="lede">網站(前台 + 後台 + backend)已經起好,7 月做嘅係<span class="hl-blue">微調 + 入資料 + 上線</span>。收款用嘅 Airwallex 同 SEO 前期準備<span class="hl-blue">並行</span>進行,唔使排隊等。<span class="hl-blue">6 個月免費試用</span>由上線當日起計。</p>
+
+  <div class="gantt">
+    <div class="goline"></div>
+    <div class="goflag">🚀 上線 GO LIVE · ~7 月中下旬</div>
+
+    <div class="ghead">
+      <div></div>
+      <div class="gtrack">
+        <div class="m">7月</div><div class="m">8月</div><div class="m">9月</div>
+        <div class="m">10月</div><div class="m">11月</div><div class="m">12月</div><div class="m">1月'27</div>
+      </div>
+    </div>
+
+    <div class="grow">
+      <div class="glabel">客戶準備<span class="sub">產品資料</span></div>
+      <div class="gtrack">
+        <div class="bar client" style="grid-column: 1 / 2;"></div>
+        <div class="blab" style="grid-column: 3 / 29;">產品資料交收　<span class="muted">← 真正開始 gate</span></div>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="glabel">收款<span class="sub">Airwallex</span></div>
+      <div class="gtrack">
+        <div class="bar client" style="grid-column: 1 / 3;"></div>
+        <div class="blab" style="grid-column: 3 / 29;">Airwallex 註冊 · ~48h 批核 <span class="muted">(預留 1–2 週)</span></div>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="glabel">網站<span class="sub">微調</span></div>
+      <div class="gtrack">
+        <div class="bar work" style="grid-column: 1 / 3;"></div>
+        <div class="blab" style="grid-column: 3 / 29;">網站微調 · 2 週 <span class="muted">(客戶意見 / 偏好)</span></div>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="glabel">資料<span class="sub">匯入</span></div>
+      <div class="gtrack">
+        <div class="bar workalt" style="grid-column: 1 / 2;"></div>
+        <div class="blab" style="grid-column: 3 / 29;">資料匯入 336 件 · 4 日</div>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="glabel">SEO<span class="sub">前期準備</span></div>
+      <div class="gtrack">
+        <div class="bar prep" style="grid-column: 1 / 3;"></div>
+        <div class="blab" style="grid-column: 3 / 29;">基線 · focus doc · AEO 重寫 · 首批 brief</div>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="glabel">6 個月<span class="sub">SEO + 內容</span></div>
+      <div class="gtrack"><div class="bar trial" style="grid-column: 3 / 29;">6 個月免費試用 · 每月 4 篇 blog + captions　 M1 ➜ M6</div></div>
+    </div>
+    <div class="grow">
+      <div class="glabel">Phase 2<span class="sub">另行報價</span></div>
+      <div class="gtrack"><div class="bar phase2" style="grid-column: 9 / 29;">Email lifecycle · CRO/A-B · social ops · 印刷 —— 另行報價</div></div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="sw client"></span> 客戶行動</span>
+    <span class="item"><span class="sw work"></span> 我哋執行</span>
+    <span class="item"><span class="sw prep"></span> SEO 前期(微調期內並行)</span>
+    <span class="item"><span class="sw trial"></span> 6 個月免費試用</span>
+    <span class="item"><span class="sw go"></span> 上線里程碑</span>
+    <span class="item"><span class="sw phase2"></span> Phase 2 / 另行報價</span>
+  </div>
+
+  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>2 / 5</span></div>
+</section>
+
+<!-- ====== Slide 3 — 6-month engine ====== -->
+<section class="slide">
+  <span class="eyebrow">02 · 6 個月 SEO 內容引擎</span>
+  <h2>固定每月引擎 + 每月主題 —— 由上線當日起計,每月 4 篇 blog。</h2>
+  <p class="lede">內容軌道即係<span class="hl-blue">全包 retainer 首 6 個月免費試用</span>。下面係逐月主題;每月之上仲有一套唔變嘅固定引擎同季度動作。</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:13%">月份</th><th style="width:14%">主題</th><th>當月交付</th><th style="width:30%">里程碑</th></tr>
+    </thead>
+    <tbody>
+      <tr class="prep">
+        <td class="mlabel">前期準備<small>7 月 · 微調期內並行</small></td>
+        <td>Onboard &amp; 基線</td>
+        <td>Day-1 資料接收(11 項)· AEO 重寫現有 buying-guide blog · 首 2 篇 brief · 分析 / schema / UTM 設定</td>
+        <td>48 格 citation <strong>基線</strong> run · Q3 focus doc</td>
+      </tr>
+      <tr>
+        <td class="mlabel">M1<small>上線</small></td>
+        <td>Launch</td>
+        <td>4 篇 blog + captions · hero PDP 文案 · 保養登記 + 門市搜尋頁 · OCR 第 1 批</td>
+        <td>首份月度報告</td>
+      </tr>
+      <tr>
+        <td class="mlabel">M2<small>加速</small></td>
+        <td>Ramp</td>
+        <td>4 篇 blog + captions · PDP rollout · parts-finder topic · OCR 第 2 批</td>
+        <td>—</td>
+      </tr>
+      <tr class="milestone-row">
+        <td class="mlabel">M3<small>季度檢視</small></td>
+        <td>Quarter review</td>
+        <td>4 篇 blog + captions · OCR 第 3 批</td>
+        <td><strong>季度 SEO 策略 + keyword research · 季度 strategy review</strong> · 首季 citation delta · CRO 開始(若選)</td>
+      </tr>
+      <tr>
+        <td class="mlabel">M4<small>深化</small></td>
+        <td>Deepen</td>
+        <td>4 篇 blog + captions · 全 hero-SKU PDP 覆蓋 · OCR 第 4 批</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td class="mlabel">M5<small>優化</small></td>
+        <td>Optimize</td>
+        <td>4 篇 blog + captions · 渠道加碼(UTM 數據)· OCR 第 5 批</td>
+        <td>期中 citation delta</td>
+      </tr>
+      <tr class="milestone-row">
+        <td class="mlabel">M6<small>決策</small></td>
+        <td>Decide</td>
+        <td>4 篇 blog + captions · OCR 第 6 批(完成)</td>
+        <td><strong>試用總檢視:基線 → M6 delta + 流量 / 轉化 → 揀 tier(3.1 vs 全包)</strong> · 下季 focus</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">固定每月引擎(每月都做)</span>
+    每月 <strong>4 篇 AEO 格式 blog + 配套 IG / FB caption</strong>(每篇 ≥13/15 先 publish)· 每篇 <strong>AEO audit</strong> · 每月 <strong>48 格 citation simulation</strong> · 每月報告。　<span class="muted">季度:SEO 策略 + keyword research + strategy review(落喺 M3 同試用尾)。</span>
+  </div>
+  <div class="callout warn">
+    <span class="label">唔包喺免費試用 · Phase 2 / 另行報價</span>
+    Email lifecycle(<strong>不含 WhatsApp</strong>)· CRO / A-B test · social ops(scheduling / community management)· 印刷 campaign(每個 HK$1,000)。
+  </div>
+
+  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>3 / 5</span></div>
+</section>
+
+<!-- ====== Slide 4 — Prerequisites ====== -->
+<section class="slide">
+  <span class="eyebrow">03 · 兩個開始前要做嘅嘢</span>
+  <h2>真正嘅開始 gate 係產品資料 —— Airwallex 唔會卡住上線。</h2>
+  <p class="lede">兩件事可以由第一日同步開始。下面列清楚要俾咩、要等幾耐。</p>
+
+  <div class="card-grid">
+    <div class="card accent">
+      <div class="label">A · 收款先決條件</div>
+      <div class="ttl">Airwallex 註冊</div>
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--soft-charcoal-3); margin-bottom:4px;">需提交文件(香港有限公司)</div>
+      <ul class="tight">
+        <li>公司註冊證書(Certificate of Incorporation)</li>
+        <li>授權人政府相片身份證明</li>
+        <li>每位最終實益擁有人(UBO,持股 ≥25%)相片身份證明</li>
+        <li><span class="muted">按需:由董事簽署嘅股權架構圖 / 授權書(若申請人非董事或 UBO)</span></li>
+      </ul>
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--soft-charcoal-3); margin:10px 0 4px;">文件要求 + 時間</div>
+      <ul class="tight">
+        <li>清晰可讀 · &lt;10MB · PDF / Word / JPG / PNG</li>
+        <li>網上申請約 <strong>5 分鐘</strong></li>
+        <li>符合資格嘅 HK 公司多數 <strong>~48 小時內批核</strong>;複雜股權 / 特定行業需時較長 —— <strong>建議預留 1–2 週</strong></li>
+      </ul>
+      <div class="src">source: help.airwallex.com · airwallex.com/hk/business-account</div>
+    </div>
+
+    <div class="card warm">
+      <div class="label">B · 簽約 Day-1 客戶提供</div>
+      <div class="ttl">產品資料 + 開站數據</div>
+      <ul class="tight">
+        <li><strong>全部產品資料</strong>(規格、圖片、價錢)—— 我哋即刻開始入資料(4 日)</li>
+        <li>每個 priority category <strong>真實 SKU code</strong></li>
+        <li>每 SKU <strong>margin + 持續庫存 status</strong></li>
+        <li>未來 <strong>90 日 promo 時間表</strong></li>
+      </ul>
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--soft-charcoal-3); margin:10px 0 4px;">解鎖更深 SEO(可選但建議)</div>
+      <ul class="tight">
+        <li>GSC export(top query / CTR / position)· 站內 search log</li>
+        <li>每篇 content 嘅 <strong>具名作者 + credential</strong>(AEO Axis 3)</li>
+      </ul>
+      <div style="margin-top:10px; font-size:12px; color:var(--soft-charcoal);">一到手,pitch 入面嘅 <strong>⚠️ 即升 ✅</strong>,唔使重做。</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">點解咁排</span>
+    產品資料一到手就可以同時行三條線:<span class="hl-blue">網站微調</span>、<span class="hl-blue">資料匯入</span>、<span class="hl-blue">SEO 前期準備</span>。Airwallex 喺旁邊獨立跑,趕得切上線收款。三樣都喺 7 月內完成。
+  </div>
+
+  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>4 / 5</span></div>
+</section>
+
+<!-- ====== Slide 5 — Closing ====== -->
+<section class="slide closing cover">
+  <img class="bg" src="images/imarflex-pitch-05-closing.png" alt="">
+  <div class="overlay">
+    <h1>7 月上線,當日起跑 6 個月引擎。</h1>
+    <div class="sub">網站已經起好,等嘅係你嘅產品資料同少少微調意見。Day-1 將 ⚠️ 升 ✅ —— 同一部機、同一套 artifact,即刻運作。</div>
+    <div class="contact">
+      <strong>下一步</strong>
+      <span>1 · 交產品資料 + 開始 Airwallex 註冊</span>
+      <span>2 · 我哋 2 週微調 + 4 日入資料 → 7 月中下旬上線</span>
+      <span>3 · 上線當日起,6 個月免費 SEO + 內容引擎開跑</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
