@@ -85,12 +85,15 @@ Why:
 - Fewer-than-5 offer display.
 - Customer reject-all and re-request flow.
 - Customer driver-choice selection.
-- Stripe credit-card charge at booking.
+- Reservation Stripe credit-card charge at booking.
+- Instant Stripe authorization hold/manual capture for post-MVP instant flow.
 - Refund handling with 15% cancellation fee more than 24 hours before pickup.
 - Booking state machine.
 - Driver selection and lock.
 - Trip state updates.
 - Cancellation and refund rules.
+- 10% platform commission deducted from driver-submitted price.
+- Friday outside-Stripe driver payout batch for all eligible completed rides since previous Friday.
 - Driver cancellation penalty rules.
 - In-app support chat with under-5-minute response target.
 - Button-triggered auto-translation in chat.
@@ -136,7 +139,7 @@ Use operational metrics, not only downloads.
 3. Build customer reservation flow.
 4. Build driver verification and marketplace offer submission.
 5. Build top-5 ranking and customer selection.
-6. Add Stripe charge-at-booking, refund, and cancellation-fee handling.
+6. Add reservation Stripe charge-at-booking plus instant hold/capture, refund, and cancellation-fee handling.
 7. Build admin marketplace monitoring and override.
 8. Add notifications, in-app support chat, and auto-translation button.
 9. Add live trip state updates.

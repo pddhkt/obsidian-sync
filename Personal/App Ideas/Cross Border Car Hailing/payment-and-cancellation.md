@@ -56,6 +56,14 @@ Recommended flow:
 
 If the ride is cancelled under a free-cancellation condition, cancel the uncaptured PaymentIntent and release the hold. If the driver has arrived and the customer cancels after the five-minute grace window, capture only the late-cancellation fee and release the remaining authorization.
 
+### Instant hold validity
+
+Stripe's current documentation says online card authorizations are typically valid for about 7 days. The exact expiry is available from `payment_method_details.card.capture_before` and must be treated as authoritative. Visa merchant-initiated transactions can have a shorter window of about 5 days.
+
+This works for instant rides because the ride should finish within the authorization window. Reservation bookings can be scheduled much further ahead, so reservation payment stays charge-at-booking instead of using a long card hold.
+
+Source: [Stripe - Place a hold on a payment method](https://docs.stripe.com/payments/place-a-hold-on-a-payment-method)
+
 ## Cancellation payment rules
 
 ### Reservation cancellation rules
@@ -77,23 +85,27 @@ Backend action: create a partial Stripe refund for 85% of the full fare and keep
 
 ### Customer cancellation within 24 hours
 
-This still needs a product decision.
+Launch rule: retain 15% of the full fare and refund the remaining 85%.
 
-Open options:
-
-- No refund.
-- Partial refund with a higher cancellation fee.
-- Same 15% cancellation fee.
-- Manual support review.
+```text
+within_24h_reservation_cancel_fee = full_fare * 0.15
+customer_refund_amount = full_fare - within_24h_reservation_cancel_fee
+```
 
 ### Reservation late customer cancellation after driver arrival
 
-Reservation after-arrival cancellation still needs a product decision because reservation payment is already captured at booking.
-
-Current open question:
+If the driver has arrived and the customer cancels after the five-minute grace window, retain 30% of the full fare and refund the remaining 70%.
 
 ```text
-For reservation bookings, should after-arrival cancellation keep the full fare, refund part of the fare, or use a special cancellation fee?
+reservation_after_arrival_cancel_fee = full_fare * 0.30
+customer_refund_amount = full_fare * 0.70
+```
+
+Fee split:
+
+```text
+driver_share = reservation_after_arrival_cancel_fee * 0.70
+platform_share = reservation_after_arrival_cancel_fee * 0.30
 ```
 
 ### Instant cancellation hold-release rules
@@ -102,20 +114,20 @@ These rules apply while the instant booking payment is still an authorization ho
 
 Release the payment authorization when:
 
-- Customer cancels before the driver has arrived.
+- Customer cancels within 10 minutes after the driver accepts.
+- Customer cancels more than 10 minutes after driver acceptance but the driver is still more than 10 minutes away from pickup.
 - Driver cancels before pickup.
 - Admin cancels for operational reasons.
 - Ride cannot proceed for a reason covered by the free-cancellation policy.
 
 Backend action: cancel the uncaptured PaymentIntent and release the hold.
 
-### Instant late customer cancellation after driver arrival
+### Instant 10% cancellation fee
 
 Charge a cancellation fee when:
 
-1. Driver marks `driver_arrived`.
-2. Five minutes pass after `driver_arrived_at`.
-3. Customer cancels after that five-minute grace window.
+1. More than 10 minutes have passed since the driver accepted and the driver is within 10 minutes ETA of pickup; or
+2. The driver has arrived and the customer cancels after the five-minute grace window.
 
 Fee rule:
 
@@ -123,7 +135,14 @@ Fee rule:
 instant_late_customer_cancel_fee = full_fare * 0.10
 ```
 
-Backend action: capture 10% of the authorized amount and release the remaining 90%. Fee payout follows the configured late-cancellation fee split.
+Backend action: capture 10% of the authorized amount and release the remaining 90%.
+
+Fee split:
+
+```text
+driver_share = instant_late_customer_cancel_fee * 0.70
+platform_share = instant_late_customer_cancel_fee * 0.30
+```
 
 ### Driver cancellation
 
@@ -131,7 +150,16 @@ If the driver cancels and no replacement driver is selected, the default custome
 
 ## Driver payout
 
-Driver payouts are outside Stripe in v1, paid weekly by bank transfer after admin/system settlement.
+Driver payouts are outside Stripe in v1. Every Friday, operations pays all eligible completed rides since the previous Friday by bank transfer after admin/system settlement.
+
+Platform commission:
+
+```text
+platform_commission = driver_submitted_price * 0.10
+driver_net_payout = driver_submitted_price - platform_commission
+```
+
+The 10% platform commission is deducted from the driver's submitted price. It is not added on top of the customer-visible price.
 
 ## Payment state machine
 
@@ -162,14 +190,17 @@ payment_disputed
 | Instant customer confirms driver/match | Create manual-capture Stripe PaymentIntent. |
 | Instant card authorization succeeds | Move booking to `payment_authorized`. |
 | Reservation customer cancels more than 24 hours before pickup | Refund 85%, keep 15% cancellation fee. |
-| Reservation customer cancels within 24 hours before pickup | Open decision. |
-| Instant customer cancels before driver arrival | Cancel PaymentIntent and release hold. |
+| Reservation customer cancels within 24 hours before pickup | Refund 85%, keep 15% cancellation fee. |
+| Reservation customer cancels after driver arrived + 5 minutes | Refund 70%, retain 30%; split retained fee 70% driver / 30% platform. |
+| Instant customer cancels within 10 minutes after driver accepts | Cancel PaymentIntent and release hold. |
+| Instant customer cancels after 10 minutes while driver ETA is more than 10 minutes | Cancel PaymentIntent and release hold. |
+| Instant customer cancels after 10 minutes while driver ETA is 10 minutes or less | Capture 10% cancellation fee, release remaining 90%. |
 | Driver arrives for instant booking | Start five-minute customer-cancellation timer. |
 | Instant customer cancels after driver arrived + 5 minutes | Capture 10% cancellation fee, release remaining 90%. |
 | Driver cancels within 5 minutes after accepting | Refund or support-assisted replacement if no replacement is selected; log event. |
 | Driver cancels more than 5 minutes after accepting | Refund or support-assisted replacement if no replacement is selected; create warning/penalty record. |
-| Reservation trip completes | Mark captured payment as earned and move driver payout to weekly bank-transfer settlement. |
-| Instant trip completes | Capture authorized PaymentIntent, then move driver payout to weekly bank-transfer settlement. |
+| Reservation trip completes | Mark captured payment as earned and include eligible driver payout in the next Friday bank-transfer batch. |
+| Instant trip completes | Capture authorized PaymentIntent, then include eligible driver payout in the next Friday bank-transfer batch. |
 
 ## Product copy requirements
 
@@ -179,16 +210,18 @@ The customer app must explain before payment:
 - Instant bookings place a card hold first, then capture after the ride is completed.
 - Instant booking holds are released when cancellation is free.
 - For instant bookings, a 10% cancellation fee applies if the customer cancels more than five minutes after the driver arrives.
-- If the customer cancels more than 24 hours before pickup, 15% is kept as the cancellation fee and 85% is refunded.
-- Cancellation within 24 hours still needs a confirmed rule.
-- Reservation after-arrival cancellation still needs a confirmed rule.
+- For reservation bookings, if the customer cancels more than 24 hours before pickup, 15% is kept as the cancellation fee and 85% is refunded.
+- Reservation cancellation within 24 hours keeps 15% and refunds 85%.
+- Reservation cancellation more than five minutes after driver arrival keeps 30% and refunds 70%.
+- Instant cancellation is free within 10 minutes after driver acceptance.
+- For instant booking, a 10% fee applies after 10 minutes if the driver is within 10 minutes ETA of pickup.
 - The final charge is in HKD.
 
 The driver app must explain:
 
 - The booking is not final until customer payment succeeds.
 - Driver can see customer details only after the customer accepts and pays.
-- The driver arrival timestamp may start a late-cancellation timer, depending on the final after-arrival cancellation rule.
+- The driver arrival timestamp starts the five-minute late-cancellation timer.
 - False arrival marking should be penalized because it can trigger customer fees.
 
 ## Admin controls
@@ -206,6 +239,4 @@ Admin needs:
 
 ## Remaining payment implementation questions
 
-- What internal bank-transfer process pays drivers weekly?
-- What is the cancellation/refund rule within 24 hours before pickup?
-- What is the reservation cancellation/refund rule after driver arrival plus five minutes?
+- What operational steps and approval checks should run before the Friday bank-transfer batch is released?

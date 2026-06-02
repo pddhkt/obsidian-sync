@@ -21,8 +21,6 @@ This note lists the core entities the backend and app should share.
 - `phone_number`
 - `email`
 - `preferred_language`
-- `nationality` optional
-- `identity_document_status` optional
 - `saved_locations`
 - `payment_methods`
 - `booking_history`
@@ -258,11 +256,17 @@ This note lists the core entities the backend and app should share.
 - `late_customer_cancel_fee_rate`
 - `late_customer_cancel_fee_driver_share_rate`
 - `late_customer_cancel_fee_platform_share_rate`
+- `instant_free_cancel_after_driver_accept_minutes`
+- `instant_cancel_fee_driver_eta_threshold_minutes`
 - `early_cancel_before_pickup_hours`
 - `early_cancel_fee_rate`
+- `within_24h_reservation_cancel_fee_rate`
+- `reservation_after_arrival_cancel_fee_rate`
+- `reservation_after_arrival_fee_driver_share_rate`
+- `reservation_after_arrival_fee_platform_share_rate`
 - `within_24h_cancel_payment_action`
-- `free_cancel_before_driver_arrival`
-- `free_cancel_before_grace_expires`
+- `instant_release_hold_within_acceptance_grace`
+- `instant_release_hold_when_driver_eta_above_threshold`
 - `driver_cancel_payment_action`
 - `admin_cancel_payment_action`
 - `active`
@@ -275,10 +279,15 @@ This note lists the core entities the backend and app should share.
 - `currency`
 - `gross_amount`
 - `platform_fee`
+- `platform_commission_rate`
+- `platform_commission_deducted_from_driver_submitted_price`
 - `deductions`
 - `net_payout`
 - `payout_method`
 - `payout_cycle`
+- `payout_day_of_week`
+- `payout_period_start`
+- `payout_period_end`
 - `paid_outside_stripe`
 - `bank_transfer_reference`
 - `payout_status`
@@ -334,6 +343,9 @@ This note lists the core entities the backend and app should share.
 - `offer_collection_window_seconds`
 - `driver_bid_price_control_enabled`
 - `stripe_charge_and_refund_rules`
+- `stripe_instant_authorization_rules`
+- `platform_commission_rules`
+- `friday_driver_payout_rules`
 - `cancellation_rules`
 - `refund_rules`
 - `driver_eligibility_rules`

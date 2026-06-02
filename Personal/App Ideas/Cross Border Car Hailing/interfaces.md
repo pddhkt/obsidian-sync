@@ -27,11 +27,11 @@ The customer app should focus on clarity and confidence for foreign travelers.
 | Quote | HKD reference fare, offer expiry, included/excluded fees, confirmed 20% reservation discount. |
 | Booking | Passenger count, luggage, vehicle class, special needs, scheduled time. |
 | Driver choices | Up to 5 marketplace driver choices after two minutes, ranked by balanced value across eligibility, reliability, price, vehicle fit, and availability. |
-| Payment | Stripe credit-card charge at booking in HKD, refund handling, and cancellation fee display. |
+| Payment | Reservation: Stripe charge at booking. Instant: Stripe authorization hold/manual capture. HKD only, with refund and cancellation fee display. |
 | Driver confirmation | Selected driver identity, vehicle, permit confidence indicators, ETA. |
 | Trip tracking | Driver en route, arrived, trip started, border crossing, completed. |
 | Messaging | Customer-driver/support chat with button-triggered auto-translation. |
-| Support | In-app chat during 09:00-00:00 operating hours, support joins by help request, cancellation, refund, pickup problem, delay, emergency, complaint, under-5-minute active-trip response target. |
+| Support | In-app chat during 09:00-00:00 operating hours, support joins by help request, cancellation, refund, pickup problem, delay, emergency, complaint, under-5-minute active-trip response target. Initially staffed by co-founders/admin staff or staff from Kevin Tsang. |
 | Profile | Contact info, payment methods, saved locations, booking history. |
 
 ### Customer screen flow
@@ -58,7 +58,7 @@ The driver app should focus on job clarity, eligibility, and settlement.
 |---|---|
 | Driver onboarding | Identity, vehicle, cross-border documents, payout account, language. |
 | Availability | Online/offline, reservation calendar, service zones, current area, vehicle status. |
-| Job feed | Only eligible reservation requests shown, filtered by current pickup-side area, route, time, passengers, luggage, and expected customer needs; customer nationality/language hidden before payment. |
+| Job feed | Only eligible reservation requests shown, filtered by current pickup-side area, route, time, passengers, luggage, and expected customer needs; customer language hidden before payment. |
 | Offer submission | Offer amount, included fees, expiry, availability, and customer selection state. |
 | Accept/decline | Offer deadline, 5-minute cancellation grace after acceptance, penalty record, conflict check. |
 | Navigation handoff | Pickup, border crossing, dropoff, region-aware map provider routing. |

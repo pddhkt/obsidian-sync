@@ -268,6 +268,7 @@ offers_ready
 customer_selecting_driver
 driver_selected
 payment_pending
+payment_authorized
 payment_paid
 payment_failed
 driver_confirmed
@@ -305,10 +306,9 @@ Information to collect:
 - Allowed directions: both Hong Kong to Mainland and Mainland to Hong Kong.
 - Hong Kong service area: every Hong Kong pickup/dropoff area.
 - Mainland service cities: all Shenzhen and Guangzhou areas for v1.
-- Allowed border crossing points.
+- Allowed border crossing points: all supported cross-border vehicle crossings for v1, stored in backend configuration.
 - Estimated border processing time by crossing and time window.
 - Whether airport, hotel, exhibition center, and residential pickups are all supported.
-- Passenger document information needed before trip.
 - Vehicle and driver permit requirements.
 - Insurance requirements.
 - Whether children, pets, large luggage, wheelchairs, or business equipment are allowed.
@@ -329,7 +329,7 @@ Driver/vehicle verification should collect the full document set before a driver
 - Insurance.
 - Business registration or fleet/company registration when applicable.
 
-The exact legal names of the required permits should be confirmed by legal/operations before implementation, but the product should assume all core driver, vehicle, cross-border, insurance, and business documents are required.
+Kevin's team will confirm the exact legal names of the required permits before implementation. Until then, the product should assume all core driver, vehicle, cross-border, insurance, and business documents are required.
 
 ## Driver cancellation policy
 
@@ -355,11 +355,16 @@ Recommended v1:
 - Reservation booking is confirmed only after payment succeeds.
 - Instant booking is confirmed only after payment authorization succeeds.
 - If the customer cancels more than 24 hours before pickup, refund 85% and keep 15% as the cancellation fee.
-- Cancellation within 24 hours before pickup still needs a business rule.
-- Reservation after-arrival cancellation still needs a business rule.
-- Instant booking after-arrival cancellation captures 10% if the driver has arrived and the customer cancels after a five-minute grace window; otherwise release the hold when cancellation is free.
+- Reservation cancellation within 24 hours keeps 15% and refunds 85%.
+- Reservation cancellation more than five minutes after driver arrival keeps 30% and refunds 70%.
+- Instant cancellation is free within 10 minutes after driver acceptance.
+- Instant cancellation after 10 minutes captures 10% if driver ETA is 10 minutes or less; otherwise release the hold.
+- Instant booking after-arrival cancellation captures 10% if the driver has arrived and the customer cancels after a five-minute grace window.
+- Instant cancellation fee split is 70% driver and 30% platform.
+- Reservation after-arrival retained fee split is 70% driver and 30% platform.
 - Admin can override refund and extra charge decisions.
-- Driver payout happens weekly by bank transfer outside Stripe after trip completion and admin/system settlement.
+- Platform commission is deducted as 10% of the driver's submitted price; it is not added on top of the customer-visible fare.
+- Every Friday, driver payout covers all eligible completed rides since the previous Friday and is paid by bank transfer outside Stripe after admin/system settlement.
 
 See [[payment-and-cancellation]] for the detailed Stripe flow and cancellation rules.
 
@@ -371,7 +376,6 @@ Needed logic:
 
 - Multi-language onboarding and booking copy.
 - International phone number support.
-- Passport/name handling if required by operations.
 - Hotel/airport pickup instructions.
 - Driver identity and vehicle display.
 - Live trip status.
@@ -389,12 +393,12 @@ Support SLA:
 - Active-trip support response target: under 5 minutes.
 - V1 support channel: in-app chat.
 - V1 support coverage: operating hours only, 09:00 to 00:00.
+- V1 staffing: admin staff, initially the co-founders or staff from Kevin Tsang.
 
 ## Driver customer-info visibility
 
 Before the customer accepts and pays:
 
-- Driver should not see customer nationality.
 - Driver should not see customer language.
 - Driver should only see operational booking details needed to price the offer.
 

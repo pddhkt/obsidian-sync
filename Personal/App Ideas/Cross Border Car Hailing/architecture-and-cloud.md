@@ -181,13 +181,23 @@ Recommended Stripe instant flow:
 5. Booking becomes confirmed after authorization succeeds.
 6. Backend captures the authorized amount after ride completion.
 7. Backend cancels the uncaptured PaymentIntent to release the hold when cancellation is free.
-8. Backend captures 10% if the customer cancels more than five minutes after driver arrival.
+8. Backend captures 10% if the customer cancels after driver acceptance + 10 minutes while driver ETA is 10 minutes or less.
+9. Backend also captures 10% if the customer cancels more than five minutes after driver arrival.
+
+Stripe hold-window note:
+
+- Online card authorizations are typically valid for about 7 days.
+- Use Stripe's `payment_method_details.card.capture_before` deadline as the authoritative expiry.
+- Visa merchant-initiated cases can be shorter at about 5 days.
+- This is suitable for instant rides, not reservation bookings scheduled far ahead.
+- Source: [Stripe - Place a hold on a payment method](https://docs.stripe.com/payments/place-a-hold-on-a-payment-method)
 
 Marketplace payout note:
 
 - Driver payouts are outside Stripe in v1.
-- Driver payout cadence is weekly.
+- Driver payout cadence is every Friday for all eligible completed rides since the previous Friday.
 - Driver payout method is bank transfer.
+- Platform commission is deducted as 10% of the driver's submitted price; it is not added on top of customer-visible fare.
 - Store driver payout status separately from customer payment status.
 - Stripe Connect can remain a post-MVP option if automated marketplace payout becomes necessary.
 
@@ -201,7 +211,6 @@ Cloud decision:
 Before writing production code, classify data:
 
 - Account data.
-- Identity or travel document data.
 - Driver document data.
 - Vehicle document data.
 - Location and route traces.

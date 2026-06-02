@@ -109,7 +109,7 @@ graph TD
 | **Mobile apps** | Kotlin Multiplatform (KMP), native UI per platform | Share booking/pricing/payment logic across Android + iOS, keep native look and native map/payment SDKs. Chosen over React Native because the *logic* is the hard part. |
 | **Admin** | Web dashboard | Ops needs verification, overrides, and monitoring from day one. |
 | **Backend** | Modular services (can ship as one service at v1) | Backend owns *authoritative* decisions; apps only preview & validate. |
-| **Payments** | Stripe PaymentIntents, HKD, HK merchant | Card-only for foreign customers; charge-at-booking for reservations. |
+| **Payments** | Stripe PaymentIntents, HKD, HK merchant | Reservations charge at booking; instant rides authorize/hold first and capture after completion. |
 | **Maps** | AMap (authoritative for HK + Mainland) | One provider that routes on **both** sides of the border; its distance drives the fare. |
 | **Cloud** | HK / global for v1 | Mainland (Tencent Cloud) only if legal/network/distribution forces it later. |
 | **Rules** | Backend **configuration**, not app code | Fares, routes, discounts, ranking weights, cancellation rules change without app releases. |
@@ -162,14 +162,14 @@ flowchart TD
     G -->|Yes| H["Get confirmed job +<br/>customer execution info"]
     H --> I["Navigate to pickup<br/>(AMap native)"]
     I --> J["Arrived → start → border → complete"]
-    J --> K["See earnings;<br/>weekly bank-transfer payout"]
+    J --> K["See earnings;<br/>Friday bank-transfer payout"]
 ```
 
 > [!warning] Driver cancellation policy (after accepting)
 > ≤ 5 min → allowed but **logged** · > 5 min → **warning/penalty** · > 3 late cancels in a rolling week → **5-hour temporary ban**.
 
 > [!info] Privacy rule
-> Before the customer pays, the driver does **not** see customer nationality or language — only operational booking details. Full execution info is revealed **only after payment succeeds**.
+> Before the customer pays, the driver does **not** see customer language — only operational booking details. Full execution info is revealed **only after payment succeeds**.
 
 ---
 
@@ -198,7 +198,7 @@ sequenceDiagram
     BE-->>APP: Booking confirmed
     BE->>D: Send confirmed job + customer info
     Note over C,D: Trip runs: en route → border → complete
-    BE->>BE: Queue weekly driver payout (bank transfer)
+    BE->>BE: Deduct 10% from driver offer; queue next Friday payout
 ```
 
 ---
@@ -260,17 +260,19 @@ stateDiagram-v2
     payment_processing --> payment_failed
     payment_authorized --> payment_captured: Trip completed
     payment_authorized --> payment_released: Free cancel
+    payment_authorized --> instant_late_cancel_fee_captured_10: After 10 min + driver ETA ≤ 10 min, or arrived + 5 min
     payment_paid --> refund_full: Driver/admin cancel
     payment_paid --> refund_partial_85: Customer cancel over 24h, keep 15%
     payment_captured --> [*]
     payment_released --> [*]
+    instant_late_cancel_fee_captured_10 --> [*]
     refund_full --> [*]
     refund_partial_85 --> [*]
     payment_failed --> [*]
 ```
 
 > [!todo] Still open (blocking) payment decisions
-> Cancel **within 24h** before pickup · **reservation after driver arrival** · the **weekly bank-transfer** payout process. See [[open-questions]].
+> Confirm the exact legal document names with Kevin's team · define approval steps for the **Friday bank-transfer** payout batch. See [[open-questions]].
 
 ---
 
@@ -291,7 +293,7 @@ stateDiagram-v2
 | Setup | Full document onboarding (identity, licence, vehicle, permit, insurance, business) |
 | Work | Availability + service zone + current-area, filtered eligible job feed, offer submission |
 | Trip | Confirmed-job detail post-payment, AMap navigation handoff, trip-state updates |
-| Money & care | Earnings + weekly payout, issue reporting, document-expiry alerts |
+| Money & care | Earnings + Friday payout, issue reporting, document-expiry alerts |
 
 ### Admin / Ops dashboard
 | Area | Features |
@@ -344,7 +346,7 @@ flowchart LR
 | **Authorize / hold + capture** | "Reserve" money on a card now (hold), then actually **take** it later (capture) — used for the future instant flow. |
 | **AMap (高德)** | The map provider that routes on **both** sides of the border; its distance sets the fare. |
 | **Dispatch** | Deciding which eligible drivers may receive which trips. |
-| **Settlement / payout** | Paying drivers — **weekly, by bank transfer, outside Stripe** in v1. |
+| **Settlement / payout** | Paying drivers — **every Friday, by bank transfer, outside Stripe** for eligible completed rides since the previous Friday. The platform deducts **10%** from driver-submitted price. |
 | **Config-driven rules** | Fares, routes, discounts, ranking weights live in backend settings so ops can change them **without an app release**. |
 | **SLA** | A response-time promise — here, **under 5 minutes** for active-trip support. |
 

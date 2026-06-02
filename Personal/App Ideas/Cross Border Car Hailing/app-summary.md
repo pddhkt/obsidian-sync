@@ -29,7 +29,7 @@ aliases:
 | Mobile stack | Kotlin Multiplatform (KMP), native UI per platform. |
 | Map/routing | AMap (authoritative for HK + Mainland routing and fare distance). |
 | Payment | Stripe credit card, HKD, HK merchant entity. |
-| Driver payout | Weekly bank transfer outside Stripe. |
+| Driver payout | Every Friday by bank transfer outside Stripe for all eligible completed rides since previous Friday; platform deducts 10% from driver-submitted price. |
 | Support hours | In-app chat 09:00–00:00, target response < 5 min on active trips. |
 | Languages | English, Traditional Chinese, Simplified Chinese. |
 
@@ -125,12 +125,14 @@ Distance is authoritative from AMap.
 | Instant: customer confirms | Create manual-capture PaymentIntent, authorize. |
 | Instant: trip completes | Capture authorized amount. |
 | Reservation: cancel > 24h before pickup | Refund 85%, keep 15% fee. |
-| Reservation: cancel < 24h before pickup | **Open decision.** |
-| Reservation: cancel after driver arrival | **Open decision.** |
-| Instant: cancel before driver arrival | Cancel PaymentIntent, release hold. |
+| Reservation: cancel < 24h before pickup | Refund 85%, keep 15% fee. |
+| Reservation: cancel > 5 min after driver arrival | Refund 70%, retain 30%; split retained fee 70% driver / 30% platform. |
+| Instant: cancel within 10 min after driver accepts | Cancel PaymentIntent, release hold. |
+| Instant: cancel after 10 min and driver ETA > 10 min | Cancel PaymentIntent, release hold. |
+| Instant: cancel after 10 min and driver ETA ≤ 10 min | Capture 10% fee, release 90%. |
 | Instant: cancel > 5 min after driver arrived | Capture 10% fee, release 90%. |
 | Driver cancels (no replacement) | Full refund / support replacement; log + penalty. |
-| Trip completes | Move driver payout to weekly bank transfer. |
+| Trip completes | Deduct 10% from driver-submitted price; include eligible ride in next Friday payout batch. |
 
 ### 4.6 Driver cancellation policy
 
@@ -165,7 +167,7 @@ Side states: refund_requested, refund_review_required,
 
 ### 4.9 Customer info visibility to driver
 
-- **Before** customer accepts and pays: only operational booking details. **No** nationality, no language.
+- **Before** customer accepts and pays: only operational booking details. Customer language stays hidden.
 - **After** payment succeeds: full execution info (name, contact, pickup notes).
 
 ### 4.10 Support and chat
@@ -173,6 +175,7 @@ Side states: refund_requested, refund_review_required,
 - In-app customer ↔ driver chat, support joins by help request.
 - Button-triggered auto-translation.
 - Operating hours 09:00–00:00; active-trip response target < 5 minutes.
+- Initially staffed by co-founders/admin staff or staff from Kevin Tsang.
 - Emergency contact workflow.
 
 ### 4.11 Admin capabilities (v1)
@@ -206,7 +209,7 @@ Driver/vehicle verification, document expiry tracking, fare rule editor, service
 - [ ] Confirmed-job detail post-payment.
 - [ ] Navigation handoff (AMap native).
 - [ ] Trip state updates (arrived, start, border, complete).
-- [ ] Earnings + weekly payout view.
+- [ ] Earnings + Friday payout view.
 - [ ] Issue reporting (no-show, route, border delay, payment).
 - [ ] Document expiry alerts.
 
@@ -236,9 +239,7 @@ Fully automatic instant dispatch, showing every bid to customer, real-time price
 
 ## 8. Open decisions still blocking implementation
 
-- Cancellation/refund rule for customer cancel **within 24h** before pickup.
-- Cancellation/refund rule for **reservation after-arrival** cancellation.
-- Bank-transfer process for weekly driver payout.
+- Approval steps for the Friday driver payout batch.
 - Address normalization across EN / TC / SC.
 - Final legal naming for required cross-border permits.
 - **Infrastructure decisions** — server hosting location, iOS/Android app distribution, ICP / 备案, China entity, backend runtime, and v1 real-time scope. Tracked in [[tech-decisions]].

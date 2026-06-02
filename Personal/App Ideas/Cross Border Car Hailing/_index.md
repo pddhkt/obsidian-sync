@@ -42,6 +42,7 @@ aliases:
 Cross Border Car Hailing/
 ├── _index.md                  <- project home
 ├── teammate-overview.md       <- visual team briefing (diagrams + image prompts)
+├── customer-app-illustration-direction.md <- customer app decorative illustration previews
 ├── app-summary.md             <- full functional spec summary
 ├── product-logic.md           <- what the app needs to understand
 ├── interfaces.md              <- customer app, driver app, admin support
@@ -58,6 +59,7 @@ Cross Border Car Hailing/
 | Area | Why the app needs it |
 |---|---|
 | [[teammate-overview|Teammate overview]] | Visual, plain-language briefing of stack + behaviour for the team (with AI image prompts). |
+| [[customer-app-illustration-direction|Customer app illustration direction]] | Transparent decorative artwork previews, placement guidance, and the illustration backlog. |
 | [[product-logic#Booking models|Booking models]] | Defines reservation, instant booking, and bidding behavior. |
 | [[product-logic#Fare and pricing engine|Fare engine]] | Prevents unclear pricing, driver disputes, and refund confusion. |
 | [[product-logic#Dispatch and driver matching|Dispatch rules]] | Decides which drivers can receive which trips. |
