@@ -71,8 +71,8 @@ html, body {
   text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
 }
 .slide.cover .meta {
-  font-size: 12px; color: var(--soft-charcoal-2); letter-spacing: 1.5px; text-transform: uppercase;
-  text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
+  font-size: 12px; color: var(--heritage-blue-2); font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(247,246,242,1), 0 0 12px rgba(247,246,242,0.95);
 }
 
 .slide.closing .overlay {
@@ -183,6 +183,26 @@ html, body {
 .sw.trial { background: linear-gradient(90deg, var(--heritage-blue), var(--heritage-blue-3)); }
 .sw.phase2 { background: repeating-linear-gradient(45deg, var(--steam-grey) 0 4px, var(--steam-grey-2) 4px 8px); border: 1px dashed var(--soft-charcoal-3); }
 .sw.go { background: var(--accent-ok); }
+.sw.mark { background: var(--clay-beige-2); }
+
+/* ====== One-month Gantt variant (4 weeks) ====== */
+.gantt.m4 { margin-top: 22px; }
+.gantt.m4 .ghead .gtrack { grid-template-columns: repeat(4, 1fr); }
+.gantt.m4 .grow .gtrack { grid-template-columns: repeat(4, 1fr);
+  background-image: repeating-linear-gradient(90deg, var(--rule) 0, var(--rule) 1px, transparent 1px, transparent calc(100% / 4)); }
+.gantt.m4 .grow { margin-bottom: 9px; }
+.bar.mark { background: var(--clay-beige-2); color: var(--soft-charcoal); }
+
+/* ====== Per-post pipeline ====== */
+.pipeline { display: flex; align-items: stretch; margin-top: 10px; }
+.pipeline .pstep { flex: 1; background: var(--rice-white-2); border: 1px solid var(--rule);
+  border-top: 3px solid var(--heritage-blue); border-radius: 4px; padding: 11px 12px; text-align: center; position: relative; margin-right: 26px; }
+.pipeline .pstep:last-child { margin-right: 0; }
+.pipeline .pstep::after { content: "\2192"; position: absolute; right: -18px; top: 50%; transform: translateY(-50%); color: var(--heritage-blue-3); font-size: 16px; font-weight: 600; }
+.pipeline .pstep:last-child::after { content: ""; }
+.pipeline .pstep .pt { font-size: 12.5px; font-weight: 600; color: var(--heritage-blue-2); margin-bottom: 4px; }
+.pipeline .pstep .pd { font-size: 10px; color: var(--soft-charcoal-2); line-height: 1.5; }
+.note-muted { margin-top: 9px; font-size: 10.5px; color: var(--soft-charcoal-3); line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -204,7 +224,7 @@ html, body {
 <!-- ====== Slide 2 — Combined Gantt ====== -->
 <section class="slide">
   <span class="eyebrow">01 · 總時間表</span>
-  <h2>一張圖睇晒 —— 7 月內搞掂上線,SEO 引擎喺開門前已經熱身。</h2>
+  <h2>整體上線時間表</h2>
   <p class="lede">網站(前台 + 後台 + backend)已經起好,7 月做嘅係<span class="hl-blue">微調 + 入資料 + 上線</span>。收款用嘅 Airwallex 同 SEO 前期準備<span class="hl-blue">並行</span>進行,唔使排隊等。<span class="hl-blue">6 個月免費試用</span>由上線當日起計。</p>
 
   <div class="gantt">
@@ -244,7 +264,7 @@ html, body {
       <div class="glabel">資料<span class="sub">匯入</span></div>
       <div class="gtrack">
         <div class="bar workalt" style="grid-column: 1 / 2;"></div>
-        <div class="blab" style="grid-column: 3 / 29;">資料匯入 336 件 · 4 日</div>
+        <div class="blab" style="grid-column: 3 / 29;">產品資料匯入 · 4 日 <span class="muted">(數量待客戶確認)</span></div>
       </div>
     </div>
     <div class="grow">
@@ -258,10 +278,6 @@ html, body {
       <div class="glabel">6 個月<span class="sub">SEO + 內容</span></div>
       <div class="gtrack"><div class="bar trial" style="grid-column: 3 / 29;">6 個月免費試用 · 每月 4 篇 blog + captions　 M1 ➜ M6</div></div>
     </div>
-    <div class="grow">
-      <div class="glabel">Phase 2<span class="sub">另行報價</span></div>
-      <div class="gtrack"><div class="bar phase2" style="grid-column: 9 / 29;">Email lifecycle · CRO/A-B · social ops · 印刷 —— 另行報價</div></div>
-    </div>
   </div>
 
   <div class="legend">
@@ -270,17 +286,16 @@ html, body {
     <span class="item"><span class="sw prep"></span> SEO 前期(微調期內並行)</span>
     <span class="item"><span class="sw trial"></span> 6 個月免費試用</span>
     <span class="item"><span class="sw go"></span> 上線里程碑</span>
-    <span class="item"><span class="sw phase2"></span> Phase 2 / 另行報價</span>
   </div>
 
-  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>2 / 5</span></div>
+  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>2 / 6</span></div>
 </section>
 
 <!-- ====== Slide 3 — 6-month engine ====== -->
 <section class="slide">
-  <span class="eyebrow">02 · 6 個月 SEO 內容引擎</span>
-  <h2>固定每月引擎 + 每月主題 —— 由上線當日起計,每月 4 篇 blog。</h2>
-  <p class="lede">內容軌道即係<span class="hl-blue">全包 retainer 首 6 個月免費試用</span>。下面係逐月主題;每月之上仲有一套唔變嘅固定引擎同季度動作。</p>
+  <span class="eyebrow">02 · 6 個月 SEO 內容計劃</span>
+  <h2>6 個月 SEO 內容計劃</h2>
+  <p class="lede">內容軌道即係<span class="hl-blue">全包 retainer 首 6 個月免費試用</span>,由上線當日起計。下面係逐月主題;每月之上仲有一套唔變嘅固定引擎同季度動作(見下方)。</p>
 
   <table class="tbl">
     <thead>
@@ -291,42 +306,42 @@ html, body {
         <td class="mlabel">前期準備<small>7 月 · 微調期內並行</small></td>
         <td>Onboard &amp; 基線</td>
         <td>Day-1 資料接收(11 項)· AEO 重寫現有 buying-guide blog · 首 2 篇 brief · 分析 / schema / UTM 設定</td>
-        <td>48 格 citation <strong>基線</strong> run · Q3 focus doc</td>
+        <td>48 格 citation <strong>基線</strong> run <span class="muted">(12 prompt × 4 AI 引擎)</span> · Q3 focus doc <span class="muted">(季度內容策略)</span></td>
       </tr>
       <tr>
         <td class="mlabel">M1<small>上線</small></td>
         <td>Launch</td>
-        <td>4 篇 blog + captions · hero PDP 文案 · 保養登記 + 門市搜尋頁 · OCR 第 1 批</td>
+        <td>4 篇 blog + captions · hero PDP 文案 · 保養登記 + 門市搜尋頁 · OCR 規格數碼化 ~30–40 件 <span class="muted">(由 hero / priority SKU 開始)</span></td>
         <td>首份月度報告</td>
       </tr>
       <tr>
         <td class="mlabel">M2<small>加速</small></td>
         <td>Ramp</td>
-        <td>4 篇 blog + captions · PDP rollout · parts-finder topic · OCR 第 2 批</td>
+        <td>4 篇 blog + captions · PDP rollout · OCR 規格數碼化 ~30–40 件</td>
         <td>—</td>
       </tr>
       <tr class="milestone-row">
         <td class="mlabel">M3<small>季度檢視</small></td>
         <td>Quarter review</td>
-        <td>4 篇 blog + captions · OCR 第 3 批</td>
+        <td>4 篇 blog + captions · OCR 規格數碼化 ~30–40 件</td>
         <td><strong>季度 SEO 策略 + keyword research · 季度 strategy review</strong> · 首季 citation delta · CRO 開始(若選)</td>
       </tr>
       <tr>
         <td class="mlabel">M4<small>深化</small></td>
         <td>Deepen</td>
-        <td>4 篇 blog + captions · 全 hero-SKU PDP 覆蓋 · OCR 第 4 批</td>
+        <td>4 篇 blog + captions · 全 hero-SKU PDP 覆蓋 · OCR 規格數碼化 ~30–40 件</td>
         <td>—</td>
       </tr>
       <tr>
         <td class="mlabel">M5<small>優化</small></td>
         <td>Optimize</td>
-        <td>4 篇 blog + captions · 渠道加碼(UTM 數據)· OCR 第 5 批</td>
+        <td>4 篇 blog + captions · 渠道加碼(UTM 數據)· OCR 規格數碼化 ~30–40 件</td>
         <td>期中 citation delta</td>
       </tr>
       <tr class="milestone-row">
         <td class="mlabel">M6<small>決策</small></td>
         <td>Decide</td>
-        <td>4 篇 blog + captions · OCR 第 6 批(完成)</td>
+        <td>4 篇 blog + captions · OCR 規格數碼化 ~30–40 件 <span class="muted">(累計 ~180–240 件)</span></td>
         <td><strong>試用總檢視:基線 → M6 delta + 流量 / 轉化 → 揀 tier(3.1 vs 全包)</strong> · 下季 focus</td>
       </tr>
     </tbody>
@@ -336,19 +351,67 @@ html, body {
     <span class="label">固定每月引擎(每月都做)</span>
     每月 <strong>4 篇 AEO 格式 blog + 配套 IG / FB caption</strong>(每篇 ≥13/15 先 publish)· 每篇 <strong>AEO audit</strong> · 每月 <strong>48 格 citation simulation</strong> · 每月報告。　<span class="muted">季度:SEO 策略 + keyword research + strategy review(落喺 M3 同試用尾)。</span>
   </div>
-  <div class="callout warn">
-    <span class="label">唔包喺免費試用 · Phase 2 / 另行報價</span>
-    Email lifecycle(<strong>不含 WhatsApp</strong>)· CRO / A-B test · social ops(scheduling / community management)· 印刷 campaign(每個 HK$1,000)。
+  <div class="note-muted">
+    OCR 規格數碼化由 hero / priority SKU 開始,每月約 30–40 件保質處理;SKU 總數待客戶確認,餘下部分試用後繼續。　以上為 6 個月免費試用全部範圍;其他服務(CRO / lifecycle / social ops / 印刷)另行報價。
   </div>
 
-  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>3 / 5</span></div>
+  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>3 / 6</span></div>
 </section>
 
-<!-- ====== Slide 4 — Prerequisites ====== -->
+<!-- ====== Slide 4 — One typical month ====== -->
 <section class="slide">
-  <span class="eyebrow">03 · 兩個開始前要做嘅嘢</span>
-  <h2>真正嘅開始 gate 係產品資料 —— Airwallex 唔會卡住上線。</h2>
-  <p class="lede">兩件事可以由第一日同步開始。下面列清楚要俾咩、要等幾耐。</p>
+  <span class="eyebrow">03 · 典型一個月</span>
+  <h2>典型一個月流程</h2>
+  <p class="lede">每月 4 篇,大約<span class="hl-blue">每週一篇</span>。每篇都行同一套流程;月底做 citation 量度同月度報告。</p>
+
+  <div class="gantt m4">
+    <div class="ghead">
+      <div></div>
+      <div class="gtrack">
+        <div class="m">第 1 週</div><div class="m">第 2 週</div><div class="m">第 3 週</div><div class="m">第 4 週</div>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="glabel">Blog 產出<span class="sub">4 篇 / 月</span></div>
+      <div class="gtrack">
+        <div class="bar work" style="grid-column: 1 / 2;">Blog 1</div>
+        <div class="bar work" style="grid-column: 2 / 3;">Blog 2</div>
+        <div class="bar work" style="grid-column: 3 / 4;">Blog 3</div>
+        <div class="bar work" style="grid-column: 4 / 5;">Blog 4</div>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="glabel">Citation 量度<span class="sub">48 格</span></div>
+      <div class="gtrack">
+        <div class="bar mark" style="grid-column: 4 / 5;">◇ 48 格 simulation</div>
+      </div>
+    </div>
+    <div class="grow">
+      <div class="glabel">月度報告<span class="sub">月底</span></div>
+      <div class="gtrack">
+        <div class="bar mark" style="grid-column: 4 / 5;">◇ 報告 + delta</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:26px; font-size:10px; letter-spacing:1px; color:var(--soft-charcoal-3); text-transform:uppercase;">每篇 blog 流程</div>
+  <div class="pipeline">
+    <div class="pstep"><div class="pt">1 · 寫 brief</div><div class="pd">topic + AEO 要求 + schema spec</div></div>
+    <div class="pstep"><div class="pt">2 · 撰稿</div><div class="pd">1,200–1,500 字 · 跟品牌 voice</div></div>
+    <div class="pstep"><div class="pt">3 · AEO audit</div><div class="pd">5 軸 rubric · ≥13/15 先出街</div></div>
+    <div class="pstep"><div class="pt">4 · 出街 + caption</div><div class="pd">網站 publish + IG / FB caption</div></div>
+  </div>
+
+  <div class="note-muted">每篇 ≥13/15 先出街;唔達標就重寫。一次內容,網站 + IG + FB 三個 channel 同步用,唔使分開構思。</div>
+
+  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>4 / 6</span></div>
+</section>
+
+<!-- ====== Slide 5 — Prerequisites ====== -->
+<section class="slide">
+  <span class="eyebrow">04 · 開始前準備</span>
+  <h2>開始前要準備嘅嘢</h2>
+  <p class="lede">產品資料一到手,三條線(<span class="hl-blue">網站微調 · 資料匯入 · SEO 前期</span>)同 Airwallex 並行,全部 7 月內完成。下面列要俾咩、要等幾耐,同上線前要傾掂嘅遷移選擇。</p>
 
   <div class="card-grid">
     <div class="card accent">
@@ -374,7 +437,7 @@ html, body {
       <div class="label">B · 簽約 Day-1 客戶提供</div>
       <div class="ttl">產品資料 + 開站數據</div>
       <ul class="tight">
-        <li><strong>全部產品資料</strong>(規格、圖片、價錢)—— 我哋即刻開始入資料(4 日)</li>
+        <li><strong>全部產品資料</strong>(規格、圖片、價錢)—— 我哋即刻開始入資料(4 日)<span class="muted">(SKU 總數待客戶確認)</span></li>
         <li>每個 priority category <strong>真實 SKU code</strong></li>
         <li>每 SKU <strong>margin + 持續庫存 status</strong></li>
         <li>未來 <strong>90 日 promo 時間表</strong></li>
@@ -384,24 +447,25 @@ html, body {
         <li>GSC export(top query / CTR / position)· 站內 search log</li>
         <li>每篇 content 嘅 <strong>具名作者 + credential</strong>(AEO Axis 3)</li>
       </ul>
-      <div style="margin-top:10px; font-size:12px; color:var(--soft-charcoal);">一到手,pitch 入面嘅 <strong>⚠️ 即升 ✅</strong>,唔使重做。</div>
+      <div style="margin-top:10px; font-size:12px; color:var(--soft-charcoal);">一到手,<strong>簽約即日用真實資料取代所有假設</strong>,唔使重做。</div>
     </div>
   </div>
 
   <div class="callout">
-    <span class="label">點解咁排</span>
-    產品資料一到手就可以同時行三條線:<span class="hl-blue">網站微調</span>、<span class="hl-blue">資料匯入</span>、<span class="hl-blue">SEO 前期準備</span>。Airwallex 喺旁邊獨立跑,趕得切上線收款。三樣都喺 7 月內完成。
+    <span class="label">上線前要傾掂 · Shopline 遷移選擇</span>
+    現有官網喺 <strong>Shopline</strong>,上線前要揀:<strong>① 兩站並行</strong> —— 新站先上,Shopline 繼續行一段時間(風險低、漸進);或 <strong>② 全面遷移</strong> —— ~7 月中 cutover 去新站(single source of truth)。<br>
+    無論揀邊個,遷移流程都係:<span class="hl-blue">Shopline 匯出 → 下載圖片 / 規格資產(cutover 前必做,否則圖片連結會失效)→ 匯入新站</span>。呢個選擇我哋想同 Imarflex 一齊傾。
   </div>
 
-  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>4 / 5</span></div>
+  <div class="footer"><span>Imarflex · 上線時間表 + 6 個月 SEO 計劃</span><span>5 / 6</span></div>
 </section>
 
-<!-- ====== Slide 5 — Closing ====== -->
+<!-- ====== Slide 6 — Closing ====== -->
 <section class="slide closing cover">
   <img class="bg" src="images/imarflex-pitch-05-closing.png" alt="">
   <div class="overlay">
     <h1>7 月上線,當日起跑 6 個月引擎。</h1>
-    <div class="sub">網站已經起好,等嘅係你嘅產品資料同少少微調意見。Day-1 將 ⚠️ 升 ✅ —— 同一部機、同一套 artifact,即刻運作。</div>
+    <div class="sub">網站已經起好,等嘅係你嘅產品資料同少少微調意見。簽約即日用真實資料取代所有假設,即刻運作,唔使重做。</div>
     <div class="contact">
       <strong>下一步</strong>
       <span>1 · 交產品資料 + 開始 Airwallex 註冊</span>
