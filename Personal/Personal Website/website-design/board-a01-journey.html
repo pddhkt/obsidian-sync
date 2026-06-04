@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board A-01 · Journey — As-Built</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --ink:#14140F; --muted:#6A685E; --muted2:#4A4840;
+    --rule:#E3E1D8; --rule2:#C9C7BD; --accent:#2D5BFF; --chip:#EFEDE4;
+    --orbit:#B2AEA2;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:46px 32px 90px}
+  .mono{font-family:var(--mono)}
+  .accent{color:var(--accent)}
+
+  .head{border-bottom:1px solid var(--ink);padding-bottom:20px;margin-bottom:30px}
+  .head .kick{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .head h1{font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+  .head p{font-size:16px;color:var(--muted2);max-width:680px;margin-top:12px}
+
+  h2.sec{font-size:13px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+         margin:42px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+  .sub{font-size:14px;color:var(--muted);margin:-8px 0 18px;max-width:680px}
+
+  /* ===== SCROLLABLE AS-BUILT VIEWPORT ===== */
+  .frame{position:relative;height:520px;overflow:hidden;background:var(--bg);
+         border:1px solid var(--rule);border-radius:18px;
+         background-image:radial-gradient(var(--rule) 1px,transparent 1px);background-size:22px 22px;
+         box-shadow:0 18px 50px rgba(20,20,15,.06)}
+  /* scrolling region sits inside the framed atmosphere */
+  .scroll{position:absolute;inset:0;overflow-y:auto;scrollbar-width:thin;scroll-behavior:smooth}
+  .scroll::-webkit-scrollbar{width:9px}
+  .scroll::-webkit-scrollbar-thumb{background:var(--rule2);border-radius:6px}
+  .stage{position:relative;width:100%}
+  .stage svg{display:block;width:100%;height:auto}
+
+  /* fixed chrome overlaid on the frame (does not scroll) */
+  .frameRect{fill:none;stroke:var(--rule2);stroke-width:1}
+  .corner{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);
+          position:absolute;z-index:3;pointer-events:none;background:rgba(250,250,247,.82);padding:2px 7px;border-radius:5px}
+  .corner.tl{top:14px;left:14px;color:var(--accent)}
+  .corner.tr{top:14px;right:14px}
+  .corner.br{bottom:14px;right:14px}
+  .progress{position:absolute;left:14px;bottom:14px;z-index:3;font-family:var(--mono);font-size:11px;
+            letter-spacing:.1em;color:var(--muted);background:rgba(250,250,247,.82);padding:2px 7px;border-radius:5px}
+  .progress b{color:var(--accent)}
+  .hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;
+        font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);
+        background:rgba(250,250,247,.88);padding:4px 11px;border-radius:20px;border:1px solid var(--rule);
+        transition:opacity .4s ease}
+
+  /* svg element classes */
+  .colLine{stroke:var(--accent);stroke-width:2;fill:none;stroke-linecap:round}
+  .colGhost{stroke:var(--rule2);stroke-width:2;fill:none;stroke-dasharray:1 6;stroke-linecap:round}
+  .floorRule{stroke:var(--ink);stroke-width:1.2;fill:none}
+  .dim{stroke:var(--rule2);stroke-width:1;fill:none}
+  .dimTick{stroke:var(--accent);stroke-width:1.4;fill:none}
+  .node{fill:var(--accent);stroke:var(--bg);stroke-width:2.5}
+  .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;fill:var(--accent)}
+  .yr{font-family:var(--mono);font-size:11px;letter-spacing:.06em;fill:var(--muted)}
+  .ttl{font-family:var(--sans);font-weight:700;font-size:16px;fill:var(--ink)}
+  .role{font-family:var(--sans);font-size:12.5px;fill:var(--muted2)}
+  .body{font-family:var(--sans);font-size:12px;fill:var(--muted)}
+  .footprint{fill:rgba(45,91,255,.045);stroke:var(--rule2);stroke-width:1}
+  .floor{opacity:0}                 /* JS reveals each floor on threshold */
+  .reduced .floor{opacity:1}
+
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .legend{font-size:14px;color:var(--muted2)}
+  .legend li{margin:9px 0;list-style:none;padding-left:20px;position:relative}
+  .legend li::before{content:"";position:absolute;left:0;top:7px;width:11px;height:2px;background:var(--accent)}
+  .legend b{color:var(--ink)}
+
+  pre{background:#10131A;color:#D6DEEC;border-radius:12px;padding:20px 22px;overflow-x:auto;font-family:var(--mono);
+      font-size:12.5px;line-height:1.7;border:1px solid #1C2230}
+  pre .c{color:#6B7689}pre .k{color:#7FB4FF}pre .f{color:#9DE3A4}pre .s{color:#E0B080}
+
+  .note{margin-top:34px;border:1px dashed var(--rule2);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--muted2);background:rgba(45,91,255,.03)}
+  .note b{color:var(--accent)}
+  .controls{margin:14px 0 0;display:flex;gap:10px}
+  .btn{font-family:var(--mono);font-size:12px;border:1px solid var(--rule2);border-radius:7px;padding:7px 13px;background:#fff;cursor:pointer;color:var(--ink)}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .chip{display:inline-block;padding:5px 11px;border-radius:20px;background:var(--chip);color:var(--muted2);font-family:var(--mono);font-size:12px}
+  @media(max-width:740px){.row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div class="kick">Spec Board · Sheet A-01 · Journey</div>
+    <h1>As-Built — the career, assembled on scroll</h1>
+    <p>The centrepiece sheet. Jack's path reads as a <b>vertical structure that builds itself</b>: the <b>foundation</b> is structural engineering, then each career move stacks as a <b>floor</b> while an accent <b>column line</b> (the load path) grows upward. Scroll the framed preview and the floors <b>plot on</b> one at a time. Below: what it means and the exact scroll algorithm.</p>
+  </div>
+
+  <h2 class="sec">01 · Look &amp; feel <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">— live</span></h2>
+  <p class="sub">Scroll <b>inside</b> the frame. The column line tracks your scroll progress; each floor rule + label draws in, then its content fades up, the moment scroll crosses its level. Left edge: dimension lines for each floor's year span.</p>
+
+  <div class="frame">
+    <span class="corner tl">AS-BUILT · LOAD PATH</span>
+    <span class="corner tr mono">A-01</span>
+    <span class="corner br mono">jackleung.dev</span>
+    <div class="progress mono">ERECTED <b id="pct">0%</b></div>
+    <div class="hint mono" id="hint">↓ scroll to build</div>
+    <div class="scroll" id="scroll">
+      <div class="stage">
+        <svg id="svg" viewBox="0 0 720 1480" role="img" aria-label="As-built career structure that assembles on scroll">
+          <!-- column line: ghost (full, faint) under; accent grows upward over it.
+               col shares the ghost geometry; reveal is driven by stroke-dashoffset.
+               Drawn bottom (1420 = under the foundation) up to top (60 = roof). -->
+          <line id="ghost" class="colGhost" x1="250" y1="1420" x2="250" y2="60"></line>
+          <line id="col"   class="colLine"  x1="250" y1="1420" x2="250" y2="60"></line>
+          <g id="floors"></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <button class="btn" id="replay">↻ replay (scroll to top)</button>
+    <button class="btn" id="topout">▲ jump to roof</button>
+  </div>
+
+  <h2 class="sec">02 · What it means</h2>
+  <div class="row2">
+    <ul class="legend">
+      <li><b>Foundation = engineering</b> — the structure sits on Structural Engineering (39-storey towers). The origin isn't hidden; it's literally what everything else is built on.</li>
+      <li><b>Floors stack bottom→top</b> — Fractal/Yeslend, Buddy Ride, then the contact-centre suite. Newest work is highest, so reading up <i>is</i> reading forward in time.</li>
+      <li><b>The column line</b> — one accent load path threads every floor. It grows exactly with scroll, so the visitor feels themselves erecting the building.</li>
+      <li><b>Dimension lines</b> — the left edge dimensions each floor by its year span, the engineer's habit of annotating a drawing rather than decorating it.</li>
+      <li><b>As-built, not rendered</b> — this is the record drawing of a career: what was actually constructed, floor by floor, foundation to <b>Now</b>.</li>
+    </ul>
+    <div>
+      <div class="note" style="margin-top:0">
+        <b>Why this is the centrepiece:</b> it states the whole thesis in one motion — Structures literally becoming Systems. The foundation is concrete-and-steel; the upper floors are software. You don't read a timeline, you <i>watch it stand up</i>, and the engineering past reads as load-bearing rather than a footnote.
+      </div>
+      <p style="margin-top:16px"><span class="chip">FOUNDATION → ROOF</span> <span class="chip">2018 → Now</span></p>
+    </div>
+  </div>
+
+  <h2 class="sec">03 · How it draws &amp; loops <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">— the algorithm</span></h2>
+  <p class="sub">One scroll listener throttled through <span class="mono">requestAnimationFrame</span>; progress drives the column line, and per-floor thresholds fire each reveal once. In production this is GSAP <span class="mono">ScrollTrigger</span> with <span class="mono">scrub</span>; the live demo runs on vanilla JS.</p>
+
+  <pre><span class="c">// 1 — FLOORS, bottom → top  (foundation first, roof last)</span>
+floors = [
+  { tag:<span class="s">"FND"</span>, t:<span class="f">0.00</span>, title:<span class="s">"Structural Engineering"</span>, yr:<span class="s">"2018–2021"</span> },  <span class="c">// 39-storey towers</span>
+  { tag:<span class="s">"L1"</span>,  t:<span class="f">0.26</span>, title:<span class="s">"Fractal · Yeslend + automation"</span>, yr:<span class="s">"2022–2025"</span> },
+  { tag:<span class="s">"L2"</span>,  t:<span class="f">0.48</span>, title:<span class="s">"Buddy Ride · cross-border"</span>,     yr:<span class="s">"2024–2025"</span> },
+  { tag:<span class="s">"L3"</span>,  t:<span class="f">0.70</span>, title:<span class="s">"Contact-centre suite"</span>,          yr:<span class="s">"2025–now"</span>  },
+  { tag:<span class="s">"ROOF"</span>,t:<span class="f">0.92</span>, title:<span class="s">"Now"</span>,                           yr:<span class="s">"—"</span>        },
+]
+
+<span class="c">// 2 — READ SCROLL PROGRESS of the inner frame  → p ∈ [0,1]</span>
+<span class="k">function</span> <span class="f">progress</span>():
+    <span class="k">return</span> scroll.scrollTop / (scroll.scrollHeight - scroll.clientHeight)
+
+<span class="c">// 3 — GROW THE COLUMN LINE  (the load path) with p</span>
+<span class="c">//     same primitive as everywhere: a length we reveal, not a fade</span>
+<span class="k">function</span> <span class="f">drawColumn</span>(p):
+    L = ghost.<span class="f">getTotalLength</span>()            <span class="c">// full height of the structure</span>
+    col.style.strokeDasharray  = L
+    col.style.strokeDashoffset = L * (1 - p)     <span class="c">// L→0 as p:0→1, plots upward</span>
+
+<span class="c">// 4 — REVEAL EACH FLOOR ONCE, when scroll crosses its threshold tᵢ</span>
+<span class="k">function</span> <span class="f">checkFloors</span>(p):
+    <span class="k">for</span> f <span class="k">in</span> floors:
+        <span class="k">if</span> !f.built <span class="k">and</span> p &gt;= f.t:
+            f.built = <span class="k">true</span>
+            <span class="f">plotOn</span>(f.rule)      <span class="c">// level rule draws in  (dashoffset L→0)</span>
+            <span class="f">plotOn</span>(f.dim)       <span class="c">// left dimension line draws in</span>
+            f.content.<span class="f">fadeUp</span>()    <span class="c">// label + body translateY(8)→0, opacity→1</span>
+
+<span class="c">// 5 — THROTTLE with requestAnimationFrame (one read per frame, no jank)</span>
+ticking = <span class="k">false</span>
+scroll.<span class="f">onscroll</span> = () =&gt;
+    <span class="k">if</span> !ticking:
+        ticking = <span class="k">true</span>
+        <span class="f">requestAnimationFrame</span>(() =&gt; {
+            p = <span class="f">progress</span>()
+            <span class="f">drawColumn</span>(p); <span class="f">checkFloors</span>(p); <span class="f">setPct</span>(p)
+            ticking = <span class="k">false</span>
+        })
+
+<span class="c">// — PRODUCTION equivalent —</span>
+<span class="c">// gsap ScrollTrigger { trigger:frame, scrub:true } drives the same p.</span>
+
+<span class="c">// 6 — RESPECT THE USER</span>
+<span class="k">if</span> prefers-reduced-motion:
+    p = 1; <span class="f">drawColumn</span>(1)         <span class="c">// full column, every floor built</span>
+    floors.<span class="f">forEach</span>(buildInstantly)   <span class="c">// no scroll loop</span></pre>
+
+  <div class="note">
+    <b>The "draw" primitive (reused everywhere):</b>
+    <span class="mono" style="color:var(--ink)">L = path.getTotalLength(); dasharray = L; dashoffset = L → 0</span>.
+    The column line, every floor rule, every dimension line on this sheet — all the same three lines of code as the home hero's spine and orbits. Scroll just maps your position onto that one offset, so the structure plots on like a plotter instead of fading in. That's what makes it feel like <i>one hand drew the whole site</i>.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ----- floor data, bottom (foundation) -> top (roof) -----
+  // y is the SVG y of each level rule; thresholds t are scroll-progress gates.
+  const floors=[
+    {tag:"FND", t:0.00, y:1340, title:"Structural Engineering — CM Wong & Associates",
+     role:"Structural Engineer · 2018–2021",
+     body:"Designed 39-storey residential towers. ETABS / SAFE / SADS modelling, wind & reinforced-concrete design.",
+     yr:"2018", foundation:true},
+    {tag:"L1",  t:0.26, y:1050, title:"Fractal Technologies — Yeslend + automation",
+     role:"Co-founder · 2022–2025",
+     body:"Yeslend fintech loan site (Next.js, Payload CMS) and Python tooling that automates structural models.",
+     yr:"2022"},
+    {tag:"L2",  t:0.48, y:780,  title:"Buddy Ride — cross-border ride-sharing",
+     role:"Co-founder · 2024–2025",
+     body:"HK ↔ Macau ride-sharing. Next.js web + React Native apps on Cloudflare Workers & Convex.",
+     yr:"2024"},
+    {tag:"L3",  t:0.70, y:480,  title:"Contact-centre suite — CTINT",
+     role:"Frontend Developer · 2025–present",
+     body:"Enterprise CDSS: TTS portal with version control, email auto-reply, customer-tagging; client delivery.",
+     yr:"2025"},
+    {tag:"ROOF",t:0.92, y:170,  title:"Now",
+     role:"Developer / Builder",
+     body:"Engineering judgment, applied to software. Foundation to roof, still building upward.",
+     yr:"now", roof:true},
+  ];
+
+  const COLX=250;                 // column line x
+  const svg   = document.getElementById('svg');
+  const layer = document.getElementById('floors');
+  const scroll= document.getElementById('scroll');
+  const ghost = document.getElementById('ghost');
+  const col   = document.getElementById('col');
+  const pctEl = document.getElementById('pct');
+  const hint  = document.getElementById('hint');
+
+  function el(tag,attrs){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+
+  // wrap a long string into balanced tspan lines (~max chars/line) for SVG text
+  function wrapText(textEl,str,x,max){
+    const words=str.split(' '); const lines=[]; let cur='';
+    words.forEach(w=>{
+      if((cur+' '+w).trim().length>max){ lines.push(cur.trim()); cur=w; }
+      else cur=(cur+' '+w).trim();
+    });
+    if(cur)lines.push(cur);
+    lines.forEach((ln,i)=>{
+      const ts=el('tspan',{x:x,dy:i===0?0:15}); ts.textContent=ln; textEl.appendChild(ts);
+    });
+  }
+
+  // ----- build the static geometry of every floor -----
+  floors.forEach((f,i)=>{
+    const g=el('g',{class:'floor'}); f.g=g;
+
+    // floor footprint slab (gives each level a sense of plan area)
+    const slabW = f.roof ? 200 : 300;
+    f.slab=el('rect',{class:f.roof?'colGhost':'footprint',x:COLX-20,y:f.y-2,width:slabW,height:4,rx:2});
+
+    // level rule — the horizontal floor line that plots on
+    f.rule=el('line',{class:'floorRule',x1:COLX-110,y1:f.y,x2:COLX+300,y2:f.y});
+
+    // node where the column line meets the floor
+    f.node=el('circle',{class:'node',cx:COLX,cy:f.y,r:6});
+
+    // left-edge dimension line marking the year span up to this floor
+    const dimX=70, top=f.y-2, bot=(i===0?1380:floors[i-1].y)-2;
+    f.dim=el('path',{class:'dim',d:`M ${dimX} ${bot} L ${dimX} ${top}`});
+    f.dimTopT=el('line',{class:'dimTick',x1:dimX-6,y1:top,x2:dimX+6,y2:top});
+    f.dimBotT=el('line',{class:'dimTick',x1:dimX-6,y1:bot,x2:dimX+6,y2:bot});
+    f.yrText=el('text',{class:'yr',x:dimX-12,y:(top+bot)/2,'text-anchor':'end'});
+    f.yrText.setAttribute('transform',`rotate(-90 ${dimX-12} ${(top+bot)/2})`);
+    f.yrText.textContent=f.yr;
+
+    // text block: tag, title, role, body — fades up
+    const tx=COLX+26;
+    const tagS=f.tag, titleS=f.title, roleS=f.role, bodyS=f.body;
+    f.tagEl=el('text',{class:'tag',x:tx,y:f.y-36}); f.tagEl.textContent=tagS;
+    f.title=el('text',{class:'ttl',x:tx,y:f.y-16}); f.title.textContent=titleS;
+    f.role=el('text',{class:'role',x:tx,y:f.y+4});  f.role.textContent=roleS;
+    f.body=el('text',{class:'body',x:tx,y:f.y+24}); wrapText(f.body,bodyS,tx,52);
+
+    g.appendChild(f.slab);
+    g.appendChild(f.rule);
+    g.appendChild(f.dim);
+    g.appendChild(f.dimTopT);
+    g.appendChild(f.dimBotT);
+    g.appendChild(f.yrText);
+    g.appendChild(f.tagEl);
+    g.appendChild(f.title);
+    g.appendChild(f.role);
+    g.appendChild(f.body);
+    g.appendChild(f.node);
+    layer.appendChild(g);
+
+    // prime the plot-on primitive for the rule + dim line
+    primeDraw(f.rule);
+    primeDraw(f.dim);
+    f.node.style.opacity=0;
+    // content wrapper-ish: animate each text/slab as a set
+    f.contentEls=[f.slab,f.tagEl,f.title,f.role,f.body];
+    f.contentEls.forEach(e=>{e.style.opacity=0;e.style.transform='translateY(8px)';e.style.transformBox='fill-box';});
+  });
+
+  // ----- shared draw primitive: length-reveal a path/line -----
+  function primeDraw(line){
+    const L=line.getTotalLength();
+    line.dataset.len=L;
+    line.style.strokeDasharray=L;
+    line.style.strokeDashoffset=L;
+  }
+  function plotOn(line,dur){
+    line.style.transition=`stroke-dashoffset ${dur||0.5}s ease`;
+    line.style.strokeDashoffset=0;
+  }
+
+  // ----- column line: a length we reveal in step with scroll -----
+  const COLLEN = ghost.getTotalLength();
+  col.style.strokeDasharray = COLLEN;
+  col.style.strokeDashoffset = COLLEN;       // hidden; grows up with p
+  function drawColumn(p){
+    col.style.strokeDashoffset = COLLEN*(1-p);
+  }
+
+  function buildFloor(f){
+    if(f.built)return; f.built=true;
+    f.g.style.opacity=1;            // reveal the group (CSS .floor{opacity:0} gated it)
+    plotOn(f.rule,0.5);
+    plotOn(f.dim,0.55);
+    f.node.style.transition='opacity .45s ease';
+    f.node.style.opacity=1;
+    f.contentEls.forEach((e,i)=>{
+      e.style.transition=`opacity .5s ease ${i*0.05}s, transform .5s ease ${i*0.05}s`;
+      e.style.opacity=1; e.style.transform='translateY(0)';
+    });
+  }
+
+  function progress(){
+    const max=scroll.scrollHeight-scroll.clientHeight;
+    return max>0 ? scroll.scrollTop/max : 0;
+  }
+  function setPct(p){ pctEl.textContent=Math.round(p*100)+'%'; }
+
+  function update(){
+    const p=progress();
+    drawColumn(p);
+    setPct(p);
+    floors.forEach(f=>{ if(p>=f.t) buildFloor(f); });
+    hint.style.opacity = p>0.04 ? 0 : 1;
+  }
+
+  // ----- throttle scroll through rAF -----
+  let ticking=false;
+  function onScroll(){
+    if(!ticking){ ticking=true; requestAnimationFrame(()=>{ update(); ticking=false; }); }
+  }
+
+  function resetAll(){
+    floors.forEach(f=>{
+      f.built=false;
+      f.g.style.opacity=0;          // re-hide the group so ticks/labels don't leak before rebuild
+      primeDraw(f.rule); primeDraw(f.dim);
+      f.node.style.transition='none'; f.node.style.opacity=0;
+      f.contentEls.forEach(e=>{e.style.transition='none';e.style.opacity=0;e.style.transform='translateY(8px)';});
+    });
+    col.style.strokeDashoffset=COLLEN;
+    void svg.getBoundingClientRect();
+  }
+
+  if(reduce){
+    // static, complete frame: full column, every floor built, no scroll loop
+    document.body.classList.add('reduced');
+    drawColumn(1);
+    floors.forEach(f=>{
+      plotOn(f.rule,0); plotOn(f.dim,0);
+      f.node.style.opacity=1;
+      f.contentEls.forEach(e=>{e.style.opacity=1;e.style.transform='translateY(0)';});
+      f.built=true;
+    });
+    setPct(1); hint.style.display='none';
+  }else{
+    scroll.addEventListener('scroll',onScroll,{passive:true});
+    update();                                  // build the foundation (t=0) on load
+    document.getElementById('replay').onclick=()=>{
+      scroll.scrollTo({top:0,behavior:'smooth'});
+      resetAll();
+      // re-evaluate after the scroll settles so the foundation rebuilds
+      setTimeout(update,60);
+    };
+    document.getElementById('topout').onclick=()=>{
+      scroll.scrollTo({top:scroll.scrollHeight,behavior:'smooth'});
+    };
+  }
+})();
+</script>
+</body>
+</html>

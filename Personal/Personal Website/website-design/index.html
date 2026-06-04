@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drawing Set — Website Spec Boards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --ink:#14140F; --muted:#6A685E; --muted2:#4A4840;
+    --rule:#E3E1D8; --rule2:#C9C7BD; --accent:#2D5BFF; --chip:#EFEDE4;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+  .app{display:grid;grid-template-rows:auto 1fr;height:100%}
+
+  /* header = title block strip */
+  header{display:flex;align-items:stretch;border-bottom:1px solid var(--ink);background:var(--bg);
+         background-image:radial-gradient(var(--rule) 1px,transparent 1px);background-size:20px 20px}
+  .tb{display:flex;flex-direction:column;justify-content:center;padding:9px 18px;border-right:1px solid var(--rule2);font-family:var(--mono)}
+  .tb .k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .tb .v{font-size:13px;color:var(--ink);font-weight:600;margin-top:2px}
+  .tb.grow{flex:1}
+  .tb .v.accent{color:var(--accent)}
+  .navbtns{display:flex;align-items:center;gap:8px;padding:0 16px}
+  .nb{font-family:var(--mono);font-size:12px;border:1px solid var(--rule2);border-radius:7px;padding:8px 12px;background:#fff;cursor:pointer;color:var(--ink)}
+  .nb:hover{border-color:var(--accent);color:var(--accent)}
+  .nb:disabled{opacity:.35;cursor:default;border-color:var(--rule2);color:var(--ink)}
+
+  .body{display:grid;grid-template-columns:268px 1fr;min-height:0}
+  /* sidebar = sheet index */
+  aside{border-right:1px solid var(--rule);overflow-y:auto;background:var(--bg)}
+  .idxhead{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+           padding:16px 18px 10px}
+  .sheet{display:flex;gap:12px;align-items:flex-start;padding:13px 18px;border-bottom:1px solid var(--rule);cursor:pointer;
+         border-left:3px solid transparent;transition:background .12s}
+  .sheet:hover{background:#F2F0E8}
+  .sheet.active{background:#fff;border-left-color:var(--accent)}
+  .sheet .no{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600;min-width:34px;padding-top:1px}
+  .sheet .pg{font-size:14.5px;font-weight:600;letter-spacing:-.01em}
+  .sheet .sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:2px}
+  .sheet.active .pg{color:var(--ink)}
+
+  /* main = the board viewport */
+  main{min-width:0;min-height:0;padding:18px;display:flex;flex-direction:column;gap:0}
+  .frame{flex:1;min-height:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:#fff;
+         box-shadow:0 14px 40px rgba(20,20,15,.05);position:relative}
+  iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+  .loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+           font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--bg);transition:opacity .25s;pointer-events:none}
+  .loading.hide{opacity:0}
+  .hint{font-family:var(--mono);font-size:10.5px;color:var(--muted);padding:8px 4px 0;text-align:right}
+  .hint a{color:var(--accent);text-decoration:none}
+  @media(max-width:760px){ .body{grid-template-columns:1fr} aside{display:none} }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="tb"><span class="k">Project</span><span class="v accent">jackleung.dev</span></div>
+    <div class="tb"><span class="k">Document</span><span class="v">Drawing Set · Spec Boards</span></div>
+    <div class="tb grow"><span class="k">Sheet</span><span class="v" id="curSheet">A-00 · Home</span></div>
+    <div class="navbtns">
+      <button class="nb" id="prev">← Prev</button>
+      <button class="nb" id="next">Next →</button>
+    </div>
+  </header>
+  <div class="body">
+    <aside>
+      <div class="idxhead">Sheet Index</div>
+      <div id="list"></div>
+    </aside>
+    <main>
+      <div class="frame">
+        <iframe id="view" title="Spec board" loading="eager"></iframe>
+        <div class="loading" id="loading">drawing…</div>
+      </div>
+      <div class="hint">Use ← / → keys to flip sheets · <a id="raw" target="_blank" rel="noopener">open this sheet in a new tab ↗</a></div>
+    </main>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Works both ways: opened from disk (file://) → siblings; served by the
+  // brainstorm companion (http) → the /files/ route.
+  const BASE = location.protocol === 'file:' ? '' : '/files/';
+
+  const SHEETS = [
+    { no:'A-00', page:'Home',     sub:'Title Block / Index',  file:'board-a00-home-hero.html' },
+    { no:'A-01', page:'Journey',  sub:'As-Built',             file:'board-a01-journey.html'   },
+    { no:'A-02', page:'Projects', sub:'Drawing Set',          file:'board-a02-projects.html'  },
+    { no:'A-03', page:'Writing',  sub:'Field Notes',          file:'board-a03-writing.html'   },
+    { no:'A-04', page:'Ideas',    sub:'Concept Sketches',     file:'board-a04-ideas.html'     },
+    { no:'A-05', page:'Now',      sub:'Current Works',        file:'board-a05-now.html'       },
+    { no:'A-06', page:'Uses',     sub:'Equipment Schedule',   file:'board-a06-uses.html'      },
+    { no:'·',    page:'Theme',    sub:'Concept Declaration',  file:'theme-system.html'        },
+  ];
+
+  const list=document.getElementById('list');
+  const view=document.getElementById('view');
+  const loading=document.getElementById('loading');
+  const curSheet=document.getElementById('curSheet');
+  const raw=document.getElementById('raw');
+  const prev=document.getElementById('prev');
+  const next=document.getElementById('next');
+  let i=0;
+
+  SHEETS.forEach((s,idx)=>{
+    const el=document.createElement('div');
+    el.className='sheet'; el.dataset.idx=idx;
+    el.innerHTML='<div class="no">'+s.no+'</div><div><div class="pg">'+s.page+'</div><div class="sub">'+s.sub+'</div></div>';
+    el.onclick=()=>go(idx);
+    list.appendChild(el);
+  });
+
+  function go(idx){
+    i=Math.max(0,Math.min(SHEETS.length-1,idx));
+    const s=SHEETS[i];
+    loading.classList.remove('hide'); loading.textContent='drawing…';
+    view.src=BASE+s.file;
+    raw.href=BASE+s.file;
+    curSheet.textContent=(s.no==='·'?'':s.no+' · ')+s.page;
+    [...list.children].forEach((c,n)=>c.classList.toggle('active',n===i));
+    list.children[i].scrollIntoView({block:'nearest'});
+    prev.disabled=(i===0); next.disabled=(i===SHEETS.length-1);
+  }
+  view.addEventListener('load',()=>loading.classList.add('hide'));
+
+  prev.onclick=()=>go(i-1);
+  next.onclick=()=>go(i+1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowLeft'){go(i-1);} else if(e.key==='ArrowRight'){go(i+1);}
+  });
+
+  go(0);
+})();
+</script>
+</body>
+</html>

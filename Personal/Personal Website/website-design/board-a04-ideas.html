@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board A-04 · Ideas — Concept Sketches</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --ink:#14140F; --muted:#6A685E; --muted2:#4A4840;
+    --rule:#E3E1D8; --rule2:#C9C7BD; --accent:#2D5BFF; --chip:#EFEDE4;
+    --orbit:#B2AEA2;
+    --stamp:#B0492E;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:46px 32px 90px}
+  .mono{font-family:var(--mono)}
+  .accent{color:var(--accent)}
+
+  .head{border-bottom:1px solid var(--ink);padding-bottom:20px;margin-bottom:30px}
+  .head .kick{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .head h1{font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+  .head p{font-size:16px;color:var(--muted2);max-width:680px;margin-top:12px}
+
+  h2.sec{font-size:13px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+         margin:42px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+  .sub{font-size:14px;color:var(--muted);margin:-8px 0 18px;max-width:680px}
+
+  /* ===== PREVIEW FRAME ===== */
+  .preview{position:relative;background:var(--bg);border:1px solid var(--rule);border-radius:18px;overflow:hidden;
+        background-image:radial-gradient(var(--rule) 1px,transparent 1px);background-size:22px 22px;
+        box-shadow:0 18px 50px rgba(20,20,15,.06);padding:30px 28px 26px}
+  .pvHead{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:22px}
+  .pvKick{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .pvHonest{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .pvSheet{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--muted)}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+  /* preliminary sketch cards — looser, papered, slight skew */
+  .card{position:relative;background:#FFFFFF;border:1px solid var(--rule2);border-radius:10px;
+        padding:22px 20px 20px;min-height:236px;display:flex;flex-direction:column;
+        box-shadow:0 6px 18px rgba(20,20,15,.05)}
+  .card:nth-child(1){transform:rotate(-.5deg)}
+  .card:nth-child(2){transform:rotate(.4deg)}
+  .card:nth-child(3){transform:rotate(-.3deg)}
+  .card.placeholder{background:repeating-linear-gradient(135deg,#FFFFFF,#FFFFFF 11px,#FBFAF6 11px,#FBFAF6 22px);
+        border-style:dashed;box-shadow:none}
+
+  .cardNo{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);margin-bottom:8px}
+  .card h3{font-size:19px;font-weight:600;letter-spacing:-.01em;line-height:1.18;position:relative;z-index:2}
+  .card.placeholder h3{color:var(--muted2)}
+
+  /* hand-drawn sketch underline lives just under the title */
+  .uline{display:block;width:100%;height:14px;margin:2px 0 12px}
+  .uline path{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round}
+  .card.placeholder .uline path{stroke:var(--rule2)}
+
+  .card p{font-size:13.5px;color:var(--muted2);flex:1}
+  .card.placeholder p{color:var(--muted)}
+
+  /* status tag */
+  .status{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;
+          letter-spacing:.06em;color:var(--muted2);margin-top:14px}
+  .status .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  .status.exploring .dot{background:var(--accent)}
+  .status.concept .dot{background:var(--stamp)}
+  .status.open .dot{background:var(--orbit)}
+  .status b{color:var(--ink);font-weight:600}
+
+  /* rotated rubber-stamp */
+  .stamp{position:absolute;top:16px;right:14px;z-index:3;
+         font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.16em;
+         color:var(--stamp);border:2px solid var(--stamp);border-radius:5px;padding:4px 9px;
+         opacity:.78;transform:rotate(-7deg) scale(1);transform-origin:center;
+         box-shadow:inset 0 0 0 1px rgba(176,73,46,.18)}
+  .card.placeholder .stamp{color:var(--orbit);border-color:var(--orbit);opacity:.7}
+  /* pre-load state for the stamp drop-in */
+  .stamp.anim{opacity:0;transform:rotate(28deg) scale(2.1)}
+
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .legend{font-size:14px;color:var(--muted2)}
+  .legend li{margin:9px 0;list-style:none;padding-left:20px;position:relative}
+  .legend li::before{content:"";position:absolute;left:0;top:7px;width:11px;height:2px;background:var(--accent)}
+  .legend b{color:var(--ink)}
+
+  pre{background:#10131A;color:#D6DEEC;border-radius:12px;padding:20px 22px;overflow-x:auto;font-family:var(--mono);
+      font-size:12.5px;line-height:1.7;border:1px solid #1C2230}
+  pre .c{color:#6B7689}pre .k{color:#7FB4FF}pre .f{color:#9DE3A4}pre .s{color:#E0B080}
+
+  .note{margin-top:34px;border:1px dashed var(--rule2);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--muted2);background:rgba(45,91,255,.03)}
+  .note b{color:var(--accent)}
+  .controls{margin:14px 0 0;display:flex;gap:10px}
+  .btn{font-family:var(--mono);font-size:12px;border:1px solid var(--rule2);border-radius:7px;padding:7px 13px;background:#fff;cursor:pointer;color:var(--ink)}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .chip{display:inline-block;padding:5px 11px;border-radius:20px;background:var(--chip);color:var(--muted2);font-family:var(--mono);font-size:12px}
+  @media(max-width:740px){.row2{grid-template-columns:1fr}.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div class="kick">Spec Board · Sheet A-04 · Ideas</div>
+    <h1>Concept Sketches — the ideas wall</h1>
+    <p>Three teaser cards drawn as <b>preliminary sketches</b> — looser than the rest of the set. Each carries a rotated <b>rubber-stamp</b>, a status tag, and a hand-drawn <b>sketch underline</b> that plots on at load. These are explorations, not a backlog. Below the demo: exactly how the stamp drops and the underline draws.</p>
+  </div>
+
+  <h2 class="sec">01 · Look &amp; feel <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">— live</span></h2>
+  <p class="sub">Watch it load: each stamp scales + rotates into place, then the wavy sketch underline plots on beneath the title — staggered card by card. Light Direction A, IBM Plex type, faint blueprint grid for atmosphere.</p>
+
+  <div class="preview">
+    <div class="pvHead">
+      <span class="pvKick">A-04 · Ideas</span>
+      <span class="pvHonest">Explorations, not commitments.</span>
+      <span class="pvSheet">A-04</span>
+    </div>
+
+    <div class="cards" id="cards">
+
+      <div class="card">
+        <span class="stamp">CONCEPT</span>
+        <div class="cardNo">IDEA-01</div>
+        <h3>Pet Social Vlog</h3>
+        <svg class="uline" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true">
+          <path class="sketch" d=""></path>
+        </svg>
+        <p>A social + vlog space for pet owners — share clips, follow other animals, build a little community around everyday pet life.</p>
+        <span class="status exploring"><span class="dot"></span>STATUS · <b>Exploring</b></span>
+      </div>
+
+      <div class="card">
+        <span class="stamp">CONCEPT</span>
+        <div class="cardNo">IDEA-02</div>
+        <h3>Cross-Border Car Hailing</h3>
+        <svg class="uline" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true">
+          <path class="sketch" d=""></path>
+        </svg>
+        <p>A cross-border ride-hailing concept — matching riders and drivers across a regional boundary, with the routing and compliance handled underneath.</p>
+        <span class="status concept"><span class="dot"></span>STATUS · <b>Concept</b></span>
+      </div>
+
+      <div class="card placeholder">
+        <span class="stamp">REV.A</span>
+        <div class="cardNo">IDEA-03</div>
+        <h3>Your next idea</h3>
+        <svg class="uline" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true">
+          <path class="sketch" d=""></path>
+        </svg>
+        <p>An open slot. The wall stays live — when the next thing is worth a sketch, it lands here.</p>
+        <span class="status open"><span class="dot"></span>STATUS · <b>Open</b></span>
+      </div>
+
+    </div>
+  </div>
+  <div class="controls"><button class="btn" id="replay">↻ replay intro</button></div>
+
+  <h2 class="sec">02 · What it means</h2>
+  <div class="row2">
+    <ul class="legend">
+      <li><b>Preliminary, on purpose</b> — the cards sit slightly rotated on a dashed/papered ground so they read as sketches, not shipped product pages.</li>
+      <li><b>The rubber-stamp</b> — <span class="mono">CONCEPT</span> / <span class="mono">REV.A</span> in muted engineer's red is the drawing-set tell: this is marked up, provisional, subject to revision.</li>
+      <li><b>The status tag</b> — Exploring / Concept / Open says the honest truth about each idea at a glance, no overselling.</li>
+      <li><b>The wavy underline</b> — a hand-drawn stroke under each title; it's the human hand on top of the technical chrome.</li>
+    </ul>
+    <div>
+      <div class="note" style="margin-top:0">
+        <b>Why teasers only:</b> the ideas wall shows direction and taste, not specs. Each card is a one-line concept plus an honest status — <i>explorations, not commitments.</i> Detail lives elsewhere, if and when an idea earns it.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec">03 · How it draws &amp; loops <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">— the algorithm</span></h2>
+  <p class="sub">A hand-drawn underline is just a straight baseline with small <i>fixed</i> offsets on its control points — same path every replay, so it looks sketched, not random noise. The stamp is a CSS transform transition. No loop: a one-shot orchestrated reveal.</p>
+
+  <pre><span class="c">// 1 — BUILD A "HAND-DRAWN" UNDERLINE PATH  (wavy, but deterministic)</span>
+W = 220                                   <span class="c">// underline width (viewBox units)</span>
+baseY = 7
+<span class="c">// fixed per-point jitter — NOT Math.random(); same every replay</span>
+jit = [ <span class="f">0, -1.6, 1.2, -0.8, 1.7, -1.1, 0.6, 0</span> ]
+<span class="k">function</span> <span class="f">sketchPath</span>(W):
+    n  = jit.length
+    pts = <span class="k">for</span> i <span class="k">in</span> 0..n-1:
+            { x: i/(n-1) * W, y: baseY + jit[i] }
+    <span class="c">// smooth the points into a single quadratic path</span>
+    d = <span class="s">"M"</span> + pts[0]
+    <span class="k">for</span> i <span class="k">in</span> 1..n-1:
+        mid = midpoint(pts[i-1], pts[i])
+        d  += <span class="s">"Q"</span> + pts[i-1] + <span class="s">" "</span> + mid   <span class="c">// control pt = prev point</span>
+    <span class="k">return</span> d
+
+<span class="c">// 2 — PLOT THE UNDERLINE ON  (the shared draw primitive)</span>
+<span class="k">function</span> <span class="f">drawOn</span>(path):
+    L = path.<span class="f">getTotalLength</span>()
+    path.style.strokeDasharray  = L
+    path.style.strokeDashoffset = L            <span class="c">// hidden: fully "rolled up"</span>
+    reflow()                                   <span class="c">// commit before transition</span>
+    path.style.transition  = <span class="s">"stroke-dashoffset .5s ease-out"</span>
+    path.style.strokeDashoffset = 0            <span class="c">// → 0 : the plotter draws it</span>
+
+<span class="c">// 3 — STAMP DROP  (rotate + scale via CSS transition, no draw)</span>
+<span class="c">// start state .anim : opacity 0, rotate(28deg) scale(2.1)</span>
+<span class="k">function</span> <span class="f">stampIn</span>(stamp):
+    stamp.style.transition = <span class="s">"transform .42s cubic-bezier(.2,.8,.2,1), opacity .3s ease"</span>
+    stamp.classList.<span class="f">remove</span>(<span class="s">"anim"</span>)         <span class="c">// → rest: rotate(-7deg) scale(1), opacity .78</span>
+
+<span class="c">// 4 — ORCHESTRATE: one staggered reveal, card by card (no infinite loop)</span>
+<span class="k">function</span> <span class="f">intro</span>():
+    <span class="k">for</span> (card, i) <span class="k">in</span> cards:
+        <span class="f">setTimeout</span>( () => <span class="f">stampIn</span>(card.stamp), 120 + i*220 )
+        <span class="f">setTimeout</span>( () => <span class="f">drawOn</span>(card.underline), 300 + i*220 )
+
+<span class="c">// 5 — RESPECT THE USER</span>
+<span class="k">if</span> prefers-reduced-motion:
+    render <span class="f">one static frame</span>: stamps at rest, underlines fully drawn, no transitions</pre>
+
+  <div class="note">
+    <b>The "draw" primitive (reused everywhere):</b>
+    <span class="mono" style="color:var(--ink)">L = path.getTotalLength(); dasharray = L; dashoffset = L → 0</span>.
+    The same three lines that plot the home-hero spine and the Journey tower draw these sketch underlines too — the only twist is a few <i>fixed</i> control-point offsets so the line reads as a hand, not a ruler. One hand, drawing the whole site.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const W = 220, baseY = 7;
+  // fixed per-point offsets → deterministic "hand-drawn" wave (NOT random)
+  const jit = [0, -1.6, 1.2, -0.8, 1.7, -1.1, 0.6, 0];
+
+  function sketchPath(){
+    const n = jit.length;
+    const pts = jit.map((dy,i)=>({ x:(i/(n-1))*W, y:baseY+dy }));
+    const r = v => Math.round(v*100)/100;
+    let d = `M ${r(pts[0].x)} ${r(pts[0].y)}`;
+    for(let i=1;i<n;i++){
+      const p0=pts[i-1], p1=pts[i];
+      const mx=r((p0.x+p1.x)/2), my=r((p0.y+p1.y)/2);
+      d += ` Q ${r(p0.x)} ${r(p0.y)} ${mx} ${my}`;
+    }
+    return d;
+  }
+
+  const cards = Array.from(document.querySelectorAll('#cards .card'));
+  const items = cards.map(card=>{
+    const path  = card.querySelector('path.sketch');
+    const stamp = card.querySelector('.stamp');
+    path.setAttribute('d', sketchPath());
+    return { card, path, stamp, len: path.getTotalLength() };
+  });
+
+  function drawOn(it){
+    it.path.style.strokeDasharray  = it.len;
+    it.path.style.strokeDashoffset = it.len;
+    void it.path.getBoundingClientRect();           // commit hidden state
+    it.path.style.transition  = 'stroke-dashoffset .5s ease-out';
+    it.path.style.strokeDashoffset = 0;             // plot the line on
+  }
+  function stampIn(it){
+    it.stamp.style.transition = 'transform .42s cubic-bezier(.2,.8,.2,1), opacity .3s ease';
+    void it.stamp.getBoundingClientRect();
+    it.stamp.classList.remove('anim');              // → rest transform
+  }
+
+  function reset(){
+    items.forEach(it=>{
+      it.stamp.style.transition = 'none';
+      it.stamp.classList.add('anim');               // pre-load: big, rotated, invisible
+      it.path.style.transition = 'none';
+      it.path.style.strokeDasharray  = it.len;
+      it.path.style.strokeDashoffset = it.len;      // underline rolled up
+    });
+  }
+  function staticFrame(){
+    items.forEach(it=>{
+      it.stamp.classList.remove('anim');            // at rest immediately
+      it.path.style.strokeDasharray  = it.len;
+      it.path.style.strokeDashoffset = 0;           // fully drawn
+    });
+  }
+  function intro(){
+    reset();
+    void document.getElementById('cards').getBoundingClientRect();
+    items.forEach((it,i)=>{
+      setTimeout(()=>stampIn(it), 120 + i*220);
+      setTimeout(()=>drawOn(it),  300 + i*220);
+    });
+  }
+
+  if(reduce){ staticFrame(); }
+  else { intro(); }
+
+  document.getElementById('replay').onclick = ()=>{
+    if(reduce){ staticFrame(); return; }
+    intro();
+  };
+})();
+</script>
+</body>
+</html>

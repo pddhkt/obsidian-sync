@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board A-00 · Home Hero — Orbital Spine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --ink:#14140F; --muted:#6A685E; --muted2:#4A4840;
+    --rule:#E3E1D8; --rule2:#C9C7BD; --accent:#2D5BFF; --chip:#EFEDE4;
+    --orbit:#B2AEA2;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:46px 32px 90px}
+  .mono{font-family:var(--mono)}
+  .accent{color:var(--accent)}
+
+  .head{border-bottom:1px solid var(--ink);padding-bottom:20px;margin-bottom:30px}
+  .head .kick{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .head h1{font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+  .head p{font-size:16px;color:var(--muted2);max-width:680px;margin-top:12px}
+
+  h2.sec{font-size:13px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+         margin:42px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+  .sub{font-size:14px;color:var(--muted);margin:-8px 0 18px;max-width:680px}
+
+  /* ===== LIGHT HERO VIEWPORT ===== */
+  .hero{position:relative;background:var(--bg);border:1px solid var(--rule);border-radius:18px;overflow:hidden;
+        background-image:radial-gradient(var(--rule) 1px,transparent 1px);background-size:22px 22px;
+        box-shadow:0 18px 50px rgba(20,20,15,.06)}
+  .hero svg{display:block;width:100%;height:auto}
+  .frameRect{fill:none;stroke:var(--rule2);stroke-width:1}
+  .logoBox{fill:var(--ink);opacity:.88}
+  .orbit{fill:none;stroke:var(--orbit);stroke-width:1;opacity:.9}
+  .spine{stroke:var(--accent);stroke-width:1.4;opacity:.95}
+  .node{fill:var(--accent);stroke:var(--bg);stroke-width:2}
+  .nodeChip rect{fill:#FFFFFF;stroke:var(--rule2)}
+  .nodeChip text{fill:var(--ink);font-family:var(--mono);font-size:12px}
+  .heroKick{fill:var(--accent);font-family:var(--mono);font-size:13px;letter-spacing:.18em}
+  .heroHead{fill:var(--ink);font-family:var(--sans);font-weight:700;font-size:40px;letter-spacing:-.02em}
+  .heroSub{fill:var(--muted2);font-family:var(--sans);font-size:15px}
+  .sheetTag{fill:var(--muted);font-family:var(--mono);font-size:12px;letter-spacing:.1em}
+  .tblock line{stroke:var(--rule2)}.tblock text{fill:var(--muted);font-family:var(--mono);font-size:9px}
+
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .legend{font-size:14px;color:var(--muted2)}
+  .legend li{margin:9px 0;list-style:none;padding-left:20px;position:relative}
+  .legend li::before{content:"";position:absolute;left:0;top:7px;width:11px;height:2px;background:var(--accent)}
+  .legend b{color:var(--ink)}
+
+  pre{background:#10131A;color:#D6DEEC;border-radius:12px;padding:20px 22px;overflow-x:auto;font-family:var(--mono);
+      font-size:12.5px;line-height:1.7;border:1px solid #1C2230}
+  pre .c{color:#6B7689}pre .k{color:#7FB4FF}pre .f{color:#9DE3A4}pre .s{color:#E0B080}
+
+  .note{margin-top:34px;border:1px dashed var(--rule2);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--muted2);background:rgba(45,91,255,.03)}
+  .note b{color:var(--accent)}
+  .controls{margin:14px 0 0;display:flex;gap:10px}
+  .btn{font-family:var(--mono);font-size:12px;border:1px solid var(--rule2);border-radius:7px;padding:7px 13px;background:#fff;cursor:pointer;color:var(--ink)}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:740px){.row2{grid-template-columns:1fr}.heroHead{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div class="kick">Spec Board · Sheet A-00 · Home</div>
+    <h1>Orbital Spine — the landing hero</h1>
+    <p>Your sketch, fused with the theme: a <b>diagonal load-path spine</b> (Structures) crossed by <b>nested orbits</b> (Systems). Nodes are the hub destinations and they orbit live. Below the demo: exactly how it draws and loops.</p>
+  </div>
+
+  <h2 class="sec">01 · Look &amp; feel <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">— live</span></h2>
+  <p class="sub">Watch it load: the spine plots on first, orbits draw in, then the nodes start orbiting. Light Direction A, IBM Plex type, faint blueprint grid for atmosphere.</p>
+
+  <div class="hero">
+    <svg id="heroSvg" viewBox="0 0 960 520" role="img" aria-label="Orbital hero demo">
+      <rect class="frameRect" x="16" y="16" width="928" height="488" rx="16"></rect>
+      <rect class="logoBox" x="46" y="44" width="46" height="30" rx="7"></rect>
+      <text class="heroKick" x="48" y="350">DEVELOPER · BUILDER</text>
+      <text class="heroHead" x="46" y="398">Engineering judgment,</text>
+      <text class="heroHead" x="46" y="444">applied to software.</text>
+      <text class="heroSub" x="48" y="476">Ex-structural engineer. I turn messy problems into systems that stand up.</text>
+      <text class="sheetTag" x="888" y="486">A-00</text>
+      <g class="tblock" transform="translate(770,40)">
+        <rect x="0" y="0" width="146" height="34" fill="none" stroke="#C9C7BD"></rect>
+        <line x1="73" y1="0" x2="73" y2="34"></line><line x1="0" y1="17" x2="146" y2="17"></line>
+        <text x="6" y="11">PROJECT</text><text x="79" y="11">SHEET</text>
+        <text x="6" y="29" fill="#14140F">jackleung.dev</text><text x="79" y="29" fill="#14140F">A-00</text>
+      </g>
+      <g id="orbitLayer"></g>
+      <g id="spineLayer"></g>
+      <g id="nodeLayer"></g>
+    </svg>
+  </div>
+  <div class="controls"><button class="btn" id="replay">↻ replay intro</button><button class="btn" id="toggle">⏸ pause orbit</button></div>
+
+  <h2 class="sec">02 · What it means</h2>
+  <div class="row2">
+    <ul class="legend">
+      <li><b>The spine</b> — the diagonal axis is a structural column line / load path. The through-line of your story; everything hangs off it.</li>
+      <li><b>The orbits</b> — nested, tilted ellipses are the systems you build. They share one centre: you.</li>
+      <li><b>The nodes</b> — four destinations (Journey, Projects, Writing, Ideas) ride the orbits. They're the actual nav — click a node to travel.</li>
+      <li><b>Scannable</b> — left side stays calm text; the motion lives on the right so the hub reads in 5 seconds.</li>
+    </ul>
+    <div>
+      <div class="note" style="margin-top:0">
+        <b>Why this works as the hub:</b> it's the theme in one image — Structures (spine) meeting Systems (orbits) — and it doubles as navigation. The diagram <i>is</i> the message and the menu.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec">03 · How it draws &amp; loops <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">— the algorithm</span></h2>
+  <p class="sub">Pure math + one <span class="mono">requestAnimationFrame</span> loop. The same primitive we reuse for every animated motif on the site.</p>
+
+  <pre><span class="c">// 1 — DEFINE THE ORBITS  (shared centre, nested, one tilt)</span>
+C    = { x: 700, y: 270 }            <span class="c">// the core = you</span>
+tilt = <span class="f">-26°</span>
+orbits = [
+  { rx:120, ry: 50, speed:<span class="f"> 0.22</span>, t:0.3, label:<span class="s">"Journey"</span>  },
+  { rx:184, ry: 78, speed:<span class="f">-0.15</span>, t:1.7, label:<span class="s">"Projects"</span> },
+  { rx:250, ry:106, speed:<span class="f"> 0.10</span>, t:3.0, label:<span class="s">"Writing"</span>  },
+  { rx:322, ry:136, speed:<span class="f">-0.07</span>, t:4.6, label:<span class="s">"Ideas"</span>    },
+]   <span class="c">// alternating speeds → orbits counter-rotate (alive, not mechanical)</span>
+
+<span class="c">// 2 — A POINT ON A TILTED ELLIPSE  (parametric, the whole trick)</span>
+<span class="k">function</span> <span class="f">pointOn</span>(o, t):
+    x = o.rx * cos(t)
+    y = o.ry * sin(t)
+    <span class="k">return</span> rotate(x, y, tilt) + C
+
+<span class="c">// 3 — INTRO: "PLOT ON", don't fade  (the theme's signature motion)</span>
+timeline:
+    spine.<span class="f">draw</span>(0.5s)                     <span class="c">// dashoffset L → 0</span>
+    orbits.<span class="f">draw</span>(0.4s, stagger 0.15s)
+    nodes.<span class="f">popIn</span>()
+    <span class="k">then</span> → start <span class="f">loop()</span>
+
+<span class="c">// 4 — THE LOOP  (orbit forever, ~30s / revolution)</span>
+<span class="k">function</span> <span class="f">loop</span>(now):
+    dt = (now - last) / 1000;  last = now
+    <span class="k">for</span> o <span class="k">in</span> orbits:
+        o.t += o.speed * dt
+        moveNode(o.node, <span class="f">pointOn</span>(o, o.t))
+    requestAnimationFrame(loop)
+
+<span class="c">// 5 — RESPECT THE USER</span>
+<span class="k">if</span> prefers-reduced-motion:
+    render <span class="f">one static frame</span>, skip the loop</pre>
+
+  <div class="note">
+    <b>The "draw" primitive (reused everywhere):</b>
+    <span class="mono" style="color:var(--ink)">L = path.getTotalLength(); dasharray = L; dashoffset = L → 0</span>.
+    Dimension lines, the Journey tower, project diagrams — all the same three lines of code. That's what makes it feel like <i>one hand drew the whole site</i>.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const C={x:700,y:270}, tiltDeg=-26, tilt=tiltDeg*Math.PI/180;
+  const ct=Math.cos(tilt), st=Math.sin(tilt);
+  const orbits=[
+    {rx:120,ry:50, sp: 0.22, t:0.3, label:"Journey"},
+    {rx:184,ry:78, sp:-0.15, t:1.7, label:"Projects"},
+    {rx:250,ry:106,sp: 0.10, t:3.0, label:"Writing"},
+    {rx:322,ry:136,sp:-0.07, t:4.6, label:"Ideas"},
+  ];
+  const orbitLayer=document.getElementById('orbitLayer');
+  const spineLayer=document.getElementById('spineLayer');
+  const nodeLayer =document.getElementById('nodeLayer');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function pointOn(o,t){
+    const x=o.rx*Math.cos(t), y=o.ry*Math.sin(t);
+    return { x:C.x + x*ct - y*st, y:C.y + x*st + y*ct };
+  }
+  function el(tag,attrs){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+
+  const sp1={x:786,y:42}, sp2={x:600,y:498};
+  const spine=el('line',{class:'spine',x1:sp1.x,y1:sp1.y,x2:sp2.x,y2:sp2.y});
+  spineLayer.appendChild(spine);
+  const spineLen=Math.hypot(sp2.x-sp1.x, sp2.y-sp1.y);
+
+  orbits.forEach(o=>{
+    o.path=el('ellipse',{class:'orbit',cx:C.x,cy:C.y,rx:o.rx,ry:o.ry,transform:`rotate(${tiltDeg} ${C.x} ${C.y})`});
+    orbitLayer.appendChild(o.path);
+    o.len=o.path.getTotalLength();
+    o.node=el('circle',{class:'node',r:6,cx:C.x,cy:C.y});
+    o.chip=el('g',{class:'nodeChip'});
+    const w=o.label.length*7.4+18;
+    o.chipRect=el('rect',{x:0,y:-11,width:w,height:22,rx:5});
+    o.chipText=el('text',{x:9,y:4});o.chipText.textContent=o.label;
+    o.chip.appendChild(o.chipRect);o.chip.appendChild(o.chipText);
+    nodeLayer.appendChild(o.chip);nodeLayer.appendChild(o.node);
+  });
+
+  function place(){
+    orbits.forEach(o=>{
+      const p=pointOn(o,o.t);
+      o.node.setAttribute('cx',p.x);o.node.setAttribute('cy',p.y);
+      const flip = p.x>C.x ? 14 : -(o.label.length*7.4+18)-14;
+      o.chip.setAttribute('transform',`translate(${p.x+flip} ${p.y})`);
+    });
+  }
+  function setHidden(h){
+    spine.style.strokeDasharray=spineLen; spine.style.strokeDashoffset=h?spineLen:0;
+    orbits.forEach(o=>{o.path.style.strokeDasharray=o.len;o.path.style.strokeDashoffset=h?o.len:0;
+      o.node.style.opacity=h?0:1;o.chip.style.opacity=h?0:1;
+      o.node.style.transition='opacity .4s ease';o.chip.style.transition='opacity .4s ease';});
+  }
+  function intro(){
+    place(); setHidden(true); void spine.getBoundingClientRect();
+    spine.style.transition='stroke-dashoffset .55s ease'; spine.style.strokeDashoffset=0;
+    orbits.forEach((o,i)=>{setTimeout(()=>{o.path.style.transition='stroke-dashoffset .45s ease';o.path.style.strokeDashoffset=0;},420+i*150);});
+    const popAt=420+orbits.length*150+200;
+    setTimeout(()=>{orbits.forEach(o=>{o.node.style.opacity=1;o.chip.style.opacity=1;});},popAt);
+    setTimeout(()=>{ if(!reduce) start(); }, popAt+450);
+  }
+  let raf=null,last=null,running=false;
+  function loop(now){if(last==null)last=now;const dt=(now-last)/1000;last=now;orbits.forEach(o=>{o.t+=o.sp*dt;});place();raf=requestAnimationFrame(loop);}
+  function start(){if(running)return;running=true;last=null;raf=requestAnimationFrame(loop);}
+  function stop(){running=false;if(raf)cancelAnimationFrame(raf);raf=null;}
+  if(reduce){setHidden(false);place();}else{intro();}
+  document.getElementById('replay').onclick=()=>{stop();intro();};
+  const tg=document.getElementById('toggle');
+  tg.onclick=()=>{if(running){stop();tg.textContent='▶ resume orbit';}else{start();tg.textContent='⏸ pause orbit';}};
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board A-06 · Uses — Equipment Schedule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --ink:#14140F; --muted:#6A685E; --muted2:#4A4840;
+    --rule:#E3E1D8; --rule2:#C9C7BD; --accent:#2D5BFF; --chip:#EFEDE4;
+    --orbit:#B2AEA2;
+    --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:46px 32px 90px}
+  .mono{font-family:var(--mono)}
+  .accent{color:var(--accent)}
+
+  .head{border-bottom:1px solid var(--ink);padding-bottom:20px;margin-bottom:30px}
+  .head .kick{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  .head h1{font-size:34px;font-weight:700;letter-spacing:-.02em;line-height:1.08}
+  .head p{font-size:16px;color:var(--muted2);max-width:680px;margin-top:12px}
+
+  h2.sec{font-size:13px;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+         margin:42px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+  .sub{font-size:14px;color:var(--muted);margin:-8px 0 18px;max-width:680px}
+
+  /* ===== SCHEDULE VIEWPORT ===== */
+  .sheet{position:relative;background:var(--bg);border:1px solid var(--rule);border-radius:18px;overflow:hidden;
+         background-image:radial-gradient(var(--rule) 1px,transparent 1px);background-size:22px 22px;
+         box-shadow:0 18px 50px rgba(20,20,15,.06);padding:34px 30px 26px}
+
+  /* schedule title strip */
+  .schTitle{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:4px}
+  .schTitle .nm{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+  .schTitle .sm{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
+
+  /* the schedule table itself */
+  .sch{width:100%;border-collapse:collapse;position:relative;z-index:1}
+  .sch col.c-tag{width:84px}
+  .sch col.c-item{width:188px}
+  .sch col.c-role{width:auto}
+  .sch col.c-notes{width:300px}
+  .sch thead th{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);
+                text-align:left;padding:8px 12px;vertical-align:bottom;font-weight:600}
+  .sch tbody td{font-size:13.5px;color:var(--ink);padding:9px 12px;vertical-align:top}
+  .sch tbody td.tag{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.04em;white-space:nowrap}
+  .sch tbody td.item{font-weight:600}
+  .sch tbody td.role{color:var(--muted2);font-size:13px}
+  .sch tbody td.notes{color:var(--muted);font-size:12.5px;font-family:var(--mono);letter-spacing:-.01em}
+
+  /* category subheader rows */
+  .sch tr.grp td{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+                 color:var(--ink);background:var(--chip);padding:7px 12px;font-weight:600}
+  .sch tr.grp td .cnt{color:var(--muted);float:right;letter-spacing:.06em}
+  .sch tr.grp.legacy td{color:var(--muted2)}
+
+  /* rows tally in: hidden then revealed */
+  .sch tbody tr.row, .sch tbody tr.grp{opacity:0;transform:translateY(4px)}
+  .sch tbody tr.shown{opacity:1;transform:none;transition:opacity .34s ease, transform .34s ease}
+
+  /* SVG rule overlay sits behind text, draws on */
+  .ruleSvg{position:absolute;inset:34px 30px auto 30px;width:calc(100% - 60px);height:100%;pointer-events:none;z-index:0;overflow:visible}
+  .ruleSvg line{stroke:var(--rule2);stroke-width:1}
+  .ruleSvg line.heavy{stroke:var(--ink);stroke-width:1.4}
+
+  /* summary count footer */
+  .schFoot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;
+           border-top:1px solid var(--ink);padding-top:10px;position:relative;z-index:1}
+  .tally{display:flex;gap:26px;align-items:baseline}
+  .tally .num{font-family:var(--mono);font-weight:600;font-size:30px;color:var(--accent);letter-spacing:-.01em;line-height:1}
+  .tally .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:7px}
+  .tally .grp{display:flex;align-items:baseline}
+  .schFoot .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
+
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .legend{font-size:14px;color:var(--muted2)}
+  .legend li{margin:9px 0;list-style:none;padding-left:20px;position:relative}
+  .legend li::before{content:"";position:absolute;left:0;top:7px;width:11px;height:2px;background:var(--accent)}
+  .legend b{color:var(--ink)}
+  .chip{display:inline-block;padding:5px 11px;border-radius:20px;background:var(--chip);color:var(--muted2);font-family:var(--mono);font-size:12px}
+
+  pre{background:#10131A;color:#D6DEEC;border-radius:12px;padding:20px 22px;overflow-x:auto;font-family:var(--mono);
+      font-size:12.5px;line-height:1.7;border:1px solid #1C2230}
+  pre .c{color:#6B7689}pre .k{color:#7FB4FF}pre .f{color:#9DE3A4}pre .s{color:#E0B080}
+
+  .note{margin-top:34px;border:1px dashed var(--rule2);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--muted2);background:rgba(45,91,255,.03)}
+  .note b{color:var(--accent)}
+  .controls{margin:14px 0 0;display:flex;gap:10px}
+  .btn{font-family:var(--mono);font-size:12px;border:1px solid var(--rule2);border-radius:7px;padding:7px 13px;background:#fff;cursor:pointer;color:var(--ink)}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:740px){
+    .row2{grid-template-columns:1fr}
+    .sch col.c-notes{width:0}
+    .sch tbody td.notes,.sch thead th.notes{display:none}
+    .sch col.c-item{width:140px}
+    .tally{gap:16px}.tally .num{font-size:24px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div class="kick">Spec Board · Sheet A-06 · Uses</div>
+    <h1>Equipment Schedule — the stack</h1>
+    <p>The tech stack drawn as an engineer's <b>equipment / materials schedule</b>: every tool gets a <b>TAG</b>, an item name, a role on site, and field notes. Grouped by discipline, tagged in monospace, ruled with hairlines. Below the demo: exactly how the rules draw and the rows tally in.</p>
+  </div>
+
+  <h2 class="sec">01 · Look &amp; feel <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">— live</span></h2>
+  <p class="sub">Watch it load: the table rule lines plot on, the rows tally in top&#8594;bottom, and the total-items count counts up. Light Direction A, IBM Plex type, faint blueprint grid for atmosphere.</p>
+
+  <div class="sheet">
+    <div class="schTitle">
+      <div class="nm">Equipment Schedule — Working Stack</div>
+      <div class="sm">REV. C · 2026-06</div>
+    </div>
+
+    <svg class="ruleSvg" id="ruleSvg" preserveAspectRatio="none" aria-hidden="true"></svg>
+
+    <table class="sch" id="sch">
+      <colgroup>
+        <col class="c-tag"><col class="c-item"><col class="c-role"><col class="c-notes">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Tag</th><th>Item</th><th>Role</th><th class="notes">Notes</th>
+        </tr>
+      </thead>
+      <tbody id="schBody"><!-- rows injected --></tbody>
+    </table>
+
+    <div class="schFoot">
+      <div class="tally">
+        <div class="grp"><span class="num" id="cTotal">0</span><span class="lab">Items scheduled</span></div>
+        <div class="grp"><span class="num" id="cGroups">0</span><span class="lab">Disciplines</span></div>
+      </div>
+      <div class="tag mono">A-06 · USES</div>
+    </div>
+  </div>
+  <div class="controls"><button class="btn" id="replay">&#8635; replay intro</button></div>
+
+  <h2 class="sec">02 · What it means</h2>
+  <div class="row2">
+    <ul class="legend">
+      <li><b>The schedule format</b> — on a drawing set, every fixture, beam and fitting is catalogued in a schedule with a tag. Here the stack <i>is</i> the schedule: tools as equipment with codes you can point at.</li>
+      <li><b>The TAG codes</b> — <span class="mono">FE-01 … EN-05</span>. A tag per discipline (FE / BE / CL / TL / EN) so the page reads like a parts list, not a logo wall.</li>
+      <li><b>Disciplines, not buckets</b> — Frontend, Backend &amp; Data, Cloud, Tools &amp; AI, and a quiet <b>Engineering (legacy)</b> row that keeps the structural thread honest.</li>
+      <li><b>The count-up</b> — the footer tallies items and disciplines as the rows land, the way a schedule footer totals quantities.</li>
+    </ul>
+    <div>
+      <div class="note" style="margin-top:0">
+        <b>Why a schedule:</b> it expresses the theme without a single decorative line &mdash; the <i>document type</i> carries the metaphor. Software leads (Frontend / Backend / Cloud / AI sit first); the legacy structural tools are scheduled last, present but no longer load-bearing.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sec">03 · How it draws &amp; loops <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0">— the algorithm</span></h2>
+  <p class="sub">A staggered reveal timeline + the shared draw primitive for the rules + an eased lerp for the count-up. All vanilla JS, one <span class="mono">requestAnimationFrame</span> per counter.</p>
+
+  <pre><span class="c">// 1 — THE SCHEDULE DATA  (grouped by discipline, tagged)</span>
+groups = [
+  { tag:<span class="s">"FE"</span>, name:<span class="s">"Frontend"</span>,           items:[TypeScript, React, Next.js, React Native] },
+  { tag:<span class="s">"BE"</span>, name:<span class="s">"Backend &amp; Data"</span>,     items:[Python, PHP, Laravel, Convex, Supabase, SQL] },
+  { tag:<span class="s">"CL"</span>, name:<span class="s">"Cloud"</span>,              items:[Cloudflare Workers] },
+  { tag:<span class="s">"TL"</span>, name:<span class="s">"Tools &amp; AI"</span>,         items:[Figma, GitHub, LangChain, Claude Code, Cursor] },
+  { tag:<span class="s">"EN"</span>, name:<span class="s">"Engineering (legacy)"</span>, items:[AutoCAD, SAP2000, ETABS, SADS, MATLAB] },
+]
+<span class="c">// each item → row: TAG = `${g.tag}-0${i}`  e.g. BE-03 = Laravel</span>
+
+<span class="c">// 2 — RULE LINES via the DRAW PRIMITIVE  (plot on, never fade)</span>
+<span class="k">function</span> <span class="f">drawRule</span>(line, delay):
+    L = line.<span class="f">getTotalLength</span>()
+    line.style.strokeDasharray  = L
+    line.style.strokeDashoffset = L
+    after(delay): line.transition(<span class="s">"stroke-dashoffset .5s ease"</span>) &#8594; offset 0
+
+<span class="c">// 3 — ROWS TALLY IN  (staggered timeline, top &#8594; bottom)</span>
+t = 0; STEP = 70ms
+<span class="k">for</span> row <span class="k">in</span> orderedRows:            <span class="c">// subheaders + item rows, in document order</span>
+    after(t): row.classList.add(<span class="s">"shown"</span>)   <span class="c">// opacity 0&#8594;1, slide 4px&#8594;0</span>
+    t += STEP                       <span class="c">// each row lands a beat after the last</span>
+
+<span class="c">// 4 — COUNT-UP  =  eased lerp 0 &#8594; value over a duration</span>
+<span class="k">function</span> <span class="f">countUp</span>(el, value, dur):
+    start = now()
+    <span class="k">function</span> <span class="f">frame</span>(t):
+        p  = clamp((t - start) / dur, 0, 1)
+        e  = 1 - (1 - p)<span class="f">&#179;</span>                <span class="c">// easeOutCubic — fast then settle</span>
+        el.text = round(value * e)
+        <span class="k">if</span> p &lt; 1: requestAnimationFrame(frame)
+    requestAnimationFrame(frame)
+
+countUp(<span class="s">"#cTotal"</span>,  totalItems,  900ms)   <span class="c">// 21 items</span>
+countUp(<span class="s">"#cGroups"</span>, groupCount,  900ms)   <span class="c">//  5 disciplines</span>
+
+<span class="c">// 5 — RESPECT THE USER</span>
+<span class="k">if</span> prefers-reduced-motion:
+    show every row, draw rules at offset 0, set final counts &#8212; <span class="f">no timeline</span></pre>
+
+  <div class="note">
+    <b>The "draw" primitive (reused everywhere):</b>
+    <span class="mono" style="color:var(--ink)">L = path.getTotalLength(); dasharray = L; dashoffset = L &#8594; 0</span>.
+    The schedule's hairline rules use the exact same three lines as the hero spine and the Journey tower &mdash; so the table reads as if <i>one plotter inked the whole set</i>.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const groups=[
+    {tag:"FE", name:"Frontend",            items:[
+      ["TypeScript","Typed contracts across the app","first language, everywhere"],
+      ["React","UI rendering layer","components + hooks"],
+      ["Next.js","App framework / routing","SSR, app router"],
+      ["React Native","Cross-platform mobile","Buddy Ride apps"],
+    ]},
+    {tag:"BE", name:"Backend & Data",       items:[
+      ["Python","Automation + scripting","SAP2000 model gen"],
+      ["PHP","Server-side runtime","CMS + legacy services"],
+      ["Laravel","PHP app framework","APIs, auth, jobs"],
+      ["Convex","Reactive backend / DB","realtime state"],
+      ["Supabase","Postgres + auth","managed data layer"],
+      ["SQL","Relational queries","schema + reporting"],
+    ]},
+    {tag:"CL", name:"Cloud",                items:[
+      ["Cloudflare Workers","Edge compute","low-latency endpoints"],
+    ]},
+    {tag:"TL", name:"Tools & AI",           items:[
+      ["Figma","Design + handoff","specs, prototypes"],
+      ["GitHub","Source control / CI","PRs, actions"],
+      ["LangChain","LLM orchestration","chains + agents"],
+      ["Claude Code","AI pair / agent","daily driver"],
+      ["Cursor","AI-assisted editor","inline edits"],
+    ]},
+    {tag:"EN", name:"Engineering (legacy)", legacy:true, items:[
+      ["AutoCAD","Drafting / drawings","detailing"],
+      ["SAP2000","Structural analysis","frame models"],
+      ["ETABS","Building analysis","39-storey towers"],
+      ["SADS","RC design (HK code)","reinforced concrete"],
+      ["MATLAB","Numerical / wind calc","load studies"],
+    ]},
+  ];
+
+  const body  = document.getElementById('schBody');
+  const ruleSvg = document.getElementById('ruleSvg');
+  const revealOrder = [];   // every <tr> in document order
+  const totalItems = groups.reduce((n,g)=>n+g.items.length,0);
+  const groupCount = groups.length;
+
+  function el(tag,attrs){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
+
+  // ---- BUILD TABLE ----
+  groups.forEach(g=>{
+    const gr=document.createElement('tr');
+    gr.className='grp'+(g.legacy?' legacy':'');
+    const td=document.createElement('td'); td.colSpan=4;
+    td.innerHTML=g.tag+' &nbsp;&middot;&nbsp; '+g.name+
+      '<span class="cnt">'+g.items.length+(g.items.length===1?' item':' items')+'</span>';
+    gr.appendChild(td); body.appendChild(gr); revealOrder.push(gr);
+
+    g.items.forEach((it,i)=>{
+      const tr=document.createElement('tr'); tr.className='row';
+      const tag=g.tag+'-'+String(i+1).padStart(2,'0');
+      const cells=[
+        ['tag',tag],['item',it[0]],['role',it[1]],['notes',it[2]],
+      ];
+      cells.forEach(([cls,val])=>{const c=document.createElement('td');c.className=cls;c.textContent=val;tr.appendChild(c);});
+      body.appendChild(tr); revealOrder.push(tr);
+    });
+  });
+
+  // ---- BUILD RULE LINES (one hairline under each tr; heavy under header) ----
+  // measured after layout so we can position lines at row boundaries
+  function buildRules(){
+    ruleSvg.innerHTML='';
+    const wrap=ruleSvg.getBoundingClientRect();
+    const W=wrap.width;
+    const lines=[];
+    // header bottom = heavy rule
+    const thead=document.querySelector('.sch thead tr');
+    const addLine=(yPix,heavy)=>{
+      const y=yPix-wrap.top;
+      const ln=el('line',{x1:0,y1:y,x2:W,y2:y});
+      if(heavy) ln.setAttribute('class','heavy');
+      ruleSvg.appendChild(ln); lines.push(ln); return ln;
+    };
+    const tr=thead.getBoundingClientRect();
+    addLine(tr.bottom,true);
+    revealOrder.forEach(row=>{
+      const r=row.getBoundingClientRect();
+      addLine(r.bottom,false);
+    });
+    return lines;
+  }
+
+  function setRuleHidden(lines,hidden){
+    lines.forEach(ln=>{
+      const L=ln.getTotalLength();
+      ln.style.strokeDasharray=L;
+      ln.style.strokeDashoffset=hidden?L:0;
+    });
+  }
+
+  // ---- COUNT-UP (eased lerp 0 -> value) ----
+  function countUp(elId,value,dur){
+    const node=document.getElementById(elId);
+    const start=performance.now();
+    function frame(t){
+      const p=Math.min((t-start)/dur,1);
+      const e=1-Math.pow(1-p,3);            // easeOutCubic
+      node.textContent=Math.round(value*e);
+      if(p<1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // ---- TIMELINE ----
+  let timers=[];
+  function clearTimers(){timers.forEach(clearTimeout);timers=[];}
+
+  function staticFrame(){
+    const lines=buildRules();
+    setRuleHidden(lines,false);
+    revealOrder.forEach(r=>r.classList.add('shown'));
+    document.getElementById('cTotal').textContent=totalItems;
+    document.getElementById('cGroups').textContent=groupCount;
+  }
+
+  function intro(){
+    clearTimers();
+    // reset
+    revealOrder.forEach(r=>{r.classList.remove('shown');});
+    document.getElementById('cTotal').textContent='0';
+    document.getElementById('cGroups').textContent='0';
+    // build rules against current layout, hide them
+    const lines=buildRules();
+    setRuleHidden(lines,true);
+    void ruleSvg.getBoundingClientRect();
+
+    // 1) rules plot on, staggered
+    lines.forEach((ln,i)=>{
+      timers.push(setTimeout(()=>{
+        ln.style.transition='stroke-dashoffset .5s ease';
+        ln.style.strokeDashoffset=0;
+      }, 60+i*45));
+    });
+
+    // 2) rows tally in, top -> bottom
+    const STEP=70;
+    revealOrder.forEach((row,i)=>{
+      timers.push(setTimeout(()=>row.classList.add('shown'), 180+i*STEP));
+    });
+
+    // 3) counts count up after rows have mostly landed
+    const countAt=180+revealOrder.length*STEP*0.5;
+    timers.push(setTimeout(()=>{
+      countUp('cTotal',  totalItems, 900);
+      countUp('cGroups', groupCount, 900);
+    }, countAt));
+  }
+
+  // rebuild rules on resize so they stay aligned
+  let rz=null;
+  window.addEventListener('resize',()=>{
+    clearTimeout(rz);
+    rz=setTimeout(()=>{
+      const lines=buildRules();
+      setRuleHidden(lines,false);
+    },150);
+  });
+
+  if(reduce){ staticFrame(); }
+  else { requestAnimationFrame(intro); }
+
+  document.getElementById('replay').onclick=()=>{ if(reduce){staticFrame();return;} intro(); };
+})();
+</script>
+</body>
+</html>
