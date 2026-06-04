@@ -1,0 +1,318 @@
+[
+  {
+    "slug": "mother-days-gifts",
+    "name": "母親節精選產品"
+  },
+  {
+    "slug": "display-item-sales-area",
+    "name": "陳列品專賣區"
+  },
+  {
+    "slug": "風扇清貨區",
+    "name": "風扇清貨區"
+  },
+  {
+    "slug": "fan",
+    "name": "風扇"
+  },
+  {
+    "slug": "air-circulator-fan-series",
+    "name": "循環扇"
+  },
+  {
+    "slug": "water-cooled-fan",
+    "name": "水冷扇"
+  },
+  {
+    "slug": "small-round-fan-series",
+    "name": "小圓扇"
+  },
+  {
+    "slug": "desk-fan",
+    "name": "檯夾扇"
+  },
+  {
+    "slug": "table-fan",
+    "name": "座檯扇"
+  },
+  {
+    "slug": "floor-fan",
+    "name": "座地扇"
+  },
+  {
+    "slug": "flower-basket-fan",
+    "name": "花籃扇"
+  },
+  {
+    "slug": "lucky-fan-series",
+    "name": "鴻運扇"
+  },
+  {
+    "slug": "wall-mounted-fan",
+    "name": "掛牆扇"
+  },
+  {
+    "slug": "evaporative-cooler",
+    "name": "冷風機"
+  },
+  {
+    "slug": "portable-air-conditioner",
+    "name": "移動冷氣"
+  },
+  {
+    "slug": "rice-cooker",
+    "name": "電飯煲"
+  },
+  {
+    "slug": "ih-magnetic-rice-cooker",
+    "name": "IH磁應電飯煲"
+  },
+  {
+    "slug": "quick-logic-rice-cooker-series-1",
+    "name": "快思邏輯電飯煲"
+  },
+  {
+    "slug": "xishi-rice-cooker-thick-pot-series",
+    "name": "西施電飯煲"
+  },
+  {
+    "slug": "traditional-rice-cooker",
+    "name": "傳統電飯煲"
+  },
+  {
+    "slug": "white-ceramic-inner-pot-rice-cooker",
+    "name": "白陶內鍋電飯煲"
+  },
+  {
+    "slug": "cooking-stove",
+    "name": "煮食爐"
+  },
+  {
+    "slug": "induction-cooker-series",
+    "name": "電磁爐"
+  },
+  {
+    "slug": "electric-ceramic-stove",
+    "name": "電陶爐"
+  },
+  {
+    "slug": "rf-far-infrared-cooking-oven",
+    "name": "RF遠紅外線煮食爐"
+  },
+  {
+    "slug": "professional-tabletop-induction-cooker",
+    "name": "專業用座檯電磁爐"
+  },
+  {
+    "slug": "built-in-cooker",
+    "name": "嵌入式煮食爐"
+  },
+  {
+    "slug": "electric-kettle",
+    "name": "電熱水壼"
+  },
+  {
+    "slug": "health-pot-and-health-preserving-pot",
+    "name": "保健壺及養生壼"
+  },
+  {
+    "slug": "stainless-steel-cordless-kettle-series",
+    "name": "不銹鋼電熱水壺"
+  },
+  {
+    "slug": "stainless-steel-electric-kettle",
+    "name": "玻璃電熱水壺"
+  },
+  {
+    "slug": "international-voltage-electric-kettle",
+    "name": "雙電壓旅行電熱水壺"
+  },
+  {
+    "slug": "electric-thermos",
+    "name": "電熱水瓶"
+  },
+  {
+    "slug": "electric-slow-cooker",
+    "name": "電子燉盅"
+  },
+  {
+    "slug": "electronic-stew-pot-series-1",
+    "name": "電子燉煲"
+  },
+  {
+    "slug": "electronic-vault",
+    "name": "電子瓦罉"
+  },
+  {
+    "slug": "electric-hot-pot-series",
+    "name": "電火鍋"
+  },
+  {
+    "slug": "microwave-oven-series",
+    "name": "微波爐"
+  },
+  {
+    "slug": "electric-oven-series",
+    "name": "電焗爐"
+  },
+  {
+    "slug": "steam-oven-series",
+    "name": "蒸焗爐"
+  },
+  {
+    "slug": "party-grill-electric-bbq-grill",
+    "name": "派對烤烘電燒烤爐"
+  },
+  {
+    "slug": "health-conditioning-machine-series",
+    "name": "養生調理機"
+  },
+  {
+    "slug": "egg-beatermug-maker",
+    "name": "打蛋器/鬆餅機"
+  },
+  {
+    "slug": "food-chopper-series",
+    "name": "食材切碎機/攪拌機"
+  },
+  {
+    "slug": "dishwasher",
+    "name": "乾碗碟機"
+  },
+  {
+    "slug": "cookware-series",
+    "name": "煮食鍋具 (非電器類別，不設保養)"
+  },
+  {
+    "slug": "dehumidifier",
+    "name": "抽濕機"
+  },
+  {
+    "slug": "semiconductor-dehumidifier",
+    "name": "半導體抽濕機"
+  },
+  {
+    "slug": "壓縮式抽濕機",
+    "name": "壓縮式抽濕機"
+  },
+  {
+    "slug": "heater",
+    "name": "暖爐"
+  },
+  {
+    "slug": "ptc-ceramic-heater-series",
+    "name": "PTC陶瓷暖風機"
+  },
+  {
+    "slug": "quartz-heating-tube-furnace-series",
+    "name": "石英暖管爐"
+  },
+  {
+    "slug": "bathroom-waterproof-heater-series",
+    "name": "浴室防水霧暖風機"
+  },
+  {
+    "slug": "oil-filled-electric-heater-series",
+    "name": "充油式電暖爐"
+  },
+  {
+    "slug": "hot-water-bottleelectric-heating-pad",
+    "name": "熱水袋/電暖墊"
+  },
+  {
+    "slug": "desk-lamp",
+    "name": "LED檯燈"
+  },
+  {
+    "slug": "negative-ion-hair-dryer-series",
+    "name": "電風筒"
+  },
+  {
+    "slug": "dehumidification-dryer",
+    "name": "除濕乾燥機"
+  },
+  {
+    "slug": "mosquito-killer-lamp-series",
+    "name": "滅蚊燈"
+  },
+  {
+    "slug": "steam-iron",
+    "name": "蒸汽電熨斗"
+  },
+  {
+    "slug": "air-purifier",
+    "name": "空氣淨化器"
+  },
+  {
+    "slug": "humidifier",
+    "name": "加濕器"
+  },
+  {
+    "slug": "dust-mite-removal-vacuum-cleaner",
+    "name": "塵蟎機"
+  },
+  {
+    "slug": "vacuum-cleaner",
+    "name": "吸塵機及配件"
+  },
+  {
+    "slug": "吸塵機",
+    "name": "吸塵機"
+  },
+  {
+    "slug": "accessories",
+    "name": "吸塵機配件"
+  },
+  {
+    "slug": "exhaust-fan",
+    "name": "抽氣扇"
+  },
+  {
+    "slug": "accessories-1",
+    "name": "配件"
+  },
+  {
+    "slug": "famous",
+    "name": "法國名家"
+  },
+  {
+    "slug": "mosquito-lamp",
+    "name": "滅蚊燈"
+  },
+  {
+    "slug": "famous-fan-series",
+    "name": "法國名家風扇"
+  },
+  {
+    "slug": "large-electrical-appliances",
+    "name": "大型電器"
+  },
+  {
+    "slug": "washing-machine",
+    "name": "洗衣機"
+  },
+  {
+    "slug": "electric-water-heater",
+    "name": "電熱水爐"
+  },
+  {
+    "slug": "range-hood",
+    "name": "抽油煙機"
+  },
+  {
+    "slug": "refrigerated-display-case",
+    "name": "冷藏櫃"
+  },
+  {
+    "slug": "other-products",
+    "name": "其他產品"
+  },
+  {
+    "slug": "massage-electrical-appliance-series",
+    "name": "按摩器"
+  },
+  {
+    "slug": "small-home-appliances",
+    "name": "小家電"
+  }
+]

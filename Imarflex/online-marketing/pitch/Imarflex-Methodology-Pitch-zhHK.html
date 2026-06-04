@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>Imarflex 伊瑪牌 — 網上推廣方法論</title>
+<style>
+:root {
+  --heritage-blue: #1E4B7A;
+  --heritage-blue-2: #163A5F;
+  --heritage-blue-3: #2C5F8F;
+  --rice-white: #F7F6F2;
+  --rice-white-2: #FFFFFF;
+  --clay-beige: #E7D7C1;
+  --clay-beige-2: #D9C5A6;
+  --steam-grey: #DCE1E6;
+  --steam-grey-2: #C5CCD3;
+  --soft-charcoal: #3C3F42;
+  --soft-charcoal-2: #5A5E62;
+  --soft-charcoal-3: #8A8E92;
+  --cool-air: #BFD7E6;
+  --cool-air-2: #DCE9F1;
+  --bg-tint: #F0EBE3;
+  --rule: #E5E1D9;
+  --rule-strong: #C8C2B5;
+  --accent-warn: #C7383E;
+  --accent-ok: #2C7A4D;
+}
+
+@page { size: 297mm 210mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: "PingFang HK", "Noto Sans HK", "Noto Sans CJK HK", "Source Han Sans HK", "Hiragino Sans HK", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--soft-charcoal);
+  background: var(--rice-white);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.slide {
+  width: 297mm;
+  height: 210mm;
+  page-break-after: always;
+  break-after: page;
+  position: relative;
+  overflow: hidden;
+  padding: 18mm 22mm;
+  background: var(--rice-white);
+}
+.slide:last-child { page-break-after: auto; break-after: auto; }
+
+.slide.cover, .slide.fullbleed { padding: 0; background: var(--soft-charcoal); }
+.slide.cover .bg, .slide.fullbleed .bg {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+}
+
+.slide.cover .overlay {
+  position: absolute; inset: 0; z-index: 1;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-end;
+  padding: 0 38mm 0 0; text-align: right;
+}
+
+.slide.cover h1 {
+  font-size: 52px; font-weight: 300; letter-spacing: -1px;
+  color: var(--heritage-blue-2); line-height: 1.15; margin-bottom: 14px;
+  text-shadow: 0 1px 24px rgba(247, 246, 242, 0.7);
+}
+.slide.cover h1 .accent { color: var(--heritage-blue); font-weight: 500; display: block; }
+
+.slide.cover .sub {
+  font-size: 18px; color: var(--soft-charcoal); font-weight: 400; margin-bottom: 32px;
+  text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
+}
+.slide.cover .meta {
+  font-size: 12px; color: var(--soft-charcoal-2); letter-spacing: 1.5px; text-transform: uppercase;
+  text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
+}
+
+.slide.closing .overlay {
+  background: linear-gradient(180deg, rgba(247,246,242,0.85) 0%, rgba(247,246,242,0.4) 50%, transparent 70%);
+  align-items: center; text-align: center; justify-content: flex-start; padding-top: 22mm;
+}
+.slide.closing h1 { font-size: 44px; font-weight: 300; color: var(--heritage-blue-2); margin-bottom: 18px; }
+.slide.closing .sub { font-size: 18px; max-width: 600px; margin-bottom: 36px; }
+.slide.closing .contact {
+  background: var(--rice-white-2); border: 1px solid var(--rule); padding: 18px 30px;
+  border-radius: 8px; display: inline-flex; flex-direction: column; gap: 6px;
+  font-size: 14px; color: var(--soft-charcoal-2);
+}
+.slide.closing .contact strong { color: var(--heritage-blue); font-size: 15px; }
+
+.eyebrow {
+  display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--heritage-blue); font-weight: 500; padding: 4px 10px;
+  background: var(--cool-air-2); border-radius: 3px; margin-bottom: 14px;
+}
+
+.slide h2 {
+  font-size: 28px; font-weight: 500; color: var(--heritage-blue-2);
+  margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.3;
+}
+
+.slide .lede {
+  font-size: 14.5px; color: var(--soft-charcoal-2); margin-bottom: 18px;
+  max-width: 200mm; line-height: 1.7;
+}
+
+.slide.split { display: grid; grid-template-columns: 1fr 1.4fr; gap: 22mm; padding: 18mm 22mm; }
+.slide.split .col-image { display: flex; align-items: center; justify-content: center; }
+.slide.split .col-image img { width: 100%; height: auto; max-height: 145mm; object-fit: cover; border-radius: 4px; }
+.slide.split .col-text { display: flex; flex-direction: column; justify-content: center; }
+.slide.split.reverse { grid-template-columns: 1.4fr 1fr; }
+.slide.split.reverse .col-image { order: 2; }
+.slide.split.reverse .col-text { order: 1; }
+
+.slide.banner-top .banner { margin: -18mm -22mm 14mm -22mm; height: 75mm; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.slide.banner-top .banner img { width: 100%; height: 100%; object-fit: cover; }
+
+.tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 12px; }
+.tbl th {
+  text-align: left; font-weight: 500; color: var(--heritage-blue-2);
+  padding: 10px 12px; background: var(--bg-tint);
+  border-bottom: 2px solid var(--rule-strong);
+  font-size: 11.5px; letter-spacing: 0.5px; text-transform: uppercase;
+}
+.tbl td { padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 12.5px; }
+.tbl td.num, .tbl th.num { text-align: center; font-variant-numeric: tabular-nums; }
+.tbl.compact td { padding: 6px 10px; font-size: 11.5px; }
+
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card { background: var(--rice-white-2); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.card .num { font-size: 28px; font-weight: 500; color: var(--heritage-blue); line-height: 1; margin-bottom: 6px; }
+.card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--soft-charcoal-3); margin-bottom: 6px; }
+.card .title { font-size: 14px; font-weight: 500; color: var(--soft-charcoal); margin-bottom: 4px; }
+.card .body { font-size: 12px; color: var(--soft-charcoal-2); line-height: 1.65; }
+.card.accent { background: var(--cool-air-2); border-color: var(--cool-air); }
+.card.warm { background: var(--clay-beige); border-color: var(--clay-beige-2); }
+.card.ok { border-left: 3px solid var(--accent-ok); }
+.card.warn { border-left: 3px solid var(--accent-warn); }
+
+.workflow { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 20px; align-items: stretch; }
+.workflow .step {
+  background: var(--rice-white-2); border: 1px solid var(--rule);
+  border-top: 3px solid var(--heritage-blue); border-radius: 4px;
+  padding: 10px 8px; font-size: 10.5px; text-align: center; position: relative;
+}
+.workflow .step .num { font-size: 22px; color: var(--heritage-blue); font-weight: 500; line-height: 1; margin-bottom: 4px; }
+.workflow .step .lbl { font-size: 10.5px; color: var(--soft-charcoal); font-weight: 500; margin-bottom: 2px; line-height: 1.3; }
+.workflow .step .desc { font-size: 9.5px; color: var(--soft-charcoal-2); line-height: 1.4; margin-top: 4px; }
+.workflow .step.aux { border-top-color: var(--clay-beige-2); }
+.workflow .step.aux .num { color: var(--clay-beige-2); }
+
+.skills-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 18px; font-size: 10.5px; }
+.skills-row .pill {
+  background: var(--cool-air-2); border: 1px solid var(--cool-air);
+  padding: 7px 10px; border-radius: 16px; text-align: center;
+  color: var(--heritage-blue-2); font-weight: 500;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 10px;
+}
+
+.chip { display: inline-block; font-size: 10.5px; padding: 2px 8px; border-radius: 10px; background: var(--steam-grey); color: var(--soft-charcoal-2); margin-right: 4px; }
+.chip.ok { background: #dff0e3; color: var(--accent-ok); }
+.chip.warn { background: #fbe4e6; color: var(--accent-warn); }
+.chip.info { background: var(--cool-air-2); color: var(--heritage-blue); }
+
+.footer {
+  position: absolute; bottom: 8mm; left: 22mm; right: 22mm;
+  display: flex; justify-content: space-between;
+  font-size: 9.5px; color: var(--soft-charcoal-3); letter-spacing: 0.5px;
+}
+.kicker-num { color: var(--soft-charcoal-3); font-size: 10px; letter-spacing: 1px; }
+
+.hl-blue { color: var(--heritage-blue); font-weight: 500; }
+.hl-warm { color: #8B5A2B; font-weight: 500; }
+.muted { color: var(--soft-charcoal-2); }
+
+.kv { display: flex; gap: 6px; align-items: baseline; font-size: 12.5px; margin: 4px 0; }
+.kv .k { color: var(--soft-charcoal-3); font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; min-width: 65px; }
+.kv .v { color: var(--soft-charcoal); }
+
+ul.tight { margin: 8px 0; padding-left: 16px; }
+ul.tight li { font-size: 12.5px; margin-bottom: 4px; line-height: 1.6; }
+
+.score-big { display: inline-flex; align-items: baseline; gap: 4px; }
+.score-big .num { font-size: 42px; font-weight: 500; color: var(--heritage-blue); line-height: 1; }
+.score-big .denom { font-size: 18px; color: var(--soft-charcoal-3); }
+.score-big .label { font-size: 11px; color: var(--soft-charcoal-2); margin-left: 8px; text-transform: uppercase; letter-spacing: 1px; }
+
+.callout {
+  background: var(--clay-beige); border-left: 4px solid var(--heritage-blue);
+  padding: 10px 14px; margin-top: 12px;
+  font-size: 12.5px; color: var(--soft-charcoal); border-radius: 0 4px 4px 0;
+}
+.callout .label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--heritage-blue); font-weight: 500; display: block; margin-bottom: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- ====== Slide 1 — Cover ====== -->
+<section class="slide cover">
+  <img class="bg" src="images/imarflex-pitch-01-cover.png" alt="">
+  <div class="overlay">
+    <div class="meta">2026 · 提案方法論</div>
+    <h1>
+      Imarflex 伊瑪牌
+      <span class="accent">網上推廣<br>方法論</span>
+    </h1>
+    <div class="sub">為香港家電 DTC 而設嘅 7 步工作流程,<br>迎接 2026 AI 搜尋新時代。</div>
+    <div class="meta">2026-05-30 製作</div>
+  </div>
+</section>
+
+<!-- ====== Slide 2 — The problem ====== -->
+<section class="slide">
+  <span class="eyebrow">01 · 我哋要解決嘅問題</span>
+  <h2>香港家電品牌而家同時面對三個結構性轉變。</h2>
+  <p class="lede">中型 HK 品牌好似 Imarflex,夾喺平價內地新對手同日系大牌嘅 mindshare 之間。2026 嘅遊戲規則一次過喺三個方向轉。</p>
+
+  <div class="card-grid" style="margin-top:24px">
+    <div class="card warn">
+      <div class="label">轉變 1 · AI 搜尋</div>
+      <div class="num">38%</div>
+      <div class="title">Google top-10 排名 文章獲 AI Overview cite 嘅比率</div>
+      <div class="body">由 2025 年中 76% 跌返落嚟(Wellows 2026)。Google SEO 做得好,唔再等於 AI 搜尋一定見到你。37% 嘅產品 discovery 而家由 AI interface 起跳。</div>
+    </div>
+    <div class="card warn">
+      <div class="label">轉變 2 · SERP 被鎖位</div>
+      <div class="num">0</div>
+      <div class="title">Imarflex 出現喺 HK 2026 IH 電飯煲 listicle 嘅次數</div>
+      <div class="body">跨 ElecBoy / Beauty Review 360 / HK01 — SERP 被 Panasonic / Zojirushi / Toshiba / Tiger / Philips 鎖位。品牌 mindshare 差距係結構性。</div>
+    </div>
+    <div class="card warn">
+      <div class="label">轉變 3 · 新對手湧入</div>
+      <div class="num">5+</div>
+      <div class="title">HK Q2 2026 同期 Breakout 嘅 IH 競品品牌</div>
+      <div class="body">Cuckoo、美的、松井、tefal、小米 IH 喺同一個 30 日 Trends window 全部 Breakout。Price war 打唔贏 — 一定要靠技術深度 + DTC 差異化。</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">我哋嘅應對</span>
+    一個<strong>拒絕追量</strong>嘅 7 步工作流程 — 用 rubric 揀出每個 category 嘅 hero,出 AEO 格式內容俾 AI engine cite,起 DTC moat(2 年保養 + parts-finder)零售商抄唔到。
+  </div>
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>2 / 17</span></div>
+</section>
+
+<!-- ====== Slide 3 — Workflow diagram ====== -->
+<section class="slide">
+  <span class="eyebrow">02 · 方法論 概覽</span>
+  <h2>7 步工作流程 — 每步都有 skill、agent、同一套唔可以破嘅 hard rule。</h2>
+  <p class="lede">Macro 市場掃描 → category 押注 → topic 發掘 → 評分 → AEO 格式 audit → brief → production。每步 hard rule fail 咗,就唔出街。</p>
+
+  <div class="workflow">
+    <div class="step"><div class="num">0</div><div class="lbl">市場掃描</div><div class="desc">7 個 source、24 條 seed、季度 cadence</div></div>
+    <div class="step"><div class="num">1</div><div class="lbl">Business focus</div><div class="desc">季度 thesis + 月度 bet placement</div></div>
+    <div class="step"><div class="num">2</div><div class="lbl">收集 signal</div><div class="desc">每星期一掃,8 個 source</div></div>
+    <div class="step"><div class="num">3</div><div class="lbl">Topic capture</div><div class="desc">9 個欄位 structured note</div></div>
+    <div class="step"><div class="num">4</div><div class="lbl">Topic 評分</div><div class="desc">6 因素 rubric,≥24/30 入 calendar</div></div>
+    <div class="step aux"><div class="num">4.5</div><div class="lbl">AEO 格式 audit</div><div class="desc">5 軸 rubric,≥13/15 先 publish</div></div>
+    <div class="step"><div class="num">5</div><div class="lbl">寫 brief</div><div class="desc">production-ready spec + schema</div></div>
+    <div class="step"><div class="num">6</div><div class="lbl">Production</div><div class="desc">Blog / PDP / IG / FB / Reel / WhatsApp</div></div>
+  </div>
+
+  <div style="margin-top:22px"><span class="kicker-num">5 個 SKILL + 5 個 AGENT</span></div>
+  <div class="skills-row">
+    <div class="pill">imarflex-market-scan</div>
+    <div class="pill">imarflex-business-focus</div>
+    <div class="pill">imarflex-signal-gather</div>
+    <div class="pill">imarflex-aeo</div>
+    <div class="pill">imarflex-copywriter</div>
+  </div>
+
+  <div class="callout" style="margin-top:18px">
+    <span class="label">實際運作</span>
+    每個 skill 都係一份寫定嘅手冊,AI agent 每次行嗰陣都要讀一次。每個 agent 同你互動跑嗰步。Hard rule(LIHKG 內部 only、唔可以 fake citation、唔可以 false schema)由 skill file 自己 enforce — 唔係淨係靠團隊自覺。
+  </div>
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>3 / 17</span></div>
+</section>
+
+<!-- ====== Slide 4 — Verdict vs 2026 industry ====== -->
+<section class="slide">
+  <span class="eyebrow">03 · 同 2026 業界比較</span>
+  <h2>三個位行先業界。三個位喺呢個 build 補返。</h2>
+  <p class="lede">2026-05-27 benchmark 過,引用 16 篇 2025-2026 業界文章(Brafton / Digital Applied / Wellows / Inspired Monks / Sequenzy / Meltwater / Marketing-Interactive / Yotpo / Shopify / McKinsey 等)。</p>
+
+  <div class="card-grid cols-2" style="margin-top:18px">
+    <div class="card ok">
+      <div class="label">行先業界</div>
+      <ul class="tight">
+        <li><strong>Topic cluster + business-focus 先行</strong> — Brafton 2026:「5-8 個 pillar topic 對應產品 category」</li>
+        <li><strong>Hero SKU 集中 + 6 軸 rubric</strong> — Triple Whale:「hero product 係生意嘅 atomic unit」</li>
+        <li><strong>Evidence marker 紀律 + Step 0 macro scan</strong> — Digital Applied:「author identity 影響 page-level authority」</li>
+        <li><strong>LIHKG 內部 only hard rule</strong> — 2026 年 3 月 E-E-A-T update 罰 unsourced claim</li>
+        <li><strong>DTC moat = 保養 + parts + WhatsApp</strong> — Volt'n'Vector:「serviceability 做 feature 嘅品牌贏緊」</li>
+        <li><strong>BOFU bias 喺 content decision</strong> — SEL:「AI 搜尋時代 60-80% output 落 bottom / mid funnel」</li>
+      </ul>
+    </div>
+    <div class="card warn">
+      <div class="label">呢個 build 補返(2026 年 5 月)</div>
+      <ul class="tight">
+        <li><strong>AEO / GEO 優化</strong> — 2026-05-27 起咗 <code>imarflex-aeo</code> skill + auditor agent。 補返嗰 37% AI discovery gap。</li>
+        <li><strong>Google Trends 可行嘅 access pattern</strong> — Playwright CLI 配 agent-browser、24 條 seed list、rate-limit 操作規則。 取代之前「best-effort、經常 unavailable」嘅狀態。</li>
+        <li><strong>容量字眼 reframe</strong> — Trends compare retest 證實「2L 電飯煲」之類 capacity-phrase SEO 喺 HK 零搜尋量。Content angle 轉做 generic 入口 + 家庭 size 論述。</li>
+      </ul>
+      <div style="font-size:11px; color: var(--soft-charcoal-2); margin-top:14px; font-style: italic;">
+        設計咗未起:lifecycle(Email + WhatsApp)、KOL programme、Copywriter 嘅 Reel/Short 延伸。 Phase-2 priorities。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>4 / 17</span></div>
+</section>
+
+<!-- ====== Slide 5 — Step 0 ====== -->
+<section class="slide split">
+  <div class="col-image">
+    <img src="images/imarflex-pitch-02-market-scan.png" alt="">
+  </div>
+  <div class="col-text">
+    <span class="eyebrow">Step 0 · 市場掃描</span>
+    <h2>押 category 之前,先望出窗外。</h2>
+    <p class="lede">每季掃 7 個公開 source。 將 ~480 條 keyword signal 提煉成 5-10 句「Market context」,直接餵畀 Step 1。</p>
+
+    <div class="kv"><span class="k">Source</span><span class="v">Google Trends HK · HKTVmall / 豐澤 / 百老匯 bestseller · 競品新品(Pana / Toshiba / Tiger)· HK 媒體 editorial · LIHKG sentiment(內部 only)· Amazon JP / TW · 小紅書(opt-in)</span></div>
+    <div class="kv"><span class="k">頻率</span><span class="v">季度全掃(~2 小時)+ 月度 light refresh(~20 分)+ ad-hoc trigger(~30 分)</span></div>
+    <div class="kv"><span class="k">Output</span><span class="v">5-10 句 distilled bullet,marker + source + implication → paste 入 Step 1 focus doc</span></div>
+    <div class="kv"><span class="k">Pitch 用</span><span class="v">所有 default source 都係公開 — 唔需要 client access</span></div>
+
+    <div class="callout">
+      <span class="label">點解要呢步</span>
+      冇 Step 0,focus 就會繼承 client 嘅所有 blind spot — workflow 變成「client 想 sell 咩 × 季節」嘅 closed loop。 Step 0 就係解藥。
+    </div>
+  </div>
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>5 / 17</span></div>
+</section>
+
+<!-- ====== Slide 6 — Step 0 case study: Trends iteration ====== -->
+<section class="slide">
+  <span class="eyebrow">Step 0 · 實例</span>
+  <h2>Trends 嘅嘗試過程 — 點解我哋唔接受「個 tool fail 咗」做最終答案。</h2>
+  <p class="lede">真實 Q2 build 嘅時間線。 demo 個 workflow 點樣喺第一次 fetch fail 之後變得更好。</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:18%">日期</th><th style="width:42%">做咗咩</th><th>結果</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2026-05-23</td><td>第一次 Q2 scan,用 WebFetch + 3 個 browser-automation tool</td><td><span class="chip warn">HTTP 429</span> — 3 個 tool 全部畀 IP-level rate limit 撞死。 標為「best-effort、經常 unavailable」</td></tr>
+      <tr><td>2026-05-27</td><td>用 agent-browser CLI(Playwright)retest,加 <code>?date=today 1-m</code>(30 日 window 取代 default 12 個月)</td><td><span class="chip ok">成功</span> — 攞到 電飯煲 HK 30 日完整 series + Related Rising 10 條 query</td></tr>
+      <tr><td>2026-05-27</td><td>Capture 嗰啲 rising query:<strong>panasonic 電飯煲 內膽</strong> Breakout、<strong>小米 IH 電飯煲</strong> Breakout、加上 cuckoo / 美的 / 松井 / tefal — 同期入場</td><td><span class="chip info">3 個 Q2 決定增強, 1 個 thesis 標出嚟 cross-check</span></td></tr>
+      <tr><td>2026-05-30</td><td>Compare 測試:電飯煲 vs 迷你 電飯煲 vs 2L 電飯煲 — 驗證容量 gap thesis</td><td>Generic 電飯煲 = 平均 63、迷你 = 平均 1、2L = 平均 1。 <strong>HK 用戶根本唔以容量字眼搜電飯煲。</strong></td></tr>
+      <tr><td>2026-05-30</td><td>Thesis reframe:容量 gap 係<strong>產品架上嘅 gap</strong>(真實)、唔係<strong>搜尋需求嘅 gap</strong>(零)。 Content angle 跟住轉。</td><td><span class="chip ok">IRC-20IH 分數 16/18 → 17/18</span> — Demand 軸有信心升一分</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card-grid" style="margin-top:18px">
+    <div class="card accent">
+      <div class="title">寫返入 skill</div>
+      <div class="body">可行嘅 access pattern 記入 <code>sources-public.md</code>。 24 條 HK seed list 存做 <code>seed-list-hk.md</code>。 Rate-limit 操作規則入 <code>cadence-and-triggers.md</code>。</div>
+    </div>
+    <div class="card accent">
+      <div class="title">Workflow 原則</div>
+      <div class="body">當 demand signal 睇落弱,要 check 究竟<strong>字眼</strong>錯定<strong>概念</strong>錯。 Trends 係 seed-expansion 工具,唔係 idea-discovery。</div>
+    </div>
+    <div class="card accent">
+      <div class="title">Pitch-stage 意義</div>
+      <div class="body">方法論本身就係 deliverable。Pitch 階段我哋 show 嘅係<strong>點樣 iterate</strong> — 唔淨係最終答案。 Client 睇到我哋嘅紀律。</div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>6 / 17</span></div>
+</section>
+
+<!-- ====== Slide 7 — Step 1 banner ====== -->
+<section class="slide banner-top">
+  <div class="banner">
+    <img src="images/imarflex-pitch-03-business-focus.png" alt="">
+  </div>
+  <span class="eyebrow">Step 1 · Business focus</span>
+  <h2>每個 category 一個 hero。 紀律咁揀,唔係靠熱情。</h2>
+  <p class="lede">兩層 model:季度 focus = thesis(category + DTC moat)。月度 focus = bet placement(今月 promo / 內容 / 同季度 diff)。 兩者都由 6 軸 hero SKU rubric 撐住。</p>
+
+  <div class="card-grid cols-2" style="margin-top:14px">
+    <div class="card">
+      <div class="label">季度 focus</div>
+      <div class="title">Thesis(每 3 個月改一次)</div>
+      <div class="body">推邊個 category · 每個 category 嘅 hero SKU · DTC moat · 季節 arc · evergreen pillar。 Output:<code>yyyy-qx-focus.md</code></div>
+    </div>
+    <div class="card">
+      <div class="label">月度 focus</div>
+      <div class="title">Bet placement(每月改)</div>
+      <div class="body">今月實際 promo · 推緊邊啲 SKU · ship 緊邊啲 content · <strong>同季度 diff</strong> reconciliation table · <strong>今月 out of scope</strong> list(必填)。 Output:<code>yyyy-mm-focus.md</code></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">月度必填嘅兩個 section</span>
+    <strong>Diff from quarter focus</strong> + <strong>Out of scope this month</strong> 存在係要 catch 靜雞雞 drop 嘅 bug。 真實例子:Q2 focus 押咗抽濕機,monthly 靜雞雞 drop 咗。 Audit 揪返出嚟。 新規則強制每個決定都見得到。
+  </div>
+
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>7 / 17</span></div>
+</section>
+
+<!-- ====== Slide 8 — Q2 hero SKU scoring example ====== -->
+<section class="slide split reverse">
+  <div class="col-text">
+    <span class="eyebrow">Step 1 · Q2 實例</span>
+    <h2>IRC-20IH hero scoring — 透明 reasoning + auto-DQ 規則。</h2>
+    <p class="lede">Q2 2026 worked example。 每個 hero 候選人 6 軸 1-3 分。 任何一軸 = 1 → auto-DQ,唔理總分。</p>
+
+    <div style="margin: 20px 0;">
+      <div class="score-big">
+        <span class="num">17</span><span class="denom">/ 18</span>
+        <span class="label">IRC-20IH<br>✅ HERO</span>
+      </div>
+    </div>
+
+    <table class="tbl compact">
+      <thead><tr><th>軸</th><th class="num">分</th><th>Reasoning</th></tr></thead>
+      <tbody>
+        <tr><td>M×I(margin × inv)</td><td class="num">2 ⚠️</td><td>Placeholder,等 client 真實 margin</td></tr>
+        <tr><td>Demand</td><td class="num">3 ✅</td><td>母親節 peak 100 + 中容量家庭 size 決策時刻</td></tr>
+        <tr><td>Diff</td><td class="num">3 ✅</td><td>產品架上 gap + 日工藝 + DTC moat</td></tr>
+        <tr><td>Content 準備</td><td class="num">3 ✅</td><td>Buying-guide + carousel 已 draft</td></tr>
+        <tr><td>DTC moat fit</td><td class="num">3 ✅</td><td>2 年保養 + parts-finder anchor</td></tr>
+        <tr><td>Brand safety</td><td class="num">3 ✅</td><td>無可靠性問題 surface</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:14px">
+      <span class="label">DQ 即場應用 — 同一季度</span>
+      <strong>降糖 IH(generic)</strong> = Diff 軸 1 → auto-DQ。 5+ 個競品都 sell 一樣嘅 35% 降糖。 個門要重開,Imarflex 要搵到 specific USP 先得。
+    </div>
+  </div>
+  <div class="col-image">
+    <img src="../../blog/samples/images/buying-guide-rice-cooker-hero.png" alt="">
+  </div>
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>8 / 17</span></div>
+</section>
+
+<!-- ====== Slide 9 — Steps 2-4 signal + scoring ====== -->
+<section class="slide">
+  <span class="eyebrow">Step 2-4 · 收集 signal → capture → 評分</span>
+  <h2>每周 sweep → 9 欄位 topic capture → 6 因素 rubric → priority calendar。</h2>
+  <p class="lede">Q2 2026-05-30 sample:Trends + 媒體 + retailer signal 搵出 5 條 IH topic。 評分。 揀 winner 入 Step 5 brief。</p>
+
+  <table class="tbl compact" style="margin-top:14px">
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th class="num">Biz</th>
+        <th class="num">Demand</th>
+        <th class="num">Intent</th>
+        <th class="num">Fit</th>
+        <th class="num">Repurp</th>
+        <th class="num">Rank</th>
+        <th class="num">總分</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background: var(--cool-air-2);">
+        <td><strong>1. 電飯煲 容量 點揀</strong></td>
+        <td class="num">5</td><td class="num">5</td><td class="num">4</td><td class="num">5</td><td class="num">5</td><td class="num">4</td>
+        <td class="num"><strong>28</strong></td>
+        <td><span class="chip ok">✅ 入下月 calendar</span></td>
+      </tr>
+      <tr style="background: var(--cool-air-2);">
+        <td><strong>2. panasonic 電飯煲 內膽 邊度買</strong></td>
+        <td class="num">5</td><td class="num">4</td><td class="num">5</td><td class="num">5</td><td class="num">4</td><td class="num">5</td>
+        <td class="num"><strong>28</strong></td>
+        <td><span class="chip ok">✅ 簽約後 Day-1</span></td>
+      </tr>
+      <tr style="background: var(--cool-air-2);">
+        <td>3. 電飯煲 母親節 / 父親節 送禮</td>
+        <td class="num">5</td><td class="num">5</td><td class="num">5</td><td class="num">4</td><td class="num">4</td><td class="num">4</td>
+        <td class="num"><strong>27</strong></td>
+        <td><span class="chip ok">✅ 時機:6 月中父親節</span></td>
+      </tr>
+      <tr>
+        <td>4. 小米 IH vs 主流(defensive)</td>
+        <td class="num">4</td><td class="num">4</td><td class="num">4</td><td class="num">3</td><td class="num">3</td><td class="num">4</td>
+        <td class="num">22</td>
+        <td><span class="chip">Backlog Q3</span></td>
+      </tr>
+      <tr>
+        <td>5. 內膽 清潔 + 替換(retention)</td>
+        <td class="num">4</td><td class="num">3</td><td class="num">3</td><td class="num">5</td><td class="num">5</td><td class="num">4</td>
+        <td class="num">24</td>
+        <td><span class="chip">同 #2 bundle</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top:14px">
+    <span class="label">Winner 揀法 + tie-breaker 邏輯</span>
+    Topic 1 + Topic 2 都 28/30 平手。 <strong>Topic 1 贏 — 接下個 brief</strong> — 食住 generic「電飯煲」最大 traffic pool,pitch 階段已可 ship,唔需要 parts-finder 後端配合。 Topic 2 = parts-finder 部署之後 Day-1 priority。
+  </div>
+
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>9 / 17</span></div>
+</section>
+
+<!-- ====== Slide 10 — Step 4.5 AEO ====== -->
+<section class="slide split">
+  <div class="col-image">
+    <img src="images/imarflex-pitch-04-aeo-audit.png" alt="">
+  </div>
+  <div class="col-text">
+    <span class="eyebrow">Step 4.5 · AEO 格式 audit</span>
+    <h2>俾 ChatGPT、Perplexity、Claude cite — 唔單止係 Google rank。</h2>
+    <p class="lede">5 軸 rubric。 過關 = 13/15。 任何軸 = 1 + 內容涉及 health / safety / electrical → auto-DQ。</p>
+
+    <table class="tbl compact">
+      <thead><tr><th>軸</th><th>測咩</th></tr></thead>
+      <tbody>
+        <tr><td>Passage-Q&A</td><td>每個 H2 都係用戶語氣嘅問題;≤ 50 字 direct answer 行頭</td></tr>
+        <tr><td>Schema markup</td><td>Article + Product + FAQPage + HowTo(applicable 嗰時);冇 false structured fact</td></tr>
+        <tr><td>Author identity</td><td>有名有 credentials 嘅 author + LinkedIn(YMYL 內容唔可以用「編輯部」)</td></tr>
+        <tr><td>Statement-fact</td><td>每個 concrete claim 都有數字 + source URL + 日期</td></tr>
+        <tr><td>Freshness</td><td>Publish 日 + dateModified + review cadence</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="label">點解 而家先做</span>
+      Wellows 2026:Google top-10 嘅 ranker 喺 2025 年中佔咗 AI Overview citation 76%,到 2026 年初跌返落 38%。 排名 同 citation 開始<strong>脫鈎</strong>。 AEO 就係新嘅 optimization surface。
+    </div>
+  </div>
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>10 / 17</span></div>
+</section>
+
+<!-- ====== Slide 11 — AEO case study ====== -->
+<section class="slide">
+  <span class="eyebrow">Step 4.5 · 實例</span>
+  <h2>用 AEO auditor 跑現有 IH buying-guide blog — 8/15,要重寫。</h2>
+  <p class="lede">呢篇文喺 AEO skill 起之前已經寫好。 編輯角度好(brand voice ✅、SEO keyword targeting ✅)但係唔達 2026 AEO 標準。 顯示由 2024 SEO 到 2026 AEO 嘅 delta。</p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 18px; margin-top: 14px;">
+    <div>
+      <div class="score-big" style="margin-bottom: 10px">
+        <span class="num">8</span><span class="denom">/ 15</span>
+        <span class="label" style="color: var(--accent-warn)">❌ 重寫<br>+ Axis 3 borderline DQ</span>
+      </div>
+      <table class="tbl compact">
+        <thead><tr><th>軸</th><th class="num">分</th></tr></thead>
+        <tbody>
+          <tr><td>Passage-Q&A 結構</td><td class="num">2 ⚠️</td></tr>
+          <tr><td>Schema markup</td><td class="num">1 ❌</td></tr>
+          <tr><td>Author identity</td><td class="num">1 🚨</td></tr>
+          <tr><td>Statement-fact pairing</td><td class="num">2 ⚠️</td></tr>
+          <tr><td>Freshness signal</td><td class="num">2 ⚠️</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <strong style="color: var(--heritage-blue-2);">7 條 fix list</strong>
+      <ul class="tight">
+        <li><strong>H2 結構</strong> — 全部 H2 改做用戶語氣問題,≤ 50 字 direct answer 行頭</li>
+        <li><strong>冇 schema</strong> — 加 Article + Product(IRC-20IH)+ FAQPage spec</li>
+        <li><strong>冇 FAQ section</strong> — 加 H2「常見問題」+ 5 條 Q&A,mirror 入 FAQPage schema</li>
+        <li><strong>Author 太 generic</strong> — client 要提供有名有 credential 嘅 author(Day-1 ask)</li>
+        <li><strong>數據冇 source</strong> — 「50年」、「IH 滲透率 80%」、「鍋身 >2mm」 全部要附 source URL</li>
+        <li><strong>健康角度觸 DQ</strong> — 糖尿病 mention + generic author = DQ;解法:或者加 named author,或者刪走呢個提及</li>
+        <li><strong>Freshness signal 唔齊</strong> — 加 dateModified + review cadence</li>
+      </ul>
+      <div class="callout" style="margin-top:10px">
+        <span class="label">點解呢個 demo 有價值</span>
+        同一篇 blog,2024 SEO 標準下「publish-ready」。 AEO audit 揪出嗰 7 個改動,就係由「Google 有 rank」到「AI engine 會 cite」嘅分別。 2026 兩個都重要。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>11 / 17</span></div>
+</section>
+
+<!-- ====== Slide 12 — Step 5-6 production ====== -->
+<section class="slide split reverse">
+  <div class="col-text">
+    <span class="eyebrow">Step 5-6 · Brief → production</span>
+    <h2>一個 topic、多個 channel output — 由同一份 brief 出。</h2>
+    <p class="lede">Brief = production spec,AEO 要求已 bake 入去。 <code>imarflex-copywriter</code> agent 跟住喺同一個 source 出多個 channel 嘅 output。</p>
+
+    <table class="tbl compact">
+      <thead><tr><th>Channel</th><th>Output</th></tr></thead>
+      <tbody>
+        <tr><td>Blog(zh-HK)</td><td>1,200-1,500 字、AEO 格式、Q&A H2、FAQ section、schema spec</td></tr>
+        <tr><td>Instagram</td><td>8-slide carousel script + image brief</td></tr>
+        <tr><td>Facebook</td><td>Hook + link post</td></tr>
+        <tr><td>Reel / Short</td><td>15-30s script(而家設計咗,copywriter 延伸 TBD)</td></tr>
+        <tr><td>WhatsApp</td><td>Consultation bot script,有 branching logic</td></tr>
+        <tr><td>PDP</td><td>Hero copy + spec table + FAQ</td></tr>
+        <tr><td>Email lifecycle</td><td>Trigger flow(簽約後先做)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:14px">
+      <span class="label">Brand voice 強制執行</span>
+      Copywriter agent 每次 run 都要讀 <code>brand/voice-tone-of-voice.md</code>。 5 個形容詞(可靠 · 溫暖 · 專業 · 貼地 · 日式精緻)。 3 個 anti-pattern。 Voice check fail 就 block 個 output。
+    </div>
+  </div>
+  <div class="col-image">
+    <img src="../../blog/samples/images/recipe-air-fryer-shrimp-toast-char-siu-hero.png" alt="">
+  </div>
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>12 / 17</span></div>
+</section>
+
+<!-- ====== Slide 13 — Citation simulation ====== -->
+<section class="slide">
+  <span class="eyebrow">Step 4.5 · 量度</span>
+  <h2>Citation simulation — 我哋點 measure AI 搜尋嘅 visibility lift。</h2>
+  <p class="lede">12 條 standardized prompt × 4 個 LLM engine = 48 格 baseline matrix。 每月跑。 Track delta。 手動 collect — 自動跑會誤代表真實用戶體驗。</p>
+
+  <div class="card-grid cols-4" style="margin-top: 18px">
+    <div class="card">
+      <div class="label">Cluster 1</div>
+      <div class="title">Category discovery</div>
+      <div class="body">3 條 prompt,Imarflex 唔出名。<br><em>「香港邊個牌子嘅 IH 電飯煲最值得買?」</em></div>
+    </div>
+    <div class="card">
+      <div class="label">Cluster 2</div>
+      <div class="title">Brand discovery</div>
+      <div class="body">3 條 prompt,Imarflex 名 named。<br><em>「伊瑪牌 IH 電飯煲 點解 港人鍾意?」</em></div>
+    </div>
+    <div class="card">
+      <div class="label">Cluster 3</div>
+      <div class="title">SKU specific(BOFU)</div>
+      <div class="body">3 條 prompt,high intent。<br><em>「IRC-20IH 好唔好用?啱咩家庭?」</em></div>
+    </div>
+    <div class="card">
+      <div class="label">Cluster 4</div>
+      <div class="title">DTC moat</div>
+      <div class="body">3 條 prompt,差異化點。<br><em>「伊瑪牌 保養 點 登記?」</em></div>
+    </div>
+  </div>
+
+  <div style="margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
+    <div>
+      <strong style="color: var(--heritage-blue-2);">每個 engine 嘅 recording matrix</strong>
+      <ul class="tight">
+        <li><span class="chip ok">✅</span> Imarflex 出現喺 answer top 3</li>
+        <li><span class="chip">⚠️ pos N</span> 排到 4-10 位</li>
+        <li><span class="chip">❌</span> 完全唔提</li>
+        <li><span class="chip warn">🚨</span> 提但有 hallucination — content opportunity</li>
+      </ul>
+    </div>
+    <div>
+      <strong style="color: var(--heritage-blue-2);">Pitch-stage 預期 baseline</strong>
+      <ul class="tight">
+        <li>估計 5-15 / 48 mention(中型 HK 品牌、training data 唔多)</li>
+        <li>Cluster 2(brand discovery)最強 — 名 named 之後 model 有少少知識</li>
+        <li>Cluster 1(unbranded)最弱 — default 落 top-of-mind brand</li>
+        <li>Cluster 3 SKU hallucination 估計會出 — AEO content 直接補</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">Pitch 承諾</span>
+    <strong>Pitch 階段只 demo 方法論</strong>。 唔承諾 lift %。 簽約後第一個禮拜 = 真實 baseline run。 Wellows 2026 數據顯示 AI engine 喺 publish 後 2-4 個禮拜就見 citation pattern shift — 比 traditional SEO(3-6 個月)快。
+  </div>
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>13 / 17</span></div>
+</section>
+
+<!-- ====== Slide 14 — Hard rules ====== -->
+<section class="slide">
+  <span class="eyebrow">04 · Hard rule — skill file 自己 enforce,唔淨係靠團隊自覺</span>
+  <h2>三條 — 就算 client 提出我哋都唔會破。</h2>
+  <p class="lede">規則同時 mirror 喺幾個 skill + agent file + persistent memory。 多層 enforcement 保證 session 同 session 之間、agent 同 agent 之間,行為一致。</p>
+
+  <div class="card-grid" style="margin-top: 22px">
+    <div class="card warm">
+      <div class="num">1</div>
+      <div class="title">LIHKG / Reddit / 論壇 sentiment 只留內部</div>
+      <div class="body" style="margin-top: 6px">
+        永遠唔入 brief、blog、PDP、social、pitch deck、任何 client-facing deliverable。 只可 aggregate sentiment(eg「過去 90 日 N 條 thread 提及痛點 X」)。 只計 Imarflex 自己嘅 brand mention — 競品 brand sentiment 永遠唔 surface。
+        <br><br>
+        <strong>點解:</strong>法律 risk(quote 用戶冇同意)。 E-E-A-T penalty(Google 2026-03)。 Brand 信譽 risk,如果用競品 sentiment 做 marketing ammunition。
+      </div>
+    </div>
+    <div class="card warm">
+      <div class="num">2</div>
+      <div class="title">唔可以 fake citation 或 false schema fact</div>
+      <div class="body" style="margin-top: 6px">
+        每個 claim 都有 URL + 日期 + source。 AEO auditor reject「according to X report」但冇 URL 嘅 content。 Schema 只 declare PDP 實際支援嘅嘢 — 冇 fake <code>aggregateRating</code>、冇 stale price、冇 false stock status。
+        <br><br>
+        <strong>點解:</strong>Google 罰 false structured data。 Brand 信譽。 LLM hallucination 會將 false claim 放大成 AI 搜尋 answer — 規模化錯誤。
+      </div>
+    </div>
+    <div class="card warm">
+      <div class="num">3</div>
+      <div class="title">Pitch-stage 誠實 — 未 measure 前唔承諾 lift</div>
+      <div class="body" style="margin-top: 6px">
+        Pitch 階段我哋 show <strong>方法論</strong>、唔 sell promises。 ⚠️-heavy 喺 scan output 屬正常(冇 client data)。 唔講「我哋幫你 lift X% traffic」 — 我哋 show 點 measure、然後誠實 measure。
+        <br><br>
+        <strong>點解:</strong>信任。 Client 簽約前可以驗證方法論嚴謹度。 同時消除我哋 fake baseline 嘅誘因。
+      </div>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>14 / 17</span></div>
+</section>
+
+<!-- ====== Slide 15 — Differentiators ====== -->
+<section class="slide">
+  <span class="eyebrow">05 · 同 generic 2026 agency playbook 有咩唔同</span>
+  <h2>我哋俾到你嘅嘢,普通 generalist 俾唔到。</h2>
+
+  <table class="tbl" style="margin-top: 18px">
+    <thead>
+      <tr><th style="width: 18%">範疇</th><th style="width: 38%">Generic 2026 agency</th><th>我哋嘅 workflow</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Topic 發掘</strong></td>
+        <td>由 keyword volume → topic。 追 Search Console 嘅 quick win。</td>
+        <td>由 business focus + macro scan → topic。 Volume 只係 sanity check intent。</td>
+      </tr>
+      <tr>
+        <td><strong>Hero SKU</strong></td>
+        <td>成個 catalog 平均 promote。</td>
+        <td>每個 category 1 個 hero、6 軸 rubric 評、任何軸 = 1 auto-DQ。</td>
+      </tr>
+      <tr>
+        <td><strong>Evidence 紀律</strong></td>
+        <td>Implicit。 Source cite 不一致。</td>
+        <td>每個 claim 都有 ✅ / ⚠️ marker。 ⚠️ items 自動入 Day-1 ask checklist。</td>
+      </tr>
+      <tr>
+        <td><strong>論壇 / community signal</strong></td>
+        <td>Quote 喺 client-facing deck 扮「消費者聲音」。</td>
+        <td>LIHKG / Reddit 內部 only。 Hard rule。 Mirror 喺 3 個 skill + 2 個 memory file。</td>
+      </tr>
+      <tr>
+        <td><strong>AEO / AI 搜尋</strong></td>
+        <td>Bolt-on 或者完全冇。 當係未來嘅事。</td>
+        <td>Step 4.5 有專屬 rubric + auditor agent。 Citation simulation 方法論已備。</td>
+      </tr>
+      <tr>
+        <td><strong>Pitch deliverable</strong></td>
+        <td>Slide deck 講「我哋會點做」。</td>
+        <td>Working artifact — focus doc、signal sweep、brief、AEO audit、sample blog audit、simulation protocol。</td>
+      </tr>
+      <tr>
+        <td><strong>流程透明度</strong></td>
+        <td>事後做月 report。</td>
+        <td>季度 thesis → 月度 diff → 每周 signal → 每日 AEO audit。 每步都有 artifact + audit trail。</td>
+      </tr>
+      <tr>
+        <td><strong>Pitch 到 engagement 嘅過渡</strong></td>
+        <td>簽約後重新 scope + 重新做。</td>
+        <td>Client data 入到嚟,⚠️ 升 ✅。 同一個 machine、同一啲 artifact。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>15 / 17</span></div>
+</section>
+
+<!-- ====== Slide 16 — Day-1 client asks ====== -->
+<section class="slide">
+  <span class="eyebrow">06 · 簽約 Day-1 要嘅嘢</span>
+  <h2>Pitch 入面每個 ⚠️ 都對應一個具體 Day-1 ask。</h2>
+  <p class="lede">冇 surprise scope creep。 ⚠️ 嘅數量<em>就係</em>個 onboarding checklist。 Day-1 提供呢啲嘢,即刻由 ⚠️ 升做 ✅,唔需要重做。</p>
+
+  <table class="tbl" style="margin-top: 14px">
+    <thead><tr><th style="width: 25%">範疇</th><th>Day-1 ask</th><th style="width: 18%">解鎖咩</th></tr></thead>
+    <tbody>
+      <tr><td><strong>SKU code</strong></td><td>每個 priority category 嘅真實 SKU code(pitch 用 IRC-20IH 做 placeholder)</td><td>Hero scoring 嘅 M×I 軸</td></tr>
+      <tr><td><strong>Margin / 庫存</strong></td><td>每 SKU 嘅月度 margin + 持續有貨 status</td><td>Hero rubric → priority 排序</td></tr>
+      <tr><td><strong>Promo 時間表</strong></td><td>未來 90 日 promo + 清貨 roadmap</td><td>月度 focus + content timing</td></tr>
+      <tr><td><strong>Search Console</strong></td><td>GSC export — top query、CTR、position 8-20 quick-win</td><td>取代 ⚠️ workflow FAQ 假設</td></tr>
+      <tr><td><strong>站內 search</strong></td><td>Meilisearch / on-site search log — 過去 90 日</td><td>捕捉真實用戶字眼(取代假設)</td></tr>
+      <tr><td><strong>WhatsApp</strong></td><td>過去 30 日客服對話 sample(去個人資料)</td><td>FAQ topic + consultation bot script</td></tr>
+      <tr><td><strong>PostHog / analytics</strong></td><td>Blog → PDP funnel + content engagement</td><td>Step 4 評分嘅「Search demand」軸</td></tr>
+      <tr><td><strong>AEO 作者</strong></td><td>每篇 content 嘅 named author 加 credential + LinkedIn URL</td><td>AEO Axis 3 升 3/3、解除 DQ</td></tr>
+      <tr><td><strong>工程</strong></td><td>後端 platform 確認(Shopify / Shopline / custom)</td><td>Schema 部署路線</td></tr>
+      <tr><td><strong>Review system</strong></td><td>現有 review 數據(if any)</td><td>Review schema markup(only if 真實)</td></tr>
+      <tr><td><strong>法律 review</strong></td><td>用對手 SKU model 名做 comparison 嘅授權</td><td>Comparison content + 防守性 positioning</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">呢個代表咩</span>
+    Onboarding 係有界線、具體嘅。 <strong>11 個明確 data handoff</strong> — 唔係模糊嘅「要 access 你個 stack」。 每個 item 都有清楚嘅解鎖目標。
+  </div>
+
+  <div class="footer"><span>Imarflex · 網上推廣方法論</span><span>16 / 17</span></div>
+</section>
+
+<!-- ====== Slide 17 — Closing ====== -->
+<section class="slide cover closing">
+  <img class="bg" src="images/imarflex-pitch-05-closing.png" alt="">
+  <div class="overlay">
+    <div class="meta">隨時可以開始。</div>
+    <h1>一齊開始啦。</h1>
+    <div class="sub">一個為你品類而設、已經運作緊嘅 marketing operation — 等 Day-1 將 ⚠️ 升 ✅。</div>
+
+    <div class="contact">
+      <strong>Imarflex 網上推廣提案 · 2026-05-30</strong>
+      <span>方法論:<code>reference/methodology-summary.md</code></span>
+      <span>Live Q2 focus:<code>online-marketing/business-focus/2026-q2-focus.md</code></span>
+      <span>Skill + agent:<code>.claude/skills/</code> + <code>.claude/agents/</code></span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
