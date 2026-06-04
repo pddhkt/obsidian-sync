@@ -1,0 +1,23 @@
+{
+  "skill_name": "imarflex-client-reply",
+  "evals": [
+    {
+      "id": 0,
+      "name": "multi-q-followup",
+      "prompt": "[新嘅 WhatsApp from Derek Chong]\n午安,同事再 review 咗 proposal,有幾個 follow-up 想再問下:\n\n1) 個試用 admin 啱啱試咗,想知支持唔支持多 user 同 role permission?例如客服同事得睇訂單但唔可以改價,marketing 同事可以寫 blog 但唔可以改產品 spec — 呢類 access control 做唔做到?\n\n2) 我哋部分產品有 PDF 說明書同保養手冊,客戶買咗會想自己 download。新後台有冇位俾我哋上載同管理呢類 PDF 文件,然後喺 PDP 顯示俾客戶?\n\n3) 中長期我哋想擴展去澳門做 cross-border,同一個 site 處理唔同 currency / 地址格式 / 運費邏輯做唔做到?\n\n請幫我哋準備返一份正式回覆 + PDF 俾同事傳閱,唔該!",
+      "expected_output": "A proper Imarflex client reply doc (markdown + PDF) with A1/A2/A3 sections covering RBAC, PDF document storage, and cross-border expansion. Should follow the established frontmatter / structure / voice / anti-patterns from the skill."
+    },
+    {
+      "id": 1,
+      "name": "timeline-phasing",
+      "prompt": "[Derek email]\nHi, 我哋 board 啱啱開完 meeting, 想了解多兩件事:\n\n1) 如果 11 月之前希望可以上線, 你哋 timeline 估計咁多時間做唔做到? 中間有冇咩 critical milestone 我哋要配合?\n\n2) 整個 scope 我哋睇咗, 老實講 budget 有壓力。係咪一定要全部 phase 一齊做? 定係可以先做最緊要嗰 part 慳啲先, 之後再 add 上去?\n\n搞掂先回覆我, 唔趕。",
+      "expected_output": "A proper reply doc covering timeline / critical milestones (with the client-side dependencies surfaced) and a phasing option that shows tradeoffs honestly without nickel-and-diming. Should apply the comparison-context pricing pattern."
+    },
+    {
+      "id": 2,
+      "name": "mixed-with-oos-it",
+      "prompt": "[Derek WhatsApp]\n另外順手問下:\n\n1) 新網站既然有 admin 後台同數據, 同事可以自己 export 訂單做月結 report 嗎? 而家 Shopline 嗰邊 export 出嚟啲 format 唔好用, 每次都要手動 reformat。\n\n2) 我哋舊個 IT 移咗民去加拿大幾年, 而家 WFH 都唔係好掂。你哋順手幫我哋做埋 office 365 全公司 migration + 全部同事新 laptop SSO setup, quote 個價俾我哋睇下? 急住下個月之內想搞掂。",
+      "expected_output": "A reply that (a) confidently addresses Q1 about order export with a real solution, and (b) handles Q2 by bounding scope honestly — should NOT quote enthusiastically for office hardware / company-wide SSO setup, but should follow the skill's IT anti-pattern (clarify what we DO do vs. what's out of strength, do not offer to introduce a partner unless authorized)."
+    }
+  ]
+}
