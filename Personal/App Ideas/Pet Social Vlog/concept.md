@@ -11,12 +11,27 @@ tags:
 
 ## What it is, in one sentence
 
-> A daily companion app for active urban dog parents that turns the walk you were going to take anyway into a routine you actually keep, and the photos you were going to take anyway into a video worth watching.
+> A daily health companion for active urban dog parents — built around the walk you were going to take, the photos you were going to capture, and the food you were going to give.
 
-Two value props, sharpened — see [[value-props]]:
+Three value props (see [[value-props]] for detail):
 
-1. **Routine accountability** — for the walk (not measurement for measurement's sake).
+1. **Routine accountability** — for the walk (not measurement for its own sake).
 2. **Curation engine** — for the memory (not photo storage).
+3. **Health intelligence** — for the food, body, and vet visit (not medical advice).
+
+## The three pillars
+
+| Pillar | Job | Built from |
+|---|---|---|
+| 1. **Routine Accountability** | Walk your dog enough | [[features/pet-walking-activity]], [[features/breed-aware-activity-targets]], streaks |
+| 2. **Curation Engine** | Turn your phone's mess into a watchable artifact | [[features/auto-vlog-export]], [[features/media-capture-modes]], [[features/daily-pet-log]] |
+| 3. **Health Intelligence** | Feed right, weigh right, give the vet what they need | [[features/food-and-nutrition-tracking]], weight + BCS tracking, vet PDF |
+
+> [!important] One engine across all three pillars
+> All three pillars use the same calibration spine — *this specific dog* (breed, age, weight, conditions, activity history). Activity data informs food targets. Food and walk data both enrich the daily vlog. The vlog rewards the routine. **One product, three jobs, each reinforcing the others.**
+
+> [!tip] Positioning vs execution
+> The three-pillar story is the *positioning* from day 1 — we are a pet health companion. The *execution* is phased: Pillars 1 + 2 ship in the MVP; Pillar 3 lands in v1.2. See [[roadmap]] for the full schedule.
 
 ## Lead segment — Active Urban Dog Parents
 
@@ -75,14 +90,26 @@ We picked the hybrid, but the three pure positionings show the design pull:
 
 ## Main user value (revised)
 
-In priority order:
+In priority order, grouped by pillar:
 
+**Pillar 1 — Routine**
 1. **Know you're doing right by your dog.** Activity guidance calibrated to *your* dog ([[features/breed-aware-activity-targets]]) — not a generic step count.
-2. **Get a video at the end of the day you actually want to watch.** Auto-curated daily recap from photos + walk ([[features/auto-vlog-export]]).
-3. **A pet-centric timeline you can scroll without wading through screenshots.** Daily log ([[features/daily-pet-log]]).
-4. **A shared timeline for households** (v1.1). Both partners contribute, both see everything.
-5. **Friendly competition that gets you out the door** (v1.3). Friend leaderboards.
-6. **Proof and reports when someone else walks the dog** (v2.x). [[features/dog-walker-mode]].
+2. **A daily nudge to walk** without nagging or guilt. Streaks + weekly framing.
+
+**Pillar 2 — Curation**
+3. **Get a video at the end of the day you actually want to watch.** Auto-curated daily recap ([[features/auto-vlog-export]]).
+4. **A pet-centric timeline you can scroll** without wading through screenshots, receipts, and lunches ([[features/daily-pet-log]]).
+5. **A year-in-review you didn't have to make.** Spotify Wrapped for pets.
+
+**Pillar 3 — Health**
+6. **Feed the right amount** for *this dog* — calibrated by breed, age, weight, and yesterday's walks ([[features/food-and-nutrition-tracking]]).
+7. **Prevent double-feeding in multi-person households.** "Mochi ate at 7:12 — confirm second meal?"
+8. **Give your vet a structured report** instead of vague answers. Vet PDF.
+
+**Cross-pillar**
+9. **A shared timeline for households** (v1.1). Both partners contribute, both see everything, both log walks and meals.
+10. **Friendly competition that gets you out the door** (v1.1). Friend leaderboards.
+11. **Proof and reports when someone else walks the dog** (v2.0). [[features/dog-walker-mode]].
 
 ## Why now
 

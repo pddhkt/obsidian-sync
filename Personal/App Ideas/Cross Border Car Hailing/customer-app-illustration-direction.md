@@ -41,6 +41,12 @@ The first exploration uses:
 
 ## Generated look-and-feel previews
 
+### Integrated HTML mock
+
+[Open the one-page customer app mock](customer-app-illustration-mock.html)
+
+This page shows the transparent illustrations inside four app screens: route search, top driver choices, booking confirmation, and live trip support.
+
 ### 1. Route-line background pattern
 
 ![[assets/customer-app-illustrations/route-pattern-generated.png|800]]

@@ -1,0 +1,1121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cross Border Car Hailing - Customer App Illustration Mock</title>
+  <style>
+    :root {
+      --ink: #143d4a;
+      --muted: #5b8fa8;
+      --coral: #e97862;
+      --yellow: #f4c95d;
+      --paper: #f7faf9;
+      --surface: #ffffff;
+      --line: rgba(20, 61, 74, 0.14);
+      --soft: rgba(91, 143, 168, 0.12);
+      --shadow: 0 24px 70px rgba(20, 61, 74, 0.18);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(91, 143, 168, 0.12), rgba(247, 250, 249, 0) 320px),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      width: min(1440px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 42px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 68px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      max-width: 420px;
+      margin: 8px 0 0;
+      color: rgba(20, 61, 74, 0.76);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(5, 34px);
+      gap: 8px;
+      padding-top: 8px;
+    }
+
+    .swatch {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(20, 61, 74, 0.18);
+      border-radius: 8px;
+    }
+
+    .stage {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.78fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .design-note {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      padding: 26px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 46px rgba(20, 61, 74, 0.08);
+    }
+
+    .design-note::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -80px;
+      width: 420px;
+      height: 260px;
+      background-image: url("assets/customer-app-illustrations/route-pattern-generated.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.14;
+      pointer-events: none;
+    }
+
+    .design-note h2,
+    .showcase h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .design-note p {
+      margin: 0 0 18px;
+      color: rgba(20, 61, 74, 0.72);
+      line-height: 1.65;
+    }
+
+    .principles {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      background: rgba(247, 250, 249, 0.86);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .principle-icon {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      color: #ffffff;
+      background: var(--ink);
+      border-radius: 8px;
+      font-weight: 900;
+    }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    .principle span {
+      color: rgba(20, 61, 74, 0.68);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .asset-strip {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .asset-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      color: rgba(20, 61, 74, 0.72);
+      font-size: 13px;
+    }
+
+    .asset-row strong {
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .showcase {
+      min-width: 0;
+      overflow: hidden;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 46px rgba(20, 61, 74, 0.08);
+    }
+
+    .phone-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .phone-wrap {
+      display: grid;
+      min-width: 0;
+      gap: 12px;
+    }
+
+    .caption {
+      padding: 0 4px;
+      color: rgba(20, 61, 74, 0.72);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .caption strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .phone {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 620px;
+      padding: 12px;
+      background: #122f39;
+      border: 1px solid rgba(20, 61, 74, 0.26);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .screen {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      padding: 14px 14px 72px;
+      background: #f7faf9;
+      border-radius: 18px;
+    }
+
+    .notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      z-index: 5;
+      width: 72px;
+      height: 20px;
+      transform: translateX(-50%);
+      background: #122f39;
+      border-radius: 999px;
+    }
+
+    .status {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 4px 2px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .signal {
+      display: flex;
+      gap: 4px;
+      align-items: end;
+    }
+
+    .signal span {
+      width: 4px;
+      background: var(--ink);
+      border-radius: 999px;
+    }
+
+    .signal span:nth-child(1) {
+      height: 6px;
+    }
+
+    .signal span:nth-child(2) {
+      height: 9px;
+    }
+
+    .signal span:nth-child(3) {
+      height: 12px;
+    }
+
+    .app-head {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 900;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      color: #ffffff;
+      background: var(--ink);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .ghost-btn,
+    .icon-btn {
+      display: grid;
+      place-items: center;
+      min-width: 32px;
+      height: 32px;
+      padding: 0 10px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .screen-title {
+      position: relative;
+      z-index: 2;
+      margin: 0 0 12px;
+      font-size: clamp(21px, 1.8vw, 25px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .screen-subtitle {
+      position: relative;
+      z-index: 2;
+      margin: 0 0 18px;
+      color: rgba(20, 61, 74, 0.68);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .illustration {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .route-bg {
+      top: 74px;
+      left: -120px;
+      width: 520px;
+      opacity: 0.11;
+    }
+
+    .mpv-hero {
+      right: -22px;
+      bottom: 64px;
+      width: 255px;
+      opacity: 0.96;
+    }
+
+    .icons-soft {
+      right: -76px;
+      top: 76px;
+      width: 310px;
+      opacity: 0.12;
+    }
+
+    .confirmed-art {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-height: 132px;
+      margin: 8px auto 14px;
+      object-fit: contain;
+    }
+
+    .form-stack,
+    .list-stack {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 10px;
+    }
+
+    .field,
+    .driver-card,
+    .summary-card,
+    .timeline,
+    .support-box {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 10px 28px rgba(20, 61, 74, 0.07);
+    }
+
+    .field {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 10px;
+      align-items: center;
+      min-height: 54px;
+      padding: 10px;
+    }
+
+    .field-icon {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      background: rgba(91, 143, 168, 0.16);
+      border-radius: 8px;
+    }
+
+    .field-icon::before,
+    .pin-icon::before,
+    .car-icon::before,
+    .pay-icon::before {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--ink);
+    }
+
+    .field-icon::before {
+      border-radius: 999px 999px 999px 0;
+      transform: rotate(-45deg);
+    }
+
+    .field-label {
+      margin-bottom: 3px;
+      color: rgba(20, 61, 74, 0.52);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .field-value {
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .segmented {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 14px;
+      padding: 5px;
+      background: rgba(20, 61, 74, 0.08);
+      border-radius: 8px;
+    }
+
+    .segment {
+      display: grid;
+      place-items: center;
+      height: 34px;
+      border-radius: 8px;
+      color: rgba(20, 61, 74, 0.64);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .segment.active {
+      color: #ffffff;
+      background: var(--ink);
+    }
+
+    .primary-btn {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 48px;
+      margin-top: 14px;
+      padding: 0 16px;
+      color: #ffffff;
+      background: var(--ink);
+      border: 0;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .primary-btn span:last-child {
+      color: var(--yellow);
+      font-size: 17px;
+    }
+
+    .route-pills {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 16px 0 14px;
+    }
+
+    .pill {
+      padding: 8px 10px;
+      color: var(--ink);
+      background: rgba(244, 201, 93, 0.2);
+      border: 1px solid rgba(244, 201, 93, 0.42);
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 850;
+    }
+
+    .map-card {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      height: 128px;
+      margin-bottom: 12px;
+      background:
+        linear-gradient(90deg, rgba(91, 143, 168, 0.18) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(91, 143, 168, 0.18) 1px, transparent 1px),
+        #eef5f4;
+      background-size: 28px 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .map-route {
+      position: absolute;
+      inset: 28px 26px 34px;
+      border: 3px solid var(--coral);
+      border-left: 0;
+      border-bottom: 0;
+      border-radius: 0 60px 0 0;
+    }
+
+    .map-pin {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: var(--ink);
+      border: 3px solid #ffffff;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(20, 61, 74, 0.22);
+    }
+
+    .map-pin.start {
+      left: 34px;
+      bottom: 30px;
+    }
+
+    .map-pin.end {
+      right: 34px;
+      top: 26px;
+      background: var(--coral);
+    }
+
+    .driver-card {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .driver-avatar {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      color: #ffffff;
+      background: var(--muted);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .driver-card:nth-child(2) .driver-avatar {
+      background: var(--coral);
+    }
+
+    .driver-card:nth-child(3) .driver-avatar {
+      background: var(--ink);
+    }
+
+    .driver-name {
+      margin-bottom: 2px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .driver-meta {
+      color: rgba(20, 61, 74, 0.58);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .fare {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    .small-status {
+      color: var(--coral);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .summary-card {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 8px;
+      padding: 10px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: rgba(20, 61, 74, 0.68);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .summary-row strong {
+      color: var(--ink);
+      text-align: right;
+    }
+
+    .success-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      color: var(--ink);
+      background: rgba(244, 201, 93, 0.22);
+      border: 1px solid rgba(244, 201, 93, 0.5);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .success-dot {
+      width: 9px;
+      height: 9px;
+      background: var(--coral);
+      border-radius: 999px;
+    }
+
+    .timeline {
+      position: relative;
+      z-index: 2;
+      padding: 12px;
+    }
+
+    .timeline-step {
+      display: grid;
+      grid-template-columns: 18px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-step:last-child {
+      border-bottom: 0;
+    }
+
+    .step-dot {
+      width: 10px;
+      height: 10px;
+      margin-left: 4px;
+      background: rgba(20, 61, 74, 0.24);
+      border-radius: 999px;
+    }
+
+    .timeline-step.done .step-dot {
+      background: var(--ink);
+    }
+
+    .timeline-step.current .step-dot {
+      background: var(--coral);
+      box-shadow: 0 0 0 5px rgba(233, 120, 98, 0.16);
+    }
+
+    .step-title {
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .step-time {
+      color: rgba(20, 61, 74, 0.58);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .support-box {
+      position: relative;
+      z-index: 2;
+      margin-top: 12px;
+      padding: 12px;
+    }
+
+    .support-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .message {
+      margin-bottom: 8px;
+      padding: 10px;
+      background: rgba(91, 143, 168, 0.1);
+      border-radius: 8px;
+      color: rgba(20, 61, 74, 0.74);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .translate-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 10px;
+      color: #ffffff;
+      background: var(--muted);
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .bottom-nav {
+      position: absolute;
+      right: 18px;
+      bottom: 14px;
+      left: 18px;
+      z-index: 4;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 10px 26px rgba(20, 61, 74, 0.12);
+    }
+
+    .nav-item {
+      display: grid;
+      place-items: center;
+      min-height: 34px;
+      color: rgba(20, 61, 74, 0.52);
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .nav-item.active {
+      color: var(--ink);
+      background: rgba(244, 201, 93, 0.24);
+      border-radius: 8px;
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      color: rgba(20, 61, 74, 0.68);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 1180px) {
+      .stage {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-grid {
+        grid-template-columns: repeat(2, minmax(230px, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 24px, 520px);
+        padding-top: 28px;
+      }
+
+      .topbar {
+        display: grid;
+      }
+
+      .phone-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phone {
+        height: 620px;
+      }
+
+      .showcase,
+      .design-note {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Customer app mock</p>
+        <h1>Illustrations inside the booking experience</h1>
+      </div>
+      <div>
+        <p class="summary">
+          One-page visual mock showing how transparent decorative artwork can support the cross-border car hailing app without covering the functional booking UI.
+        </p>
+        <div class="palette" aria-label="Illustration palette">
+          <span class="swatch" style="background:#143d4a"></span>
+          <span class="swatch" style="background:#5b8fa8"></span>
+          <span class="swatch" style="background:#e97862"></span>
+          <span class="swatch" style="background:#f4c95d"></span>
+          <span class="swatch" style="background:#f8faf9"></span>
+        </div>
+      </div>
+    </header>
+
+    <section class="stage" aria-label="Illustration direction and app screens">
+      <aside class="design-note">
+        <h2>Design intent</h2>
+        <p>
+          The artwork should make the app feel professional, cross-border, and traveler-friendly. It should appear as a transparent layer, not as a rectangular image block.
+        </p>
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-icon">1</div>
+            <div>
+              <strong>Functional screens stay clear</strong>
+              <span>Patterns sit in unused space at low opacity. Forms, fares, and driver choices remain dominant.</span>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-icon">2</div>
+            <div>
+              <strong>Spot art marks emotional moments</strong>
+              <span>Use larger illustrations for welcome, confirmation, empty states, and support moments.</span>
+            </div>
+          </div>
+          <div class="principle">
+            <div class="principle-icon">3</div>
+            <div>
+              <strong>Travel cues stay abstract</strong>
+              <span>Use route lines, MPV, skyline, bridge, luggage, and payment motifs without promising a specific border path.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="asset-strip" aria-label="Artwork used in this mock">
+          <div class="asset-row">
+            <strong>Route pattern</strong>
+            <span>Background layer</span>
+          </div>
+          <div class="asset-row">
+            <strong>MPV skyline</strong>
+            <span>Welcome motif</span>
+          </div>
+          <div class="asset-row">
+            <strong>Travel icons</strong>
+            <span>Light decoration</span>
+          </div>
+          <div class="asset-row">
+            <strong>Confirmed ride</strong>
+            <span>Success state</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="showcase">
+        <div class="phone-grid">
+          <article class="phone-wrap">
+            <div class="phone">
+              <div class="notch"></div>
+              <div class="screen">
+                <img class="illustration route-bg" src="assets/customer-app-illustrations/route-pattern-generated.png" alt="">
+                <img class="illustration mpv-hero" src="assets/customer-app-illustrations/mpv-skyline-generated.png" alt="">
+                <div class="status">
+                  <span>9:41</span>
+                  <span class="signal" aria-hidden="true"><span></span><span></span><span></span></span>
+                </div>
+                <div class="app-head">
+                  <div class="brand"><span class="mark">C</span><span>CrossBorder</span></div>
+                  <div class="ghost-btn">EN</div>
+                </div>
+                <h2 class="screen-title">Book your cross-border ride</h2>
+                <p class="screen-subtitle">Reserve a verified MPV between Hong Kong, Shenzhen, and Guangzhou.</p>
+                <div class="segmented" aria-label="Booking type">
+                  <div class="segment active">Reserve</div>
+                  <div class="segment">Instant</div>
+                </div>
+                <div class="route-pills">
+                  <span class="pill">HK Airport</span>
+                  <span class="pill">Shenzhen</span>
+                  <span class="pill">Guangzhou</span>
+                </div>
+                <div class="form-stack">
+                  <div class="field">
+                    <span class="field-icon"></span>
+                    <div>
+                      <div class="field-label">Pickup</div>
+                      <div class="field-value">Hong Kong Airport T1</div>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <span class="field-icon"></span>
+                    <div>
+                      <div class="field-label">Destination</div>
+                      <div class="field-value">Shenzhen Futian</div>
+                    </div>
+                  </div>
+                </div>
+                <nav class="bottom-nav" aria-label="Customer app navigation">
+                  <div class="nav-item active">Book</div>
+                  <div class="nav-item">Trips</div>
+                  <div class="nav-item">Chat</div>
+                  <div class="nav-item">Me</div>
+                </nav>
+              </div>
+            </div>
+            <p class="caption"><strong>Home and route search</strong>Use the route pattern behind empty space and the MPV motif below the booking form.</p>
+          </article>
+
+          <article class="phone-wrap">
+            <div class="phone">
+              <div class="notch"></div>
+              <div class="screen">
+                <img class="illustration icons-soft" src="assets/customer-app-illustrations/travel-icons-generated.png" alt="">
+                <div class="status">
+                  <span>9:42</span>
+                  <span class="signal" aria-hidden="true"><span></span><span></span><span></span></span>
+                </div>
+                <div class="app-head">
+                  <div class="brand"><span class="mark">C</span><span>Choose driver</span></div>
+                  <div class="icon-btn">2m</div>
+                </div>
+                <h2 class="screen-title">Top choices</h2>
+                <p class="screen-subtitle">Ranked by vehicle fit, reliability, price, and pickup confidence.</p>
+                <div class="map-card" aria-hidden="true">
+                  <div class="map-route"></div>
+                  <div class="map-pin start"></div>
+                  <div class="map-pin end"></div>
+                </div>
+                <div class="list-stack">
+                  <div class="driver-card">
+                    <div class="driver-avatar">AL</div>
+                    <div>
+                      <div class="driver-name">Alex Lau</div>
+                      <div class="driver-meta">MPV · 4.9 · 612 trips</div>
+                    </div>
+                    <div>
+                      <div class="fare">HK$880</div>
+                      <div class="small-status">Best fit</div>
+                    </div>
+                  </div>
+                  <div class="driver-card">
+                    <div class="driver-avatar">MC</div>
+                    <div>
+                      <div class="driver-name">Ming Chen</div>
+                      <div class="driver-meta">Premium MPV · 4.8</div>
+                    </div>
+                    <div>
+                      <div class="fare">HK$940</div>
+                      <div class="small-status">Fast ETA</div>
+                    </div>
+                  </div>
+                </div>
+                <nav class="bottom-nav" aria-label="Customer app navigation">
+                  <div class="nav-item active">Book</div>
+                  <div class="nav-item">Trips</div>
+                  <div class="nav-item">Chat</div>
+                  <div class="nav-item">Me</div>
+                </nav>
+              </div>
+            </div>
+            <p class="caption"><strong>Top-5 choice screen</strong>Keep decoration pale and off to the side because fare and driver comparison is the main task.</p>
+          </article>
+
+          <article class="phone-wrap">
+            <div class="phone">
+              <div class="notch"></div>
+              <div class="screen">
+                <div class="status">
+                  <span>9:43</span>
+                  <span class="signal" aria-hidden="true"><span></span><span></span><span></span></span>
+                </div>
+                <div class="app-head">
+                  <div class="brand"><span class="mark">C</span><span>Confirmed</span></div>
+                  <div class="ghost-btn">Paid</div>
+                </div>
+                <img class="confirmed-art" src="assets/customer-app-illustrations/booking-confirmed-generated.png" alt="">
+                <div class="success-badge"><span class="success-dot"></span><span>Reservation locked</span></div>
+                <h2 class="screen-title">Alex will meet you at T1</h2>
+                <p class="screen-subtitle">Your payment is complete and the driver has your pickup details.</p>
+                <div class="summary-card">
+                  <div class="summary-row"><span>Route</span><strong>HK Airport to Shenzhen</strong></div>
+                  <div class="summary-row"><span>Vehicle</span><strong>MPV · 6 seats</strong></div>
+                  <div class="summary-row"><span>Pickup</span><strong>Tomorrow 10:30</strong></div>
+                  <div class="summary-row"><span>Total</span><strong>HK$880</strong></div>
+                </div>
+                <nav class="bottom-nav" aria-label="Customer app navigation">
+                  <div class="nav-item">Book</div>
+                  <div class="nav-item active">Trips</div>
+                  <div class="nav-item">Chat</div>
+                  <div class="nav-item">Me</div>
+                </nav>
+              </div>
+            </div>
+            <p class="caption"><strong>Booking confirmed</strong>Use a larger spot illustration after payment, where emotional confidence matters.</p>
+          </article>
+
+          <article class="phone-wrap">
+            <div class="phone">
+              <div class="notch"></div>
+              <div class="screen">
+                <img class="illustration route-bg" src="assets/customer-app-illustrations/route-pattern-generated.png" alt="">
+                <div class="status">
+                  <span>10:09</span>
+                  <span class="signal" aria-hidden="true"><span></span><span></span><span></span></span>
+                </div>
+                <div class="app-head">
+                  <div class="brand"><span class="mark">C</span><span>Trip</span></div>
+                  <div class="ghost-btn">Help</div>
+                </div>
+                <h2 class="screen-title">Driver en route</h2>
+                <p class="screen-subtitle">Pickup at Hong Kong Airport T1. Support is available until 00:00.</p>
+                <div class="timeline">
+                  <div class="timeline-step done">
+                    <span class="step-dot"></span>
+                    <span class="step-title">Driver confirmed</span>
+                    <span class="step-time">Done</span>
+                  </div>
+                  <div class="timeline-step current">
+                    <span class="step-dot"></span>
+                    <span class="step-title">En route to pickup</span>
+                    <span class="step-time">18 min</span>
+                  </div>
+                  <div class="timeline-step">
+                    <span class="step-dot"></span>
+                    <span class="step-title">Arrived</span>
+                    <span class="step-time">Next</span>
+                  </div>
+                  <div class="timeline-step">
+                    <span class="step-dot"></span>
+                    <span class="step-title">Border crossing</span>
+                    <span class="step-time">Later</span>
+                  </div>
+                </div>
+                <div class="support-box">
+                  <div class="support-head">
+                    <span>Driver message ready</span>
+                    <span class="translate-btn">Translate</span>
+                  </div>
+                </div>
+                <nav class="bottom-nav" aria-label="Customer app navigation">
+                  <div class="nav-item">Book</div>
+                  <div class="nav-item active">Trips</div>
+                  <div class="nav-item">Chat</div>
+                  <div class="nav-item">Me</div>
+                </nav>
+              </div>
+            </div>
+            <p class="caption"><strong>Live trip state</strong>Use light pattern art only. The timeline and support actions need priority.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <p class="footer-note">
+      Prototype note: these transparent PNGs are generated look-and-feel assets. Final production art should be redrawn as clean vector artwork after the preferred direction is selected.
+    </p>
+  </main>
+</body>
+</html>

@@ -7,9 +7,9 @@ tags:
   - mvp
 ---
 
-# MVP — Smallest Useful Loop
+# MVP (v1.0) — Smallest Useful Loop
 
-The first version should focus on the smallest loop that delivers real value to a single user, without depending on a friend network.
+The first version focuses on the smallest loop that delivers real value to a single user, without depending on a friend network. **Pillars 1 + 2 baseline only.** Pillar 3 (Health) is positioned in marketing from day 1 but not built until v1.2 — see [[roadmap]] for the full phasing.
 
 ## The loop
 

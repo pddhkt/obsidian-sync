@@ -25,6 +25,7 @@ aliases:
 
 Lead segment, positioning, and sub-segment expansion order: [[concept]].
 Two sharpened value props in detail: [[value-props]].
+Shareable one-file product and business summary: [[shareable-summary]].
 
 ---
 
@@ -33,34 +34,69 @@ Two sharpened value props in detail: [[value-props]].
 ```
 Pet Social Vlog/
 ├── _index.md           ← you are here
-├── concept.md          ← positioning, lead segment, expansion order
-├── value-props.md      ← two sharpened value props
-├── mvp.md              ← smallest useful loop
+├── concept.md          ← positioning, lead segment, three pillars
+├── value-props.md      ← three value props in detail
+├── shareable-summary.md ← single-file product + business brief
+├── roadmap.md          ← full vision + v1.0 → v2.0 phasing
+├── mvp.md              ← v1.0 — smallest useful loop
 ├── data-model.md       ← all entities in one place
 ├── README.md           ← raw concept dump (legacy, kept as source)
 │
-├── features/           ← one node per feature (10 nodes)
-├── retention/          ← engagement & "addiction" mechanics — discussion
+├── features/           ← one node per feature (11 nodes)
+├── retention/          ← engagement & habit mechanics — discussion
 ├── decisions/          ← open product questions
 └── visual/             ← mockups + visual concept notes
 ```
 
 ---
 
-## 🧩 Features (10 nodes)
+## 🏛 Three pillars
 
-| Feature | MVP? | Why it matters |
+The product has three pillars sharing one engine. See [[concept]] and [[value-props]].
+
+| Pillar | Job | Core feature |
 |---|---|---|
-| [[features/pet-profile]] | ✅ | Identity anchor — every record hangs off a pet |
-| [[features/breed-aware-activity-targets]] | ✅ | The Prop 1 wedge — makes the km number meaningful |
-| [[features/daily-pet-log]] | ✅ | The raw input. Photos + captions throughout the day |
-| [[features/media-capture-modes]] | ✅ | Layered capture — spontaneous + walk-tied + daily ritual |
-| [[features/pet-walking-activity]] | ✅ | GPS-tracked walk = killer feature + retention hook |
-| [[features/auto-vlog-export]] | ✅ | The Prop 2 deliverable. Variable reward + growth channel |
-| [[features/privacy-controls]] | ✅ | Foundational — gates everything social |
-| [[features/social-sharing]] | ⏳ | Friends, groups, reactions, comments |
-| [[features/friends-walking-chart]] | ⏳ | The leaderboard — social-pressure engine |
-| [[features/dog-walker-mode]] | ❌ | Secondary persona — paid walker workflow |
+| **1. Routine Accountability** | Walk your dog enough | [[features/breed-aware-activity-targets]] |
+| **2. Curation Engine** | Make the photos watchable | [[features/auto-vlog-export]] |
+| **3. Health Intelligence** | Feed right · know they're healthy | [[features/food-and-nutrition-tracking]] |
+
+---
+
+## 🧩 Features (11 nodes, grouped by pillar)
+
+### Pillar 1 — Routine
+
+| Feature | Ships in | Notes |
+|---|---|---|
+| [[features/pet-profile]] | v1.0 | Identity anchor |
+| [[features/breed-aware-activity-targets]] | v1.0 | The Pillar 1 wedge |
+| [[features/pet-walking-activity]] | v1.0 | GPS walks |
+| [[features/daily-pet-log]] | v1.0 | Timeline base |
+| [[features/media-capture-modes]] | v1.0 | Layered capture |
+| [[features/privacy-controls]] | v1.0 | Visibility gate |
+
+### Pillar 2 — Curation
+
+| Feature | Ships in | Notes |
+|---|---|---|
+| [[features/auto-vlog-export]] | v1.0 | The Pillar 2 deliverable |
+
+### Pillar 3 — Health
+
+| Feature | Ships in | Notes |
+|---|---|---|
+| [[features/food-and-nutrition-tracking]] | v1.2 → v1.4 | Food log → vet PDF → Diet Library |
+
+### Cross-pillar
+
+| Feature | Ships in | Notes |
+|---|---|---|
+| [[features/social-sharing]] | v1.1 | Friends + household |
+| [[features/friends-walking-chart]] | v1.1 → v1.4 | Avatar list → House-to-pet |
+| [[features/dog-walker-mode]] | v2.0 | Service tier |
+
+> [!tip] Full vision + version sequencing
+> See [[roadmap]] for what's in each release, success criteria per phase, and the explicit list of things we don't build.
 
 ---
 
@@ -96,8 +132,9 @@ See [[decisions/_index]] for unresolved product calls (privacy defaults, owner-v
 
 ## 🚀 Next steps
 
-1. Pick a positioning angle in [[concept]] (private memory tool vs social pet app vs pet fitness tracker — these pull the design in different directions).
-2. Confirm the MVP loop in [[mvp]].
-3. Pick 2–3 retention mechanics from [[retention/_index]] that should ship with the MVP.
-4. Resolve top 3 open questions in [[decisions/_index]].
-5. Sketch screens for the MVP user flow.
+1. ✅ ~~Pick a positioning angle~~ — three pillars, [[concept]].
+2. ✅ ~~Decide food/nutrition strategic positioning~~ — Pillar 3, ships v1.2 per [[roadmap]].
+3. Confirm the MVP loop in [[mvp]].
+4. Pick 2–3 retention mechanics from [[retention/_index]] for v1.0.
+5. Resolve top 3 open questions in [[decisions/_index]].
+6. Sketch screens for the MVP user flow.

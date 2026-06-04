@@ -43,6 +43,7 @@ Cross Border Car Hailing/
 ├── _index.md                  <- project home
 ├── teammate-overview.md       <- visual team briefing (diagrams + image prompts)
 ├── customer-app-illustration-direction.md <- customer app decorative illustration previews
+├── customer-app-illustration-mock.html <- one-page customer app look-and-feel mock
 ├── app-summary.md             <- full functional spec summary
 ├── product-logic.md           <- what the app needs to understand
 ├── interfaces.md              <- customer app, driver app, admin support

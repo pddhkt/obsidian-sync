@@ -66,6 +66,25 @@ Unresolved calls that should be made before / during MVP design. Each is small e
 - [ ] Themed prompts at launch (Sleepy Sunday etc.) or v1.1?
 - [ ] AI-assisted import from camera roll: **on-device only** or **cloud**?
 
+## Food & nutrition tracking ([[../features/food-and-nutrition-tracking]])
+
+**Resolved:**
+- [x] Strategic positioning — **Pillar 3, ships v1.2** ([[../roadmap]]).
+- [x] Vet share format — **PDF only** at launch. No clinic integration / partnership / portal until traction.
+- [x] Diet sharing — **Diet Library** (anonymised browsable database), opt-in publishing. Ships v1.4. *Not* day-by-day diaries.
+
+**Still open:**
+- [ ] Input model: confirm **quick-add + barcode + manual** baseline for v1.2?
+- [ ] Photo recognition for food in v1.2, v1.3, or later?
+- [ ] Food database: license existing (Open Pet Food Facts?) or crowd-source?
+- [ ] Vet recommendation source: industry-standard RER × MER × activity multiplier, or partner with veterinary nutritionist for proprietary formula?
+- [ ] Vet advisory board needed before shipping recommendations?
+- [ ] Treat tracking — separate category from v1.2, or arrive in v1.3?
+- [ ] Water tracking — include in v1.2, defer to v2.0, or skip entirely?
+- [ ] Smart feeder integrations — defer to v2.0 confirmed?
+- [ ] Liability / professional indemnity insurance before v1.2 launch?
+- [ ] Diet Library moderation policy — what if someone publishes a fad/dangerous diet?
+
 ## Auto-vlog ([[../features/auto-vlog-export]])
 
 - [ ] Number of templates at launch: **3, 5, or 10+**?

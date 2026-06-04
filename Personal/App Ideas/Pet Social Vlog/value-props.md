@@ -10,10 +10,13 @@ tags:
 
 # Value Props — Sharpened
 
-Two value props, each tied to a real pain the user already has. Each section follows the job-to-be-done frame: *what's the user trying to do, what's broken about the status quo, what we deliver*.
+Three value props, each tied to a real pain the user already has. Each section follows the job-to-be-done frame: *what's the user trying to do, what's broken about the status quo, what we deliver*.
 
 > [!important] The frame
-> We don't promise "track your walks" or "remember your pet" — those are descriptions, not benefits. We promise **routine accountability** and **a curation engine**. Those are jobs.
+> We don't promise "track your walks", "remember your pet", or "log food" — those are descriptions, not benefits. We promise **routine accountability**, **a curation engine**, and **health intelligence**. Those are jobs.
+
+> [!tip] One product, three pillars, one engine
+> The three pillars share a single engine — *calibrated to your specific dog* (breed, age, weight, activity). Activity data informs the food target. Food and walk data both enrich the vlog and the year-in-review. Each pillar makes the others stronger.
 
 ---
 
@@ -84,23 +87,83 @@ If the auto-vlog isn't good enough, the value prop collapses. Quality bar must b
 
 ---
 
-## How the two props reinforce each other
+## Prop 3 — Health Intelligence
 
-These are not two separate apps stapled together. They share the same daily ritual:
+> **"Feed your dog the right amount of the right thing — and know your dog is healthy."**
+
+### The job
+
+The user wants their dog to be healthy. Daily, that decomposes into: am I feeding the right amount? The right kind? At the right schedule? Is the dog's weight okay? If something seems off, can the vet help me figure it out? Right now, owners guess from a vague vet visit twice a year and a feeding chart on the back of a kibble bag.
+
+### Why the status quo fails
+
+| Status quo | What it doesn't do |
+|---|---|
+| **Vet visit 2x/year** | Far too sparse to inform daily decisions. |
+| **Bag-of-kibble feeding chart** | Generic by weight. Ignores activity level, age, breed, condition. |
+| **MyFitnessPal-style food trackers** | Built for humans. Wrong food database. No recommendations. |
+| **Smart bowls** | Fragmented hardware, expensive, single-use. No reporting. |
+| **Spreadsheets / paper logs** | Discipline-dependent. Nobody actually keeps them. |
+| **Asking the internet** | "How much should my husky eat?" → 47 contradictory answers. |
+
+### How we deliver
+
+- **Quick-add food logging** ([[features/food-and-nutrition-tracking]]) — 1-tap for "same as yesterday" (90% of meals). Barcode for new foods. Manual as the escape hatch.
+- **Portion recommendations** — calibrated to weight × breed × activity × life-stage. Industry-standard RER × MER formula at launch.
+- **Activity-coupled** — *this is the moat*. High-walk days adjust the calorie target up. Rest days down. Only we can do this, because we already have activity data from Pillar 1.
+- **Multi-person anti-double-feed alert** — "Mochi was fed at 7:12am by Anna. Confirm second meal?" Closes a real, daily household pain point.
+- **Weight + Body Condition Score** tracking — the actual gold-standard health metrics.
+- **Vet PDF report** — structured weekly/monthly summary, exportable as PDF the owner emails to their vet. Standardised format.
+- **Diet Library** — anonymised reference: "what do other shibas, 8kg, 3 years old, actually eat?" Browsable; opt-in to contribute your own dog's diet.
+- **Always defers to the vet** for medical questions. We surface signal; the vet interprets.
+
+### Honest risk
+
+- **Liability** — recommendations are medical-adjacent. Need vet sign-off on the formula and clear "guidance, not medical advice" framing.
+- **Food logging fatigue** — the #1 churn driver in MyFitnessPal. Mitigated by quick-add as the default, weekly framing instead of daily nagging, and never gamifying meal compliance.
+- **Brand drift** — being "a health app" carries clinical seriousness that can clash with the playful daily-companion vibe. We address this by *never* gating Pillars 1 and 2 behind health onboarding.
+
+---
+
+## How the three pillars reinforce each other
+
+These are not three separate apps stapled together. They share one daily ritual and one engine:
 
 ```
-Walk the dog (routine)  →  Take photos along the way (capture)
-       │                              │
-       └──────► End of walk ◄─────────┘
-                    │
-            Walk recap video (curation)
-                    │
-            End of day vlog (curation)
-                    │
-            Streak +1  (routine accountability)
+                            Pet profile
+                  (breed · age · weight · conditions)
+                                │
+                                ▼
+        ┌───────────────────────┴───────────────────────┐
+        │                       │                       │
+   Pillar 1                Pillar 2                Pillar 3
+   ROUTINE                 CURATION                HEALTH
+        │                       │                       │
+   Walk activity           Daily log               Food log
+   Activity target         Capture modes           Portion target
+        │                       │                       │
+        └──────► Activity data ─┴─── adjusts ────► Calorie target
+                                │
+                                ▼
+                    Daily vlog at 9pm (P2)
+                       includes walks + meals
+                                │
+                                ▼
+                Streak +1 (P1) · Weekly health summary (P3)
+                                │
+                                ▼
+                  Year-in-review: walks + meals + memories
+                                │
+                                ▼
+                       Vet PDF (P3) — annual or on-demand
 ```
 
-The walk is when the photos happen. The photos feed the vlog. The vlog rewards the routine. **One loop, two payoffs.**
+- The **walk** is when the photos happen → feeds Pillar 2.
+- The **activity data** adjusts the **calorie target** → P1 enables P3.
+- The **food log** + **walks** enrich the **vlog and year-in-review** → P3 feeds P2.
+- The **vet PDF** closes the loop on the health pillar — turns daily logging into something useful at the medical level.
+
+**One product, three jobs, each making the others stronger.**
 
 ---
 
@@ -108,16 +171,19 @@ The walk is when the photos happen. The photos feed the vlog. The vlog rewards t
 
 - ❌ Photo storage / backup. (Photos / iCloud / Google handle this. We're not competing.)
 - ❌ Fitness coaching for the owner. (We're about the dog; owner steps incidental.)
-- ❌ Pet social network with strangers. (Friends only, by design.)
-- ❌ Pet health diagnosis. (Activity guidance ≠ medical advice. Always defer to vet.)
-- ❌ A marketplace for dog walkers (at launch). (See [[features/dog-walker-mode]] for later.)
+- ❌ Pet social network with strangers. (Friends only by design; Diet Library is anonymised aggregate.)
+- ❌ **Pet diagnosis or medical advice.** (We surface signal. The vet interprets. Always.)
+- ❌ Prescription diets / medication recommendations. (Vet-prescribed only.)
+- ❌ A marketplace for dog walkers (at launch — see [[features/dog-walker-mode]] for later).
 
 ---
 
 ## See also
 
-- [[concept]] — positioning & target segment.
-- [[mvp]] — smallest loop that delivers both props.
-- [[features/breed-aware-activity-targets]] — operationalizes Prop 1.
-- [[features/auto-vlog-export]] — operationalizes Prop 2.
+- [[concept]] — positioning & target segment, three-pillar mental model.
+- [[roadmap]] — how the three pillars phase in across versions.
+- [[mvp]] — smallest loop that delivers Pillars 1 and 2.
+- [[features/breed-aware-activity-targets]] — operationalises Prop 1.
+- [[features/auto-vlog-export]] — operationalises Prop 2.
 - [[features/media-capture-modes]] — feeds Prop 2.
+- [[features/food-and-nutrition-tracking]] — operationalises Prop 3.
