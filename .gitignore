@@ -25,3 +25,7 @@ ctint/tts/uat deployment.md
 # More sensitive files
 groq.md
 ctint/Untitled.md
+.superpowers/
+
+# Export archives (source content is tracked as markdown)
+*.zip
