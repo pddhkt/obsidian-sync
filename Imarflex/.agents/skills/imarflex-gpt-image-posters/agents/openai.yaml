@@ -1,4 +1,4 @@
 interface:
   display_name: "Imarflex GPT-image Posters"
-  short_description: "Generate Imarflex text-in-image posters."
-  default_prompt: "Create text-in-image GPT-image prompts and generated social poster assets for an Imarflex product campaign."
+  short_description: "Generate Imarflex social cards and audit product references."
+  default_prompt: "Create Imarflex pitch-deck-style social card prompts, audit the product source images, and generate/save campaign poster assets."

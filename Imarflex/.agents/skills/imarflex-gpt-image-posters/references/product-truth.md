@@ -6,6 +6,7 @@ Use this reference before generating Imarflex social poster assets. Product geom
 
 | Style | Use | Visual Language |
 |---|---|---|
+| Pitch-deck social card | Testing, IG carousel systems, saveable social education, CTA frames | Square-first social-card template, large frame number, Heritage Blue shapes, callout chips, icon rows, CTA buttons, collage/photo-card modules |
 | Muji-style minimal poster | Feature cards, hooks, CTA frames, checklist posters | Clean neutral background, generous white space, restrained sans-serif typography, simple product-first layout |
 | Kinfolk/Monocle base | Lifestyle and editorial post frames | Natural window light, compact Hong Kong home context, practical props, magazine-like composition |
 
@@ -37,6 +38,12 @@ Known look from reference images:
 - Rounded white oval base with small touch buttons and dark IR receiver slot.
 - Small slim white remote control may appear as a prop.
 
+Reference gaps to watch:
+
+- Side and rear body shape are hard to infer from a front-only source image.
+- Detached/open-front scenes need real detach/open references.
+- If a frame shows the product turned sideways, request side/back references or keep the composition front-dominant.
+
 Prompt locks:
 
 - Say "exactly three visible white fan blades" for any exposed blade, detached blade, cleaning, or rear/open-grille frame.
@@ -58,6 +65,11 @@ Known look from reference images:
 - Blue water/filter cues in official product card and generated maintenance visuals.
 - Large rear/side wheels and small front caster wheels.
 - Black remote control may appear as a prop.
+
+Reference gaps to watch:
+
+- Side/rear body, water tank access, handle, and wheel geometry need separate references.
+- Filter/tank/water-detail scenes should use official close-ups or product cards, not invented interior structure.
 
 Confirmed campaign specs:
 

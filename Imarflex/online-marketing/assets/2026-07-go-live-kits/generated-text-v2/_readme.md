@@ -1,6 +1,6 @@
 ---
 type: marketing-asset-folder
-status: proof-ready
+status: ifq-carousel-generated
 area: online-marketing
 campaigns:
   - IFQ-22R
@@ -34,15 +34,36 @@ Do not regenerate the same scene only to change crop or size. Use a master image
 - Do not regenerate blog hero / inline duplicates in this pass.
 - Keep existing no-text blog assets in `../generated/` unless a future layout specifically requires a text-in-image blog variant.
 
+## GPT-image Masters
+
+The built-in GPT-image path was tested again on 2026-06-05 using the new product source image for IFQ-22R. The rate limit cleared and the IFQ-22R IG carousel pass was generated as one master per frame/message.
+
+![[online-marketing/assets/2026-07-go-live-kits/generated-text-v2/exports/ifq22r-v2-ig-carousel-gpt-contact-sheet.jpg]]
+
+| Master | Size | Derived export | QA |
+|---|---:|---|---|
+| `masters/ifq22r-v2-ig-frame1-hook-gpt.png` | 1092 × 1440 | `exports/ifq22r-v2-ig-frame1-hook-gpt-export.png` | product shape good; text appears readable; formal QA still needed |
+| `masters/ifq22r-v2-ig-frame2-vs-fan-gpt.png` | 1003 × 1568 | `exports/ifq22r-v2-ig-frame2-vs-fan-gpt-export.png` | comparison reads clearly; punctuation needs formal QA |
+| `masters/ifq22r-v2-ig-frame3-dc-quiet-gpt.png` | 1003 × 1568 | `exports/ifq22r-v2-ig-frame3-dc-quiet-gpt-export.png` | product shape good; text appears close; formal QA still needed |
+| `masters/ifq22r-v2-ig-frame4-omnidirectional-gpt.png` | 1003 × 1568 | `exports/ifq22r-v2-ig-frame4-omnidirectional-gpt-export-top.png` | use top crop; center crop has unwanted prop text |
+| `masters/ifq22r-v2-ig-frame5-detach-gpt.png` | 1024 × 1536 | `exports/ifq22r-v2-ig-frame5-detach-gpt-export.png` | front grille detached; exactly 3 blades visible; formal QA still needed |
+| `masters/ifq22r-v2-ig-frame6-cta-gpt-v2.png` | 1024 × 1536 | `exports/ifq22r-v2-ig-frame6-cta-gpt-v2-export.png` | use v2; v1 crop had unwanted prop text / tight crop |
+
+Draft variants kept for traceability:
+
+- `exports/ifq22r-v2-ig-frame4-omnidirectional-gpt-export.png` — center crop with unwanted prop text.
+- `masters/ifq22r-v2-ig-frame6-cta-gpt.png` and its exports — first CTA draft with unwanted prop text / tight top crop.
+
 ## Local Proof Exports
 
-The current `exports/` files are deterministic local overlays built from the existing clean no-text stills while GPT-image generation is rate-limited.
+The local `exports/*-local.png` files are deterministic overlays built from the existing clean no-text stills. Keep them as fallback/proof references; do not count them as GPT-image masters.
 
 ![[online-marketing/assets/2026-07-go-live-kits/generated-text-v2/exports/text-v2-local-contact-sheet.jpg]]
 
 | Output | Size | Source |
 |---|---:|---|
 | `ifq22r-v2-ig-frame1-hook-local.png` | 1080 × 1350 | `../generated/ifq22r-ig-frame1-hook.png` |
+| `ifq22r-v2-ig-frame1-hook-gpt-export.png` | 1080 × 1350 | `../generated-text-v2/masters/ifq22r-v2-ig-frame1-hook-gpt.png` |
 | `ifq22r-v2-ig-frame2-vs-fan-local.png` | 1080 × 1350 | `../generated/ifq22r-ig-frame2-vs-fan.png` |
 | `ifq22r-v2-ig-frame3-dc-quiet-local.png` | 1080 × 1350 | `../generated/ifq22r-ig-frame3-dc-quiet.png` |
 | `ifq22r-v2-ig-frame4-omnidirectional-local.png` | 1080 × 1350 | `../generated/ifq22r-ig-frame4-omnidirectional.png` |

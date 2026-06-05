@@ -24,9 +24,9 @@ Index of the posts themselves: [[../social-post-plan-2026-07]]. Live counts: [[.
 | # | Step | Owner | Done so far |
 |---|---|---|---|
 | 1 | Copy written (brand voice) | copywriter | ✅ all 10 |
-| 2 | GPT-image prompts written | copywriter | ✅ all (21 stills + 2 reel b-roll) |
+| 2 | GPT-image prompts written | copywriter | ✅ all first-pass prompts (21 stills + 2 reel b-roll); ✅ v2 text prompts in [[text-overlay-prompts-2026-07]] |
 | 3 | AEO audited | aeo-auditor | ✅ 2 blogs (8/15, 10/15 → quick-fixes applied) |
-| 4 | **Generate images from GPT-image prompts** | designer / AI | ✅ 21 / 21 stills generated; 2 reel b-roll items remain video workflow |
+| 4 | **Generate images from GPT-image prompts** | designer / AI | ✅ 21 / 21 first-pass stills generated; ✅ IFQ-22R v2 IG carousel GPT masters generated (6 / 6); remaining ICF-140R v2 text masters + FB/Story v2 masters + 2 reel b-roll items pending |
 | 5 | Human QA images (real SKU, no fake logo / spec / extra blades, palette-correct) | reviewer | ☐ draft contact-sheet check done; client/SKU approval still required |
 | 6 | Fill `【待客戶確認】` slots (price, specs, URLs, author) | client | ☐ |
 | 7 | Place images + final layout (CMS / IG / FB) | producer | ☐ vault notes embedded; CMS / IG / FB final layouts still pending |
@@ -107,6 +107,7 @@ Prompt full text lives in each kit's §"影像 PROMPT 總表" and per-channel se
 
 - 2 of the 23 visuals are **Reel b-roll** (real footage or AI-video), not single GPT-image stills — handle in the video workflow.
 - 21 stills were generated and copied into `online-marketing/assets/2026-07-go-live-kits/generated/` on 2026-06-05. Contact-sheet QA was done for obvious drift only; formal client/SKU approval is still step 5.
+- IFQ-22R v2 text-in-image IG carousel masters were generated into `online-marketing/assets/2026-07-go-live-kits/generated-text-v2/masters/` on 2026-06-05, with preferred 4:5 exports and contact sheet in `generated-text-v2/exports/`. Treat them as generated drafts until exact text/punctuation QA is complete.
 - `Placed` in the asset register means embedded into the vault kit/post notes. It does **not** mean final CMS / IG / FB layout has been assembled.
 - Update each row's ☐→✅ as work lands; flip the per-content matrix and post-card `status` (`drafting → draft-ready → scheduled → published`) in step.
 - This tracker is reusable: copy it per campaign month, swap the asset register.
