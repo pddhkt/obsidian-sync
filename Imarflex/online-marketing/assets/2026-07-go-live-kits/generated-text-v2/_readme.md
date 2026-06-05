@@ -54,6 +54,14 @@ Draft variants kept for traceability:
 - `exports/ifq22r-v2-ig-frame4-omnidirectional-gpt-export.png` — center crop with unwanted prop text.
 - `masters/ifq22r-v2-ig-frame6-cta-gpt.png` and its exports — first CTA draft with unwanted prop text / tight top crop.
 
+## V3 Social-Card Exploration
+
+These masters test the more energetic pitch-deck social-card direction using the product-shape candidate workflow. They are not replacements for the v2 carousel until reviewed.
+
+| Master | Size | Derived export | QA |
+|---|---:|---|---|
+| `masters/ifq22r-v3-social-card-frame5-detach-gpt-test.png` | 1254 × 1254 | none yet | Frame 05 social-card test; text appears exact; exactly 3 exposed blades visible; product is based on `online-marketing/products/ifq-22r/images/generated/ifq-22r-candidate-open-front-v1.png` and needs product-shape review before approval |
+
 ## Local Proof Exports
 
 The local `exports/*-local.png` files are deterministic overlays built from the existing clean no-text stills. Keep them as fallback/proof references; do not count them as GPT-image masters.
