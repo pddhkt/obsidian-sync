@@ -25,6 +25,7 @@ Assets for the two demo go-live content kits:
 |---|---|---|
 | Product references | ✅ saved | Scraped Shopline/PDP reference images in `reference/` |
 | Generated stills | ✅ 21 / 21 | Saved in `generated/` |
+| Text-in-image v2 | ✅ local proofs / ☐ GPT masters | Master-first social poster pass in `generated-text-v2/` |
 | Reel b-roll | ☐ 0 / 2 | Needs real footage or AI-video workflow, not single still generation |
 | Human QA | ☐ | Contact-sheet check done only; client/SKU approval still needed |
 | Layout placement | ☐ | CMS / IG / FB layouts not assembled yet |
@@ -45,6 +46,8 @@ Assets for the two demo go-live content kits:
 |---|---|
 | `reference/` | Downloaded product reference images from the scraped migration catalog |
 | `generated/` | Generated still images named to match the production tracker |
+| `generated-text-v2/masters/` | GPT-image text-in-image masters, one per unique scene + exact message |
+| `generated-text-v2/exports/` | Local crop/resize exports derived from v2 masters |
 
 ## QA Notes
 
@@ -52,3 +55,4 @@ Assets for the two demo go-live content kits:
 - IFQ-22R stills were generated against the real reference silhouette: round white grille, wood supports, white circular base.
 - ICF-140R stills were generated against the real reference silhouette: slim white tower cooler, dark front grille, blue accents, caster wheels.
 - Formal QA should still check: real SKU accuracy, no fake logo/model text, no extra fan blades, no misleading cooling claims, and ICF visuals staying in the "local/personal-zone" positioning.
+- Text-in-image v2 should use a master-first rule: generate once per unique scene + exact message, then derive channel crops locally when only size changes.

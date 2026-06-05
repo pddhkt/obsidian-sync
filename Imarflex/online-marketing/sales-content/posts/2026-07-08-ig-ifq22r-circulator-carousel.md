@@ -11,7 +11,7 @@ format: carousel
 topic-type: buying-guide
 sales-purpose: decision-confidence
 parent-campaign: "[[2026-06-ifq-22r-circulator-buying-guide]]"
-post-angle: 循環扇點揀 3 重點 carousel (DC 靜音 / 全方位 / 全拆式易洗)
+post-angle: 循環扇點揀 3 重點 carousel (DC 靜音 / 全方位 / 易拆前網罩)
 product-category: air-circulator-fan
 hero-sku: IFQ-22R
 source-brief: "[[2026-06-ifq-22r-circulator-buying-guide]]"
@@ -32,7 +32,7 @@ tags:
 
 ## Content
 
-- 6-frame carousel: hook → 循環扇 vs 普通風扇 → DC 靜音 → 全方位送風 → 全拆式易洗 → soft CTA.
+- 6-frame carousel: hook → 循環扇 vs 普通風扇 → DC 靜音 → 全方位送風 → 前網罩易拆易洗 → soft CTA.
 - Full caption + per-frame on-image copy + alt text + 6 GPT-image prompts live in the kit: **[[2026-06-ifq-22r-circulator-buying-guide]] §2 INSTAGRAM**.
 
 ## Visual Assets

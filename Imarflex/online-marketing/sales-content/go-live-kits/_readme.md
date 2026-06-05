@@ -28,6 +28,12 @@ imarflex-aeo-auditor   → citation-readiness score + fixes (appended to each ki
 2. The frontmatter (`topic-type`, `sales-purpose`, `hero-sku`, `destination`, `primary-cta`, `utm-campaign`) lets each kit slot into [[../../_sales-content.base|Sales Content Base]] for counting.
 3. To count individual channel posts in the Base, fan a kit out into per-channel post cards under [[../posts/_readme|posts/]] using [[../post-card-template]].
 
+## Index & tracking
+
+- **Post index (July):** [[../social-post-plan-2026-07]] — human-readable schedule of every post.
+- **Production tracker:** [[production-tracker-2026-07]] — the 10-step checklist + GPT-image asset register (what still needs generating before go-live).
+- **Live dashboard:** [[../../_sales-content.base]] — auto-counts the per-channel post cards in `posts/`.
+
 ## Hard rules baked into every kit
 
 - No fabricated specs / prices / numbers — unknowns are left as `【待客戶確認:…】` slots.

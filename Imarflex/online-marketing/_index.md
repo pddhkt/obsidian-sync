@@ -46,6 +46,9 @@ flowchart LR
 | [[content-calendar]] | 安排 research、writing、social posting | 每週 / 每月 planning |
 | [[channel-production-workflow]] | 一個 topic 拆成 blog、IG、FB | 寫作同排程前 |
 | [[content-storage-system]] | 規定資料放邊、點命名 | 每次收集或輸出內容時 |
+| [[products/_readme]] | Product info、spec、approved reference images source of truth | 每次做 SKU content / image prompt / PDP copy 前 |
+| [[sales-content/_index]] | 追蹤 sales content assumptions、topic type、sales purpose、post 狀態 | 每次 planning / review sales content |
+| [[_sales-content.base]] | 用 database view 睇 topic type、sales purpose、ad candidate、published posts | 每週 / 每月 review |
 
 ## Storage folders
 
@@ -55,7 +58,9 @@ flowchart LR
 | `research-inbox` | [[research-inbox/_readme]] | 未整理資料 | 客戶問題、competitor link、SERP screenshot note |
 | `seo-research` | [[seo-research/_readme]] | Keyword、SERP、GSC、site search 整理 | `2026-Q3-air-fryer-keywords.md` |
 | `content-briefs` | [[content-briefs/_readme]] | 已決定要做嘅 topic brief | `air-fryer-shrimp-toast-brief.md` |
+| `products` | [[products/_readme]] | SKU source-of-truth: info、spec、approved images | `ifq-22r/spec.md`、`icf-140r/assets.md` |
 | `published-content` | [[published-content/_readme]] | 已發佈內容紀錄 | Blog URL、IG post、FB post |
+| `sales-content` | [[sales-content/_index]] | Sales-oriented content taxonomy + post tracker | `posts/2026-06-w1-rice-cooker-capacity-buying-guide.md` |
 | `assets` | [[assets/_readme]] | 圖片、caption draft、creative reference | Blog image brief、carousel copy |
 | `reports` | [[reports/_readme]] | Weekly / monthly / quarterly review | GSC review、social report |
 

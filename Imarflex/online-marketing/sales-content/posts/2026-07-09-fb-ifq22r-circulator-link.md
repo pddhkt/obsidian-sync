@@ -32,7 +32,7 @@ tags:
 
 ## Content
 
-- Hook「淨係涼一邊?問題唔係冷氣,係空氣冇對流」→ 3 重點(DC / 全方位 / 全拆式)→ cleaning tip + 四季用 → blog link + WhatsApp.
+- Hook「淨係涼一邊?問題唔係冷氣,係空氣冇對流」→ 3 重點(DC / 全方位 / 易拆前網罩)→ cleaning tip + 四季用 → blog link + WhatsApp.
 - Full ready-to-paste copy + GPT-image prompt: **[[2026-06-ifq-22r-circulator-buying-guide]] §3 FACEBOOK**.
 
 ## Visual Asset

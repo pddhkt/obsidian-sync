@@ -11,6 +11,10 @@ tags:
 
 放 weekly、monthly、quarterly marketing review。
 
+## Active report stubs
+
+- [[2026-06-sales-content-review]] — first sales-content cycle review
+
 ## Monthly report template
 
 ```markdown
