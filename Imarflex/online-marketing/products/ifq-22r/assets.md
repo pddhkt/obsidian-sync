@@ -55,6 +55,14 @@ Do not copy these unless they become approved evergreen product references.
 - First-pass generated stills: `online-marketing/assets/2026-07-go-live-kits/generated/`
 - Text v2 local proofs: `online-marketing/assets/2026-07-go-live-kits/generated-text-v2/exports/`
 
+## Product-Shape Candidate Images
+
+These are synthetic product-reference candidates for review. Do not use them as campaign references unless they pass product-shape QA.
+
+| File | Source Prompt | Status | Notes |
+|---|---|---|---|
+| `images/generated/ifq-22r-candidate-open-front-v1.png` | `images/qa/ifq-22r-product-shape-reconstruction-prompts-2026-06-05.md` Prompt 4 | candidate-review | Open-front product with detached grille; initial QA passes 3-blade/base/support/no-text gates, but inner housing and detached grille center need review. |
+
 ## QA Notes
 
 - `images/qa/ifq-22r-product-shape-reconstruction-prompts-2026-06-05.md` - upstream prompt pack for generating candidate missing product angles/parts before carousel production.

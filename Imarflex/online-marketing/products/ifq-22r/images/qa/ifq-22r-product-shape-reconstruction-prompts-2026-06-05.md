@@ -63,6 +63,12 @@ Reject any generated candidate if it has:
 - invented display, fake model label, fake price, QR code, or extra text
 - rear or open-front geometry that does not plausibly connect to the source references
 
+## Generated Candidate Log
+
+| Candidate | Prompt | Date | File | Status | Initial QA Notes |
+|---|---|---:|---|---|---|
+| open-front-v1 | Prompt 4 | 2026-06-05 | `../generated/ifq-22r-candidate-open-front-v1.png` | candidate-review | Passes main visible gates: detached grille, open front, exactly 3 broad blades, two wood-tone supports, rounded oval base, no extra text. Needs user/client review: detached grille center area and inner open-front housing are AI-interpreted, not official product geometry. |
+
 ## Recommended Test Order
 
 1. Generate `Prompt 1` and `Prompt 2` first: side/three-quarter whole-product shape.
