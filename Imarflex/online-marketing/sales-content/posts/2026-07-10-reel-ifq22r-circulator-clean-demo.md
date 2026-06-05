@@ -36,6 +36,13 @@ tags:
 - 15–30s: dusty old fan hook → 一秒快拆 → 沖洗組返 → 開機 DC 靜音 + 全方位擺頭(紙巾示意氣流,不標數字)→ CTA.
 - Full caption + shot-by-shot table + audio/overlay notes + b-roll brief: **[[2026-06-ifq-22r-circulator-buying-guide]] §4 REEL**.
 
+## Visual Status
+
+- ☐ Reel b-roll still pending: `ifq22r-reel-broll-detach-clean-run` needs real footage or AI-video, not a single still.
+- Reference still for detachable product framing:
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-story-detach.png|220]]
+
 ## KPI
 
 - Plays / completion rate

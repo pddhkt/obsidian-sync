@@ -36,6 +36,14 @@ tags:
 - Full caption + per-frame copy + alt text + 5 GPT-image prompts: **[[2026-06-icf-140r-cooler-trust]] §2 INSTAGRAM**.
 - Guardrail: 局部/個人範圍 only; 降溫數字標「公開參考/視乎環境」; never 媲美冷氣.
 
+## Visual Assets
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame1-hook.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame2-principle.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame3-checklist.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame4-range-spec.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame5-cta.png|220]]
+
 ## KPI
 
 - Saves / shares

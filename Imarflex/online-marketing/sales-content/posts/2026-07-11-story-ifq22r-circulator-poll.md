@@ -36,6 +36,10 @@ tags:
 - 4 frames: poll「你部風扇幾耐冇拆洗?」→ Q&A「循環扇有咩想問?」→ reminder「旺季早入手」→ link sticker to PDP.
 - Full frame-by-frame copy + sticker types + GPT-image prompt: **[[2026-06-ifq-22r-circulator-buying-guide]] §5 STORY**.
 
+## Visual Asset
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-story-detach.png|220]]
+
 ## KPI
 
 - Poll responses

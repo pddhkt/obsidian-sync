@@ -37,6 +37,13 @@ tags:
 - Full caption + shot-by-shot table + b-roll brief: **[[2026-06-icf-140r-cooler-trust]] §4 REEL**.
 - Guardrail: 貼地誠實 tone, no frost/ice-blast hype; 降溫字幕帶「公開參考/視乎環境」; sealed-room scene only as ❌ example, no aircon unit on screen.
 
+## Visual Status
+
+- ☐ Reel b-roll still pending: `icf140r-reel-broll` needs real footage or AI-video, not a single still.
+- Reference still for window-side personal-zone framing:
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-story-9x16.png|220]]
+
 ## KPI
 
 - Plays / completion

@@ -35,6 +35,15 @@ tags:
 - 6-frame carousel: hook → 循環扇 vs 普通風扇 → DC 靜音 → 全方位送風 → 全拆式易洗 → soft CTA.
 - Full caption + per-frame on-image copy + alt text + 6 GPT-image prompts live in the kit: **[[2026-06-ifq-22r-circulator-buying-guide]] §2 INSTAGRAM**.
 
+## Visual Assets
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame1-hook.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame2-vs-fan.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame3-dc-quiet.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame4-omnidirectional.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame5-detach.png|220]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame6-cta.png|220]]
+
 ## KPI
 
 - Saves / shares

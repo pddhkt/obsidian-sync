@@ -69,7 +69,7 @@ tags:
 
 ---
 
-【圖:blog-hero — ICF-140R 喺窗邊個人範圍,自然光】
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-blog-hero-window.png]]
 
 # 冷風機 vs 冷氣:邊種情況先啱用?原理、降溫期望同保養(2026)
 
@@ -96,7 +96,7 @@ tags:
 2. 風扇將乾燥空氣抽過濕水簾;
 3. 空氣經過水簾時,水分蒸發吸熱,**吹出嚟嘅風就會比室溫涼一截**。
 
-【圖:原理 still — 注水 → 水簾 → 出風 三步示意】
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-blog-evap-principle.png]]
 
 咁同冷氣有咩分別?
 
@@ -162,7 +162,7 @@ tags:
 
 冷風機因為涉及水,**保養比一般風扇更加重要**——打理得好,涼風先乾淨,部機先用得長久。
 
-【圖:濾網易拆洗 close-up】
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-blog-filter-clean.png]]
 
 ### 換水
 
@@ -262,6 +262,14 @@ ICF-140R 跟 **2 年原廠保養**。買咗之後,記得花 1 分鐘登記,出�
 ### Alt text
 伊瑪牌 ICF-140R 冷風機 IG carousel,5 張圖解釋冷風機同冷氣分別、蒸發降溫原理、啱用 3 條件 checklist、真實降溫公開參考數字同規格,最後 CTA 登記 2 年保養;Heritage Blue 同 Cool Air 色調,窗邊個人範圍場景。
 
+### Visual assets
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame1-hook.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame2-principle.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame3-checklist.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame4-range-spec.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame5-cta.png|240]]
+
 ### GPT-image prompts（5 個,逐 frame）
 
 **Frame 1 — `icf140r-ig-frame1-hook`**
@@ -308,6 +316,8 @@ A warm closing scene: the Imarflex ICF-140R cooling fan (or faithful stand-in) s
 
 ### GPT-image prompt — `icf140r-fb-hero`
 
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-fb-hero.png]]
+
 A clean horizontal hero of a real Imarflex ICF-140R portable evaporative cooling fan (or faithful stand-in: a slim white-and-blue upright tower cooler with visible 14L water tank and caster wheels) positioned beside an open window in a ventilated Hong Kong personal corner — a small writing desk with a notebook and a cup of water — 3/4 angle, photographed in soft natural daylight with a Steam Grey `#DCE1E6` sheer curtain lifting gently in the breeze to signal ventilation, set against a Rice White `#F7F6F2` wall with Heritage Blue `#1E4B7A` and Cool Air `#BFD7E6` accents, honest reassuring editorial mood, generous left-side negative space, color grading lifted from the Imarflex palette, 1.91:1 landscape crop suitable for a Facebook link post. Avoid: stock-model staging, HDR, pure black background, saturated reds, air-conditioner units, sealed full-living-room cooling scenes, frost/ice-blast graphics, Western Christmas/family clichés, digital text overlays.
 
 ---
@@ -344,6 +354,9 @@ A clean horizontal hero of a real Imarflex ICF-140R portable evaporative cooling
 | 4 保養 tip | 「保養小貼士:用完倒走餘水、3M 濾網易拆易洗。要換濾網?」 | Link sticker | parts-finder【待客戶確認:濾網更換部件 / 連結】 |
 
 ### GPT-image prompt — `icf140r-story-9x16`
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-story-9x16.png|240]]
+
 A vertical lifestyle still of a real Imarflex ICF-140R portable evaporative cooling fan (or faithful stand-in: slim white-and-blue upright tower cooler with 14L tank and caster wheels) beside an open window in a personal Hong Kong corner, 3/4 angle, photographed in soft natural daylight with a Steam Grey `#DCE1E6` sheer curtain lifting in a gentle breeze to signal ventilation, a Clay Beige `#E7D7C1` cup of iced water on a small wooden stool nearby, Rice White `#F7F6F2` wall with Heritage Blue `#1E4B7A` and Cool Air `#BFD7E6` accents, large clean negative space at top and bottom for story stickers and poll, calm honest mood, color grading from the Imarflex palette, 9:16 vertical crop suitable for Instagram / Facebook Story. Avoid: stock-model staging, HDR, pure black background, saturated reds, air-conditioner units, sealed living-room scenes, frost/ice-blast graphics, Western family clichés, digital text overlays.
 
 ---

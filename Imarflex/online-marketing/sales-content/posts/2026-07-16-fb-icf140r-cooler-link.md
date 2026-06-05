@@ -36,6 +36,10 @@ tags:
 - Full ready-to-paste copy + GPT-image prompt: **[[2026-06-icf-140r-cooler-trust]] §3 FACEBOOK**.
 - Guardrail: never 媲美冷氣 / whole-room; 局部 only.
 
+## Visual Asset
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-fb-hero.png|360]]
+
 ## KPI
 
 - Link / blog clicks

@@ -15,7 +15,7 @@ tags:
 
 # Production Tracker — 2026-07 Go-Live Kits
 
-The record for turning the two finished content kits ([[2026-06-ifq-22r-circulator-buying-guide|IFQ-22R]], [[2026-06-icf-140r-cooler-trust|ICF-140R]]) into actually-published posts. Copy + prompts are done; this tracks the remaining steps — **the big outstanding one is generating images from the GPT-image prompts** (the kits hold prompts, not images).
+The record for turning the two finished content kits ([[2026-06-ifq-22r-circulator-buying-guide|IFQ-22R]], [[2026-06-icf-140r-cooler-trust|ICF-140R]]) into actually-published posts. Copy, prompts, and still-image embeds are done; this tracks the remaining steps — **formal image QA, two reel b-roll items, client-confirm slots, layout, scheduling, and publishing**.
 
 Index of the posts themselves: [[../social-post-plan-2026-07]]. Live counts: [[../_sales-content.base]].
 
@@ -29,7 +29,7 @@ Index of the posts themselves: [[../social-post-plan-2026-07]]. Live counts: [[.
 | 4 | **Generate images from GPT-image prompts** | designer / AI | ✅ 21 / 21 stills generated; 2 reel b-roll items remain video workflow |
 | 5 | Human QA images (real SKU, no fake logo / spec / extra blades, palette-correct) | reviewer | ☐ draft contact-sheet check done; client/SKU approval still required |
 | 6 | Fill `【待客戶確認】` slots (price, specs, URLs, author) | client | ☐ |
-| 7 | Place images + final layout (CMS / IG / FB) | producer | ☐ |
+| 7 | Place images + final layout (CMS / IG / FB) | producer | ☐ vault notes embedded; CMS / IG / FB final layouts still pending |
 | 8 | Schedule with UTM | scheduler | ☐ |
 | 9 | Publish + log `published-url` / `published-date` | scheduler | ☐ |
 | 10 | Track KPI (saves, clicks, WhatsApp, warranty regs) | analyst | ☐ |
@@ -63,34 +63,34 @@ Prompt full text lives in each kit's §"影像 PROMPT 總表" and per-channel se
 
 | Filename | Channel | Ratio | Prompt source | Generated | QA | Placed |
 |---|---|---|---|:--:|:--:|:--:|
-| `ifq22r-blog-hero` | Blog hero | 16:9 | kit §1 / §6 | ✅ | ☐ | ☐ |
-| `ifq22r-blog-airflow-diagram` | Blog inline | 4:3 | kit §6 (from Frame 2) | ✅ | ☐ | ☐ |
-| `ifq22r-blog-detach-proof` | Blog inline | 4:3 | kit §6 (from Frame 5) | ✅ | ☐ | ☐ |
-| `ifq22r-ig-frame1-hook` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `ifq22r-ig-frame2-vs-fan` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `ifq22r-ig-frame3-dc-quiet` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `ifq22r-ig-frame4-omnidirectional` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `ifq22r-ig-frame5-detach` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `ifq22r-ig-frame6-cta` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `ifq22r-fb-lifestyle` | Facebook | 4:5 | kit §3 | ✅ | ☐ | ☐ |
+| `ifq22r-blog-hero` | Blog hero | 16:9 | kit §1 / §6 | ✅ | ☐ | ✅ |
+| `ifq22r-blog-airflow-diagram` | Blog inline | 4:3 | kit §6 (from Frame 2) | ✅ | ☐ | ✅ |
+| `ifq22r-blog-detach-proof` | Blog inline | 4:3 | kit §6 (from Frame 5) | ✅ | ☐ | ✅ |
+| `ifq22r-ig-frame1-hook` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `ifq22r-ig-frame2-vs-fan` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `ifq22r-ig-frame3-dc-quiet` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `ifq22r-ig-frame4-omnidirectional` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `ifq22r-ig-frame5-detach` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `ifq22r-ig-frame6-cta` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `ifq22r-fb-lifestyle` | Facebook | 4:5 | kit §3 | ✅ | ☐ | ✅ |
 | `ifq22r-reel-broll-detach-clean-run` | Reel | 9:16 | kit §4 — **video b-roll, shoot/AI-video, not a single still** | ☐ | ☐ | ☐ |
-| `ifq22r-story-detach` | Story | 9:16 | kit §5 | ✅ | ☐ | ☐ |
+| `ifq22r-story-detach` | Story | 9:16 | kit §5 | ✅ | ☐ | ✅ |
 
 ### ICF-140R 冷風機 — 11 visuals (10 stills + 1 reel b-roll)
 
 | Filename | Channel | Ratio | Prompt source | Generated | QA | Placed |
 |---|---|---|---|:--:|:--:|:--:|
-| `icf140r-blog-hero-window` | Blog hero | 16:9 | kit §6 (from FB hero) | ✅ | ☐ | ☐ |
-| `icf140r-blog-evap-principle` | Blog inline | 4:3 | kit §6 (from Frame 2) | ✅ | ☐ | ☐ |
-| `icf140r-blog-filter-clean` | Blog inline | 4:3 | kit §6 | ✅ | ☐ | ☐ |
-| `icf140r-ig-frame1-hook` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `icf140r-ig-frame2-principle` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `icf140r-ig-frame3-checklist` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `icf140r-ig-frame4-range-spec` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `icf140r-ig-frame5-cta` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ☐ |
-| `icf140r-fb-hero` | Facebook | 1.91:1 | kit §3 | ✅ | ☐ | ☐ |
+| `icf140r-blog-hero-window` | Blog hero | 16:9 | kit §6 (from FB hero) | ✅ | ☐ | ✅ |
+| `icf140r-blog-evap-principle` | Blog inline | 4:3 | kit §6 (from Frame 2) | ✅ | ☐ | ✅ |
+| `icf140r-blog-filter-clean` | Blog inline | 4:3 | kit §6 | ✅ | ☐ | ✅ |
+| `icf140r-ig-frame1-hook` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `icf140r-ig-frame2-principle` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `icf140r-ig-frame3-checklist` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `icf140r-ig-frame4-range-spec` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `icf140r-ig-frame5-cta` | IG carousel | 4:5 | kit §2 | ✅ | ☐ | ✅ |
+| `icf140r-fb-hero` | Facebook | 1.91:1 | kit §3 | ✅ | ☐ | ✅ |
 | `icf140r-reel-broll` | Reel | 9:16 | kit §4 — **video b-roll, shoot/AI-video, not a single still** | ☐ | ☐ | ☐ |
-| `icf140r-story-9x16` | Story | 9:16 | kit §5 | ✅ | ☐ | ☐ |
+| `icf140r-story-9x16` | Story | 9:16 | kit §5 | ✅ | ☐ | ✅ |
 
 > **Image QA rule (every still):** must show the real SKU (or faithful stand-in), palette-anchored, with no fabricated logo / model text / spec number / extra fan blades, and follow each prompt's `Avoid:` line. ICF visuals must read as 局部/窗邊 personal-zone — never imply aircon / 大廳.
 
@@ -107,5 +107,6 @@ Prompt full text lives in each kit's §"影像 PROMPT 總表" and per-channel se
 
 - 2 of the 23 visuals are **Reel b-roll** (real footage or AI-video), not single GPT-image stills — handle in the video workflow.
 - 21 stills were generated and copied into `online-marketing/assets/2026-07-go-live-kits/generated/` on 2026-06-05. Contact-sheet QA was done for obvious drift only; formal client/SKU approval is still step 5.
+- `Placed` in the asset register means embedded into the vault kit/post notes. It does **not** mean final CMS / IG / FB layout has been assembled.
 - Update each row's ☐→✅ as work lands; flip the per-content matrix and post-card `status` (`drafting → draft-ready → scheduled → published`) in step.
 - This tracker is reusable: copy it per campaign month, swap the asset register.

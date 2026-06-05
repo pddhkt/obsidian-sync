@@ -63,7 +63,7 @@ tags:
 > ✍️ 作者:【待客戶確認:作者姓名 / 職銜】　🔎 審稿:【待客戶確認:產品 / 技術審稿人】
 > 📅 發佈:【待客戶確認:出版日期】　最後更新:2026-06-05　下次檢視:2026-09(換季前)
 
-【圖:blog-hero — IFQ-22R 正面 3/4 角,大量留白,Rice White 背景】
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-blog-hero.png]]
 
 夏天開緊冷氣,但成日覺得「淨係涼一邊」?房尾位永遠悶熱?
 問題好多時唔係冷氣唔夠力,而係**室內空氣冇對流** —— 冷氣困喺一忽,郁唔到去其他位。
@@ -82,7 +82,7 @@ tags:
 
 ## 循環扇 vs 普通風扇,到底有咩分別?
 
-【圖:blog-inline-airflow — 對流 vs 直吹 對比示意圖(still),左邊普通風扇直線氣流、右邊循環扇螺旋氣流帶起房間對流;Steam Grey 背景 + Cool Air 氣流線】
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-blog-airflow-diagram.png]]
 
 一句講晒:**普通風扇吹「你」,循環扇吹「成間屋」。**
 
@@ -111,7 +111,7 @@ tags:
 
 **全方位送風(上下左右擺頭)**可以將氣流送去房嘅唔同角落 —— 上面焗熱空氣、下面冷氣積聚位,都郁得起,唔再淨係涼一邊。
 
-【圖:blog-inline-airflow-coverage(可選)— IFQ-22R 擺頭氣流覆蓋示意,Cool Air 氣流線繞房一圈】
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame4-omnidirectional.png]]
 
 ### 重點③｜循環扇要點清潔?點解要揀全拆式?
 
@@ -123,7 +123,7 @@ Imarflex 嘅『龍卷』IFQ-22R 做到**全拆式**:扇網、扇葉拆得出,沖
 
 ## 推薦:『龍卷』IFQ-22R 8.7吋全拆式遙控循環扇
 
-【圖:blog-inline-detach — IFQ-22R 扇網扇葉已拆開,並排放喺 Clay Beige 枱面,旁邊一條毛巾,proof shot】
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-blog-detach-proof.png]]
 
 上面 3 個重點,IFQ-22R 逐項對得返:
 
@@ -213,6 +213,15 @@ Imarflex 嘅『龍卷』IFQ-22R 做到**全拆式**:扇網、扇葉拆得出,沖
 
 伊瑪牌龍卷 IFQ-22R 8.7吋全拆式遙控循環扇 6 張圖懶人包:循環扇點揀、循環扇同普通風扇分別、DC 馬達靜音慳電、全方位上下左右送風、全拆式扇網扇葉易洗、IFQ-22R 連遙控 2 年保養。
 
+### Visual assets
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame1-hook.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame2-vs-fan.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame3-dc-quiet.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame4-omnidirectional.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame5-detach.png|240]]
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame6-cta.png|240]]
+
 ### GPT-image prompts（6 frames）
 
 **Frame 1 — `ifq22r-ig-frame1-hook`**
@@ -257,6 +266,8 @@ A warm closing product hero of the Imarflex IFQ-22R circulator fully assembled w
 💬 揀型號唔肯定?WhatsApp 9140 6664,我哋幫你揀,免費無壓力。
 
 ### GPT-image prompt（`ifq22r-fb-lifestyle`）
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-fb-lifestyle.png]]
 
 A natural lifestyle still of the Imarflex Tornado IFQ-22R 8.7-inch air circulator fan placed on the floor of a real Hong Kong living room near a sofa, angled to push air across the room, front 3/4 angle, photographed in soft natural afternoon window light, the room grounded in Rice White `#F7F6F2` walls with Clay Beige `#E7D7C1` and Steam Grey `#DCE1E6` soft furnishings and a faint Cool Air `#BFD7E6` cast suggesting cool circulated air, lived-in but tidy HK home (compact space, tiled floor, a folded throw, a glass of cold water), no people or only a softly out-of-focus hand, color grading lifted from the Imarflex palette (Heritage Blue `#1E4B7A`, Rice White `#F7F6F2`, Clay Beige `#E7D7C1`, Steam Grey `#DCE1E6`, Soft Charcoal `#3C3F42`, Cool Air `#BFD7E6`), warm everyday Japanese-craft mood, 4:5 portrait crop suitable for Facebook feed. Avoid: stock-model staging, HDR, pure black background, saturated reds, Western Christmas/family clichés, fictional brand badges, distorted grille, extra blades.
 
@@ -306,6 +317,8 @@ A natural lifestyle still of the Imarflex Tornado IFQ-22R 8.7-inch air circulato
 | **4 · Link** | IFQ-22R:DC 靜音 + 全方位 + 全拆式 + 2 年保養。睇詳情 👉 | Link sticker | 【內部連結:IFQ-22R PDP】 |
 
 ### GPT-image prompt（key frame — Frame 4 detach,9:16 · `ifq22r-story-detach`）
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-story-detach.png|240]]
 
 A vertical hero still of the Imarflex Tornado IFQ-22R 8.7-inch circulator fan shown mid-detach — the round front grille lifted slightly off the body by a hand to reveal the blade, front 3/4 angle, photographed in soft natural window light, set against a Rice White `#F7F6F2` background with a Clay Beige `#E7D7C1` surface and a folded Steam Grey `#DCE1E6` towel, large clean negative space at top and bottom for Story stickers and link, color grading lifted from the Imarflex palette (Heritage Blue `#1E4B7A`, Rice White `#F7F6F2`, Clay Beige `#E7D7C1`, Steam Grey `#DCE1E6`, Soft Charcoal `#3C3F42`, Cool Air `#BFD7E6`), tidy reassuring Japanese-craft mood, 9:16 vertical crop suitable for Instagram Story. Avoid: stock-model staging, HDR, pure black background, saturated reds, Western family clichés, fictional brand badges, distorted grille, extra blades.
 

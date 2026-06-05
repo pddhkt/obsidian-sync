@@ -36,6 +36,10 @@ tags:
 - 4 frames: poll「你以為冷風機=冷氣嗎?」→ 揭曉局部降溫要通風 → Q&A「邊個位想局部降溫?」+ 保養登記 link → 保養 tip(換水 + 濾網易洗)link to parts-finder.
 - Full frame-by-frame copy + sticker types + GPT-image prompt: **[[2026-06-icf-140r-cooler-trust]] §5 STORY**.
 
+## Visual Asset
+
+![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-story-9x16.png|220]]
+
 ## KPI
 
 - Poll responses
