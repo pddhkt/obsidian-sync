@@ -63,6 +63,14 @@ These are synthetic product-reference candidates for review. Do not use them as 
 |---|---|---|---|
 | `images/generated/ifq-22r-candidate-open-front-v1.png` | `images/qa/ifq-22r-product-shape-reconstruction-prompts-2026-06-05.md` Prompt 4 | candidate-review | Open-front product with detached grille; initial QA passes 3-blade/base/support/no-text gates, but inner housing and detached grille center need review. |
 
+## Pose Calibration Outputs
+
+These are generated QA boards for testing whether image models can preserve IFQ-22R geometry from different angles. Do not treat them as approved product references without manual review.
+
+| File | Source Prompt | Status | Notes |
+|---|---|---|---|
+| `images/qa/generations/ifq-22r-gpt-pose-calibration-v3-angle-board-2026-06-06.png` | `images/qa/ifq-22r-pose-calibration-2026-06-05.md` v3 | candidate-review | 4-tile front / rear-side / open-front / parts-layout board; front and open-front pass basic shape gates, rear-side remains candidate-only without true client side/back photo. |
+
 ## QA Notes
 
 - `images/qa/ifq-22r-product-shape-reconstruction-prompts-2026-06-05.md` - upstream prompt pack for generating candidate missing product angles/parts before carousel production.

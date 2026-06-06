@@ -1,6 +1,6 @@
 ---
 type: image-generation-qa
-status: rate-limited
+status: generated-qa-review
 sku: IFQ-22R
 date: 2026-06-05
 tags:
@@ -25,6 +25,19 @@ Use this before spending attempts on full Instagram carousel frames.
 |---|---:|---|---|
 | v1 | 2026-06-05 | Rate-limited | Built-in GPT-image returned `TooManyRequests` before an image was produced. |
 | v2 | 2026-06-05 | Rate-limited | Retry with visible product references and saved calibration prompt also returned `TooManyRequests`. |
+| v3 | 2026-06-06 | Generated | Saved as `images/qa/generations/ifq-22r-gpt-pose-calibration-v3-angle-board-2026-06-06.png`; 4-tile angle board generated for front, rear-side, open-front, and parts-layout QA. |
+
+![[online-marketing/products/ifq-22r/images/qa/generations/ifq-22r-gpt-pose-calibration-v3-angle-board-2026-06-06.png|420]]
+
+### v3 QA Notes
+
+- Tile 01 front-safe assembled view: passes the main silhouette gates — round spiral/radial grille, wood-tone center cap, two wood-tone supports, rounded oval base, small base buttons, dark IR receiver slot.
+- Tile 02 rear-side assembled approximation: plausible enough for exploration, but still candidate-only because the client has not provided a true assembled rear/side product photo.
+- Tile 03 open-front detach view: passes the key test for visible blade count — exactly 3 broad white blades; detached grille is round and close to the IFQ-22R front grille shape.
+- Tile 04 parts truth still life: passes the parts-layout test for a 3-blade fan blade, rear grille/housing, and rear-side body/yoke module; use as a QA reference, not final campaign art.
+- No unwanted Chinese/English copy, fake URL, QR code, price, or model text appeared. Only `01`, `02`, `03`, `04` labels appeared as requested.
+
+Decision: v3 is useful as a product-geometry calibration board. For final carousel frames, keep side/rear views conservative unless the client provides true assembled side/back photos.
 
 ## Scene-To-Reference Matrix
 

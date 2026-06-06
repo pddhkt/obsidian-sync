@@ -63,9 +63,18 @@ Generated 2026-06-06 via `gpt_image_2` (text-in-image), replacing the earlier lo
 | `masters/ifq22r-v2-fb-lifestyle-gpt.png` | 1744 × 2336 | Facebook (3:4 nearest enum to 4:5) | Text exact (`淨係涼一邊？` / `問題係空氣冇對流`, Cantonese 冇 correct); product truth good; front grille on |
 | `masters/ifq22r-v2-story-detach-gpt.png` | 1520 × 2688 | Story 9:16 | Text exact (`IFQ-22R` / `DC 靜音 + 全方位 + 易拆前網罩`); mid-detach with hand; exactly 3 blades visible; clean Story-UI space |
 
-## V4 Lifestyle-Rich Story (current chosen direction)
+## V4 Lifestyle-Rich Story (superseded for exploration)
 
-**Superseded V3 on 2026-06-06.** The v3 paper-collage set was judged to lack excitement and information versus the approved pitch-deck carousels (`imarflex pitch deck/assets/social-carousel-fan-*`). V4 restores the pitch-deck direction — real bright HK home scenes, airflow visualised through the room, an isometric 3-use cutaway, verified spec chips, CTA buttons, and a cool airy summer palette — while keeping the big Heritage Blue frame number and exact zh-HK copy. Full 6-frame set + reproducible prompts: [`masters/ifq22r-v4-lifestyle-rich/`](masters/ifq22r-v4-lifestyle-rich/_readme.md) (square 1:1, frames 01–06, `gpt_image_2` via Higgsfield with the IFQ-22R product reference, all text QA-passed). **This is now the IFQ-22R carousel look.**
+**Superseded V3 on 2026-06-06.** The v3 paper-collage set was judged to lack excitement and information versus the approved pitch-deck carousels (`imarflex pitch deck/assets/social-carousel-fan-*`). V4 restored the pitch-deck direction — real bright HK home scenes, airflow visualised through the room, an isometric 3-use cutaway, verified spec chips, CTA buttons, and a cool airy summer palette — while keeping the big Heritage Blue frame number and exact zh-HK copy. Full 6-frame set + reproducible prompts: [`masters/ifq22r-v4-lifestyle-rich/`](masters/ifq22r-v4-lifestyle-rich/_readme.md) (square 1:1, frames 01–06, `gpt_image_2` via Higgsfield with the IFQ-22R product reference, all text QA-passed). V4 is kept as traceable prior output while V5 explores a stronger content/theme direction.
+
+## V5 HK Summer Airflow Lab (new exploration)
+
+Started after V4 was judged not strong enough. V5 changes the content angle to "not more wind; move room air correctly" and uses a bolder social-card / airflow-lab system. Test frames: [`masters/ifq22r-v5-airflow-lab/`](masters/ifq22r-v5-airflow-lab/_readme.md).
+
+Current test result:
+
+- Frame 03 placement guide is the strongest candidate so far.
+- Frame 01 visual direction works, but the exact Cantonese subline `可能係空氣冇郁` drifted twice, so it is not approved. Use easier copy or local deterministic typography for final.
 
 ## V3 Social-Card Exploration (retired)
 
