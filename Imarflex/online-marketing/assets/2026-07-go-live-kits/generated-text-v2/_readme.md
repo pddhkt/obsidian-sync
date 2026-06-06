@@ -65,7 +65,9 @@ Generated 2026-06-06 via `gpt_image_2` (text-in-image), replacing the earlier lo
 
 ## V3 Social-Card Exploration
 
-These masters test the more energetic pitch-deck social-card direction using the product-shape candidate workflow. They are not replacements for the v2 carousel until reviewed.
+**Chosen direction (2026-06-06):** the paper-collage social-card style was approved as the IFQ-22R carousel look. The full 6-frame story is generated as a self-contained set in [`masters/ifq22r-v3-social-card/`](masters/ifq22r-v3-social-card/_readme.md) (square 1:1, frames 01–06, all text QA-passed). New rule: one set = one subfolder, so different-date/style passes no longer share the flat `masters/` dump.
+
+The single-frame masters below were the earlier exploration that led to that choice. The `bold-diagram` alternate was not chosen.
 
 | Master | Size | Derived export | QA |
 |---|---:|---|---|
