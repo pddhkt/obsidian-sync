@@ -54,6 +54,15 @@ Draft variants kept for traceability:
 - `exports/ifq22r-v2-ig-frame4-omnidirectional-gpt-export.png` — center crop with unwanted prop text.
 - `masters/ifq22r-v2-ig-frame6-cta-gpt.png` and its exports — first CTA draft with unwanted prop text / tight top crop.
 
+### IFQ-22R FB + Story Masters
+
+Generated 2026-06-06 via `gpt_image_2` (text-in-image), replacing the earlier local-proof-only status. Both passed text QA.
+
+| Master | Size | Channel | QA |
+|---|---:|---|---|
+| `masters/ifq22r-v2-fb-lifestyle-gpt.png` | 1744 × 2336 | Facebook (3:4 nearest enum to 4:5) | Text exact (`淨係涼一邊？` / `問題係空氣冇對流`, Cantonese 冇 correct); product truth good; front grille on |
+| `masters/ifq22r-v2-story-detach-gpt.png` | 1520 × 2688 | Story 9:16 | Text exact (`IFQ-22R` / `DC 靜音 + 全方位 + 易拆前網罩`); mid-detach with hand; exactly 3 blades visible; clean Story-UI space |
+
 ## V3 Social-Card Exploration
 
 These masters test the more energetic pitch-deck social-card direction using the product-shape candidate workflow. They are not replacements for the v2 carousel until reviewed.
@@ -61,6 +70,90 @@ These masters test the more energetic pitch-deck social-card direction using the
 | Master | Size | Derived export | QA |
 |---|---:|---|---|
 | `masters/ifq22r-v3-social-card-frame5-detach-gpt-test.png` | 1254 × 1254 | none yet | Frame 05 social-card test; text appears exact; exactly 3 exposed blades visible; product is based on `online-marketing/products/ifq-22r/images/generated/ifq-22r-candidate-open-front-v1.png` and needs product-shape review before approval |
+| `masters/ifq22r-v3-bold-diagram-frame5-detach-gpt-test.png` | 1254 × 1254 | none yet | Frame 05 bold diagram-card alternate; text appears exact; exactly 3 exposed blades visible; stronger blue panel and step/callout structure; product is based on the synthetic open-front candidate and needs product-shape review before approval |
+
+### Alternate Style: Bold Diagram Card
+
+Status: generated on 2026-06-06 as `masters/ifq22r-v3-bold-diagram-frame5-detach-gpt-test.png`.
+
+```text
+Use case: ads-marketing.
+Asset type: IFQ-22R Instagram carousel Frame 05 alternative style test, square 1:1 master.
+
+Use the visible images as references:
+- IFQ-22R open-front candidate: product module reference for detached front grille, open front, exactly 3 broad white blades, two wood-tone support arms, rounded white oval base.
+- IFQ-22R assembled front source: product truth for the spiral/radial grille, wood-tone center cap style, white casing, wood-tone support arms, pale grey yoke, rounded base, and dark IR receiver slot.
+- Imarflex pitch-deck carousel examples: broad social-card family style only.
+- Previous Frame 05 social-card test: contrast reference. Create a different style from it: less scrapbook/tape, less soft paper collage, more bold diagram/instruction card.
+
+Primary request:
+Create a square 1:1 Instagram carousel social card for Imarflex IFQ-22R in a BOLD DIAGRAM CARD style. It should feel like a clear saveable maintenance diagram, not a calm poster and not the same paper-collage layout as the previous test.
+
+Exact text to render, and no other words:
+Large frame number: "05"
+Headline line 1: "前網罩快拆"
+Supporting line 2: "前網罩拆得出易抹"
+
+Composition direction:
+Use a strong graphic template with a large Heritage Blue vertical panel or corner block, a crisp white technical-card area, and a clear product demonstration zone. Put the large "05" in Heritage Blue in the upper-left or inside the blue panel. Put the bold Traditional Chinese headline in high-contrast Soft Charcoal on a clean white area. Use the product as a structured demo: IFQ-22R open front on the right, detached grille separated on the left or bottom-left, with thin blue callout arrows connecting grille -> open body -> towel/cleaning icon. Add 2-3 simple circular icon chips without extra words, a small step-like visual rhythm using numbers or dots only, and a light dotted grid. Use fewer decorative torn-paper/tape elements than the previous version; this should look more diagrammatic, modern, and high-impact.
+
+Product truth:
+- IFQ-22R is a compact white round-grille air circulator, not a pedestal fan and not a generic table fan.
+- Open front must remain round and aligned with the fan head.
+- Exposed blade must show exactly 3 broad white PP blades, not 4, not 5.
+- Detached front grille must be round white plastic with spiral/radial ribs matching the source product.
+- Two vertical wood-tone support arms remain attached to the body/base.
+- Rounded white oval base remains visible, with small touch buttons and dark IR receiver slot.
+- Pale grey yoke/bracket behind the fan head remains plausible.
+
+Style:
+Bold diagram-card social layout: Heritage Blue blocks and rules, clean white product card, technical callout lines, icon chips, sharp hierarchy, strong contrast, still warm and practical. Use Rice White, Heritage Blue, Soft Charcoal, very light Cool Air blue, and small Clay Beige accents only if needed. The result should feel more graphic and instructional than the previous paper-collage test.
+
+Avoid:
+Wrong Chinese text, misspelled Traditional Chinese, extra text, extra English, fake labels, fake model text, fake price, fake URL, fake QR code, fake warranty badges, 4-blade fan, 5-blade fan, extra blades, broken grille, jagged plastic, missing wood supports, pedestal stand, wrong base shape, generic fan parts, dirty repair scene, hand interaction, copying text from the style references, repeating the exact layout of the previous Frame 05 test.
+```
+
+### Pending Alternate Style: Pop-Out Teardown Social Card
+
+Status: rate-limited on 2026-06-06. Retry when GPT-image quota is available.
+
+```text
+Use case: ads-marketing.
+Asset type: IFQ-22R Instagram carousel Frame 05 style exploration, square 1:1 master.
+
+Use the visible images as references:
+- IFQ-22R open-front candidate: primary product module reference for the detached front grille, open front, exactly 3 broad white blades, two wood-tone support arms, rounded white oval base, and dark IR receiver slot.
+- IFQ-22R assembled front source: product truth for the round white spiral/radial grille, white casing, wood-tone support arms, pale grey yoke, rounded white base, and front grille shape.
+- Existing paper-collage Frame 05 and bold diagram-card Frame 05: contrast references only. Create a third distinct layout, not a repeat.
+- Imarflex pitch-deck carousel examples: broad social-card family style only: big number, strong blue anchors, product/photo modules, callouts, dotted grids, light collage energy.
+
+Primary request:
+Create a square 1:1 Instagram carousel social card for Imarflex IFQ-22R in a POP-OUT TEARDOWN SOCIAL CARD style. It should feel more exciting and campaign-ready than a calm poster: a graphic product demo card with cutout depth, layered panels, a dramatic product/photo module, and energetic but clean social-carousel hierarchy.
+
+Exact text to render, and no other words:
+Large frame number: "05"
+Headline line 1: "前網罩快拆"
+Supporting line 2: "前網罩拆得出易抹"
+
+Composition direction:
+Make the product feel like it is popping out from a clean white/cream product card. Put the large "05" in a Heritage Blue corner badge or oversized cropped number block. Put the headline in bold Traditional Chinese, large and readable, with the supporting line below it. Use the IFQ-22R open-front body as the main hero on the right or lower-right, front-facing to slight three-quarter only. Place the detached round front grille as a separate floating/cutout part on the left or lower-left, slightly overlapping a light Clay Beige paper/photo panel. Add a small folded towel prop or cleaning sparkle icon, but keep it secondary. Use 2-3 blue callout dots/lines pointing at the open front, the detached grille, and the towel/cleaning cue. Include subtle Cool Air blue swoosh ribbons, dotted grid micro-patterns, and one or two angled paper-card layers. The layout should be more dynamic and dimensional than the bold diagram version, but still clean, readable, and saveable.
+
+Product truth:
+- IFQ-22R is a compact white round-grille air circulator, not a pedestal fan and not a generic desk fan.
+- Open fan head must remain round, white, and aligned with the body.
+- Exposed blade must show exactly 3 broad white PP blades, not 4, not 5.
+- Detached front grille must be round white plastic with spiral/radial ribs matching the source product.
+- Two vertical wood-tone support arms must remain attached to the body/base.
+- Rounded white oval base remains visible with small touch buttons and a dark IR receiver slot.
+- Pale grey rear yoke/bracket behind the fan head remains plausible.
+- Keep the product mostly front-facing because side/back references are limited.
+
+Style:
+Pitch-deck social-card energy, pop-out product teardown, warm practical appliance campaign. Palette: Heritage Blue `#1E4B7A`, Rice White `#F7F6F2`, Soft Charcoal `#3C3F42`, Cool Air `#BFD7E6`, small Clay Beige `#E7D7C1` accents. Use clean printed sans-serif typography, strong hierarchy, and crisp poster graphics.
+
+Avoid:
+Wrong Chinese text, misspelled Traditional Chinese, extra text, extra English, fake labels, fake model text, fake price, fake URL, fake QR code, fake warranty badge, copied text from references, 4-blade fan, 5-blade fan, extra blades, broken grille, jagged plastic, missing wood supports, pedestal stand, wrong base shape, generic fan parts, dirty repair scene, hand interaction, repeating the exact previous paper-collage layout, repeating the exact bold blue vertical-panel diagram layout.
+```
 
 ## Local Proof Exports
 

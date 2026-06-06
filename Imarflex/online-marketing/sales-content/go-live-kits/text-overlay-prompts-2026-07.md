@@ -9,7 +9,7 @@ campaigns:
 asset-folder: online-marketing/assets/2026-07-go-live-kits/generated-text-v2
 asset-policy: master-first
 local-proof-status: generated
-gpt-master-status: partial-ifq-carousel-generated
+gpt-master-status: ifq-carousel-plus-fb-story-generated
 source-kits:
   - 2026-06-ifq-22r-circulator-buying-guide
   - 2026-06-icf-140r-cooler-trust
@@ -77,10 +77,10 @@ online-marketing/assets/2026-07-go-live-kits/generated-text-v2/
 | `ifq22r-v2-ig-frame2-vs-fan` | IG carousel | 4:5 | Muji minimal | master | GPT master generated; 4:5 export generated; punctuation QA needed |
 | `ifq22r-v2-ig-frame3-dc-quiet` | IG carousel | 4:5 | Muji minimal | master | GPT master generated; 4:5 export generated; formal QA needed |
 | `ifq22r-v2-ig-frame4-omnidirectional` | IG carousel | 4:5 | Kinfolk/Monocle | master | GPT master generated; preferred top crop generated; center crop has unwanted prop text |
-| `ifq22r-v2-ig-frame5-detach` | IG carousel | 4:5 | Muji minimal | master | GPT master generated; 4:5 export generated; 3-blade visual check passed; v3 square social-card test generated; formal QA needed |
+| `ifq22r-v2-ig-frame5-detach` | IG carousel | 4:5 | Muji minimal | master | GPT master generated; 4:5 export generated; 3-blade visual check passed; v3 square social-card tests generated; formal QA needed |
 | `ifq22r-v2-ig-frame6-cta` | IG carousel | 4:5 | Kinfolk/Monocle | master | GPT v2 master generated; 4:5 export generated; text spacing QA needed |
-| `ifq22r-v2-fb-lifestyle` | Facebook | 4:5 | Kinfolk/Monocle | master | prompt ready; local proof generated |
-| `ifq22r-v2-story-detach` | Story | 9:16 | Kinfolk/Monocle | master | prompt ready; local proof generated |
+| `ifq22r-v2-fb-lifestyle` | Facebook | 4:5 | Kinfolk/Monocle | master | GPT master generated (`masters/ifq22r-v2-fb-lifestyle-gpt.png`, 3:4 nearest enum); QA passed — text exact |
+| `ifq22r-v2-story-detach` | Story | 9:16 | Kinfolk/Monocle | master | GPT master generated (`masters/ifq22r-v2-story-detach-gpt.png`); QA passed — text exact; 3 blades visible |
 | `icf140r-v2-ig-frame1-hook` | IG carousel | 4:5 | Kinfolk/Monocle | master | prompt ready; local proof generated |
 | `icf140r-v2-ig-frame2-principle` | IG carousel | 4:5 | Muji minimal | master | prompt ready; local proof generated |
 | `icf140r-v2-ig-frame3-checklist` | IG carousel | 4:5 | Muji minimal | master | prompt ready; local proof generated |
