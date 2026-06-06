@@ -63,9 +63,13 @@ Generated 2026-06-06 via `gpt_image_2` (text-in-image), replacing the earlier lo
 | `masters/ifq22r-v2-fb-lifestyle-gpt.png` | 1744 × 2336 | Facebook (3:4 nearest enum to 4:5) | Text exact (`淨係涼一邊？` / `問題係空氣冇對流`, Cantonese 冇 correct); product truth good; front grille on |
 | `masters/ifq22r-v2-story-detach-gpt.png` | 1520 × 2688 | Story 9:16 | Text exact (`IFQ-22R` / `DC 靜音 + 全方位 + 易拆前網罩`); mid-detach with hand; exactly 3 blades visible; clean Story-UI space |
 
-## V3 Social-Card Exploration
+## V4 Lifestyle-Rich Story (current chosen direction)
 
-**Chosen direction (2026-06-06):** the paper-collage social-card style was approved as the IFQ-22R carousel look. The full 6-frame story is generated as a self-contained set in [`masters/ifq22r-v3-social-card/`](masters/ifq22r-v3-social-card/_readme.md) (square 1:1, frames 01–06, all text QA-passed). New rule: one set = one subfolder, so different-date/style passes no longer share the flat `masters/` dump.
+**Superseded V3 on 2026-06-06.** The v3 paper-collage set was judged to lack excitement and information versus the approved pitch-deck carousels (`imarflex pitch deck/assets/social-carousel-fan-*`). V4 restores the pitch-deck direction — real bright HK home scenes, airflow visualised through the room, an isometric 3-use cutaway, verified spec chips, CTA buttons, and a cool airy summer palette — while keeping the big Heritage Blue frame number and exact zh-HK copy. Full 6-frame set + reproducible prompts: [`masters/ifq22r-v4-lifestyle-rich/`](masters/ifq22r-v4-lifestyle-rich/_readme.md) (square 1:1, frames 01–06, `gpt_image_2` via Higgsfield with the IFQ-22R product reference, all text QA-passed). **This is now the IFQ-22R carousel look.**
+
+## V3 Social-Card Exploration (retired)
+
+**Retired 2026-06-06 — replaced by V4 above; kept for traceability.** The paper-collage social-card style was briefly the IFQ-22R carousel look. The full 6-frame story is in [`masters/ifq22r-v3-social-card/`](masters/ifq22r-v3-social-card/_readme.md) (square 1:1, frames 01–06, all text QA-passed). New rule: one set = one subfolder, so different-date/style passes no longer share the flat `masters/` dump.
 
 The single-frame masters below were the earlier exploration that led to that choice. The `bold-diagram` alternate was not chosen.
 
