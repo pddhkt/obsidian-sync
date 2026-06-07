@@ -76,6 +76,16 @@ Current test result:
 - Frame 03 placement guide is the strongest candidate so far.
 - Frame 01 visual direction works, but the exact Cantonese subline `可能係空氣冇郁` drifted twice, so it is not approved. Use easier copy or local deterministic typography for final.
 
+## V6 Concept-Only Airflow Lab (fake-product theme test)
+
+V6 intentionally removes real IFQ product binding to judge theme, layout, and social-card energy first. Generated concept tests: [`masters/ifq22r-v6-concept-airflow-lab/`](masters/ifq22r-v6-concept-airflow-lab/_readme.md).
+
+Current result:
+
+- V6 is the strongest creative direction so far for airflow storytelling and carousel variety.
+- All product forms in V6 are fake/generic placeholders and must not be treated as product-approved.
+- If approved, use the V6 layout/theme as the brief for client product-photo requests and product-bound regeneration.
+
 ## V3 Social-Card Exploration (retired)
 
 **Retired 2026-06-06 — replaced by V4 above; kept for traceability.** The paper-collage social-card style was briefly the IFQ-22R carousel look. The full 6-frame story is in [`masters/ifq22r-v3-social-card/`](masters/ifq22r-v3-social-card/_readme.md) (square 1:1, frames 01–06, all text QA-passed). New rule: one set = one subfolder, so different-date/style passes no longer share the flat `masters/` dump.
