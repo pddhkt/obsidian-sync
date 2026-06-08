@@ -61,16 +61,19 @@ Generate Frames 01, 02, and 03 first.
 | `ifq22r-v6-concept-01-hook.png` | generated, concept candidate | Stronger hook than V5: paper tear, warm heat zone, large airflow loop, room-map inset, and readable `01`/headline/subline. Placeholder product is intentionally not IFQ-accurate. |
 | `ifq22r-v6-concept-02-explain.png` | generated, concept candidate | Clear comparison logic: wrong direct-blow side vs desirable circulation-loop side. Strong social-card system; includes a person as a discomfort cue, which can be kept or removed later. Placeholder fans are intentionally generic. |
 | `ifq22r-v6-concept-03-placement.png` | generated, concept candidate | Strongest practical-guide layout: product slot + isometric room map + three icon modules. Text appears close; placeholder product is intentionally not IFQ-accurate. |
+| `ifq22r-v6-concept-03-placement-v2-room-layout.png` | generated, stronger concept candidate | Revised prompt explicitly fixes furniture and AC positions. QA: sofa is on the left wall, TV/cabinet on the right wall, window on the top wall, and the wall-mounted split AC is on the upper-right wall instead of sitting oddly on the floor. Placeholder product remains intentionally generic. |
 
 ![[online-marketing/assets/2026-07-go-live-kits/generated-text-v2/masters/ifq22r-v6-concept-airflow-lab/ifq22r-v6-concept-01-hook.png|300]]
 ![[online-marketing/assets/2026-07-go-live-kits/generated-text-v2/masters/ifq22r-v6-concept-airflow-lab/ifq22r-v6-concept-02-explain.png|300]]
 ![[online-marketing/assets/2026-07-go-live-kits/generated-text-v2/masters/ifq22r-v6-concept-airflow-lab/ifq22r-v6-concept-03-placement.png|300]]
+![[online-marketing/assets/2026-07-go-live-kits/generated-text-v2/masters/ifq22r-v6-concept-airflow-lab/ifq22r-v6-concept-03-placement-v2-room-layout.png|300]]
 
 ## Concept QA
 
 - This two-step workflow is valid. Removing product truth constraints let the model produce stronger layouts, better airflow storytelling, and more varied frame structures.
 - Do not treat any V6 product placeholder as IFQ reference. The fan forms are generic and sometimes wrong by design.
 - V6 uses the clearest social-card system so far: big numbers, paper/card texture, room maps, blue airflow loops, icon modules, and practical HK room context.
+- Frame 03 v2 confirms that furniture/fixture positions should be specified as a mini floor-plan brief, not just as "room map". The prompt now locks top wall/window, left wall/sofa, right wall/TV, upper-right wall-mounted AC, lower-left circulator, and center coffee table.
 - Text is acceptable enough for concept review, but final production should still use local deterministic typography if exact Traditional Chinese is critical.
 - If this direction is approved, request client product photos based on these layouts:
   - assembled front 3/4 hero for Frames 01/06,
@@ -154,4 +157,47 @@ Designed Instagram social card, airflow-lab information design, pitch-deck-style
 
 Avoid:
 Real IFQ product binding, fake brand logo, fake model text, price, URL, QR code, warranty badge, extra text labels inside the icon chips, extra English, clutter, dark lighting, plain product poster.
+```
+
+## Prompt - Frame 03 Placement Guide v2, Explicit Room Layout
+
+```text
+Use case: ads-marketing.
+Asset type: IFQ-22R carousel concept-only Frame 03 v2, square 1:1 master.
+
+Important: this is a creative concept test only. Do NOT use the real IFQ product reference. Use a temporary generic unbranded white compact air-circulator placeholder. Product accuracy is not judged in this pass; judge layout, composition, furniture placement, and educational clarity.
+
+Primary request:
+Create a bold HK Summer Airflow Lab Instagram social card teaching that fan placement changes comfort. This revision must make the furniture positions and air-conditioner location physically believable.
+
+Exact text to render, and no other words:
+"03"
+"擺位啱先舒服"
+"對窗・對角・配冷氣"
+
+Overall layout:
+Use a split social-card composition. Left third: large Heritage Blue "03", headline, subline, and a generic white compact air-circulator placeholder on a light tabletop/floor plinth. Right two-thirds: a large isometric/top-down compact Hong Kong living-room map.
+
+Room-map floor plan, fixed positions:
+- The room is a rectangular HK living room viewed from above / slight isometric.
+- Top wall: wide window with sheer curtains and city light outside.
+- Left wall: two-seat sofa against the wall, facing right.
+- Right wall: low TV cabinet and TV against the wall, facing the sofa.
+- Center: small rectangular coffee table on a light rug.
+- Upper-right wall near the ceiling: one wall-mounted split air-conditioner indoor unit, drawn as a small horizontal white unit high on the wall above/right of the TV area. It must NOT be on the floor, NOT on the coffee table, NOT floating in the middle of the room, and NOT blocking the window.
+- Lower-left floor area near the sofa / room entrance: generic white compact air-circulator placeholder, angled diagonally toward the window and across the room.
+
+Airflow routes:
+- Route 1, window route: blue airflow arrow travels from the lower-left circulator toward the top-wall window, then curls back into the room.
+- Route 2, diagonal route: blue airflow arrow travels diagonally from lower-left to upper-right corner, then loops around the sofa and coffee table.
+- Route 3, air-conditioner route: pale blue AC airflow begins from the upper-right wall-mounted AC and is picked up by the lower-left circulator, forming one clean circulation loop around the room.
+
+Graphic modules:
+Use three icon-only chips beside the room map, with no text inside: window icon, diagonal corner arrow icon, AC/snowflake icon. Use dotted-grid micro-patterns, thin blue connector lines, Cool Air ribbons, and Heritage Blue corner brackets. Keep the map clean and readable.
+
+Style:
+Designed Instagram social card, airflow-lab information design, pitch-deck-style rhythm, crisp and energetic. Palette: Heritage Blue #1E4B7A, Rice White #F7F6F2, Cool Air #BFD7E6, Soft Charcoal #3C3F42, small Clay Beige #E7D7C1.
+
+Avoid:
+Real IFQ product binding, fake brand logo, fake model text, price, URL, QR code, warranty badge, extra text labels inside the icon chips, extra English, air-conditioner on the floor, air-conditioner in the middle of the room, air-conditioner blocking the window, sofa facing the wrong direction, TV floating in the room, clutter, dark lighting, plain product poster.
 ```
