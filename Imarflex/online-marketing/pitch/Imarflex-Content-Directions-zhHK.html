@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>Imarflex 伊瑪牌 — 內容方向 + 每週內容節奏</title>
+<style>
+:root {
+  --heritage-blue: #1E4B7A;
+  --heritage-blue-2: #163A5F;
+  --heritage-blue-3: #2C5F8F;
+  --rice-white: #F7F6F2;
+  --rice-white-2: #FFFFFF;
+  --clay-beige: #E7D7C1;
+  --clay-beige-2: #D9C5A6;
+  --steam-grey: #DCE1E6;
+  --steam-grey-2: #C5CCD3;
+  --soft-charcoal: #3C3F42;
+  --soft-charcoal-2: #5A5E62;
+  --soft-charcoal-3: #8A8E92;
+  --cool-air: #BFD7E6;
+  --cool-air-2: #DCE9F1;
+  --bg-tint: #F0EBE3;
+  --rule: #E5E1D9;
+  --rule-strong: #C8C2B5;
+  --accent-warn: #C7383E;
+  --accent-ok: #2C7A4D;
+}
+
+@page { size: 297mm 210mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: "PingFang HK", "Noto Sans HK", "Noto Sans CJK HK", "Source Han Sans HK", "Hiragino Sans HK", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--soft-charcoal);
+  background: var(--rice-white);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.slide {
+  width: 297mm;
+  height: 210mm;
+  page-break-after: always;
+  break-after: page;
+  position: relative;
+  overflow: hidden;
+  padding: 18mm 22mm;
+  background: var(--rice-white);
+}
+.slide:last-child { page-break-after: auto; break-after: auto; }
+
+.slide.cover, .slide.fullbleed { padding: 0; background: var(--soft-charcoal); }
+.slide.cover .bg, .slide.fullbleed .bg {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+}
+.slide.cover .overlay {
+  position: absolute; inset: 0; z-index: 1;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-end;
+  padding: 0 38mm 0 0; text-align: right;
+}
+.slide.cover h1 {
+  font-size: 50px; font-weight: 300; letter-spacing: -1px;
+  color: var(--heritage-blue-2); line-height: 1.15; margin-bottom: 14px;
+  text-shadow: 0 1px 24px rgba(247, 246, 242, 0.7);
+}
+.slide.cover h1 .accent { color: var(--heritage-blue); font-weight: 500; display: block; }
+.slide.cover .sub {
+  font-size: 18px; color: var(--soft-charcoal); font-weight: 400; margin-bottom: 32px;
+  text-shadow: 0 1px 14px rgba(247, 246, 242, 0.9);
+}
+.slide.cover .meta {
+  font-size: 12px; color: var(--heritage-blue-2); font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(247,246,242,1), 0 0 12px rgba(247,246,242,0.95);
+}
+
+.slide.closing .overlay {
+  background: linear-gradient(180deg, rgba(247,246,242,0.88) 0%, rgba(247,246,242,0.45) 50%, transparent 72%);
+  align-items: center; text-align: center; justify-content: flex-start; padding-top: 20mm;
+}
+.slide.closing h1 { font-size: 40px; font-weight: 300; color: var(--heritage-blue-2); margin-bottom: 16px; }
+.slide.closing .sub { font-size: 17px; max-width: 640px; margin: 0 auto 30px; color: var(--soft-charcoal); }
+.slide.closing .contact {
+  background: var(--rice-white-2); border: 1px solid var(--rule); padding: 16px 28px;
+  border-radius: 8px; display: inline-flex; flex-direction: column; gap: 6px;
+  font-size: 13px; color: var(--soft-charcoal-2);
+}
+.slide.closing .contact strong { color: var(--heritage-blue); font-size: 15px; }
+
+.eyebrow {
+  display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--heritage-blue); font-weight: 500; padding: 4px 10px;
+  background: var(--cool-air-2); border-radius: 3px; margin-bottom: 14px;
+}
+.slide h2 {
+  font-size: 27px; font-weight: 500; color: var(--heritage-blue-2);
+  margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.3;
+}
+.slide .lede {
+  font-size: 14px; color: var(--soft-charcoal-2); margin-bottom: 16px;
+  max-width: 230mm; line-height: 1.7;
+}
+
+.tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 12px; }
+.tbl th {
+  text-align: left; font-weight: 500; color: var(--heritage-blue-2);
+  padding: 9px 12px; background: var(--bg-tint);
+  border-bottom: 2px solid var(--rule-strong);
+  font-size: 11.5px; letter-spacing: 0.5px;
+}
+.tbl td { padding: 6px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 12px; line-height: 1.5; }
+.tbl td.c, .tbl th.c { text-align: center; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl tr.milestone-row td { background: var(--cool-air-2); }
+.tbl .mlabel { font-weight: 600; color: var(--heritage-blue); white-space: nowrap; }
+.tbl .mlabel small { display:block; font-weight: 400; color: var(--soft-charcoal-3); font-size: 10px; letter-spacing: .5px; }
+
+.callout {
+  background: var(--clay-beige); border-left: 4px solid var(--heritage-blue);
+  padding: 9px 14px; margin-top: 9px;
+  font-size: 12.5px; color: var(--soft-charcoal); border-radius: 0 4px 4px 0;
+}
+.callout .label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--heritage-blue); font-weight: 500; display: block; margin-bottom: 4px;
+}
+.callout.warn { background: #fbe8e9; border-left-color: var(--accent-warn); }
+.callout.warn .label { color: var(--accent-warn); }
+
+.footer {
+  position: absolute; bottom: 8mm; left: 22mm; right: 22mm;
+  display: flex; justify-content: space-between;
+  font-size: 9.5px; color: var(--soft-charcoal-3); letter-spacing: 0.5px;
+}
+.hl-blue { color: var(--heritage-blue); font-weight: 500; }
+.muted { color: var(--soft-charcoal-2); }
+.nowrap { white-space: nowrap; }
+.note-muted { margin-top: 9px; font-size: 10.5px; color: var(--soft-charcoal-3); line-height: 1.55; }
+
+/* ====== Direction menu (8 cards) ====== */
+.dir-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+.dir-card {
+  background: var(--rice-white-2); border: 1px solid var(--rule); border-radius: 6px;
+  border-top: 4px solid var(--heritage-blue); padding: 11px 12px;
+  display: flex; flex-direction: column;
+}
+.dir-card.reserved { border-top-color: var(--clay-beige-2); background: var(--bg-tint); border-style: dashed; }
+.dir-card .dnum { font-size: 9.5px; letter-spacing: 1.5px; color: var(--soft-charcoal-3); text-transform: uppercase; margin-bottom: 4px; }
+.dir-card .dttl { font-size: 14.5px; font-weight: 600; color: var(--heritage-blue-2); line-height: 1.3; }
+.dir-card .den { font-size: 9.5px; color: var(--soft-charcoal-3); letter-spacing: .5px; margin-bottom: 6px; }
+.dir-card .ddesc { font-size: 10.5px; color: var(--soft-charcoal); line-height: 1.55; flex: 1; }
+.dir-card .dex {
+  margin-top: 8px; padding-top: 7px; border-top: 1px dashed var(--rule);
+  font-size: 9.5px; color: var(--soft-charcoal-2); line-height: 1.5;
+}
+.dir-card .dex .exlabel { color: var(--heritage-blue); font-weight: 600; }
+.chip {
+  display: inline-block; font-size: 8.5px; letter-spacing: .5px; padding: 1px 7px;
+  border-radius: 9px; background: var(--cool-air-2); color: var(--heritage-blue-2);
+  margin-top: 6px; align-self: flex-start; font-weight: 600;
+}
+.chip.warm { background: var(--clay-beige); color: var(--soft-charcoal); }
+
+/* ====== Week rhythm strip ====== */
+.pipeline { display: flex; align-items: stretch; margin-top: 10px; }
+.pipeline .pstep { flex: 1; background: var(--rice-white-2); border: 1px solid var(--rule);
+  border-top: 3px solid var(--heritage-blue); border-radius: 4px; padding: 11px 12px; text-align: center; position: relative; margin-right: 26px; }
+.pipeline .pstep:last-child { margin-right: 0; }
+.pipeline .pstep::after { content: "\2192"; position: absolute; right: -18px; top: 50%; transform: translateY(-50%); color: var(--heritage-blue-3); font-size: 16px; font-weight: 600; }
+.pipeline .pstep:last-child::after { content: ""; }
+.pipeline .pstep .pt { font-size: 12.5px; font-weight: 600; color: var(--heritage-blue-2); margin-bottom: 4px; }
+.pipeline .pstep .pd { font-size: 10px; color: var(--soft-charcoal-2); line-height: 1.5; }
+.pipeline .pstep .pday { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--soft-charcoal-3); margin-bottom: 4px; }
+
+/* ====== Multiplier diagram ====== */
+.mult { display: grid; grid-template-columns: 1fr 30px 2.2fr; gap: 0; align-items: center; margin-top: 14px; }
+.mult .seed { background: var(--heritage-blue); color: #fff; border-radius: 6px; padding: 14px 16px; text-align: center; }
+.mult .seed .st { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.mult .seed .sd { font-size: 10px; opacity: .85; line-height: 1.5; }
+.mult .arrow { text-align: center; color: var(--heritage-blue-3); font-size: 20px; font-weight: 600; }
+.mult .fanout { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.mult .fanout .fitem { background: var(--rice-white-2); border: 1px solid var(--rule); border-left: 3px solid var(--heritage-blue-3); border-radius: 4px; padding: 9px 10px; }
+.mult .fanout .fitem .ft { font-size: 11.5px; font-weight: 600; color: var(--heritage-blue-2); margin-bottom: 2px; }
+.mult .fanout .fitem .fd { font-size: 9.5px; color: var(--soft-charcoal-2); line-height: 1.45; }
+
+/* ====== Month calendar ====== */
+.cal { width: 100%; border-collapse: collapse; margin-top: 12px; table-layout: fixed; }
+.cal th {
+  font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--heritage-blue-2);
+  background: var(--bg-tint); border: 1px solid var(--rule-strong); padding: 5px 8px; text-align: left; font-weight: 600;
+}
+.cal td { border: 1px solid var(--rule); vertical-align: top; padding: 4px 7px; height: 21.5mm; background: var(--rice-white-2); }
+.cal td.off { background: var(--bg-tint); }
+.cal td .d { font-size: 10px; color: var(--soft-charcoal-3); font-weight: 600; font-variant-numeric: tabular-nums; }
+.cal .ev { margin-top: 3px; font-size: 9px; line-height: 1.35; padding: 2px 5px; border-radius: 3px; font-weight: 500; }
+.cal .ev .evt { display: block; font-size: 8px; opacity: .8; font-weight: 400; }
+.ev.guide { background: var(--heritage-blue); color: #fff; }
+.ev.maint { background: var(--cool-air-2); color: var(--heritage-blue-2); border: 1px solid var(--cool-air); }
+.ev.trust { background: var(--clay-beige); color: var(--soft-charcoal); border: 1px solid var(--clay-beige-2); }
+.ev.proof { background: var(--heritage-blue-3); color: #fff; }
+.ev.hold { background: repeating-linear-gradient(45deg, var(--steam-grey) 0 5px, var(--rice-white-2) 5px 10px); color: var(--soft-charcoal-2); border: 1px dashed var(--soft-charcoal-3); }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; font-size: 10.5px; color: var(--soft-charcoal-2); }
+.legend .item { display: inline-flex; align-items: center; gap: 6px; }
+.legend .sw { width: 16px; height: 11px; border-radius: 2px; display: inline-block; }
+.sw.guide { background: var(--heritage-blue); }
+.sw.maint { background: var(--cool-air-2); border: 1px solid var(--cool-air); }
+.sw.trust { background: var(--clay-beige); border: 1px solid var(--clay-beige-2); }
+.sw.proof { background: var(--heritage-blue-3); }
+.sw.hold { background: repeating-linear-gradient(45deg, var(--steam-grey) 0 4px, var(--rice-white-2) 4px 8px); border: 1px dashed var(--soft-charcoal-3); }
+
+/* ====== Two-column helper ====== */
+.cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; }
+.panel { background: var(--rice-white-2); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.panel.accent { background: var(--cool-air-2); border-color: var(--cool-air); }
+.panel.warm { background: var(--clay-beige); border-color: var(--clay-beige-2); }
+.panel .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--soft-charcoal-3); margin-bottom: 8px; }
+.panel .ttl { font-size: 16px; font-weight: 500; color: var(--heritage-blue-2); margin-bottom: 10px; }
+.panel ul.tight { margin: 6px 0 0; padding-left: 16px; }
+.panel ul.tight li { font-size: 12px; margin-bottom: 6px; line-height: 1.6; color: var(--soft-charcoal); }
+</style>
+</head>
+<body>
+
+<!-- ====== Slide 1 — Cover ====== -->
+<section class="slide cover">
+  <img class="bg" src="images/imarflex-pitch-01-cover.png" alt="">
+  <div class="overlay">
+    <div class="meta">2026 · 內容計劃</div>
+    <h1>
+      Imarflex 伊瑪牌
+      <span class="accent">內容方向菜單<br>+ 每週內容節奏</span>
+    </h1>
+    <div class="sub">由「每月 4 篇」升級做「每週都有嘢出」——<br>八個內容方向輪住行,一條每週生產線揸住個質素。</div>
+    <div class="meta">2026-06-10 製作 · 配合上線時間表使用</div>
+  </div>
+</section>
+
+<!-- ====== Slide 2 — Direction menu ====== -->
+<section class="slide">
+  <span class="eyebrow">01 · 內容方向菜單</span>
+  <h2>顧客喺 feed 會見到啲咩?</h2>
+  <p class="lede">八個內容方向,每一個都對應顧客買嘢前後嘅<span class="hl-blue">一條真實問題</span>。下面每張卡都有一個已經寫好或者製作中嘅實例 —— 唔係概念,係已經喺生產線上嘅嘢。</p>
+
+  <div class="dir-grid">
+    <div class="dir-card">
+      <div class="dnum">方向 1</div>
+      <div class="dttl">揀機指南</div>
+      <div class="den">BUYING GUIDE</div>
+      <div class="ddesc">幫顧客揀容量、規格、尺寸 —— 決策表 carousel、checklist、blog 指南。</div>
+      <div class="dex"><span class="exlabel">實例</span> · 「電飯煲容量點揀?」carousel · 「循環扇點揀 3 重點」</div>
+      <span class="chip">建立決策信心</span>
+    </div>
+    <div class="dir-card">
+      <div class="dnum">方向 2</div>
+      <div class="dttl">產品主場</div>
+      <div class="den">PRODUCT SHOWCASE</div>
+      <div class="ddesc">單一產品獨立亮相 —— 功能實證、demo reel、一張圖講晒重點嘅 feature card。</div>
+      <div class="dex"><span class="exlabel">實例</span> · IFQ-22R 產品功能總覽 feature card(製作中)</div>
+      <span class="chip">直接帶動購買</span>
+    </div>
+    <div class="dir-card">
+      <div class="dnum">方向 3</div>
+      <div class="dttl">痛點解難</div>
+      <div class="den">PAIN-POINT SOLUTIONS</div>
+      <div class="ddesc">由顧客真實困擾開波,即場解決 —— 「問題 → 解法」carousel、FAQ、互動 poll。</div>
+      <div class="dex"><span class="exlabel">實例</span> · 「電飯煲飯硬點算?」 · 「幾耐冇拆洗?」poll</div>
+      <span class="chip">轉化做查詢 / 名單</span>
+    </div>
+    <div class="dir-card">
+      <div class="dnum">方向 4</div>
+      <div class="dttl">比較解構</div>
+      <div class="den">HONEST COMPARISONS</div>
+      <div class="ddesc">A 同 B 有咩分別?包括誠實預期管理 —— 唔賣大包,反而贏信任。</div>
+      <div class="dex"><span class="exlabel">實例</span> · IH vs 壓力電飯煲 blog · 「冷風機 ≠ 冷氣」reel</div>
+      <span class="chip">建立決策信心</span>
+    </div>
+    <div class="dir-card">
+      <div class="dnum">方向 5</div>
+      <div class="dttl">食譜實用法</div>
+      <div class="den">RECIPES &amp; REAL-LIFE USE</div>
+      <div class="ddesc">產品實際用緊嘅樣 —— 食譜、demo、生活場景。高 save / share 格式,Reel 行先。</div>
+      <div class="dex"><span class="exlabel">實例</span> · 「氣炸鍋 10 分鐘整蝦多士」reel + 步驟 carousel</div>
+      <span class="chip">產品發現 + 回頭客</span>
+    </div>
+    <div class="dir-card">
+      <div class="dnum">方向 6</div>
+      <div class="dttl">保養清潔教學</div>
+      <div class="den">CARE &amp; MAINTENANCE</div>
+      <div class="ddesc">點清潔、點保養、點用耐啲 —— 買前減焦慮,買後帶配件同回購。</div>
+      <div class="dex"><span class="exlabel">實例</span> · 風扇換季清潔 checklist · 前網罩快拆 demo reel</div>
+      <span class="chip">減購買疑慮 + 回頭客</span>
+    </div>
+    <div class="dir-card">
+      <div class="dnum">方向 7</div>
+      <div class="dttl">信心保證</div>
+      <div class="den">TRUST &amp; SERVICE</div>
+      <div class="ddesc">保養、零件、送貨、支援 —— 移走購買風險,係官網對比零售商嘅護城河。</div>
+      <div class="dex"><span class="exlabel">實例</span> · 保養登記 FAQ · 冷風機 carousel「登記 2 年保養」CTA</div>
+      <span class="chip">減購買疑慮</span>
+    </div>
+    <div class="dir-card reserved">
+      <div class="dnum">方向 8</div>
+      <div class="dttl">節日及季節攻勢</div>
+      <div class="den">FESTIVAL &amp; SEASONAL</div>
+      <div class="ddesc">跟住香港節日同季節高峰出擊 —— 送禮檔期、換季優惠、倒數系列。每月預留檔期。</div>
+      <div class="dex"><span class="exlabel">狀態</span> · 檔期已預留,內容配合 貴司 promo 日曆落實</div>
+      <span class="chip warm">待確認 promo 日曆</span>
+    </div>
+  </div>
+
+  <div class="note-muted">所有實例為樣板或製作中內容,出街前都會經 QA 同客戶確認;實際表現數據喺開跑後逐月匯報。</div>
+
+  <div class="footer"><span>Imarflex · 內容方向 + 每週內容節奏</span><span>2 / 8</span></div>
+</section>
+
+<!-- ====== Slide 3 — The logic behind ====== -->
+<section class="slide">
+  <span class="eyebrow">02 · 背後邏輯</span>
+  <h2>點解係呢八個方向?</h2>
+  <p class="lede">每個 post 出街前都要答到三條問題:<span class="hl-blue">解答顧客邊條問題?推佢去邊件產品?想佢做咩動作?</span>答唔到嘅 post 唔會出。八個方向就係呢套邏輯嘅完整覆蓋 —— 由「未識你」到「買咗仲返嚟」。</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:16%">內容方向</th><th style="width:30%">解答顧客邊條問題</th><th style="width:18%">銷售目的</th><th>主要量度</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mlabel">揀機指南</td><td>「咁多款,我應該買邊款?」</td><td>建立決策信心</td><td>saves · 入 PDP 點擊</td></tr>
+      <tr><td class="mlabel">產品主場</td><td>「呢件產品值唔值得買?」</td><td>直接帶動購買</td><td>入 PDP 點擊 · 轉化</td></tr>
+      <tr><td class="mlabel">痛點解難</td><td>「我而家個問題點搞?」</td><td>收集查詢 / 名單</td><td>WhatsApp 查詢 · poll 互動</td></tr>
+      <tr><td class="mlabel">比較解構</td><td>「A 同 B 有咩分別?邊樣啱我?」</td><td>建立決策信心</td><td>讀全文 · 入 PDP 點擊</td></tr>
+      <tr><td class="mlabel">食譜實用法</td><td>「買咗返嚟,仲可以點用?」</td><td>產品發現 + 回頭客</td><td>saves · shares · reach</td></tr>
+      <tr><td class="mlabel">保養清潔教學</td><td>「難唔難打理?用得耐唔耐?」</td><td>減購買疑慮 + 回頭客</td><td>saves · 配件頁點擊</td></tr>
+      <tr><td class="mlabel">信心保證</td><td>「喺官網買,有咩保障?」</td><td>減購買疑慮</td><td>保養登記 · WhatsApp 查詢</td></tr>
+      <tr><td class="mlabel">節日及季節攻勢</td><td>「呢個節 / 呢季,買咩好?」</td><td>直接帶動購買</td><td>promo 點擊 · 轉化</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">每月覆蓋紀律(寫入工作流程,唔係靠彈性)</span>
+    每月至少 <strong>4 個方向</strong>同時行 · 至少 <strong>3 種銷售目的</strong>有覆蓋 · <strong>50% 以上</strong>係建立信任 / 決策信心嘅內容 · 硬銷 post 每月<strong>最多 1–2 個</strong>(除非有 promo 檔期)—— 確保個 feed 係幫顧客做決定,唔係日日叫人買嘢。
+  </div>
+
+  <div class="footer"><span>Imarflex · 內容方向 + 每週內容節奏</span><span>3 / 8</span></div>
+</section>
+
+<!-- ====== Slide 4 — Weekly rhythm ====== -->
+<section class="slide">
+  <span class="eyebrow">03 · 每週節奏</span>
+  <h2>同一個承諾,升級咗個引擎</h2>
+  <p class="lede">上次時間表承諾<span class="hl-blue">每月 4 篇 blog + captions</span> —— 呢個 SEO 骨幹唔變。升級嘅地方係:每篇 blog 而家會展開成<span class="hl-blue">一套一週嘅 campaign</span>,變出 3–4 個社交 post,逐日出街 —— 由「一個月交一批」變成「每星期都喺顧客 feed 度」。</p>
+
+  <div class="mult">
+    <div class="seed">
+      <div class="st">每月 4 個主題</div>
+      <div class="sd">每主題 1 篇 AEO 格式 blog<br>(骨幹承諾,唔變)</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="fanout">
+      <div class="fitem"><div class="ft">IG Carousel</div><div class="fd">決策表 / checklist / 步驟圖</div></div>
+      <div class="fitem"><div class="ft">IG Reel</div><div class="fd">demo / 食譜 / 對比實拍</div></div>
+      <div class="fitem"><div class="ft">IG Story</div><div class="fd">poll / Q&amp;A,收互動同查詢</div></div>
+      <div class="fitem"><div class="ft">FB Link Post</div><div class="fd">帶流量返 blog / PDP</div></div>
+    </div>
+  </div>
+
+  <div style="margin-top:18px; font-size:10px; letter-spacing:1px; color:var(--soft-charcoal-3); text-transform:uppercase;">每週生產循環(星期一至五)</div>
+  <div class="pipeline">
+    <div class="pstep"><div class="pday">MON</div><div class="pt">確認本週主題</div><div class="pd">睇返一週信號:搜尋趨勢 · 零售商熱賣 · 季節日曆</div></div>
+    <div class="pstep"><div class="pday">TUE</div><div class="pt">寫稿</div><div class="pd">blog 文 + 各 channel caption 一次過構思</div></div>
+    <div class="pstep"><div class="pday">WED</div><div class="pt">製作視覺</div><div class="pd">carousel / reel / story 圖像同影片</div></div>
+    <div class="pstep"><div class="pday">THU</div><div class="pt">QA + 確認</div><div class="pd">事實核對 · 品牌一致 · 客戶過目</div></div>
+    <div class="pstep"><div class="pday">FRI</div><div class="pt">排程出街</div><div class="pd">本週 post 上線,記錄入系統</div></div>
+  </div>
+
+  <div class="cols2" style="margin-top:14px;">
+    <div class="panel accent">
+      <div class="label">出 post 節奏承諾</div>
+      <div class="ttl">每週 3 IG + 2 FB 起步</div>
+      <ul class="tight">
+        <li>即係每月約 <strong>12–15 個社交 post</strong>,對比舊計劃嘅每月 4 件交付</li>
+        <li>有紀律咁加,唔係為出而出:engagement 數據支持先加碼,每月檢視</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <div class="label">生產線實證 · 2026 年 6 月 cycle(製作中)</div>
+      <div class="ttl">4 個主題 → 15 個 post</div>
+      <ul class="tight">
+        <li>W1 電飯煲容量指南 · W2 氣炸鍋蝦多士食譜 · W3 風扇換季清潔 · W4 保養登記信心</li>
+        <li>每主題出齊 carousel + reel / FB + poll,即係每週 3–4 個 post 嘅實際樣</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer"><span>Imarflex · 內容方向 + 每週內容節奏</span><span>4 / 8</span></div>
+</section>
+
+<!-- ====== Slide 5 — Sample month calendar ====== -->
+<section class="slide">
+  <span class="eyebrow">04 · 樣板月</span>
+  <h2>你哋 7 月嘅 feed 會係咁</h2>
+  <p class="lede">用<span class="hl-blue">真實已規劃嘅 7 月內容</span>做樣板:頭兩週係兩套已經喺生產線上嘅 campaign(IFQ-22R 循環扇 · ICF-140R 冷風機),後兩週檔期預留俾節日 / promo 主題同新一輪信號選題。<span class="hl-blue">所有日期均為暫定</span>,待帳號接通同客戶確認後鎖定。</p>
+
+  <table class="cal">
+    <thead>
+      <tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="off"></td>
+        <td class="off"></td>
+        <td><div class="d">1</div></td>
+        <td><div class="d">2</div></td>
+        <td><div class="d">3</div></td>
+        <td><div class="d">4</div></td>
+      </tr>
+      <tr>
+        <td><div class="d">6</div></td>
+        <td><div class="d">7</div></td>
+        <td><div class="d">8</div><div class="ev guide">IG carousel<span class="evt">循環扇點揀 3 重點</span></div></td>
+        <td><div class="d">9</div><div class="ev guide">FB link<span class="evt">「淨係涼一邊」對流解法</span></div></td>
+        <td><div class="d">10</div><div class="ev maint">IG reel<span class="evt">前網罩快拆清潔 demo</span></div></td>
+        <td><div class="d">11</div><div class="ev maint">IG story<span class="evt">「幾耐冇拆洗?」poll</span></div></td>
+      </tr>
+      <tr>
+        <td><div class="d">13</div></td>
+        <td><div class="d">14</div></td>
+        <td><div class="d">15</div><div class="ev trust">IG carousel<span class="evt">冷風機 ≠ 冷氣 checklist</span></div></td>
+        <td><div class="d">16</div><div class="ev trust">FB link<span class="evt">冷風機係咪平價冷氣?</span></div></td>
+        <td><div class="d">17</div><div class="ev trust">IG reel<span class="evt">啱用 vs 唔啱用 實拍</span></div></td>
+        <td><div class="d">18</div><div class="ev trust">IG story<span class="evt">冷風機 poll + 保養提醒</span></div></td>
+      </tr>
+      <tr>
+        <td><div class="d">20</div></td>
+        <td><div class="d">21</div></td>
+        <td><div class="d">22</div><div class="ev hold">檔期預留<span class="evt">節日 / promo 主題</span></div></td>
+        <td><div class="d">23</div><div class="ev hold">檔期預留<span class="evt">節日 / promo 主題</span></div></td>
+        <td><div class="d">24</div><div class="ev proof">IG feature card<span class="evt">IFQ-22R 功能總覽(暫定)</span></div></td>
+        <td><div class="d">25</div></td>
+      </tr>
+      <tr>
+        <td><div class="d">27</div></td>
+        <td><div class="d">28</div></td>
+        <td><div class="d">29</div><div class="ev hold">檔期預留<span class="evt">信號選題 W4</span></div></td>
+        <td><div class="d">30</div><div class="ev hold">檔期預留<span class="evt">信號選題 W4</span></div></td>
+        <td><div class="d">31</div><div class="ev proof">IG feature card<span class="evt">ICF-140R 功能總覽(暫定)</span></div></td>
+        <td class="off"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="legend">
+    <span class="item"><span class="sw guide"></span> 揀機指南</span>
+    <span class="item"><span class="sw maint"></span> 保養清潔教學</span>
+    <span class="item"><span class="sw trust"></span> 信心保證 / 比較解構</span>
+    <span class="item"><span class="sw proof"></span> 產品主場</span>
+    <span class="item"><span class="sw hold"></span> 預留檔期(待 promo 日曆 / 每週信號)</span>
+  </div>
+
+  <div class="note-muted">已排 8 個 post + 2 張 feature card(草稿)+ 預留檔期;兩篇 campaign blog(循環扇揀機指南 · 冷風機 vs 冷氣)同步喺網站出街。日期全部暫定,以客戶確認為準。</div>
+
+  <div class="footer"><span>Imarflex · 內容方向 + 每週內容節奏</span><span>5 / 8</span></div>
+</section>
+
+<!-- ====== Slide 6 — Festival & seasonal ====== -->
+<section class="slide">
+  <span class="eyebrow">05 · 節日與旺季</span>
+  <h2>節日同旺季,每週都接得住</h2>
+  <p class="lede">舊模式月初鎖死 4 個 topic,個月中間有咩節日高峰、突發熱潮都要等下個月先郁。<span class="hl-blue">每週選題</span>就唔同:星期一睇信號,同一個星期已經有 post 出街。</p>
+
+  <div class="cols2">
+    <div class="panel">
+      <div class="label">每週一睇嘅選題信號</div>
+      <div class="ttl">而家已經用緊</div>
+      <ul class="tight">
+        <li><strong>搜尋趨勢</strong> —— Google Trends 香港,品類同節日關鍵詞</li>
+        <li><strong>零售商熱賣榜</strong> —— 競品上新、價位變動</li>
+        <li><strong>季節日曆</strong> —— 香港節日 + 品類旺季(下面例子)</li>
+        <li><strong>媒體話題</strong> —— 港媒家電 / 飲食編輯內容</li>
+      </ul>
+      <div class="note-muted" style="margin-top:10px;">簽約後再加:GSC 搜尋數據 · 站內搜尋 · WhatsApp 查詢主題 —— 令選題直接反映你哋顧客真實問緊咩。</div>
+    </div>
+    <div class="panel warm">
+      <div class="label">季節攻勢例子(以品類旺季計)</div>
+      <div class="ttl">下半年點切入</div>
+      <ul class="tight">
+        <li><strong>7–8 月</strong> · 風扇 / 冷風機旺季高峰 —— 對流、誠實預期、清潔保養(已喺 7 月樣板月)</li>
+        <li><strong>9 月 中秋</strong> · 送禮檔期 —— 電飯煲 / 廚電禮物指南</li>
+        <li><strong>10–11 月</strong> · 轉季 —— 風扇收納保養、鍋物廚電預熱</li>
+        <li><strong>11–12 月</strong> · 大型購物節 + 聖誕 —— promo 攻勢配合 貴司優惠檔期</li>
+      </ul>
+      <div class="note-muted" style="margin-top:10px;">具體節日 post 內容,待 貴司確認 promo / 清貨 SKU 日曆後逐月鎖定 —— 檔期我哋已經喺每月計劃預留。</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">點解每週節奏先接得住節日?</span>
+    節日同熱潮嘅搜尋高峰通常得 <strong>1–2 星期</strong>。每週一選題、星期五出街,代表由「見到信號」到「post 喺 feed 度」<strong>最快 5 個工作天</strong> —— 月初鎖題嘅模式做唔到呢樣嘢。
+  </div>
+
+  <div class="footer"><span>Imarflex · 內容方向 + 每週內容節奏</span><span>6 / 8</span></div>
+</section>
+
+<!-- ====== Slide 7 — Governance & reporting ====== -->
+<section class="slide">
+  <span class="eyebrow">06 · 管控與匯報</span>
+  <h2>出得多,唔代表求其出</h2>
+  <p class="lede">每個 post 出街前都有一張<span class="hl-blue">內容卡</span>記低佢嘅方向、銷售目的、目標產品同 CTA —— 答唔齊嘅唔會開工。質素關卡同量度機制,同上次時間表承諾嘅完全一致。</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:22%">關卡 / 機制</th><th style="width:44%">內容</th><th>頻率</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mlabel">內容卡管控</td>
+        <td>每個 post 要有:內容方向 · 銷售目的 · 目標產品 / 頁面 · 主 CTA —— 缺一不可,先至開工</td>
+        <td>每個 post</td>
+      </tr>
+      <tr>
+        <td class="mlabel">blog 質素關卡</td>
+        <td>每篇 blog 經 AEO audit,<strong>≥13/15 先出街</strong>;唔達標就重寫(同上次承諾一致)</td>
+        <td>每篇 blog</td>
+      </tr>
+      <tr>
+        <td class="mlabel">事實核對</td>
+        <td>產品規格對返官方資料 · 唔出未經確認嘅 claim(價錢、優惠、功效)</td>
+        <td>每個 post</td>
+      </tr>
+      <tr class="milestone-row">
+        <td class="mlabel">月度報告</td>
+        <td>各方向 post 表現(saves / 點擊 / 查詢 / 保養登記)+ 48 格 AI 引擎 citation simulation + 下月選題方向</td>
+        <td>每月</td>
+      </tr>
+      <tr class="milestone-row">
+        <td class="mlabel">節奏檢視</td>
+        <td>每週 3 IG + 2 FB 係起步線:engagement 支持就加碼,內容質素受壓就守住 —— 每月一齊檢視決定</td>
+        <td>每月</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="label">誠實聲明</span>
+    呢份計劃展示嘅係<strong>方法同紀律</strong>,唔係預先承諾流量數字。基線量度開跑後,逐月用真實數據同你哋檢視 —— 上次時間表嘅做法,呢度照舊。
+  </div>
+
+  <div class="footer"><span>Imarflex · 內容方向 + 每週內容節奏</span><span>7 / 8</span></div>
+</section>
+
+<!-- ====== Slide 8 — Closing / next steps ====== -->
+<section class="slide closing cover">
+  <img class="bg" src="images/imarflex-pitch-05-closing.png" alt="">
+  <div class="overlay">
+    <h1>八個方向,每週出街。</h1>
+    <div class="sub">生產線已經行緊 —— 6 月 cycle 15 個 post、7 月兩套 campaign 已喺製作中。<br>確認以下幾樣,個行事曆就可以即刻鎖定。</div>
+    <div class="contact">
+      <strong>需要 貴司確認</strong>
+      <span>1 · 未來 90 日 promo / 清貨檔期 —— 解鎖節日及季節攻勢方向</span>
+      <span>2 · IG / FB 帳號接通 + 內容確認人(每週四過目)</span>
+      <span>3 · 主推 SKU 名單 —— 內容卡逐個對準</span>
+      <span>4 · 7 月樣板行事曆日期確認 → 即刻開跑</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
