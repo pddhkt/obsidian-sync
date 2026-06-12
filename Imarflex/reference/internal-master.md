@@ -14,6 +14,7 @@
 
 ## 目錄
 
+0. Client background(公開資料,已 fact-check)🆕
 1. 戰略 frame(品牌 4 維度)
 2. Funnel section(6 階段 + iframe demo)🆕
 3. Stack 決定(完整版)
@@ -30,6 +31,31 @@
 14. 風險 + 假設
 15. Add-on 處理(connection to 獨立 doc)🆕
 16. Open Questions(等你答)
+
+---
+
+## 0. Client Background(公開資料,已 fact-check)🆕
+
+> 來源:[[external-research-imarflex]](2026-06-12 multi-agent web fact-check pass)。
+> 全部係公開 source — 落 pitch 前唔使再 verify,但 brand 口徑(尤其 heritage 字眼)落 deliverable 前同 client 過一次。
+
+**品牌:**
+
+- 日本品牌,**1973 年大阪成立**,parent 係 Osaka Imanishi Metal Industry Co., Ltd.(大阪今西金屬工業)— 官方品牌故事頁原文證實。⚠️ 「1956 年大阪工坊」係 LLM hallucination,永遠唔好用(見 [[imarflex-founding-year-unverified]])
+- 品牌哲學(官方口徑):匠人精神、所有產品由工程師監督生產
+- 1980s 香港引入**電子瓦罉**(起家品類)+ 自稱第一個將**微波爐**帶入香港嘅品牌
+
+**香港實體(我哋實際對口嘅生意):**
+
+- 香港總經銷:**萬利嘉實業有限公司(MANY PROFIT INDUSTRIAL LIMITED**,CR no. 0522967**)** — 1992 開業,1995 註冊,2010 正式成為日本 Imarflex 總經銷。⚠️ 唔係「宏利嘉」/「Wan Lee Ka」(舊 draft 嘅假資料,已更正)
+- Service centre:葵涌禾塘咀街 31-39 號 香港毛紡工業大廈 2102 室
+- 保養:Imarflex 品牌產品 2 年(代理嘅其他品牌 1 年)
+- 🟠 OPEN:萬利嘉 vs Imarflex Japan 嘅關係 — 影響 brand asset 使用權,要問 client
+
+**渠道現狀:**
+
+- Retail footprint 強:Fortress、Pricerite、HKTVmall(多個 reseller)、ElecBoy、Built-In Pro、Sunrich、日本城等(全部 2026-06 verify 過有貨)
+- 自家網店 imarflex.net 行 Shopline,~200 SKUs — 即係 DTC site 要同 retail channel 分工,避免價格戰
 
 ---
 
