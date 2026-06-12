@@ -32,7 +32,7 @@ tags:
 - ✅ **Google Trends Related Rising 2026-05-27 retest「panasonic 電飯煲 內膽」Breakout** — 用家主動搵 inner-pot replacement,**直接 validate Imarflex parts-finder 做 DTC moat**(唔再係 vanity feature,係 real intent 對應)→ Q2 content 必有 1 篇「邊度買 Imarflex 電飯煲內膽」FAQ + PDP parts-finder banner 升級。 Source: [trends.google.com/explore?q=panasonic 電飯煲 內膽&geo=HK&date=today 1-m](https://trends.google.com/trends/explore?geo=HK&q=panasonic+%E9%9B%BB%E9%A3%AF%E7%85%B2+%E5%85%A7+%E8%86%BD&date=today%201-m)
 - ✅ **Google Trends Related Rising IH category 競品 5+ 同時 Breakout 過去 30 日:cuckoo、美的、松井、tefal、小米 IH、home deluxe**(全部 Breakout 或 +60%+)→ HK IH 細分今季多競品同時押,**confirms 我哋 Q2 唔押 IH price war 嘅決定**;改打 technical depth + DTC moat(2 年保養 + parts-finder)+ 中容量 gap
 
-> 詳細 source-by-source audit trail 喺 [[2026-q2-market-scan-demo]]。Google Trends 2026-05-27 retry 成功(Playwright CLI;working access pattern 已寫入 `imarflex-market-scan` skill);HKTVmall SPA、小紅書 login wall 仲影響其他 source 嘅量化 %。
+> 詳細 source-by-source audit trail 喺 [[2026-q2-market-scan-demo]]。Google Trends 2026-05-27 retry 成功(Playwright CLI;working access pattern 已寫入 `imarflex-research/market-scan` skill);HKTVmall SPA、小紅書 login wall 仲影響其他 source 嘅量化 %。
 
 ## 今季要推邊個 category?
 

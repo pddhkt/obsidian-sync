@@ -13,14 +13,14 @@ images:
 generation: deterministic-composite
 generator: scripts/generate_logo_usage_images.py
 source-logos:
-  - "Brand Guideline/Logos/imarflex-mark.png"
-  - "Brand Guideline/Logos/imarflex-wordmark.png"
+  - "brand/guideline/logos/imarflex-mark.png"
+  - "brand/guideline/logos/imarflex-wordmark.png"
 ---
 
 # Logo Usage / Logo 使用規則
 
 > 🟡 In-progress — usage rules + reference images 已完成。仲等設計師交 vector master(SVG / ICO / PDF)先可以收尾 `status: final`。
-> Source logos: `Brand Guideline/Logos/imarflex-mark.png` + `imarflex-wordmark.png` ([[../Brand Guideline/Logos/README|asset list]]).
+> Source logos: `brand/guideline/logos/imarflex-mark.png` + `imarflex-wordmark.png` ([[../brand/guideline/logos/README|asset list]]).
 
 ## Logo variants
 
@@ -91,8 +91,8 @@ source-logos:
 
 | File | Notes |
 |---|---|
-| `Brand Guideline/Logos/imarflex-mark.png` | Symbol PNG (1024px, designer-provided) |
-| `Brand Guideline/Logos/imarflex-wordmark.png` | Wordmark PNG (1849x851, designer-provided) |
+| `brand/guideline/logos/imarflex-mark.png` | Symbol PNG (1024px, designer-provided) |
+| `brand/guideline/logos/imarflex-wordmark.png` | Wordmark PNG (1849x851, designer-provided) |
 | `assets/visual-logo-usage/imarflex-favicon.ico` | Multi-size ICO: 16 / 32 / 48 / 64 / 128 / 256 px. Heritage Blue rounded-square + mono-white symbol. Production-ready. |
 
 ### ⚠️ Stand-in (auto-generated, designer must replace)
@@ -123,9 +123,9 @@ The designer's final handoff should still include:
 - [ ] `imarflex-logo-master.pdf` — CMYK with ICC profile for press
 - [ ] (Optional) `imarflex-logo.eps` — for legacy print vendors
 
-When the real vectors land, drop them into `Brand Guideline/Logos/` and re-run `scripts/generate_logo_usage_images.py`. The script detects the auto-generated banner (`<!-- AUTO-GENERATED raster-embedded SVG... -->`) — files without it are left untouched.
+When the real vectors land, drop them into `brand/guideline/logos/` and re-run `scripts/generate_logo_usage_images.py`. The script detects the auto-generated banner (`<!-- AUTO-GENERATED raster-embedded SVG... -->`) — files without it are left untouched.
 
-→ Master logo source assets live at [[../Brand Guideline/Logos/README|Brand Guideline/Logos/]]
+→ Master logo source assets live at [[../brand/guideline/logos/README|brand/guideline/logos/]]
 
 ## Image generation
 
@@ -143,6 +143,6 @@ uv tool run --with pillow python3 Imarflex/brand/scripts/generate_logo_usage_ima
 
 ## Reference
 
-- [[../Brand Guideline/Logos/README|Brand Guideline/Logos]] — master logo assets
+- [[../brand/guideline/logos/README|brand/guideline/logos]] — master logo assets
 - [[visual-color-palette]] — palette tokens used in reference images
 - [[../reference/internal-master#10-brand-guidelines]]

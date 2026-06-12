@@ -532,7 +532,7 @@ Frontend 要處理:
 - [[content-production]]
 - [[../brand/content-blog-direction]]
 - [[../brand/content-pillars]]
-- [[../blog/samples/_readme]]
+- [[../online-marketing/blog/samples/_readme]]
 - [[posthog-analytics]]
 - [[accessibility]]
 

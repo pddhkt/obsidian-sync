@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Cool Air diagonal airflow route">
+  <defs>
+    <linearGradient id="airDiag" x1="80" y1="300" x2="560" y2="72" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BFD7E6" stop-opacity="0.18"/>
+      <stop offset="0.52" stop-color="#55B6E8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#1E9BDE" stop-opacity="0.8"/>
+    </linearGradient>
+    <marker id="diagArrow" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M4 4 L19 11 L4 18 Z" fill="#1E9BDE"/>
+    </marker>
+  </defs>
+  <path d="M92 292 C212 238 290 178 398 128 C462 98 514 78 566 62" fill="none" stroke="url(#airDiag)" stroke-width="32" stroke-linecap="round" marker-end="url(#diagArrow)"/>
+  <path d="M112 286 C236 226 322 168 544 70" fill="none" stroke="#F7F6F2" stroke-opacity="0.45" stroke-width="6" stroke-linecap="round"/>
+</svg>

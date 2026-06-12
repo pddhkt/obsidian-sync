@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-HK"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IFQ-22R carousel — HTML preview</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin:0; font-family: "Noto Sans CJK HK","Noto Sans",sans-serif;
+         background:#f2f3f5; color:#3C3F42; padding:32px; }
+  h1 { font-size:20px; margin:0 0 4px; color:#1E4B7A; }
+  p.note { margin:0 0 24px; font-size:13px; color:#666; }
+  code { background:#e4e7ea; padding:2px 6px; border-radius:5px; font-size:12px; }
+  h2 { font-size:14px; color:#1E4B7A; margin:28px 0 12px; border-bottom:1px solid #d8dadd; padding-bottom:6px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:18px; }
+  figure { margin:0; background:#fff; border:1px solid #e0e2e5; border-radius:12px; overflow:hidden; }
+  figure img { width:100%; display:block; }
+  figcaption { font-size:12px; padding:8px 12px; color:#555; }
+  .hint { margin-top:32px; font-size:13px; line-height:1.7; background:#fff; border:1px solid #e0e2e5;
+          border-radius:12px; padding:16px 20px; }
+</style></head>
+<body>
+  <h1>IFQ-22R carousel — HTML preview</h1>
+  <p class="note">Refresh this page (<code>Ctrl/Cmd+R</code>) after re-running the renderer to see changes.</p>
+
+  <h2>HTML overlay only (placeholder background)</h2>
+  <div class="grid">
+    <figure><img src="ifq22r-01-hook-preview.png"><figcaption>01 · hook</figcaption></figure>
+    <figure><img src="ifq22r-02-vs-fan-preview.png"><figcaption>02 · vs fan</figcaption></figure>
+    <figure><img src="ifq22r-03-spec-preview.png"><figcaption>03 · spec chips</figcaption></figure>
+    <figure><img src="ifq22r-04-360-uses-preview.png"><figcaption>04 · 360 / 3 uses</figcaption></figure>
+    <figure><img src="ifq22r-05-detach-preview.png"><figcaption>05 · detach</figcaption></figure>
+    <figure><img src="ifq22r-06-cta-preview.png"><figcaption>06 · CTA</figcaption></figure>
+  </div>
+
+  <h2>Composited over a real AI photo (example)</h2>
+  <div class="grid">
+    <figure><img src="ifq22r-01-hook-final.png"><figcaption>01 · hook (final = HTML over AI plate)</figcaption></figure>
+  </div>
+
+  <div class="hint">
+    <b>See it / change it yourself</b><br>
+    1. <b>Just look:</b> open this file — <code>brand/templates/carousel/_proof/index.html</code> — in a browser.<br>
+    2. <b>Live-tweak one card:</b> open e.g. <code>_proof/ifq22r-06-cta.html</code> directly (self-contained; use the browser inspector to try CSS).<br>
+    3. <b>Edit copy:</b> the <code>FRAMES</code> array in <code>render.mjs</code>. <b>Edit colours/fonts/sizes:</b> <code>tokens.css</code>.<br>
+    4. <b>Re-render</b> from <code>brand/templates/carousel/</code>:
+       <code>PREVIEW=1 node render.mjs</code> (all, placeholder) ·
+       <code>PREVIEW=1 node render.mjs 03 06</code> (some) ·
+       <code>node render.mjs</code> (composite over real plates).<br>
+    Then refresh this page.
+  </div>
+</body></html>

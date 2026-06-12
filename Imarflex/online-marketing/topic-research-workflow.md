@@ -27,7 +27,7 @@ Topic research 目標唔係「諗多啲題目」,而係搵到同 Imarflex 生意
 | Amazon JP / TW bestseller | 領先指標(日系家電通常 JP / TW 先紅 6-12 個月) | Quarterly |
 | Industry report(GfK / Euromonitor / HKPC 等) | 大盤 category sizing(optional / paid) | Quarterly |
 
-詳細 playbook 同 output template 喺 `imarflex-market-scan` skill;用 `imarflex-market-scout` agent 走一次完成 quarterly full scan / monthly refresh。
+詳細 playbook 同 output template 喺 `imarflex-research/market-scan` skill;用 `imarflex-market-scout` agent 走一次完成 quarterly full scan / monthly refresh。
 
 > [!important]
 > Step 0 同 Step 2 唔好混淆。

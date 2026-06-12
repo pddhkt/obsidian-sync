@@ -39,7 +39,7 @@
 
 ### 我哋交付咩
 
-**設計系統 + Brand Guideline**
+**設計系統 + brand/guideline**
 - Logo usage、color palette、typography
 - Photography style guide(產品 + 生活)
 - Iconography、spacing system

@@ -2,8 +2,8 @@
 type: sales-content-post
 content-level: campaign
 status: drafting
-publish-month: 2026-06
-publish-week:
+publish-month: 2026-07
+publish-week: W1
 planned-date:
 published-date:
 channel:
@@ -18,13 +18,13 @@ post-angle: 循環扇點揀 — 前網罩易拆易洗 + DC靜音 + 全方位送�
 product-category: air-circulator-fan
 hero-sku: IFQ-22R
 source-brief: signal-scout 2026-06-04 (in-thread brief)
-destination: IFQ-22R PDP / 循環扇 collection / WhatsApp
-primary-cta: 睇 IFQ-22R 詳情 + WhatsApp 揀型號
+destination: IFQ-22R PDP / 循環扇 collection
+primary-cta: 睇 IFQ-22R 詳情
 ad-support: none
 ad_candidate: true
 ad-budget-hkd:
 published-url:
-utm-campaign: 2026-06-ifq22r-circulator
+utm-campaign: 2026-07-ifq22r-circulator
 topic-score: 25/30
 tags:
   - online-marketing
@@ -49,7 +49,7 @@ tags:
 循環扇點揀 2026?DC靜音、全方位送風、前網罩易拆易洗 3 大重點
 
 **Meta description（~150 字）**
-循環扇同普通風扇有咩分別?2026 點揀循環扇,睇 3 樣就夠:DC 馬達相對更靜更慳電、全方位送風帶起室內對流、前網罩易拆易洗。Imarflex 50 年廚電經驗,逐項拆解,順帶推薦『極・龍卷』IFQ-22R 8吋遙控全方位循環扇,夏天降溫、雨季對流一年四季都用得著。
+循環扇同普通風扇有咩分別?2026 點揀循環扇,睇 3 樣就夠:DC 馬達相對更靜更慳電、全方位送風帶起室內對流、前網罩易拆易洗。Imarflex 多年廚電經驗,逐項拆解,順帶推薦『極・龍卷』IFQ-22R 8吋遙控全方位循環扇,夏天降溫、雨季對流一年四季都用得著。
 
 **URL slug**
 `how-to-choose-air-circulator-fan-2026-dc-omnidirectional-detachable`
@@ -63,14 +63,14 @@ tags:
 > ✍️ 作者:【待客戶確認:作者姓名 / 職銜】　🔎 審稿:【待客戶確認:產品 / 技術審稿人】
 > 📅 發佈:【待客戶確認:出版日期】　最後更新:2026-06-05　下次檢視:2026-09(換季前)
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-blog-hero.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-blog-hero.png]]
 
 夏天開緊冷氣,但成日覺得「淨係涼一邊」?房尾位永遠悶熱?
 問題好多時唔係冷氣唔夠力,而係**室內空氣冇對流** —— 冷氣困喺一忽,郁唔到去其他位。
 
 循環扇就係為咗解決呢件事。佢同普通風扇唔同,**唔係吹你,係吹郁成屋嘅空氣**。但市面型號咁多,DC、全方位、易拆清潔…… 啲字聽落都似,實際買嗰陣應該睇咩?
 
-呢篇用 Imarflex 50 年廚電經驗(由大阪工坊,到香港廚房),幫你拆返清楚。
+呢篇結合 Imarflex 喺家電上嘅經驗,幫你拆返清楚。
 
 ## TL;DR(冇時間就睇呢段)
 
@@ -82,7 +82,7 @@ tags:
 
 ## 循環扇 vs 普通風扇,到底有咩分別?
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-blog-airflow-diagram.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-blog-airflow-diagram.png]]
 
 一句講晒:**普通風扇吹「你」,循環扇吹「成間屋」。**
 
@@ -111,7 +111,7 @@ tags:
 
 **360 度全方位對流 + 左右自動搖擺送風**可以將氣流送去房嘅唔同角落 —— 上面焗熱空氣、下面冷氣積聚位,都郁得起,唔再淨係涼一邊。
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame4-omnidirectional.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-ig-frame4-omnidirectional.png]]
 
 ### 重點③｜循環扇要點清潔?點解要揀易拆前網罩?
 
@@ -123,7 +123,7 @@ Imarflex 嘅『極・龍卷』IFQ-22R 用**易拆式前網罩設計**:前網罩�
 
 ## 推薦:『極・龍卷』IFQ-22R 8吋 DC 遙控全方位循環扇
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-blog-detach-proof.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-blog-detach-proof.png]]
 
 上面 3 個重點,IFQ-22R 逐項對得返:
 
@@ -195,7 +195,7 @@ Imarflex 嘅『極・龍卷』IFQ-22R 用**易拆式前網罩設計**:前網罩�
 
 『極・龍卷』IFQ-22R 8吋遙控全方位循環扇,逐項對應 + 連遙控 + 2 年保養。一年四季都用得著:夏天幫冷氣均勻、雨季幫對流。
 
-揀型號唔肯定?WhatsApp 9140 6664 問我哋,免費無壓力 👉 詳情見 bio link。
+想睇產品功能同規格?詳情見 bio link。
 
 #伊瑪牌 #Imarflex #循環扇 #循環扇推薦 #DC循環扇 #靜音風扇 #香港家居 #龍卷 #IFQ22R
 
@@ -208,7 +208,7 @@ Imarflex 嘅『極・龍卷』IFQ-22R 用**易拆式前網罩設計**:前網罩�
 | **3 · DC 靜音** | DC 馬達 | 相對 AC 更靜、更慳電,啱長開 |
 | **4 · 全方位送風** | 360° 全方位對流 | 左右搖擺,氣流去到房尾 |
 | **5 · 前網罩易拆易洗** | 前網罩快拆 | 前網罩拆得出,抹淨再裝返 |
-| **6 · Soft CTA** | IFQ-22R | 連遙控 + 2 年保養 · WhatsApp 問我哋 |
+| **6 · Soft CTA** | IFQ-22R | 連遙控 + 2 年保養 · 睇詳情 |
 
 ### Alt text
 
@@ -216,12 +216,12 @@ Imarflex 嘅『極・龍卷』IFQ-22R 用**易拆式前網罩設計**:前網罩�
 
 ### Visual assets
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame1-hook.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame2-vs-fan.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame3-dc-quiet.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame4-omnidirectional.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame5-detach.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-ig-frame6-cta.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-ig-frame1-hook.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-ig-frame2-vs-fan.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-ig-frame3-dc-quiet.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-ig-frame4-omnidirectional.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-ig-frame5-detach.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-ig-frame6-cta.png|240]]
 
 ### GPT-image prompts（6 frames）
 
@@ -264,11 +264,11 @@ A warm closing product hero of the Imarflex IFQ-22R circulator fully assembled w
 對應呢 3 點,可以睇下我哋『極・龍卷』IFQ-22R 8吋 DC 遙控全方位循環扇:連遙控 + 2 年保養。
 
 📖 完整「循環扇點揀」攻略:【待客戶確認:blog URL】
-💬 揀型號唔肯定?WhatsApp 9140 6664,我哋幫你揀,免費無壓力。
+👉 睇 IFQ-22R 詳情:【待客戶確認:IFQ-22R PDP】
 
 ### GPT-image prompt（`ifq22r-fb-lifestyle`）
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-fb-lifestyle.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-fb-lifestyle.png]]
 
 A natural lifestyle still of the Imarflex Tornado IFQ-22R 8-inch air circulator fan (white body with wood-tone support arms and a rounded white touch-button base) placed on the floor of a real Hong Kong living room near a sofa, angled to push air across the room, front 3/4 angle, photographed in soft natural afternoon window light, the room grounded in Rice White `#F7F6F2` walls with Clay Beige `#E7D7C1` and Steam Grey `#DCE1E6` soft furnishings and a faint Cool Air `#BFD7E6` cast suggesting cool circulated air, lived-in but tidy HK home (compact space, tiled floor, a folded throw, a glass of cold water), no people or only a softly out-of-focus hand, color grading lifted from the Imarflex palette (Heritage Blue `#1E4B7A`, Rice White `#F7F6F2`, Clay Beige `#E7D7C1`, Steam Grey `#DCE1E6`, Soft Charcoal `#3C3F42`, Cool Air `#BFD7E6`), warm everyday Japanese-craft mood, 4:5 portrait crop suitable for Facebook feed. Avoid: stock-model staging, HDR, pure black background, saturated reds, Western Christmas/family clichés, fictional brand badges, distorted grille, extra blades.
 
@@ -280,7 +280,7 @@ A natural lifestyle still of the Imarflex Tornado IFQ-22R 8-inch air circulator 
 
 部循環扇用咗成季冇洗?開機有陣味、風又弱?🌀
 唔係壞,係要洗 —— 而且要揀**前網拆得出**嗰啲。睇我哋前網罩快拆 IFQ-22R,抹淨裝返,開機 DC 靜音 + 360° 全方位對流 + 左右搖擺。一年四季都用得著。
-揀型號?WhatsApp 9140 6664 問我哋。
+睇 IFQ-22R 詳情,了解功能同規格。
 #伊瑪牌 #Imarflex #循環扇 #DC循環扇 #IFQ22R #香港家居
 
 ### Shot-by-shot table
@@ -293,7 +293,7 @@ A natural lifestyle still of the Imarflex Tornado IFQ-22R 8-inch air circulator 
 | 0:10–0:14 | 抹乾,順手裝返,扣返前網 | 「抹乾,裝返,搞掂。」 | 組返超簡單 |
 | 0:14–0:20 | 開機,鏡頭擺一張紙巾喺前面飄動;扇頭左右搖擺、360° 對流 | 「開機 DC 馬達 —— 相對 AC 更靜、更慳電。360° 全方位對流、左右搖擺,氣流去到房尾。」 | DC 靜音 · 全方位送風 |
 | 0:20–0:26 | 產品 hero + 遙控入鏡 | 「連遙控,2 年保養。一年四季用得著。」 | IFQ-22R · 2 年保養 |
-| 0:26–0:30 | End card:產品 + WhatsApp | 「揀型號?WhatsApp 問我哋。」 | WhatsApp 9140 6664 |
+| 0:26–0:30 | End card:產品 + 詳情 | 「睇 IFQ-22R 詳情。」 | IFQ-22R · 睇詳情 |
 
 ### Audio / text-overlay notes
 - 音樂:輕快 lo-fi / 日系 clean beat,低調,唔搶旁白。
@@ -319,7 +319,7 @@ A natural lifestyle still of the Imarflex Tornado IFQ-22R 8-inch air circulator 
 
 ### GPT-image prompt（key frame — Frame 4 detach,9:16 · `ifq22r-story-detach`）
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/ifq22r-story-detach.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/ifq22r-story-detach.png|240]]
 
 A vertical hero still of the Imarflex Tornado IFQ-22R 8-inch circulator fan (white body, wood-tone support arms) shown mid-detach — the round front grille lifted slightly off the body by a hand to reveal the blade, front 3/4 angle, photographed in soft natural window light, set against a Rice White `#F7F6F2` background with a Clay Beige `#E7D7C1` surface and a folded Steam Grey `#DCE1E6` towel, large clean negative space at top and bottom for Story stickers and link, color grading lifted from the Imarflex palette (Heritage Blue `#1E4B7A`, Rice White `#F7F6F2`, Clay Beige `#E7D7C1`, Steam Grey `#DCE1E6`, Soft Charcoal `#3C3F42`, Cool Air `#BFD7E6`), tidy reassuring Japanese-craft mood, 9:16 vertical crop suitable for Instagram Story. Avoid: stock-model staging, HDR, pure black background, saturated reds, Western family clichés, fictional brand badges, distorted grille, extra blades.
 
@@ -381,7 +381,7 @@ A vertical hero still of the Imarflex Tornado IFQ-22R 8-inch circulator fan (whi
       "inLanguage": "zh-HK",
       "author": { "@type": "Person", "name": "{{作者姓名}}" },
       "reviewedBy": { "@type": "Person", "name": "{{審稿人}}" },
-      "publisher": { "@type": "Organization", "name": "Imarflex 伊瑪牌", "foundingDate": "1973" },
+      "publisher": { "@type": "Organization", "name": "Imarflex 伊瑪牌" },
       "datePublished": "{{出版日期}}",
       "dateModified": "2026-06-05"
     },
@@ -422,7 +422,7 @@ A vertical hero still of the Imarflex Tornado IFQ-22R 8-inch circulator fan (whi
 - LIHKG / Reddit / 論壇 source: **Pass** —— 唯一 outbound 係消委會(whitelist),kit 明寫「無論壇引用」。
 - Fabricated citation: **Pass** —— 消委會連結係 generic「睇多個 reference」指引,冇拎嚟撐任何具體數字,唔算捏造引用。
 - Fabricated specs / prices: **Pass** —— 所有 dB / W / 售價 全部留喺【待客戶確認】slot,冇被靜靜填假值;風速 4 段、尺寸 8 吋、名稱「極・龍卷」均據 POP card 核實。2 年保養屬保養聲明,出街前向 client 核(見 fix)。
-- Founding year(1973 not 1956): **Pass** —— 全文無「1956」;只用「50 年廚電經驗」(對 1973 起計 53 年嘅 rounded qualitative,可接受)。
+- Founding year / 年資: **待客戶確認** —— 全文無「1956」;原「50 年廚電經驗」字眼已抽起(年份 1973 屬內部研究、未經 client 核實),JSON-LD `foundingDate` 亦已移除。成立年份 / 起源地需 client 確認後先可寫返具體數字。
 - 誇張比較級 / 對手貶低: **Pass** —— 「更靜更慳電」一律綁「相對 AC」,無「最靜」「無敵」類字眼,無點名踩對手。
 - False schema fact: **Pass(N/A)** —— kit 內冇任何 structured data,故無假 structured fact 風險。
 

@@ -11,7 +11,7 @@ tags:
 
 # 2026 Online-Marketing Strategy Benchmark
 
-Snapshot of how our 7-step Imarflex workflow compares to 2025-2026 industry best practice. Source: dedicated research agent run on 2026-05-27, citing 16 reputable industry articles. Used as the basis for adding `imarflex-aeo` skill + reframing `imarflex-business-focus` priorities.
+Snapshot of how our 7-step Imarflex workflow compares to 2025-2026 industry best practice. Source: dedicated research agent run on 2026-05-27, citing 16 reputable industry articles. Used as the basis for adding `imarflex-aeo` skill + reframing `imarflex-research/business-focus` priorities.
 
 > [!important] How to read this doc
 > This is a **point-in-time benchmark**. Industry strategy shifts — re-run when AI-search behaviour, HK platform landscape, or DTC playbook materially changes (target: every 6 months).

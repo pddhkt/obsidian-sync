@@ -2,8 +2,8 @@
 type: sales-content-post
 content-level: campaign
 status: drafting
-publish-month: 2026-06
-publish-week:
+publish-month: 2026-07
+publish-week: W2
 planned-date:
 published-date:
 channel:
@@ -18,13 +18,13 @@ post-angle: 冷風機 vs 冷氣 — 誠實期望管理 + 2 年保養 + 濾網保
 product-category: evaporative-cooler
 hero-sku: ICF-140R
 source-brief: signal-scout 2026-06-04 (in-thread brief)
-destination: warranty-registration / ICF-140R PDP / parts-finder / WhatsApp
+destination: warranty-registration / ICF-140R PDP / parts-finder
 primary-cta: 登記 2 年保養
 ad-support: none
 ad_candidate: false
 ad-budget-hkd:
 published-url:
-utm-campaign: 2026-06-icf140r-trust
+utm-campaign: 2026-07-icf140r-trust
 topic-score: 26/30
 aeo_score: 10/15
 aeo_audited: 2026-06-04
@@ -69,7 +69,7 @@ tags:
 
 ---
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-blog-hero-window.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-blog-hero-window.png]]
 
 # 冷風機 vs 冷氣:邊種情況先啱用?原理、降溫期望同保養(2026)
 
@@ -96,7 +96,7 @@ tags:
 2. 風扇將乾燥空氣抽過濕水簾;
 3. 空氣經過水簾時,水分蒸發吸熱,**吹出嚟嘅風就會比室溫涼一截**。
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-blog-evap-principle.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-blog-evap-principle.png]]
 
 咁同冷氣有咩分別?
 
@@ -162,7 +162,7 @@ tags:
 
 冷風機因為涉及水,**保養比一般風扇更加重要**——打理得好,涼風先乾淨,部機先用得長久。
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-blog-filter-clean.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-blog-filter-clean.png]]
 
 ### 換水
 
@@ -246,7 +246,7 @@ ICF-140R 跟 **2 年原廠保養**。買咗之後,記得花 1 分鐘登記,出�
 ✅ 降溫公開參考:加水約 4–6°C、加冰約 8–10°C(視乎環境)
 
 伊瑪牌 ICF-140R｜14L 水箱・3 段風速・擺動・萬向輪・遙控・2 年保養。
-買咗第一件事:登記 2 年保養(profile link)。屋企邊個位想局部降溫?WhatsApp 9140 6664 問我哋。
+買咗第一件事:登記 2 年保養(profile link)。想知屋企邊個位啱唔啱用?先睇完整指南。
 
 #伊瑪牌 #Imarflex #冷風機 #冷風機vs冷氣 #局部降溫 #香港家居
 
@@ -265,11 +265,11 @@ ICF-140R 跟 **2 年原廠保養**。買咗之後,記得花 1 分鐘登記,出�
 
 ### Visual assets
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame1-hook.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame2-principle.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame3-checklist.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame4-range-spec.png|240]]
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-ig-frame5-cta.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-ig-frame1-hook.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-ig-frame2-principle.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-ig-frame3-checklist.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-ig-frame4-range-spec.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-ig-frame5-cta.png|240]]
 
 ### GPT-image prompts（5 個,逐 frame）
 
@@ -311,13 +311,13 @@ A warm closing scene: the Imarflex ICF-140R cooling fan (or faithful stand-in) s
 
 📖 完整原理 + 啱用情況 + 保養教學:【待客戶確認:blog URL】
 ✅ 買咗第一件事——登記 2 年保養:【內部連結:warranty-registration】
-💬 屋企邊個位想局部降溫?WhatsApp 9140 6664,我哋幫你睇啱唔啱用。
+📌 屋企邊個位想局部降溫?先讀全文睇啱唔啱用。
 
 【待客戶確認:優惠】
 
 ### GPT-image prompt — `icf140r-fb-hero`
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-fb-hero.png]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-fb-hero.png]]
 
 A clean horizontal hero of a real Imarflex ICF-140R portable evaporative cooling fan (or faithful stand-in: a slim white-and-blue upright tower cooler with visible 14L water tank and caster wheels) positioned beside an open window in a ventilated Hong Kong personal corner — a small writing desk with a notebook and a cup of water — 3/4 angle, photographed in soft natural daylight with a Steam Grey `#DCE1E6` sheer curtain lifting gently in the breeze to signal ventilation, set against a Rice White `#F7F6F2` wall with Heritage Blue `#1E4B7A` and Cool Air `#BFD7E6` accents, honest reassuring editorial mood, generous left-side negative space, color grading lifted from the Imarflex palette, 1.91:1 landscape crop suitable for a Facebook link post. Avoid: stock-model staging, HDR, pure black background, saturated reds, air-conditioner units, sealed full-living-room cooling scenes, frost/ice-blast graphics, Western Christmas/family clichés, digital text overlays.
 
@@ -326,7 +326,7 @@ A clean horizontal hero of a real Imarflex ICF-140R portable evaporative cooling
 ## 4. REEL（腳本 + 字幕,15–30s）
 
 ### Caption（可直接 paste）
-冷風機 ≠ 冷氣,買之前睇呢條 👀 局部降溫要通風、較乾爽先夠涼。睇完記得登記 2 年保養 👉 profile link｜WhatsApp 9140 6664
+冷風機 ≠ 冷氣,買之前睇呢條 👀 局部降溫要通風、較乾爽先夠涼。睇完記得登記 2 年保養 👉 profile link
 #伊瑪牌 #Imarflex #冷風機 #冷風機vs冷氣 #局部降溫
 
 ### Shot-by-shot
@@ -356,7 +356,7 @@ A clean horizontal hero of a real Imarflex ICF-140R portable evaporative cooling
 
 ### GPT-image prompt — `icf140r-story-9x16`
 
-![[online-marketing/assets/2026-07-go-live-kits/generated/icf140r-story-9x16.png|240]]
+![[online-marketing/sales-content/go-live-kits/assets/generated/icf140r-story-9x16.png|240]]
 
 A vertical lifestyle still of a real Imarflex ICF-140R portable evaporative cooling fan (or faithful stand-in: slim white-and-blue upright tower cooler with 14L tank and caster wheels) beside an open window in a personal Hong Kong corner, 3/4 angle, photographed in soft natural daylight with a Steam Grey `#DCE1E6` sheer curtain lifting in a gentle breeze to signal ventilation, a Clay Beige `#E7D7C1` cup of iced water on a small wooden stool nearby, Rice White `#F7F6F2` wall with Heritage Blue `#1E4B7A` and Cool Air `#BFD7E6` accents, large clean negative space at top and bottom for story stickers and poll, calm honest mood, color grading from the Imarflex palette, 9:16 vertical crop suitable for Instagram / Facebook Story. Avoid: stock-model staging, HDR, pure black background, saturated reds, air-conditioner units, sealed living-room scenes, frost/ice-blast graphics, Western family clichés, digital text overlays.
 
@@ -412,7 +412,7 @@ A vertical lifestyle still of a real Imarflex ICF-140R portable evaporative cool
       "inLanguage": "zh-HK",
       "author": { "@type": "Person", "name": "{{作者姓名}}" },
       "reviewedBy": { "@type": "Person", "name": "{{審稿人}}" },
-      "publisher": { "@type": "Organization", "name": "Imarflex 伊瑪牌", "foundingDate": "1973" },
+      "publisher": { "@type": "Organization", "name": "Imarflex 伊瑪牌" },
       "datePublished": "{{出版日期}}",
       "dateModified": "2026-06-05"
     },

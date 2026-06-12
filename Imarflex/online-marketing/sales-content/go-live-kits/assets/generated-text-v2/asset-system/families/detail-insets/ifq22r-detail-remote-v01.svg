@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="IFQ remote detail inset">
+  <rect x="10" y="10" width="300" height="200" rx="22" fill="#F7F6F2" stroke="#BFD7E6" stroke-width="4"/>
+  <rect x="130" y="42" width="60" height="136" rx="24" fill="#FFFFFF" stroke="#1E4B7A" stroke-width="5"/>
+  <circle cx="160" cy="76" r="9" fill="#1E4B7A"/>
+  <path d="M145 106 H175 M145 128 H175 M145 150 H175" stroke="#1E4B7A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M84 72 C58 104 58 148 84 180 M236 72 C262 104 262 148 236 180" fill="none" stroke="#BFD7E6" stroke-width="10" stroke-linecap="round"/>
+</svg>

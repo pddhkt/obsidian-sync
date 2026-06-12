@@ -9,6 +9,9 @@ tags:
 
 # Research Inbox
 
+> [!note] Versioning
+> Capture files 放入 `YYYY-MM/` month subfolder(例:`2026-05/2026-05-30-ih-category-sweep.md`),冇就開新。
+
 放未整理嘅 raw marketing / SEO / customer / competitor signals。
 
 ## What goes here

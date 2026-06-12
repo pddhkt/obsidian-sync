@@ -1,0 +1,36 @@
+/* Imarflex carousel design tokens — single source of truth.
+   Mirrors brand/visual-color-palette.md + brand/visual-typography.md.
+   The HTML renderer AND the design-system docs read these same values. */
+:root {
+  /* ---- Palette ---- */
+  --heritage-blue: #1E4B7A;
+  --rice-white:    #F7F6F2;
+  --clay-beige:    #E7D7C1;
+  --steam-grey:    #DCE1E6;
+  --soft-charcoal: #3C3F42;
+  --cool-air:      #BFD7E6;
+
+  /* ---- Type families ---- */
+  /* zh-HK: Noto Sans CJK HK (思源黑體). latin/numerals: Inter, Noto Sans fallback. */
+  --font-zh: "Noto Sans CJK HK", "Noto Sans HK", "Noto Sans", sans-serif;
+  --font-latin: "Inter", "Noto Sans", sans-serif;
+
+  /* ---- Weights ---- */
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-bold:    700;
+
+  /* ---- Type scale (1080-base; rendered at 2048 = ~1.9x) ---- */
+  --fs-badge:    300px;  /* 01–06 frame number */
+  --fs-headline:  120px;
+  --fs-sub:        58px;
+  --fs-chip:       40px;
+  --fs-button:     46px;
+
+  --lh-zh: 1.25;
+
+  /* ---- Layout ---- */
+  --card: 2048px;        /* master render size */
+  --margin: 150px;       /* safe-area outer margin */
+  --radius: 28px;
+}

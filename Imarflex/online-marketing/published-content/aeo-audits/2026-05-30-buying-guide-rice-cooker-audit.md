@@ -1,7 +1,7 @@
 ---
 type: aeo-audit
 status: complete
-audited-file: ../../../blog/samples/buying-guide-rice-cooker-2026-ih-vs-pressure.md
+audited-file: ../../blog/samples/buying-guide-rice-cooker-2026-ih-vs-pressure.md
 audited-date: 2026-05-30
 auditor: imarflex-aeo-auditor
 stage: pitch

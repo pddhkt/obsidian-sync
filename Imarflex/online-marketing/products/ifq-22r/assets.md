@@ -46,14 +46,14 @@ GPT-image upscaled references are clarity aids for later generation. Use the ori
 
 Do not copy these unless they become approved evergreen product references.
 
-![[online-marketing/assets/2026-07-go-live-kits/reference/ifq22r-hero-original.jpg|300]]
-![[online-marketing/assets/2026-07-go-live-kits/reference/ifq22r-gallery-01.jpg|300]]
+![[online-marketing/sales-content/go-live-kits/assets/reference/ifq22r-hero-original.jpg|300]]
+![[online-marketing/sales-content/go-live-kits/assets/reference/ifq22r-gallery-01.jpg|300]]
 
 ## Current Campaign Generated Images
 
-- Reference folder: `online-marketing/assets/2026-07-go-live-kits/reference/`
-- First-pass generated stills: `online-marketing/assets/2026-07-go-live-kits/generated/`
-- Text v2 local proofs: `online-marketing/assets/2026-07-go-live-kits/generated-text-v2/exports/`
+- Reference folder: `online-marketing/sales-content/go-live-kits/assets/reference/`
+- First-pass generated stills: `online-marketing/sales-content/go-live-kits/assets/generated/`
+- Text v2 local proofs: `online-marketing/sales-content/go-live-kits/assets/generated-text-v2/exports/`
 
 ## Product-Shape Candidate Images
 

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="ICF washable filter detail inset">
+  <rect x="10" y="10" width="300" height="200" rx="22" fill="#F7F6F2" stroke="#BFD7E6" stroke-width="4"/>
+  <rect x="92" y="38" width="124" height="144" rx="10" fill="#FFFFFF" stroke="#1E4B7A" stroke-width="5"/>
+  <path d="M112 62 H196 M112 82 H196 M112 102 H196 M112 122 H196 M112 142 H196 M112 162 H196" stroke="#BFD7E6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M236 84 C220 106 256 120 236 146 C226 158 228 168 244 178" fill="none" stroke="#55B6E8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M64 92 C86 86 92 116 66 128 C44 138 42 164 68 172" fill="none" stroke="#55B6E8" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+</svg>

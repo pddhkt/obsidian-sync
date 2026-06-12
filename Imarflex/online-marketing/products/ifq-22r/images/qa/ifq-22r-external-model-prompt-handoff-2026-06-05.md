@@ -24,17 +24,17 @@ If the model accepts many image references, upload the full core pack for the fi
 | Ref ID | File                                                                                             | Role                                                                                  |
 | ------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
 | `P1`   | `online-marketing/products/ifq-22r/images/source/IFQ-22R.png`                                    | Main product truth: grille, wood cap, support arms, base, close product details       |
-| `P2`   | `online-marketing/assets/2026-07-go-live-kits/reference/ifq22r-hero-original.jpg`                | Full assembled product silhouette with whitespace                                     |
+| `P2`   | `online-marketing/sales-content/go-live-kits/assets/reference/ifq22r-hero-original.jpg`                | Full assembled product silhouette with whitespace                                     |
 | `P3-source` | `online-marketing/products/ifq-22r/images/source/ifq-22r-part-fan-blade-3pp.jpg` | Original standalone fan blade source image; geometry truth for exposed 3-blade part |
 | `P3`   | `online-marketing/products/ifq-22r/images/reference/ifq-22r-ref-fan-blade-3pp-gpt-upscaled.png`  | Clean/upscaled fan blade clarity reference; exposed blade must show exactly 3 broad white blades |
 | `P4-source` | `online-marketing/products/ifq-22r/images/source/ifq-22r-part-rear-grille.jpg` | Original standalone rear grille source image; geometry truth for rear grille / housing |
 | `P4`   | `online-marketing/products/ifq-22r/images/reference/ifq-22r-ref-rear-grille-gpt-upscaled.png`    | Clean/upscaled rear grille clarity reference                                          |
 | `P5-source` | `online-marketing/products/ifq-22r/images/source/ifq-22r-part-body-rear-side.jpg` | Original standalone body rear-side source image; geometry truth for rear-side body, yoke, support, base |
 | `P5`   | `online-marketing/products/ifq-22r/images/reference/ifq-22r-ref-body-rear-side-gpt-upscaled.png` | Clean/upscaled body rear-side clarity reference                                       |
-| `S1`   | `imarflex pitch deck/assets/social-carousel-fan-1.png`                                           | Social-card style reference: fan airflow, big number, blue graphics                   |
-| `S2`   | `imarflex pitch deck/assets/social-carousel-airfryer-2.png`                                      | Social-card style reference: collage, callouts, product module                        |
-| `S3`   | `imarflex pitch deck/assets/social-carousel-fan-2.png`                                           | Optional social-card style reference                                                  |
-| `R1`   | `online-marketing/assets/2026-07-go-live-kits/reference/ifq22r-gallery-01.jpg`                   | Optional remote/spec source; use only if the model can ignore existing text and price |
+| `S1`   | `pitch/deck/assets/social-carousel-fan-1.png`                                           | Social-card style reference: fan airflow, big number, blue graphics                   |
+| `S2`   | `pitch/deck/assets/social-carousel-airfryer-2.png`                                      | Social-card style reference: collage, callouts, product module                        |
+| `S3`   | `pitch/deck/assets/social-carousel-fan-2.png`                                           | Optional social-card style reference                                                  |
+| `R1`   | `online-marketing/sales-content/go-live-kits/assets/reference/ifq22r-gallery-01.jpg`                   | Optional remote/spec source; use only if the model can ignore existing text and price |
 
 If the model gets confused by too many references, use only the minimum references listed under each prompt.
 

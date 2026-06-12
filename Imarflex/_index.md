@@ -13,7 +13,7 @@ status: in-pitch
 
 ## 📊 Bases (database views)
 
-- 🗂️ [[_features.base|All Features]] — 32 features, grouped by decision (must-have / suggested / decide)
+- 🗂️ [[_features.base|All Features]] — 31 features, grouped by decision (must-have / suggested / decide)
 - 🟠 [[_addons.base|Add-on Catalogue]] — 9 add-ons with pricing & metrics
 - 🎨 [[brand/_deliverables.base|Brand Deliverables]] — 15 brand items (voice / visual / content)
 - ❓ [[_open-questions.base|Open Questions]] — what's blocking decisions
@@ -74,14 +74,16 @@ Imarflex/
 ├── _addons.base             ← add-on catalogue (DB view)
 ├── _open-questions.base     ← decisions to make
 │
-├── features/                ← ONE NODE PER FEATURE  (32 nodes)
-├── funnel/                  ← 6 funnel-stage notes (with mermaid)
+├── features/                ← ONE NODE PER FEATURE  (31 nodes)
 ├── brand/                   ← 15 brand deliverables + social-samples/
-├── online-marketing/        ← SEO research, content calendar, social workflow, reports
-├── Brand Guideline/         ← final assets: Logos / Color Palettes / Moodboard
-├── decisions/               ← open questions / decisions
-├── reference/               ← the 4 long-form docs
-└── canvas/                  ← visual feature ↔ funnel maps
+│   └── guideline/           ← final assets: logos / color-palettes / moodboard
+├── online-marketing/        ← SEO research, content calendar, social workflow,
+│   │                          sales-content, products, reports/YYYY-MM
+│   ├── blog/                ← sample blog posts
+│   └── funnel/              ← 6 funnel-stage notes (with mermaid)
+├── pitch/                   ← client-facing pitch docs + deck/
+├── decisions/               ← type:decision notes (feeds _open-questions.base)
+└── reference/               ← long-form narrative docs (8)
 ```
 
 ---
@@ -96,7 +98,7 @@ Imarflex/
 **「What hits the purchase stage?」** → [[_features.base]] → "By Funnel Stage" view
 **「Read the full strategy」** → [[reference/internal-master]]
 **「Brand voice / visual / content guidelines」** → [[brand/_index]]
-**「Final brand assets (logos / palette / moodboard)」** → [[Brand Guideline/README]]
+**「Final brand assets (logos / palette / moodboard)」** → [[brand/guideline/README]]
 
 ---
 
@@ -157,9 +159,9 @@ metric: ""
 
 | Status | Count | Features |
 |---|---|---|
-| ✅ Shipped | 10 | admin-dashboard, back-in-stock-notify, blog-content, checkout-airwallex, customer-account, parts-finder, pdp-retail-links, posthog-analytics, stock-status-display, warranty-registration |
-| 🟡 In progress | 7 | accessibility, cross-sell-pdp, email-automation, search-meilisearch, security-baseline, seo-content-pack, trade-in-flow |
-| ⬜ Not started | 14 | ai-chatbot, ai-copywriting, first-visit-popup, live-chat, loyalty-system, monitoring-alerts, order-notification-center, product-bundles, promotional-engine, recently-viewed, referral-program, returns-system, reviews-system, subscription-products |
+| ✅ Shipped | 9 | admin-dashboard, back-in-stock-notify, checkout-airwallex, customer-account, parts-finder, pdp-retail-links, posthog-analytics, stock-status-display, warranty-registration |
+| 🟡 In progress | 8 | accessibility, content-production, cross-sell-pdp, email-automation, search-meilisearch, security-baseline, seo-content-pack, trade-in-flow |
+| ⬜ Not started | 13 | ai-chatbot, first-visit-popup, live-chat, loyalty-system, monitoring-alerts, order-notification-center, product-bundles, promotional-engine, recently-viewed, referral-program, returns-system, reviews-system, subscription-products |
 | ➖ N/A (infra) | 1 | backup-dr |
 
 Filter live in [[_features.base]] → "🚧 Build Status" view.
@@ -168,10 +170,9 @@ Filter live in [[_features.base]] → "🚧 Build Status" view.
 
 ## ✅ Status
 
-**32 feature nodes:** 23 base + 9 add-ons.
+**31 feature nodes:** 23 base + 8 add-ons.
 **11 must-have** (foundation) · **20 suggested** (client decides) · **1 decision-needed** (Meilisearch vs Algolia).
 
 Next steps:
-1. Seed `decisions/` folder with the 3 stack decisions + 7 client-confirm Qs (so `_open-questions.base` populates).
-2. Walk the client through the "💡 Suggested to Client" view — they pick, then we flip those to `confirmed`.
-3. Build `canvas/feature-funnel-map.canvas` for visual pitch.
+1. Walk the client through the "💡 Suggested to Client" view — they pick, then we flip those to `confirmed`.
+2. Populate `decisions/` with the remaining stack + client-confirm questions (so `_open-questions.base` keeps filling).

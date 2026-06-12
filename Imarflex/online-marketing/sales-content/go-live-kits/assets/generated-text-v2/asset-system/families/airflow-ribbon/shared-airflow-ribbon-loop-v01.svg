@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Cool Air loop airflow ribbon">
+  <defs>
+    <linearGradient id="airLoop" x1="60" y1="300" x2="560" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BFD7E6" stop-opacity="0.2"/>
+      <stop offset="0.5" stop-color="#55B6E8" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#1E9BDE" stop-opacity="0.78"/>
+    </linearGradient>
+    <marker id="airArrow" markerWidth="22" markerHeight="22" refX="18" refY="11" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M4 4 L19 11 L4 18 Z" fill="#1E9BDE"/>
+    </marker>
+  </defs>
+  <path d="M88 282 C190 210 250 318 368 266 C520 198 548 78 414 62 C278 46 240 154 310 204 C376 252 472 232 552 166" fill="none" stroke="url(#airLoop)" stroke-width="34" stroke-linecap="round" marker-end="url(#airArrow)"/>
+  <path d="M96 284 C198 214 254 304 362 256 C500 194 518 96 412 84 C304 72 278 152 330 190" fill="none" stroke="#F7F6F2" stroke-opacity="0.45" stroke-width="6" stroke-linecap="round"/>
+</svg>

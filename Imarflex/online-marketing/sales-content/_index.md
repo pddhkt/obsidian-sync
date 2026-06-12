@@ -10,40 +10,32 @@ tags:
 
 # Sales Content System
 
-This folder tracks the sales-oriented content strategy in a way that can be counted later: assumptions, topic types, sales purposes, and one post record per content item.
+This folder tracks the sales-oriented content strategy in a way that can be counted later. Two halves: **`_system/`** holds the timeless definitions (assumptions, taxonomies, templates); **`cycles/`** holds one folder per monthly production cycle (plan, post records, shipments, overview).
 
 > [!info]
-> Markdown notes are the source of truth. [[../_sales-content.base|Sales Content Base]] is only the dashboard view for filtering and counting.
+> Markdown notes are the source of truth. [[../_sales-content.base|Sales Content Base]] is only the dashboard view for filtering and counting. Platform / week / status are frontmatter fields the Base reads — folders only encode the month.
 
 ## What this system answers
 
 | Question | Where to look |
 |---|---|
-| What assumptions are we making? | [[assumptions]] |
-| How many topic types do we use? | [[topic-types]] |
-| How many sales purposes do we track? | [[sales-purposes]] |
-| What posts have been planned / drafted / published? | [[../_sales-content.base]] or [[posts/_readme]] |
-| Which topic type supports which sales purpose? | [[topic-types]] |
-| Which posts should get ad support? | Post records in [[posts/_readme]] |
+| What assumptions are we making? | [[_system/assumptions\|assumptions]] |
+| How many topic types do we use? | [[_system/topic-types\|topic-types]] |
+| How many sales purposes do we track? | [[_system/sales-purposes\|sales-purposes]] |
+| What posts have been planned / drafted / published? | [[../_sales-content.base]] (all cycles) |
+| What happened in month X? | `cycles/yyyy-mm/_overview.md` (plan → shipments → results → findings) |
+| Which topic type supports which sales purpose? | [[_system/topic-sales-matrix\|topic-sales-matrix]] |
 
 ## Current structure
 
 | Folder / file | Purpose |
 |---|---|
-| [[assumptions]] | Strategy assumptions, evidence level, and how to validate them |
-| [[topic-types]] | 8 repeatable content topic types |
-| [[sales-purposes]] | 6 sales purposes used for tracking |
-| [[topic-sales-matrix]] | Clear mapping from topic type to sales purpose, IG example, FB example, CTA, and ad fit |
-| [[social-post-plan-2026-06]] | Actual June IG / FB social post schedule |
-| [[social-post-plan-2026-07]] | July IG / FB schedule (IFQ-22R + ICF-140R go-live kits) |
-| [[go-live-kits/_readme]] | Full multi-channel content kits (blog + IG + FB + Reel + Story + image prompts) |
-| [[go-live-kits/production-tracker-2026-07]] | 10-step production checklist + GPT-image asset register |
-| [[production-volume-targets-2026-06]] | Required counts for signals, topic ideas, campaign topics, social posts, and ad candidates |
-| [[production-timeline-gantt-2026-06]] | Mermaid Gantt timeline from setup to monthly review |
-| [[post-card-template]] | Template for one content item |
-| [[first-cycle-walkthrough-2026-06]] | First dry run from topic selection to production timeline and missing-input review |
-| [[posts/_readme]] | Instructions for post records |
-| [[../_sales-content.base]] | Obsidian Base dashboard grouped by status, channel, topic type, sales purpose, and ad support |
+| [[_system/_readme\|_system/]] | Timeless definitions: [[_system/assumptions\|assumptions]], [[_system/topic-types\|topic-types]], [[_system/sales-purposes\|sales-purposes]], [[_system/topic-sales-matrix\|topic-sales-matrix]], [[_system/post-card-template\|post-card-template]] |
+| [[cycles/_readme\|cycles/]] | One folder per monthly cycle: `_overview.md` + plan + targets + `posts/` |
+| [[cycles/2026-06/_overview\|cycles/2026-06/]] | June cycle — 4 weekly campaigns (rice cooker, air fryer, fan cleaning, warranty) |
+| [[cycles/2026-07/_overview\|cycles/2026-07/]] | July cycle — IFQ-22R + ICF-140R go-live |
+| [[go-live-kits/_readme\|go-live-kits/]] | July shipment kits + [[go-live-kits/production-tracker-2026-07\|production tracker]] (future kits go in `cycles/yyyy-mm/kits/`) |
+| [[../_sales-content.base]] | Base dashboard grouped by status, channel, topic type, sales purpose, and ad support |
 
 ## Operating rule
 
@@ -52,8 +44,8 @@ Every content item should have one post record before production starts. If it h
 ## Minimal weekly workflow
 
 1. Pick one priority product/category from [[../business-focus/_readme]].
-2. Choose one topic type from [[topic-types]].
-3. Choose one sales purpose from [[sales-purposes]].
-4. Create a post record using [[post-card-template]].
+2. Choose one topic type from [[_system/topic-types|topic-types]].
+3. Choose one sales purpose from [[_system/sales-purposes|sales-purposes]].
+4. Create a post record in `cycles/yyyy-mm/posts/` using [[_system/post-card-template|post-card-template]].
 5. Produce the channel outputs: blog, IG, FB, Reel, Story, or ad.
-6. Update `status`, `published-url`, and KPI fields after publishing.
+6. Update `status`, `published-url`, and KPI fields after publishing; reflect shipments in the cycle's `_overview.md`.

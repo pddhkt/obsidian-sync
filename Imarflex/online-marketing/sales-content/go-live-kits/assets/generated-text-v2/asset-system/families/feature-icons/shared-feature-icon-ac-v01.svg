@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AC icon">
+  <rect x="5" y="5" width="54" height="54" rx="12" fill="#F7F6F2"/>
+  <rect x="14" y="15" width="36" height="14" rx="4" fill="none" stroke="#1E4B7A" stroke-width="4"/>
+  <path d="M20 35 L20 47 M32 35 L32 49 M44 35 L44 47" stroke="#BFD7E6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M20 42 L16 46 M20 42 L24 46 M32 44 L28 48 M32 44 L36 48 M44 42 L40 46 M44 42 L48 46" stroke="#1E4B7A" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

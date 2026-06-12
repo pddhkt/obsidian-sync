@@ -1,7 +1,7 @@
 filters:
   and:
     - type == "sales-content-post"
-    - file.inFolder("Imarflex/online-marketing/sales-content/posts")
+    - file.inFolder("Imarflex/online-marketing/sales-content/cycles")
 formulas:
   status_icon: if(status == "published", "Published", if(status == "scheduled", "Scheduled", if(status == "draft-ready", "Draft ready", if(status == "drafting", "Drafting", if(status == "planned", "Planned", if(status == "idea", "Idea", if(status == "archived", "Archived", "")))))))
 properties:

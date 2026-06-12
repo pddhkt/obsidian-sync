@@ -55,14 +55,15 @@ flowchart LR
 | Folder | Link | 放咩 | 例子 |
 |---|---|---|---|
 | `business-focus` | [[business-focus/_readme]] | 每月 / 每季方向(research 前定) | `2026-q2-focus.md`、`2026-05-focus.md` |
-| `research-inbox` | [[research-inbox/_readme]] | 未整理資料 | 客戶問題、competitor link、SERP screenshot note |
+| `research-inbox` | [[research-inbox/_readme]] | 未整理資料(`YYYY-MM/` 月份 subfolder) | 客戶問題、competitor link、SERP screenshot note |
+| `blog` | [[blog/_readme]] | Blog 樣板文(pitch material) | `samples/recipe-air-fryer-shrimp-toast-cha-siu.md` |
+| `funnel` | [[funnel/_readme]] | 6 個 funnel-stage note(KPI + mermaid) | `1-awareness.md` |
 | `seo-research` | [[seo-research/_readme]] | Keyword、SERP、GSC、site search 整理 | `2026-Q3-air-fryer-keywords.md` |
 | `content-briefs` | [[content-briefs/_readme]] | 已決定要做嘅 topic brief | `air-fryer-shrimp-toast-brief.md` |
 | `products` | [[products/_readme]] | SKU source-of-truth: info、spec、approved images | `ifq-22r/spec.md`、`icf-140r/assets.md` |
 | `published-content` | [[published-content/_readme]] | 已發佈內容紀錄 | Blog URL、IG post、FB post |
-| `sales-content` | [[sales-content/_index]] | Sales-oriented content taxonomy + post tracker | `posts/2026-06-w1-rice-cooker-capacity-buying-guide.md` |
-| `assets` | [[assets/_readme]] | 圖片、caption draft、creative reference | Blog image brief、carousel copy |
-| `reports` | [[reports/_readme]] | Weekly / monthly / quarterly review | GSC review、social report |
+| `sales-content` | [[sales-content/_index]] |  `_system/` taxonomies + `cycles/yyyy-mm/` 每月 cycle (plan/posts/overview);campaign assets 跟 campaign 放(例 `go-live-kits/assets/`) | `cycles/2026-06/_overview.md` |
+| `reports` | [[reports/_readme]] | Weekly / monthly / quarterly review(`YYYY-MM/` 月份 subfolder) | GSC review、social report |
 
 ## Operating cadence
 
@@ -82,7 +83,7 @@ flowchart LR
 | Monday | Gather SEO / customer / competitor signals | [[research-inbox/_readme]] |
 | Tuesday | 做 keyword + SERP review | [[seo-research/_readme]] |
 | Wednesday | 寫 blog brief + social angle | [[content-briefs/_readme]] |
-| Thursday | Production: blog draft、IG carousel、FB post | [[assets/_readme]] |
+| Thursday | Production: blog draft、IG carousel、FB post | [[sales-content/_index]] |
 | Friday | Publish / schedule / review last week | [[published-content/_readme]], [[reports/_readme]] |
 
 ## Related vault notes
@@ -93,5 +94,5 @@ flowchart LR
 - [[../brand/content-pillars]]
 - [[../brand/voice-tone-of-voice]]
 - [[../brand/voice-pdp-copy-framework]]
-- [[../funnel/1-awareness]]
-- [[../funnel/3-consideration]]
+- [[funnel/1-awareness]]
+- [[funnel/3-consideration]]

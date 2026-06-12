@@ -24,11 +24,11 @@ Three commitments that show up in every step:
 ## The 7-step workflow
 
 ```
-Step 0: Market intelligence scan           ← imarflex-market-scan + scout agent
+Step 0: Market intelligence scan           ← imarflex-research/market-scan + scout agent
    ↓ (5-10 bullet "Market context")
-Step 1: Business focus                     ← imarflex-business-focus + planner agent
+Step 1: Business focus                     ← imarflex-research/business-focus + planner agent
    ↓ (Q2/Q3 focus doc with hero scoring)
-Step 2: Gather signals                     ← imarflex-signal-gather + scout agent
+Step 2: Gather signals                     ← imarflex-research/signal-gather + scout agent
    ↓ (raw notes in research-inbox/)
 Step 3: Raw topic capture                  ← same scout agent
    ↓ (9-field capture)
@@ -167,9 +167,9 @@ Per-format outputs by `imarflex-copywriter` agent. Output channels:
 | Skill | Purpose | Companion agent |
 |---|---|---|
 | `imarflex` | Master project map | (used by all agents) |
-| `imarflex-business-focus` | Step 1 manual + hero rubric | `imarflex-business-focus-planner` |
-| `imarflex-market-scan` | Step 0 manual + 7 sources + 24 seeds | `imarflex-market-scout` |
-| `imarflex-signal-gather` | Step 2 manual | `imarflex-signal-scout` |
+| `imarflex-research/business-focus` | Step 1 manual + hero rubric | `imarflex-business-focus-planner` |
+| `imarflex-research/market-scan` | Step 0 manual + 7 sources + 24 seeds | `imarflex-market-scout` |
+| `imarflex-research/signal-gather` | Step 2 manual | `imarflex-signal-scout` |
 | `imarflex-aeo` | Step 4.5 manual + rubric + citation simulation | `imarflex-aeo-auditor` |
 | (extends across all) | Brand voice + production | `imarflex-copywriter` |
 

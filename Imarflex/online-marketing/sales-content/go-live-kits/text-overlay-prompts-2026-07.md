@@ -6,7 +6,7 @@ publish-month: 2026-07
 campaigns:
   - IFQ-22R
   - ICF-140R
-asset-folder: online-marketing/assets/2026-07-go-live-kits/generated-text-v2
+asset-folder: online-marketing/sales-content/go-live-kits/assets/generated-text-v2
 asset-policy: master-first
 local-proof-status: generated
 gpt-master-status: ifq-carousel-plus-fb-story-generated
@@ -29,8 +29,8 @@ Related:
 - [[2026-06-ifq-22r-circulator-buying-guide]]
 - [[2026-06-icf-140r-cooler-trust]]
 - [[production-tracker-2026-07]]
-- [[online-marketing/assets/2026-07-go-live-kits/_readme]]
-- [[online-marketing/assets/2026-07-go-live-kits/generated-text-v2/_readme]]
+- [[online-marketing/sales-content/go-live-kits/assets/_readme]]
+- [[online-marketing/sales-content/go-live-kits/assets/generated-text-v2/_readme]]
 - IFQ-22R product source: [[../../products/ifq-22r/_index]], [[../../products/ifq-22r/spec]], [[../../products/ifq-22r/assets]]
 - ICF-140R product source: [[../../products/icf-140r/_index]], [[../../products/icf-140r/spec]], [[../../products/icf-140r/assets]]
 
@@ -63,7 +63,7 @@ Previous generated stills created several concept repeats across blog / IG / FB 
 Target folders:
 
 ```text
-online-marketing/assets/2026-07-go-live-kits/generated-text-v2/
+online-marketing/sales-content/go-live-kits/assets/generated-text-v2/
   masters/
   exports/
   _readme.md
@@ -346,4 +346,4 @@ Create a 9:16 Story poster. Show the ICF-140R beside an open window in a compact
 - IFQ-22R should stay white with wood-tone supports and white base.
 - ICF-140R should stay a white upright tower cooler with black front/top grille and wheels.
 - ICF-140R frames must communicate local / ventilated / personal-zone cooling, not aircon replacement.
-- Save final images under `online-marketing/assets/2026-07-go-live-kits/generated-text-v2/`.
+- Save final images under `online-marketing/sales-content/go-live-kits/assets/generated-text-v2/`.

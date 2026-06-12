@@ -25,7 +25,7 @@ These outputs are not campaign assets. They are synthetic product reference cand
 | Ref ID      | File                                                                                             | Role                                                                        |
 | ----------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- |
 | `P1`        | `online-marketing/products/ifq-22r/images/source/IFQ-22R.png`                                    | Main product truth: close front grille, wood cap, wood supports, base, yoke |
-| `P2`        | `online-marketing/assets/2026-07-go-live-kits/reference/ifq22r-hero-original.jpg`                | Full assembled product silhouette and proportions                           |
+| `P2`        | `online-marketing/sales-content/go-live-kits/assets/reference/ifq22r-hero-original.jpg`                | Full assembled product silhouette and proportions                           |
 | `P3-source` | `online-marketing/products/ifq-22r/images/source/ifq-22r-part-fan-blade-3pp.jpg`                 | Original standalone fan blade source; geometry truth                        |
 | `P3`        | `online-marketing/products/ifq-22r/images/reference/ifq-22r-ref-fan-blade-3pp-gpt-upscaled.png`  | Clean/upscaled fan blade clarity reference                                  |
 | `P4-source` | `online-marketing/products/ifq-22r/images/source/ifq-22r-part-rear-grille.jpg`                   | Original standalone rear grille / housing source; geometry truth            |

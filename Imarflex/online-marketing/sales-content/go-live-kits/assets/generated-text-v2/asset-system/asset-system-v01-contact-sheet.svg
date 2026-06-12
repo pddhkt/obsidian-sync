@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-label="July asset system v01 contact sheet">
+  <rect width="1200" height="1600" fill="#F7F6F2"/>
+  <text x="72" y="92" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#1E4B7A">July Product Post Asset System v01</text>
+  <text x="72" y="138" font-family="Arial, sans-serif" font-size="22" fill="#3C3F42">Reusable inside-post assets: ribbons, icons, room maps, detail insets, comparison modules.</text>
+  <g transform="translate(72 190)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#3C3F42">Airflow / cooling assets</text>
+    <image href="families/airflow-ribbon/shared-airflow-ribbon-loop-v01.svg" x="0" y="24" width="320" height="180"/>
+    <image href="families/airflow-ribbon/shared-airflow-ribbon-diagonal-v01.svg" x="350" y="24" width="320" height="180"/>
+    <image href="families/cool-mist-ribbon/icf140r-cool-mist-ribbon-local-zone-v01.svg" x="700" y="24" width="320" height="180"/>
+  </g>
+  <g transform="translate(72 430)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#3C3F42">Feature icons</text>
+    <image href="families/feature-icons/shared-feature-icon-quiet-v01.svg" x="0" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-circulation-v01.svg" x="112" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-easy-clean-v01.svg" x="224" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-remote-v01.svg" x="336" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-dc-v01.svg" x="448" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-window-v01.svg" x="560" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-ac-v01.svg" x="672" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-diagonal-route-v01.svg" x="784" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-water-tank-v01.svg" x="896" y="28" width="92" height="92"/>
+    <image href="families/feature-icons/shared-feature-icon-filter-v01.svg" x="1008" y="28" width="92" height="92"/>
+  </g>
+  <g transform="translate(72 610)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#3C3F42">Room map / comparison</text>
+    <image href="families/room-maps/ifq22r-room-map-ac-placement-v01.svg" x="0" y="28" width="520" height="376"/>
+    <image href="families/comparison-modules/ifq22r-comparison-straight-vs-loop-v01.svg" x="560" y="76" width="480" height="240"/>
+  </g>
+  <g transform="translate(72 1060)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#3C3F42">Detail insets / state cue</text>
+    <image href="families/detail-insets/ifq22r-detail-grille-v01.svg" x="0" y="28" width="240" height="165"/>
+    <image href="families/detail-insets/ifq22r-detail-three-blade-v01.svg" x="270" y="28" width="240" height="165"/>
+    <image href="families/detail-insets/ifq22r-detail-remote-v01.svg" x="540" y="28" width="240" height="165"/>
+    <image href="families/detail-insets/icf140r-detail-filter-v01.svg" x="810" y="28" width="240" height="165"/>
+    <image href="families/heat-patch/shared-heat-patch-soft-haze-v01.svg" x="0" y="238" width="180" height="180"/>
+  </g>
+  <text x="72" y="1510" font-family="Arial, sans-serif" font-size="20" fill="#3C3F42">Use as overlay assets. Keep exact text and final diagrams deterministic where production precision matters.</text>
+</svg>

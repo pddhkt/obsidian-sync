@@ -19,4 +19,4 @@ Put product-level images here.
 | `generated/` | Reusable generated product images. |
 | `qa/` | Contact sheets and review outputs. |
 
-Campaign-specific assets stay in `online-marketing/assets/...` and can be linked from [[../assets]].
+Campaign-specific assets stay in `online-marketing/sales-content/<campaign>/assets/...` and can be linked from [[../assets]].

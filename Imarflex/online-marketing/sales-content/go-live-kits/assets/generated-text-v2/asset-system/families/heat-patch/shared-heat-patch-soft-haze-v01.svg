@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Soft warm heat haze patch">
+  <defs>
+    <radialGradient id="heat" cx="50%" cy="50%" r="58%">
+      <stop offset="0" stop-color="#F1A35A" stop-opacity="0.42"/>
+      <stop offset="0.55" stop-color="#F1A35A" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#F1A35A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="120" cy="120" r="116" fill="url(#heat)"/>
+  <g fill="none" stroke="#D9803F" stroke-linecap="round" stroke-width="7" opacity="0.42">
+    <path d="M82 84 C64 106 104 122 82 148 C72 160 74 172 90 186"/>
+    <path d="M120 68 C100 94 142 112 120 140 C108 154 110 174 132 190"/>
+    <path d="M158 84 C140 106 180 122 158 148 C148 160 150 172 166 186"/>
+  </g>
+</svg>

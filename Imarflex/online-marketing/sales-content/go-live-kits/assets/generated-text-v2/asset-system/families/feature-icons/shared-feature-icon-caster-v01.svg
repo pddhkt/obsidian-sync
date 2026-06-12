@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Caster wheel icon">
+  <rect x="5" y="5" width="54" height="54" rx="12" fill="#F7F6F2"/>
+  <path d="M23 18 H41 C44 18 46 20 46 23 V32 H18 V23 C18 20 20 18 23 18 Z" fill="none" stroke="#1E4B7A" stroke-width="4"/>
+  <circle cx="24" cy="43" r="8" fill="none" stroke="#1E4B7A" stroke-width="4"/>
+  <circle cx="44" cy="43" r="8" fill="none" stroke="#1E4B7A" stroke-width="4"/>
+  <path d="M24 43 H44" stroke="#BFD7E6" stroke-width="4" stroke-linecap="round"/>
+</svg>

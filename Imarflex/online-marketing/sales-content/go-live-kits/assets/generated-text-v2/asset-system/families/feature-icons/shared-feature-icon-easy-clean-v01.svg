@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Easy clean icon">
+  <rect x="5" y="5" width="54" height="54" rx="12" fill="#F7F6F2"/>
+  <circle cx="29" cy="35" r="14" fill="none" stroke="#1E4B7A" stroke-width="4"/>
+  <path d="M19 45 L39 25 M17 35 H43 M29 21 V49" stroke="#1E4B7A" stroke-width="2.6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M46 16 L48 22 L54 24 L48 26 L46 32 L44 26 L38 24 L44 22 Z" fill="#1E4B7A"/>
+</svg>

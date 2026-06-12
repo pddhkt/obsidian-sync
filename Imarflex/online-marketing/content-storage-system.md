@@ -22,8 +22,8 @@ tags:
 | [[content-briefs/_readme|content-briefs]] | Approved / candidate content briefs | 已 published |
 | [[products/_readme|products]] | SKU source-of-truth: product info、spec、approved reference images | Never; update when product facts/images change |
 | [[published-content/_readme|published-content]] | Published URL + performance notes | Never, this is archive |
-| [[sales-content/_index|sales-content]] | Sales content assumptions, topic taxonomy, purpose taxonomy, and post cards | Never, this is tracking system |
-| [[assets/_readme|assets]] | Image briefs、caption drafts、creative references | Used / archived |
+| [[sales-content/_index|sales-content]] | `_system/` = timeless taxonomies + templates;`cycles/yyyy-mm/` = 每月 cycle(plan、targets、post cards、`_overview.md`) | `_system` never;cycle folder 完結後 archive as a unit |
+| `sales-content/<campaign>/assets/` | Campaign image briefs、caption drafts、creative references(跟 campaign 放) | Used / archived |
 | [[reports/_readme|reports]] | Weekly、monthly、quarterly reports | Never, this is archive |
 
 ## Naming convention
@@ -37,7 +37,9 @@ Use simple lowercase file names:
 | SEO research | `yyyy-qx-topic-keywords.md` | `2026-q3-rice-cooker-keywords.md` |
 | Content brief | `topic-brief.md` | `air-fryer-shrimp-toast-brief.md` |
 | Product record | `<sku>/_index.md` + `spec.md` + `info.md` + `assets.md` | `ifq-22r/spec.md` |
-| Sales content post | `yyyy-mm-wx-short-topic.md` | `2026-06-w1-rice-cooker-capacity.md` |
+| Sales content post (campaign) | `yyyy-mm-wx-short-topic.md` | `2026-06-w1-rice-cooker-capacity.md` |
+| Sales content post (single) | `yyyy-mm-dd-channel-short-topic.md` | `2026-06-12-ig-rice-capacity-table.md` |
+| Cycle overview | `cycles/yyyy-mm/_overview.md` | `cycles/2026-06/_overview.md` |
 | Published log | `yyyy-mm-published-content.md` | `2026-06-published-content.md` |
 | Report | `yyyy-mm-marketing-report.md` | `2026-06-marketing-report.md` |
 
@@ -114,10 +116,11 @@ tags:
 - If it has keyword / SERP evidence, store in [[seo-research/_readme]]
 - If it has title, outline, CTA, and channel plan, store in [[content-briefs/_readme]]
 - If it is SKU info, official spec, or approved product reference imagery, store in [[products/_readme]]
-- If it is a sales-oriented post plan or post status tracker, store in [[sales-content/posts/_readme]]
+- If it is a sales-oriented post plan, monthly target, or post status record, store in `sales-content/cycles/yyyy-mm/` (see [[sales-content/cycles/_readme]])
+- If it is the month's plan→ship→results summary, it belongs in that cycle's `_overview.md`
 - If it is live, log it in [[published-content/_readme]]
 - If it is performance data, store in [[reports/_readme]]
-- If it is image / caption / creative reference, store in [[assets/_readme]]
+- If it is image / caption / creative reference, store with its campaign: `sales-content/<campaign>/assets/`
 
 ## Monthly cleanup
 

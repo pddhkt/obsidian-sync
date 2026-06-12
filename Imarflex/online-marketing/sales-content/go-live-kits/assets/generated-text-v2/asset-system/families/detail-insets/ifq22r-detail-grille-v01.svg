@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="IFQ spiral grille detail inset">
+  <rect x="10" y="10" width="300" height="200" rx="22" fill="#F7F6F2" stroke="#BFD7E6" stroke-width="4"/>
+  <circle cx="160" cy="110" r="76" fill="#FFFFFF" stroke="#1E4B7A" stroke-width="5"/>
+  <circle cx="160" cy="110" r="23" fill="#E7D7C1" stroke="#1E4B7A" stroke-width="3"/>
+  <g fill="none" stroke="#1E4B7A" stroke-width="3" stroke-linecap="round" opacity="0.85">
+    <path d="M160 34 C188 54 206 76 214 110"/>
+    <path d="M190 42 C198 74 198 102 184 132"/>
+    <path d="M214 66 C202 96 184 118 158 135"/>
+    <path d="M232 104 C202 120 174 128 140 124"/>
+    <path d="M218 144 C186 144 160 136 134 116"/>
+    <path d="M186 176 C164 154 150 130 146 96"/>
+    <path d="M136 184 C130 152 136 124 156 98"/>
+    <path d="M92 156 C116 136 140 124 174 124"/>
+    <path d="M84 110 C114 102 142 104 170 120"/>
+    <path d="M102 68 C134 70 160 80 182 104"/>
+    <path d="M132 42 C152 66 162 92 160 126"/>
+  </g>
+</svg>

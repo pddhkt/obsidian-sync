@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Circulation icon">
+  <rect x="5" y="5" width="54" height="54" rx="12" fill="#F7F6F2"/>
+  <path d="M20 24 C26 14 42 15 47 26" fill="none" stroke="#1E4B7A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M44 16 L48 27 L37 25" fill="none" stroke="#1E4B7A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 40 C38 50 22 49 17 38" fill="none" stroke="#1E4B7A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M20 48 L16 37 L27 39" fill="none" stroke="#1E4B7A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

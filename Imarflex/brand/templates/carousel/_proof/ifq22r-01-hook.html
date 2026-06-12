@@ -1,0 +1,105 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+/* Imarflex carousel design tokens — single source of truth.
+   Mirrors brand/visual-color-palette.md + brand/visual-typography.md.
+   The HTML renderer AND the design-system docs read these same values. */
+:root {
+  /* ---- Palette ---- */
+  --heritage-blue: #1E4B7A;
+  --rice-white:    #F7F6F2;
+  --clay-beige:    #E7D7C1;
+  --steam-grey:    #DCE1E6;
+  --soft-charcoal: #3C3F42;
+  --cool-air:      #BFD7E6;
+
+  /* ---- Type families ---- */
+  /* zh-HK: Noto Sans CJK HK (思源黑體). latin/numerals: Inter, Noto Sans fallback. */
+  --font-zh: "Noto Sans CJK HK", "Noto Sans HK", "Noto Sans", sans-serif;
+  --font-latin: "Inter", "Noto Sans", sans-serif;
+
+  /* ---- Weights ---- */
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-bold:    700;
+
+  /* ---- Type scale (1080-base; rendered at 2048 = ~1.9x) ---- */
+  --fs-badge:    300px;  /* 01–06 frame number */
+  --fs-headline:  120px;
+  --fs-sub:        58px;
+  --fs-chip:       40px;
+  --fs-button:     46px;
+
+  --lh-zh: 1.25;
+
+  /* ---- Layout ---- */
+  --card: 2048px;        /* master render size */
+  --margin: 150px;       /* safe-area outer margin */
+  --radius: 28px;
+}
+
+*{margin:0;box-sizing:border-box}
+html,body{width:var(--card);height:var(--card)}
+.card{position:relative;width:var(--card);height:var(--card);overflow:hidden;
+  background:var(--rice-white);font-kerning:normal}
+.ph{position:absolute;inset:0;background:
+  radial-gradient(120% 100% at 82% 22%, var(--cool-air) 0%, rgba(191,215,230,0) 46%),
+  linear-gradient(180deg,#ffffff,var(--rice-white))}
+.ph-zone{position:absolute;right:90px;top:50%;transform:translateY(-50%);width:52%;height:68%;
+  border:6px dashed rgba(30,75,122,.22);border-radius:30px;display:flex;align-items:center;
+  justify-content:center;text-align:center;font-family:var(--font-zh);font-weight:700;
+  font-size:58px;color:rgba(30,75,122,.28);line-height:1.4}
+.scrim{position:absolute;inset:0;background:
+  linear-gradient(118deg, rgba(247,246,242,.82) 0%, rgba(247,246,242,.34) 34%, rgba(247,246,242,0) 56%),
+  linear-gradient(180deg, rgba(247,246,242,.5) 0%, rgba(247,246,242,0) 22%)}
+.tl{position:absolute;top:var(--margin);left:var(--margin);max-width:1180px}
+.hl{display:inline-block}
+.headline{font-family:var(--font-zh);font-weight:var(--w-bold);font-size:var(--fs-headline);
+  line-height:var(--lh-zh);color:var(--soft-charcoal);letter-spacing:.01em}
+.headline.latin{font-family:var(--font-latin);font-weight:800;font-size:240px;
+  letter-spacing:-.02em;color:var(--heritage-blue);line-height:1}
+.uline{display:block;width:100%;height:24px;margin:10px 0 22px}
+.sub{font-family:var(--font-zh);font-weight:var(--w-medium);font-size:var(--fs-sub);color:var(--soft-charcoal);opacity:.92}
+.extras{margin-top:46px;display:flex;flex-direction:column;gap:22px}
+.chip{display:inline-flex;align-items:center;gap:16px;width:max-content;
+  background:rgba(247,246,242,.92);border:3px solid var(--heritage-blue);border-radius:999px;
+  padding:16px 34px;font-family:var(--font-zh);font-weight:var(--w-medium);font-size:var(--fs-chip);color:var(--soft-charcoal)}
+.chip.small{padding:12px 26px;font-size:34px}
+.chip .dot{width:16px;height:16px;border-radius:50%;background:var(--heritage-blue);flex:0 0 auto}
+.chiprow{display:flex;gap:18px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;width:max-content;border-radius:999px;
+  padding:24px 54px;font-family:var(--font-zh);font-weight:var(--w-bold);font-size:var(--fs-button)}
+.btn.primary{background:var(--heritage-blue);color:var(--rice-white)}
+.btn.outline{background:rgba(247,246,242,.85);color:var(--heritage-blue);border:4px solid var(--heritage-blue)}
+.legend{gap:18px}.legend div{font-family:var(--font-zh);font-weight:var(--w-medium);font-size:var(--fs-sub);color:var(--soft-charcoal)}
+.label{position:absolute;bottom:130px;transform:translateX(-50%);font-family:var(--font-zh);font-weight:var(--w-bold);
+  font-size:var(--fs-chip);color:var(--soft-charcoal);background:rgba(247,246,242,.92);
+  border:3px solid var(--heritage-blue);border-radius:999px;padding:12px 36px}
+.plan{position:absolute;right:var(--margin);bottom:var(--margin);filter:drop-shadow(0 18px 40px rgba(30,75,122,.20))}
+</style></head><body>
+<div class="card">
+  <div class="ph"><div class="ph-zone">AI 場景 plate<br>product photo</div></div>
+  <div class="scrim"></div>
+  <div class="tl">
+    <span class="hl"><div class="headline">淨係涼一邊？</div><svg class="uline" viewBox="0 0 100 12" preserveAspectRatio="none"
+  xmlns="http://www.w3.org/2000/svg"><path d="M1,8 C26,3 62,3 80,6 C88,7 95,7 99,4"
+  stroke="var(--heritage-blue)" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span>
+    <div class="sub">問題係空氣冇對流</div>
+    
+  </div>
+  
+  <div class="plan">
+<svg viewBox="0 0 560 470" width="560" height="470" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
+    <path d="M0,0 L6,3 L0,6 Z" fill="var(--heritage-blue)"/></marker></defs>
+  <rect x="14" y="14" width="532" height="442" rx="22" fill="rgba(247,246,242,.94)"
+        stroke="var(--heritage-blue)" stroke-width="5"/>
+  <rect x="44" y="150" width="56" height="180" rx="14" fill="var(--steam-grey)"
+        stroke="var(--heritage-blue)" stroke-width="3"/>
+  <rect x="232" y="212" width="96" height="56" rx="10" fill="var(--clay-beige)"
+        stroke="var(--heritage-blue)" stroke-width="3"/>
+  <rect x="500" y="150" width="18" height="180" rx="6" fill="var(--cool-air)"/>
+  <circle cx="120" cy="372" r="19" fill="var(--heritage-blue)"/>
+  <path d="M150,360 C300,300 460,300 460,212 C460,140 250,150 168,196"
+        stroke="var(--cool-air)" stroke-width="11" stroke-linecap="round"
+        stroke-dasharray="2 26" fill="none" marker-end="url(#ar)"/>
+</svg></div>
+</div></body></html>

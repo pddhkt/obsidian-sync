@@ -12,7 +12,7 @@ tags:
 
 This folder is the canonical place for reusable product information, product images, and product specs.
 
-Campaign-specific generated images can still live under `online-marketing/assets/…`; product-level approved photos, source cards, and reusable facts should live here.
+Campaign-specific generated images can still live under `online-marketing/sales-content/<campaign>/assets/…`; product-level approved photos, source cards, and reusable facts should live here.
 
 ## Current Products
 

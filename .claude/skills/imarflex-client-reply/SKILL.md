@@ -242,5 +242,5 @@ Read these when context is needed:
 - `Imarflex/客戶報價問題回覆-2026-05-26.md` — second-round reply (canonical voice + structure reference). Examples: custom CMS framing, all-in retainer free trial, UTM inline explanation, honest IT/design positioning, per-campaign design pricing, login credentials in code chips.
 - `Imarflex/客戶跟進問題-2026-05-26.md` — questions-log format with the decisions table mapping each Q to the chosen angle.
 - `Imarflex/brand/voice-tone-of-voice.md` — base brand voice (this skill extends it for Q&A).
-- `Imarflex/imarflex pitch deck/Imarflex 報價單-print.html` — the original quote document; useful when the client references a specific line item (e.g. "3.1 月度 retainer") and you need to ground the answer in what was actually quoted.
+- `Imarflex/pitch/deck/Imarflex 報價單-print.html` — the original quote document; useful when the client references a specific line item (e.g. "3.1 月度 retainer") and you need to ground the answer in what was actually quoted.
 - `.claude/agents/imarflex-copywriter.md` — for marketing copy work, distinct from Q&A replies.

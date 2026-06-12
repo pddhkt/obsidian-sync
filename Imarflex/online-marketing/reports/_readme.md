@@ -9,7 +9,7 @@ tags:
 
 # Reports
 
-放 weekly、monthly、quarterly marketing review。
+放 weekly、monthly、quarterly marketing review。**Files 放入 `YYYY-MM/` month subfolder**(例:`2026-06/2026-06-sales-content-review.md`),冇就開新。
 
 ## Active report stubs
 

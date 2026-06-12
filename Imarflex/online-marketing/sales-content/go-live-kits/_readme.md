@@ -26,13 +26,17 @@ imarflex-aeo-auditor   → citation-readiness score + fixes (appended to each ki
 
 1. Copy a kit file, swap the product, re-run the three agents with the new brief.
 2. The frontmatter (`topic-type`, `sales-purpose`, `hero-sku`, `destination`, `primary-cta`, `utm-campaign`) lets each kit slot into [[../../_sales-content.base|Sales Content Base]] for counting.
-3. To count individual channel posts in the Base, fan a kit out into per-channel post cards under [[../posts/_readme|posts/]] using [[../post-card-template]].
+3. To count individual channel posts in the Base, fan a kit out into per-channel post cards under `../cycles/yyyy-mm/posts/` (see [[../cycles/_readme|cycles]]) using [[../_system/post-card-template|post-card-template]].
 
 ## Index & tracking
 
-- **Post index (July):** [[../social-post-plan-2026-07]] — human-readable schedule of every post.
+- **Cycle overview (July):** [[../cycles/2026-07/_overview|2026-07 _overview]] — plan → shipments → results in one page.
+- **Post index (July):** [[../cycles/2026-07/social-post-plan-2026-07|social-post-plan-2026-07]] — human-readable schedule of every post.
 - **Production tracker:** [[production-tracker-2026-07]] — the 10-step checklist + GPT-image asset register (what still needs generating before go-live).
-- **Live dashboard:** [[../../_sales-content.base]] — auto-counts the per-channel post cards in `posts/`.
+- **Live dashboard:** [[../../_sales-content.base]] — auto-counts the per-channel post cards in `cycles/*/posts/`.
+
+> [!note] Location
+> This folder predates the cycle structure and stays here because many notes path-link into it. **New** kits go in `../cycles/yyyy-mm/kits/`.
 
 ## Hard rules baked into every kit
 

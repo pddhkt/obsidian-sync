@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Cool mist local zone ribbon">
+  <defs>
+    <linearGradient id="mist" x1="80" y1="260" x2="560" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BFD7E6" stop-opacity="0.12"/>
+      <stop offset="0.56" stop-color="#8ECBEA" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#55B6E8" stop-opacity="0.56"/>
+    </linearGradient>
+  </defs>
+  <path d="M76 260 C180 214 268 248 358 184 C432 132 492 100 566 104" fill="none" stroke="url(#mist)" stroke-width="42" stroke-linecap="round"/>
+  <path d="M104 248 C218 210 292 224 540 108" fill="none" stroke="#F7F6F2" stroke-opacity="0.36" stroke-width="7" stroke-linecap="round"/>
+  <g fill="#55B6E8" opacity="0.52">
+    <circle cx="394" cy="138" r="5"/>
+    <circle cx="436" cy="120" r="4"/>
+    <circle cx="482" cy="108" r="3"/>
+  </g>
+</svg>

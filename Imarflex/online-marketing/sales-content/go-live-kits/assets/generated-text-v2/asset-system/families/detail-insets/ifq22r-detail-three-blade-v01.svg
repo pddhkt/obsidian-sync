@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-label="IFQ three blade detail inset">
+  <rect x="10" y="10" width="300" height="200" rx="22" fill="#F7F6F2" stroke="#BFD7E6" stroke-width="4"/>
+  <circle cx="160" cy="110" r="78" fill="#FFFFFF" stroke="#1E4B7A" stroke-width="5"/>
+  <g fill="#DCE1E6" stroke="#1E4B7A" stroke-width="3">
+    <path d="M160 108 C154 72 176 50 214 50 C216 82 194 102 160 108 Z"/>
+    <path d="M162 112 C196 126 208 158 186 188 C158 172 148 142 162 112 Z"/>
+    <path d="M157 113 C128 136 94 132 76 100 C104 84 134 88 157 113 Z"/>
+  </g>
+  <circle cx="160" cy="110" r="18" fill="#E7D7C1" stroke="#1E4B7A" stroke-width="3"/>
+</svg>

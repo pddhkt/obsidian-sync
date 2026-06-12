@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="IFQ HK living room AC placement map">
+  <defs>
+    <marker id="routeArrow" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M3 3 L16 9 L3 15 Z" fill="#1E9BDE"/>
+    </marker>
+  </defs>
+  <rect x="28" y="28" width="664" height="464" rx="22" fill="#F7F6F2" stroke="#DCE1E6" stroke-width="4"/>
+  <rect x="72" y="70" width="520" height="378" rx="8" fill="#FFFFFF" stroke="#1E4B7A" stroke-width="4" opacity="0.96"/>
+  <rect x="158" y="70" width="248" height="22" rx="4" fill="#DCE1E6" stroke="#1E4B7A" stroke-width="3"/>
+  <path d="M198 70 V92 M282 70 V92 M364 70 V92" stroke="#1E4B7A" stroke-width="2"/>
+  <rect x="88" y="164" width="112" height="178" rx="18" fill="#E7D7C1" stroke="#1E4B7A" stroke-width="3"/>
+  <path d="M112 198 H176 M112 246 H176 M112 294 H176" stroke="#F7F6F2" stroke-width="8" stroke-linecap="round"/>
+  <rect x="492" y="164" width="56" height="190" rx="8" fill="#E7D7C1" stroke="#1E4B7A" stroke-width="3"/>
+  <rect x="460" y="188" width="30" height="132" rx="6" fill="#3C3F42"/>
+  <rect x="456" y="108" width="112" height="30" rx="10" fill="#FFFFFF" stroke="#1E4B7A" stroke-width="3"/>
+  <path d="M472 132 H552" stroke="#BFD7E6" stroke-width="4" stroke-linecap="round"/>
+  <rect x="260" y="240" width="116" height="68" rx="10" fill="#E7D7C1" stroke="#1E4B7A" stroke-width="3"/>
+  <rect x="232" y="204" width="170" height="150" rx="8" fill="none" stroke="#DCE1E6" stroke-width="5"/>
+  <circle cx="174" cy="398" r="28" fill="#FFFFFF" stroke="#1E4B7A" stroke-width="4"/>
+  <circle cx="174" cy="398" r="13" fill="#BFD7E6"/>
+  <path d="M156 398 C164 386 184 386 192 398 C184 410 164 410 156 398 Z" fill="none" stroke="#1E4B7A" stroke-width="3"/>
+  <path d="M178 384 V416 M160 392 L190 406" stroke="#1E4B7A" stroke-width="2"/>
+  <path d="M174 398 C210 280 232 150 282 98" fill="none" stroke="#55B6E8" stroke-width="12" stroke-linecap="round" opacity="0.78" marker-end="url(#routeArrow)"/>
+  <path d="M174 398 C286 306 392 192 520 126" fill="none" stroke="#1E9BDE" stroke-width="12" stroke-linecap="round" opacity="0.62" marker-end="url(#routeArrow)"/>
+  <path d="M556 132 C620 246 504 420 214 416" fill="none" stroke="#BFD7E6" stroke-width="14" stroke-linecap="round" opacity="0.82" marker-end="url(#routeArrow)"/>
+</svg>
