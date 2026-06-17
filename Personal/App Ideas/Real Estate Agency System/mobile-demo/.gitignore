@@ -1,0 +1,5 @@
+# Wrangler build cache & local account state — never commit
+.wrangler/
+
+# Node
+node_modules/
