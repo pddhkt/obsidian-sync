@@ -9,12 +9,12 @@ tags:
 
 # pitch/deck
 
-The presentable HTML pitch deck for the Imarflex 伊瑪牌 digital-sales-strategy proposal (the **rendered** slides + quotation, not the source script).
+The presentable HTML pitch deck for the Imarflex 伊瑪牌 digital-sales-strategy proposal (the **rendered** slides and original quotation sheet, not the source script).
 
 ## What lives here
 
 - `Imarflex Pitch Deck.html` — 21-slide Cantonese deck; embedded JSON speaker notes (~20 min). Open in a browser.
-- `Imarflex 報價單-print.html` — A4 print/PDF quotation sheet.
+- `Imarflex 報價單-print.html` — original A4 print quotation sheet for the strategy deck.
 - `deck-stage.js` — reusable `<deck-stage>` web component (nav, speaker notes, auto-scale, print, thumbnail rail).
 - `animations.jsx` — reusable React Stage/Sprite/easing animation library.
 - `tokens.css` — Heritage Blue / HK-daily design tokens (shadcn-mapped).
@@ -27,5 +27,6 @@ Assets use kebab-case (`social-carousel-airfryer-1.png`). Keep new assets kebab-
 
 ## Do NOT put here
 
-- The markdown pitch **script** — that is `../reference/pitch.md` (this deck renders it).
-- The Methodology-Pitch / Launch-Schedule decks and their PDF exports — those are a **separate** deck in `../pitch/` and do not use `deck-stage.js`.
+- The markdown pitch **script** — that is `../../reference/pitch.md` (this deck renders it).
+- Methodology / launch schedule / content direction decks — those live in sibling folders under `../` and do not use `deck-stage.js`.
+- New quotation versions such as IMX-2026-Q02 — those live in `../quotation/`.

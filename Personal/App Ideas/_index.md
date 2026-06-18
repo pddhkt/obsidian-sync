@@ -16,7 +16,10 @@ Durable workspace for app concepts, product logic, MVP notes, data models, and d
 | Project | Status | Start here |
 |---|---|---|
 | Cross Border Car Hailing | idea | [[Cross Border Car Hailing/_index|Cross Border Car Hailing]] |
+| Day Trading Bot | designed — ready to build | [[Day Trading Bot/Day Trading Bot\|Day Trading Bot]] |
 | Pet Social Vlog | idea | [[Pet Social Vlog/_index|Pet Social Vlog]] |
+| Real Estate Agency System | scoped — POC feature set defined | [[Real Estate Agency System/Real Estate Agency System\|Real Estate Agency System]] |
+| Syntax Gym | designed — ready to build | [[Syntax Gym/Syntax Gym\|Syntax Gym]] |
 
 ## Suggested workflow
 

@@ -3,8 +3,11 @@ type: client-reply
 project: Imarflex 伊瑪牌
 date: 2026-05-26
 re: 報價跟進問題 — 第二輪
-related: [[客戶報價問題回覆-2026-05-18]]
+related: [[2026-05-18-quote-reply|報價問題回覆 — 2026-05-18]]
 status: draft
+aliases:
+  - 客戶報價問題回覆-2026-05-26
+  - 報價問題跟進回覆 — 2026-05-26
 ---
 
 # 報價問題跟進回覆 — 2026-05-26

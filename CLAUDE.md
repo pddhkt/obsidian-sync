@@ -13,7 +13,8 @@ Write notes in Obsidian Flavored Markdown (wikilinks, callouts, frontmatter) —
 
 | Folder | What lives there |
 |---|---|
-| `Imarflex/` | Imarflex 伊瑪牌 client project (pitch stage). Project home: `Imarflex/_index.md`. Decisions → `decisions/`, marketing work → `online-marketing/` (blog, funnel, sales-content, products, research-inbox/YYYY-MM, reports/YYYY-MM), brand → `brand/` (+ `brand/guideline/` final assets), pitch docs + deck → `pitch/` |
+| `Imarflex/` | Imarflex 伊瑪牌 client project (pitch stage). Project home: `Imarflex/_index.md`. Decisions → `decisions/`, marketing work → `online-marketing/` (blog, funnel, sales-content, products, research-inbox/YYYY-MM, reports/YYYY-MM), brand → `brand/` (+ `brand/guideline/` final assets), pitch docs + deck → `pitch/`. **Parent distributor:** `ManyProfit/`. |
+| `ManyProfit/` | Many Profit 萬利嘉 — parent HK/Macau distributor carrying Imarflex + 7 other brands. Project home: `ManyProfit/_index.md`. Architecture/build decisions → `decisions/`. The app extends `imarflex-app` into a shared multi-channel platform (Many Profit + Imarflex as two channels). |
 | `ctint/` | CTINT day-job knowledge, by project: `axa/`, `HGC/`, `qhms/`, `shacom/`, `tts/` |
 | `Personal/` | Personal projects & ideas: `App Ideas/<Idea>/`, `Personal Website/`, `Gaming/` |
 | `Learn/` | Learning notes by topic, e.g. `Learn/Dev/...` |

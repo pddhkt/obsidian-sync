@@ -101,9 +101,9 @@ tags:
 
 | Slot | Slide | File | Why |
 |---|---|---|---|
-| Slide 8 | Q2 hero SKU example | `blog/samples/images/buying-guide-rice-cooker-hero.png` | Already exists, IH rice cooker context, brand-consistent |
-| Slide 12 | Production output example | `blog/samples/images/recipe-air-fryer-shrimp-toast-char-siu-hero.png` | Shows production-grade content output, warm/authentic |
-| Slide 12 (alt) | Production output example | `blog/samples/images/maintenance-fan-cleaning-hero.png` | Alternative production sample, shows breadth |
+| Slide 8 | Q2 hero SKU example | `../../online-marketing/blog/samples/images/buying-guide-rice-cooker-hero.png` | Already exists, IH rice cooker context, brand-consistent |
+| Slide 12 | Production output example | `../../online-marketing/blog/samples/images/recipe-air-fryer-shrimp-toast-char-siu-hero.png` | Shows production-grade content output, warm/authentic |
+| Slide 12 (alt) | Production output example | `../../online-marketing/blog/samples/images/maintenance-fan-cleaning-hero.png` | Alternative production sample, shows breadth |
 
 I'll embed these in the deck via relative path references — no copying needed.
 
@@ -121,9 +121,9 @@ imarflex-pitch-04-aeo-audit.png
 imarflex-pitch-05-closing.png
 ```
 
-And save to:`Imarflex/pitch/images/`
+And save to:`Imarflex/pitch/methodology-pitch/images/`
 
-I'll need that path + naming consistent so the HTML can reference them via relative path. If you use different names, just let me know and I'll wire them up.
+I'll need that path + naming consistent so the methodology HTML can reference them via `images/...`, while sibling decks can reference them via `../methodology-pitch/images/...`. If you use different names, just let me know and I'll wire them up.
 
 ## After images ready
 
@@ -131,7 +131,7 @@ Once you've generated + saved the 5 images, tell me「images ready」+ any capti
 
 1. Build the HTML pitch deck embedding all 8 image slots
 2. Render to PDF via chromium headless
-3. Output:`Imarflex/pitch/Imarflex-Methodology-Pitch-2026-05-30.pdf`
+3. Output:`Imarflex/pitch/methodology-pitch/Imarflex-Methodology-Pitch-2026-05-30.pdf`
 
 ## If you want fewer images
 

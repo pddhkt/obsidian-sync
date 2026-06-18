@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<title>Imarflex × Many Profit — 報價單 · QUOTATION IMX-2026-Q02</title>
+<link rel="stylesheet" href="../../deck/tokens.css" />
+<style>
+  /* ============== PAGE / PRINT SETUP ============== */
+  @page { size: A4; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #2a2c30; }
+  body {
+    font-family: var(--font-tc), var(--font-sans);
+    color: var(--soft-charcoal);
+    font-size: 10pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 0;
+    margin: 24px auto;
+    background: var(--rice-white);
+    box-sizing: border-box;
+    padding: 6mm 15mm 5mm;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet + .sheet { margin-top: 0; }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { margin: 0; box-shadow: none; page-break-after: always; }
+    .sheet:last-of-type { page-break-after: auto; }
+    .no-print { display: none !important; }
+  }
+  /* ============== TYPE ============== */
+  .eyebrow-en { font-family: var(--font-sans); font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--heritage-blue); font-weight: 700; }
+  .muted { color: var(--soft-charcoal-2); }
+  .faint { color: var(--soft-charcoal-3); }
+  h1, h2, h3, h4 { color: var(--soft-charcoal); margin: 0; font-family: var(--font-tc); }
+  .num { font-family: var(--font-sans); font-variant-numeric: tabular-nums; }
+  /* ============== HEADER ============== */
+  .doc-head { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; padding-bottom: 7px; border-bottom: 2px solid var(--heritage-blue); }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand-mark { width: 34px; height: 34px; border-radius: 50%; background: var(--heritage-blue); color: var(--rice-white-2); display: grid; place-items: center; font-family: var(--font-sans); font-weight: 800; font-size: 13pt; letter-spacing: 0.04em; }
+  .brand-text .name-tc { font-family: var(--font-tc); font-weight: 700; font-size: 16pt; line-height: 1; color: var(--soft-charcoal); }
+  .brand-text .name-en { font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--soft-charcoal-3); font-weight: 600; margin-top: 4px; }
+  .doc-title { text-align: right; }
+  .doc-title .tc { font-family: var(--font-tc); font-weight: 700; font-size: 21pt; line-height: 1; color: var(--heritage-blue); letter-spacing: 0.04em; }
+  .doc-title .en { font-family: var(--font-sans); font-size: 9pt; letter-spacing: 0.32em; text-transform: uppercase; color: var(--soft-charcoal-3); font-weight: 600; margin-top: 8px; }
+  /* ============== META ROW ============== */
+  .meta { margin-top: 7px; display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 14px; padding: 6px 14px; background: var(--bg-tint); border-radius: var(--radius-xl); }
+  .meta-cell .lab { font-family: var(--font-sans); font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--soft-charcoal-3); font-weight: 700; margin-bottom: 4px; }
+  .meta-cell .val { font-size: 10pt; font-weight: 600; color: var(--soft-charcoal); line-height: 1.4; }
+  .meta-cell .val.big { font-family: var(--font-sans); font-size: 11pt; letter-spacing: 0.04em; }
+  /* ============== FROM / TO ============== */
+  .party-grid { margin-top: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .party { border: 1px solid var(--rule); border-radius: var(--radius-xl); padding: 6px 12px; background: var(--rice-white-2); }
+  .party.to { background: var(--cool-air-2); border-color: var(--cool-air); }
+  .party-lab { font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--heritage-blue); margin-bottom: 8px; }
+  .party-name { font-size: 12pt; font-weight: 700; line-height: 1.25; color: var(--soft-charcoal); margin-bottom: 3px; }
+  .party-sub { font-size: 8.5pt; color: var(--soft-charcoal-2); line-height: 1.45; }
+  /* ============== LINE ITEMS TABLE ============== */
+  .section-head { margin: 7px 0 5px; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  .section-head .ttl { font-family: var(--font-tc); font-weight: 700; font-size: 13pt; color: var(--soft-charcoal); }
+  .section-head .en { font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--soft-charcoal-3); font-weight: 600; }
+  table.lines { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+  table.lines thead th { background: var(--heritage-blue); color: var(--rice-white-2); font-family: var(--font-sans); font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; text-align: left; padding: 5px 10px; }
+  table.lines thead th.right { text-align: right; }
+  table.lines thead th:first-child { border-radius: var(--radius-md) 0 0 var(--radius-md); }
+  table.lines thead th:last-child { border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+  table.lines tbody tr { border-bottom: 1px solid var(--rule); }
+  table.lines tbody tr.phase-head td { padding-top: 6px; padding-bottom: 3px; background: transparent; }
+  table.lines tbody td { padding: 1px 10px; vertical-align: top; }
+  table.lines tbody td.right { text-align: right; font-family: var(--font-sans); font-variant-numeric: tabular-nums; }
+  table.lines tbody td.idx { width: 28px; color: var(--soft-charcoal-3); font-family: var(--font-sans); font-size: 8.5pt; font-weight: 600; }
+  table.lines tbody td.qty, table.lines tbody td.unit { width: 90px; }
+  table.lines tbody td.total-col { width: 110px; font-weight: 600; color: var(--soft-charcoal); }
+  .phase-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 8.5pt; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--heritage-blue); }
+  .phase-tag::before { content: ""; width: 8px; height: 8px; background: var(--clay-beige-2); border-radius: 2px; }
+  .phase-time { font-family: var(--font-sans); font-size: 8.5pt; color: var(--soft-charcoal-3); margin-left: 12px; letter-spacing: 0.04em; }
+  .item-name { font-weight: 600; color: var(--soft-charcoal); }
+  .item-desc { font-size: 7.8pt; color: var(--soft-charcoal-2); margin-top: 0; line-height: 1.28; }
+  /* ============== TOTALS ============== */
+  .totals-wrap { margin-top: 5px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px; align-items: start; }
+  .terms-mini { border: 1px solid var(--rule); border-radius: var(--radius-xl); padding: 7px 12px; background: var(--rice-white-2); }
+  .terms-mini .lab { font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--heritage-blue); margin-bottom: 8px; }
+  .terms-mini ul { list-style: none; padding: 0; margin: 0; }
+  .terms-mini li { font-size: 8.5pt; color: var(--soft-charcoal-2); padding: 3px 0; line-height: 1.45; display: grid; grid-template-columns: 86px 1fr; gap: 10px; }
+  .terms-mini li b { font-weight: 700; color: var(--soft-charcoal); font-family: var(--font-sans); font-size: 8.5pt; letter-spacing: 0.06em; }
+  .bank-line { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--rule-strong); font-size: 8.5pt; color: var(--soft-charcoal); }
+  .bank-line b { font-family: var(--font-sans); color: var(--heritage-blue); letter-spacing: 0.04em; }
+  .totals { background: var(--heritage-blue); color: var(--rice-white-2); border-radius: var(--radius-xl); padding: 8px 14px; }
+  .totals-row { display: flex; justify-content: space-between; align-items: baseline; padding: 2px 0; font-size: 9.5pt; }
+  .totals-row.muted-row { color: var(--cool-air); }
+  .totals-row.muted-row .num { color: var(--rice-white-2); }
+  .totals-row .num { font-family: var(--font-sans); font-variant-numeric: tabular-nums; font-weight: 600; }
+  .totals-rule { height: 1px; background: rgba(247,246,242,0.25); margin: 5px 0; }
+  .totals-grand { display: flex; justify-content: space-between; align-items: baseline; padding-top: 5px; margin-top: 2px; border-top: 2px solid var(--clay-beige); }
+  .totals-grand-lab { font-family: var(--font-tc); font-size: 11pt; font-weight: 700; color: var(--clay-beige); letter-spacing: 0.06em; }
+  .totals-grand-num { font-family: var(--font-sans); font-size: 22pt; font-weight: 700; color: var(--rice-white-2); letter-spacing: -0.01em; line-height: 1; }
+  .totals-grand-num small { font-size: 11pt; color: var(--clay-beige); font-weight: 600; margin-right: 4px; }
+  .totals-foot { margin-top: 6px; font-size: 8.5pt; color: var(--cool-air); letter-spacing: 0.04em; }
+  /* ============== ADD-ONS ============== */
+  .addons { margin-top: 12px; border: 1px dashed var(--rule-strong); border-radius: var(--radius-xl); padding: 10px 16px; background: var(--bg-tint); }
+  .addons-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; }
+  .addons-head .lab { font-family: var(--font-sans); font-size: 8.5pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--heritage-blue); }
+  .addons-head .note { font-size: 8.5pt; color: var(--soft-charcoal-3); }
+  /* ============== SIGN-OFF ============== */
+  .signoff { margin-top: 7px; padding-top: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid var(--rule); }
+  .sign-box .lab { font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--soft-charcoal-3); margin-bottom: 10px; }
+  .sign-line { border-top: 1px solid var(--soft-charcoal); padding-top: 6px; font-size: 9pt; color: var(--soft-charcoal-2); display: flex; justify-content: space-between; }
+  .sign-line span:first-child { font-weight: 600; color: var(--soft-charcoal); }
+  /* ============== FOOTER ============== */
+  .doc-foot { margin-top: 6px; padding-top: 5px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-sans); font-size: 7pt; color: var(--soft-charcoal-3); letter-spacing: 0.08em; }
+  .doc-foot .left { letter-spacing: 0.16em; text-transform: uppercase; }
+  /* ============== PRINT BUTTON ============== */
+  .print-bar { position: fixed; top: 16px; right: 16px; display: flex; gap: 10px; z-index: 100; }
+  .print-btn { background: var(--heritage-blue); color: var(--rice-white-2); border: none; font-family: var(--font-sans); font-size: 11pt; font-weight: 600; padding: 10px 18px; border-radius: 999px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25); display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.04em; }
+  .print-btn:hover { background: var(--heritage-blue-2); }
+  /* ============== CONDITIONS PAGE ============== */
+  .conds-grid { margin-top: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cond-block { border: 1px solid var(--rule); border-radius: var(--radius-xl); padding: 11px 16px; background: var(--rice-white-2); }
+  .cond-block .lab { font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--heritage-blue); margin-bottom: 4px; }
+  .cond-block h3 { font-size: 11pt; font-weight: 700; margin: 0 0 6px; color: var(--soft-charcoal); }
+  .cond-block ol, .cond-block ul { margin: 0; padding-left: 18px; }
+  .cond-block li { font-size: 8.2pt; color: var(--soft-charcoal-2); line-height: 1.34; padding: 1.5px 0; }
+  .cond-block li b { color: var(--soft-charcoal); font-weight: 700; }
+  .cond-block.bright { background: var(--heritage-blue); color: var(--rice-white-2); border: none; }
+  .cond-block.bright .lab { color: var(--clay-beige); }
+  .cond-block.bright h3 { color: var(--rice-white-2); }
+  .cond-block.bright li { color: var(--cool-air-2); }
+  .cond-block.bright li b { color: var(--clay-beige); }
+  /* timetable mini */
+  .tt { margin-top: 16px; border: 1px solid var(--rule); border-radius: var(--radius-xl); background: var(--rice-white-2); overflow: hidden; }
+  .tt-head { display: grid; grid-template-columns: 70px 1.2fr 1.2fr; gap: 12px; padding: 9px 16px; background: var(--bg-tint); font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: var(--soft-charcoal-3); }
+  .tt-row { display: grid; grid-template-columns: 70px 1.2fr 1.2fr; gap: 12px; padding: 9px 16px; border-top: 1px solid var(--rule); align-items: baseline; font-size: 9pt; color: var(--soft-charcoal-2); }
+  .tt-row .wk { font-family: var(--font-sans); font-weight: 700; color: var(--heritage-blue); letter-spacing: 0.06em; }
+  .tt-row.go { background: var(--cool-air-2); }
+  .tt-row.go .wk { color: var(--heritage-blue); }
+  /* ============== ACCENT FOOTER STRIP ============== */
+  .accent-strip { position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: linear-gradient(to right, var(--heritage-blue) 0%, var(--heritage-blue) 50%, var(--clay-beige) 50%, var(--clay-beige) 75%, var(--cool-air) 75%, var(--cool-air) 100%); }
+</style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  <button class="print-btn" onclick="window.print()">↓ 列印 / 存 PDF</button>
+</div>
+
+<!-- ============== PAGE 1 ============== -->
+<div class="sheet">
+  <header class="doc-head">
+    <div class="brand">
+      <div class="brand-mark">J</div>
+      <div class="brand-text">
+        <div class="name-tc">Jack Leung</div>
+        <div class="name-en">DIGITAL COMMERCE · BRAND SYSTEM · WEB ENGINEERING</div>
+      </div>
+    </div>
+    <div class="doc-title">
+      <div class="tc">報 價 單</div>
+      <div class="en">QUOTATION</div>
+    </div>
+  </header>
+
+  <div class="meta">
+    <div class="meta-cell">
+      <div class="lab">編號 · QUOTE NO.</div>
+      <div class="val big">IMX-2026-Q02</div>
+    </div>
+    <div class="meta-cell">
+      <div class="lab">日期 · DATE</div>
+      <div class="val">2026 年 6 月 17 日</div>
+    </div>
+    <div class="meta-cell">
+      <div class="lab">有效期 · VALID UNTIL</div>
+      <div class="val">2026 年 7 月 17 日</div>
+    </div>
+    <div class="meta-cell">
+      <div class="lab">幣值 · CURRENCY</div>
+      <div class="val">港幣 HKD</div>
+    </div>
+  </div>
+
+  <div class="party-grid">
+    <div class="party">
+      <div class="party-lab">由 · FROM</div>
+      <div class="party-name">Jack Leung</div>
+      <div class="party-sub">
+        67592810 · pddhkt@gmail.com<br/>
+        Hong Kong · 香港
+      </div>
+    </div>
+    <div class="party to">
+      <div class="party-lab">致 · BILL TO</div>
+      <div class="party-name">萬利嘉實業有限公司</div>
+      <div class="party-sub">
+        Many Profit Industrial Limited<br/>
+        <span class="faint">伊瑪牌 Imarflex 香港代理</span><br/>
+        Imarflex + Many Profit 雙網店重建項目
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <div><div class="ttl">服務明細</div></div>
+    <div class="en">SCOPE OF SERVICES · LINE ITEMS</div>
+  </div>
+
+  <table class="lines">
+    <thead>
+      <tr>
+        <th style="width: 32px;">#</th>
+        <th>項目 · ITEM</th>
+        <th class="right" style="width: 70px;">數量</th>
+        <th class="right" style="width: 110px;">單價 (HKD)</th>
+        <th class="right" style="width: 120px;">小計 (HKD)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Phase 1 -->
+      <tr class="phase-head">
+        <td colspan="5">
+          <span class="phase-tag">Phase 1 · 設計、開發與整合</span>
+          <span class="phase-time">兩個網店 + 共用 CMS · DESIGN · DEVELOPMENT · INTEGRATION</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="idx">1.1</td>
+        <td>
+          <div class="item-name">兩個前台網店 — Imarflex + Many Profit</div>
+          <div class="item-desc">兩個完整網站,共用組件庫,各自品牌風格。</div>
+        </td>
+        <td class="right">1 式</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+      <tr>
+        <td class="idx">1.2</td>
+        <td>
+          <div class="item-name">兩站共用 CMS 後台</div>
+          <div class="item-desc">一個後台管兩個站,產品 / 內容 / 訂單,同事自行操作。</div>
+        </td>
+        <td class="right">1 式</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+      <tr>
+        <td class="idx">1.3</td>
+        <td>
+          <div class="item-name">Airwallex 支付閘道整合</div>
+          <div class="item-desc">FPS、AlipayHK、WeChat Pay、信用卡 — 本地支付齊全。</div>
+        </td>
+        <td class="right">1 式</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+      <tr>
+        <td class="idx">1.4</td>
+        <td>
+          <div class="item-name">SEO 技術基礎 + 響應式 + 數據分析</div>
+          <div class="item-desc">Schema、Sitemap、Mobile-first、客戶 funnel 追蹤。</div>
+        </td>
+        <td class="right">1 式</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+
+      <!-- Phase 2 -->
+      <tr class="phase-head">
+        <td colspan="5">
+          <span class="phase-tag">Phase 2 · 遷移與上線</span>
+          <span class="phase-time">MIGRATION · LAUNCH</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="idx">2.1</td>
+        <td>
+          <div class="item-name">Shopline 遷移 + 產品資料匯入</div>
+          <div class="item-desc">產品、SEO 排名導入新站(SKU 總數待客戶確認)。</div>
+        </td>
+        <td class="right">1 式</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+      <tr>
+        <td class="idx">2.2</td>
+        <td>
+          <div class="item-name">301 Redirect Migration</div>
+          <div class="item-desc">舊 URL 全套對應新站架構 — 保住 SEO。</div>
+        </td>
+        <td class="right">1 式</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+      <tr>
+        <td class="idx">2.3</td>
+        <td>
+          <div class="item-name">Email 交易 + 通知自動化(Resend)</div>
+          <div class="item-desc">落單、出貨、保養、棄單追回 — 認證子網域寄出,送達有保障。</div>
+        </td>
+        <td class="right">1 式</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+      <tr>
+        <td class="idx">2.4</td>
+        <td>
+          <div class="item-name">上線測試 + 性能 + 後台 training</div>
+          <div class="item-desc">CWV、Security baseline、Monitoring、admin 培訓。</div>
+        </td>
+        <td class="right">1 式</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+
+      <!-- Phase 3 — included marketing -->
+      <tr class="phase-head">
+        <td colspan="5">
+          <span class="phase-tag">Phase 3 · 6 個月網上推廣</span>
+          <span class="phase-time">已包入總額 · INCLUDED · 6-MONTH MARKETING</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="idx">3.1</td>
+        <td>
+          <div class="item-name">內容 + 策略 · 持續 6 個月 <span style="display: inline-block; background: var(--clay-beige); color: var(--heritage-blue-2); font-family: var(--font-sans); font-size: 7.5pt; letter-spacing: 0.14em; padding: 2px 7px; border-radius: 3px; margin-left: 6px; vertical-align: middle; font-weight: 700;">已包</span></div>
+          <div class="item-desc">每月 4 篇 blog + 每週 3 IG + 2 FB;月報 + 季度策略,由上線起 6 個月。</div>
+        </td>
+        <td class="right">6 個月</td>
+        <td class="right">—</td>
+        <td class="right total-col">included</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="totals-wrap">
+    <div class="terms-mini">
+      <div class="lab">付款條件 · PAYMENT TERMS（二選一 · 圈選）</div>
+      <ul>
+        <li><b>選項 A</b><span>50 / 30 / 20 — 訂金 $22,500 · 中期 $13,500 · 上線後 7 日 $9,000</span></li>
+        <li><b>選項 B</b><span>50 / 50 — 訂金 $22,500 · 上線交付 $22,500</span></li>
+      </ul>
+      <div class="bank-line">
+        付款銀行 · BANK<br/>
+        <b>HANG SENG BANK 恒生銀行</b><br/>
+        Leung Man Hin · <b>768 578726 668</b>
+      </div>
+    </div>
+    <div class="totals">
+      <div class="totals-row muted-row">
+        <span>兩站 + CMS · 遷移上線 · 6 個月推廣</span>
+        <span class="num">全部已包</span>
+      </div>
+      <div class="totals-rule"></div>
+      <div class="totals-row">
+        <span>小計 · Subtotal</span>
+        <span class="num">$45,000</span>
+      </div>
+      <div class="totals-row muted-row">
+        <span>稅項 · Tax (HK)</span>
+        <span class="num">$0</span>
+      </div>
+      <div class="totals-grand">
+        <span class="totals-grand-lab">應付總額<br/>TOTAL DUE</span>
+        <span class="totals-grand-num"><small>HK$</small>45,000</span>
+      </div>
+      <div class="totals-foot">第 7 個月起可選 retainer · 全包(含推廣)由 HK$3,000 / 月,或基本維護 HK$1,000 / 月</div>
+    </div>
+  </div>
+
+  <div class="signoff">
+    <div class="sign-box">
+      <div class="lab">客戶確認 · CLIENT ACCEPTANCE</div>
+      <div class="sign-line"><span>授權簽署</span><span>日期 · DATE</span></div>
+      <div style="font-size: 8.5pt; color: var(--soft-charcoal-3); margin-top: 4px;">
+        萬利嘉實業有限公司 · Many Profit Industrial Limited · 簽署即確認接受本報價單及附件條款
+      </div>
+    </div>
+    <div class="sign-box">
+      <div class="lab">服務方 · ISSUED BY</div>
+      <div class="sign-line"><span>Jack Leung</span><span>2026 年 6 月 17 日</span></div>
+      <div style="font-size: 8.5pt; color: var(--soft-charcoal-3); margin-top: 4px;">
+        67592810 · pddhkt@gmail.com
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-foot">
+    <span class="left">IMARFLEX × MANY PROFIT × JACK LEUNG · QUOTATION IMX-2026-Q02</span>
+    <span>Page 1 / 3</span>
+  </div>
+
+  <div class="accent-strip"></div>
+</div>
+
+<!-- ============== PAGE 2 — schedule + conditions ============== -->
+<div class="sheet">
+  <header class="doc-head">
+    <div class="brand">
+      <div class="brand-mark">J</div>
+      <div class="brand-text">
+        <div class="name-tc">Jack Leung</div>
+        <div class="name-en">QUOTATION · APPENDIX A · SCOPE & TERMS</div>
+      </div>
+    </div>
+    <div class="doc-title">
+      <div class="tc" style="font-size: 18pt;">附件 A · 範圍與條款</div>
+      <div class="en">APPENDIX A · IMX-2026-Q02</div>
+    </div>
+  </header>
+
+  <div class="section-head">
+    <div><div class="ttl">試用後月費 + 可選 Add-On</div></div>
+    <div class="en">POST-TRIAL RETAINER · OPTIONAL EXTENSIONS</div>
+  </div>
+  <div class="addons" style="margin-top: 0;">
+    <div class="addons-head">
+      <span class="lab">試用後月費 retainer · 可選 · 不在上述總額</span>
+      <span class="note">— 試用尾一齊檢視揀 tier —</span>
+    </div>
+    <div style="font-size: 9.5pt; color: var(--soft-charcoal); line-height: 1.65; padding: 4px 0 6px;">
+      6 個月推廣試用後可續做:<b>基本維護 HK$1,000 / 月</b>(維護 + 安全 + 監察 + 月報);或 <b>全包 retainer 由 HK$3,000 / 月起</b>(維護 + 持續內容 / SEO 引擎)。<b>詳細對照見第 3 頁。</b>
+    </div>
+    <div class="addons-head" style="margin-top: 6px;">
+      <span class="lab">延伸功能 · 另出獨立 SOW</span>
+    </div>
+    <div style="font-size: 9.5pt; color: var(--soft-charcoal); line-height: 1.65; padding: 4px 0 2px;">
+      Reviews / Referral / Loyalty / Live chat / AI Chatbot 等延伸功能,另出獨立 SOW 報價。
+    </div>
+  </div>
+
+  <div class="conds-grid" style="margin-top: 11px;">
+    <div class="cond-block bright">
+      <div class="lab">客戶需提供 · CLIENT INPUTS</div>
+      <h3>啟動所需素材</h3>
+      <ol>
+        <li><b>兩站網域 + DNS</b> — Imarflex + Many Profit 管理權(GoDaddy)</li>
+        <li><b>產品資料</b> — 圖片、規格、價錢、SKU code、CSV</li>
+        <li><b>品牌素材</b> — Many Profit 及旗下品牌 Logo / 色彩 / 字型</li>
+        <li><b>Airwallex</b> — 公司註冊證書、身份證、UBO 文件</li>
+        <li><b>Email 安排</b> — 寄件地址 + 客戶回覆 inbox</li>
+        <li><b>內容文案</b> — 關於我們、政策、FAQ</li>
+        <li><b>Shopline 數據</b> <span style="display: inline-block; background: var(--clay-beige); color: var(--heritage-blue-2); font-family: var(--font-sans); font-size: 7pt; letter-spacing: 0.14em; padding: 1px 6px; border-radius: 3px; margin: 0 4px; vertical-align: middle; font-weight: 700;">可選</span> — 訪客 / CR / AOV</li>
+        <li><b>90 日 promo 時間表</b> — 排內容檔期</li>
+      </ol>
+    </div>
+    <div class="cond-block">
+      <div class="lab">服務範圍 · SCOPE</div>
+      <h3>包括 / 不包</h3>
+      <p style="font-size: 9pt; margin: 0 0 8px; color: var(--soft-charcoal); font-weight: 700;">✓ 包括 · INCLUDED</p>
+      <ul style="margin-bottom: 12px;">
+        <li>兩個完整網店 + 共用 multi-channel CMS</li>
+        <li><b>產品資料匯入系統</b> — 客戶提供原始資料,我哋負責輸入 / 上架</li>
+        <li>Airwallex 支付整合</li>
+        <li>Email 交易 + 通知自動化(Resend)</li>
+        <li>SEO 技術基礎 + 數據分析</li>
+        <li><b>6 個月網上推廣</b> — blog 4 篇/月 + 每週 3 IG + 2 FB</li>
+        <li>後台 admin training</li>
+      </ul>
+      <p style="font-size: 9pt; margin: 0 0 8px; color: var(--soft-charcoal); font-weight: 700;">— 不包 · EXCLUDED</p>
+      <ul>
+        <li>產品相片拍攝(如冇現成靚相,另約)</li>
+        <li>第三方 / hosting 費用 — Vercel · Cloudflare · Airwallex 手續費 · GoDaddy 域名 · Resend(明細見第 3 頁)</li>
+        <li>付費廣告投放管理</li>
+        <li>延伸功能(另出 SOW)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="conds-grid" style="margin-top: 11px;">
+    <div class="cond-block">
+      <div class="lab">條款 · TERMS</div>
+      <h3>合作條款</h3>
+      <ol>
+        <li><b>有效期</b> — 本報價自出單日起 30 天內有效;逾期須重新確認。</li>
+        <li><b>修改範圍</b> — 每階段含 2 輪 major revisions;超出按每小時 HK$600 計。<b>(定義詳見第 3 頁)</b></li>
+        <li><b>第三方費用</b> — Hosting(Vercel / Cloudflare)、域名(GoDaddy)、Airwallex、Resend 等由客戶承擔。<b>(明細詳見第 3 頁)</b></li>
+        <li><b>知識產權</b> — 全數結清後,設計檔案 + code repository 轉交客戶;Jack Leung 保留作品集展示權。</li>
+        <li><b>取消條款</b> — 任何階段中止,已完成工作按比例結算;訂金不退。</li>
+        <li><b>保密協議</b> — 雙方對所有商業資料保密。</li>
+      </ol>
+    </div>
+    <div class="cond-block">
+      <div class="lab">交付保障 · DELIVERY</div>
+      <h3>進度與支援</h3>
+      <ol>
+        <li><b>每週 standup</b> — 面對面或視像通話,1–2 小時。</li>
+        <li><b>Staging 環境</b> — 開發中可隨時預覽。</li>
+        <li><b>上線後</b> — 30 日內 hyper-care(bug fix 免費)。</li>
+        <li><b>建造現況</b> — 兩站共用平台大部分已建好,由半成品衝刺,非由零起步。</li>
+        <li><b>培訓</b> — 含後台 admin training + 文件交付。</li>
+      </ol>
+    </div>
+  </div>
+
+  <div style="margin-top: 10px; padding: 9px 16px; background: var(--bg-tint); border-left: 3px solid var(--heritage-blue); border-radius: 0 var(--radius-xl) var(--radius-xl) 0;">
+    <div style="font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--heritage-blue); margin-bottom: 4px;">下一步 · NEXT STEPS</div>
+    <div style="font-size: 9pt; color: var(--soft-charcoal); line-height: 1.55;">
+      ① 確認合作 + 圈選付款方式 → ② 簽署本報價單 + 支付 50% 訂金 (HK$22,500) → ③ 提供啟動素材(產品資料 = 真正 gate)→ ④ ~7 月中上線(待定)。
+    </div>
+  </div>
+
+  <div class="signoff">
+    <div class="sign-box">
+      <div class="lab">客戶確認 · CLIENT ACCEPTANCE</div>
+      <div class="sign-line"><span>授權簽署 · 蓋章</span><span>日期 · DATE</span></div>
+    </div>
+    <div class="sign-box">
+      <div class="lab">服務方 · ISSUED BY</div>
+      <div class="sign-line"><span>Jack Leung</span><span>2026 年 6 月 17 日</span></div>
+    </div>
+  </div>
+
+  <div class="doc-foot">
+    <span class="left">IMARFLEX × MANY PROFIT × JACK LEUNG · APPENDIX · IMX-2026-Q02</span>
+    <span>Page 2 / 3</span>
+  </div>
+
+  <div class="accent-strip"></div>
+</div>
+
+<!-- ============== PAGE 3 — service definitions + fees (APPENDIX B) ============== -->
+<div class="sheet">
+  <header class="doc-head">
+    <div class="brand">
+      <div class="brand-mark">J</div>
+      <div class="brand-text">
+        <div class="name-tc">Jack Leung</div>
+        <div class="name-en">QUOTATION · APPENDIX B · DEFINITIONS & FEES</div>
+      </div>
+    </div>
+    <div class="doc-title">
+      <div class="tc" style="font-size: 18pt;">附件 B · 服務定義與收費</div>
+      <div class="en">APPENDIX B · IMX-2026-Q02</div>
+    </div>
+  </header>
+
+  <div class="conds-grid" style="margin-top: 6px;">
+    <div class="cond-block">
+      <div class="lab">服務定義 · DEFINITIONS</div>
+      <h3>「包括」項目詳細解釋</h3>
+      <ul style="list-style: none; padding-left: 0; margin: 0;">
+        <li style="padding: 4px 0; border-bottom: 1px solid var(--rule);"><b>Email 交易 + 通知自動化</b> — 交易 email(訂單確認、出貨 / 追蹤、退款)+ 系統自動通知(棄單追回、保養提醒、win-back、新品)。用 Resend 認證子網域寄出,全自動,唔使員工手動逐封寄。</li>
+        <li style="padding: 4px 0; border-bottom: 1px solid var(--rule);"><b>SEO 技術基礎</b> — Schema 結構化數據、Sitemap、301 轉址、Core Web Vitals、Mobile-first、robots。即:令 Google 搵到你、排名好、網站快、Shopline 舊連結自動轉、唔斷。</li>
+        <li style="padding: 4px 0; border-bottom: 1px solid var(--rule);"><b>數據分析</b> — PostHog(訪客行為、購買 funnel、流失點、A/B test、dashboard)+ Meilisearch 中文站內搜尋。睇住真實數據改進,唔靠估。</li>
+        <li style="padding: 4px 0;"><b>產品資料分工</b> — 客戶提供原始資料(規格 / 相片 / 價錢 / SKU);<b>我哋負責寫文案 + 匯入系統(初次上架)</b>。日常上架可由客戶後台自助,或我哋代做(包喺 retainer)。產品相片如冇現成靚相,可另約拍攝。</li>
+      </ul>
+    </div>
+    <div class="cond-block">
+      <div class="lab">第三方費用 · THIRD-PARTY</div>
+      <h3>服務明細(客戶承擔)</h3>
+      <table style="width: 100%; border-collapse: collapse; font-size: 7.8pt;">
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--rule);"><td style="padding: 2.5px 4px 2.5px 0; font-weight: 700; color: var(--soft-charcoal);">Vercel</td><td style="padding: 2.5px 6px; color: var(--soft-charcoal-2);">網店前台 hosting</td><td style="padding: 2.5px 0; text-align: right; white-space: nowrap;">~$156/月</td></tr>
+          <tr style="border-bottom: 1px solid var(--rule);"><td style="padding: 2.5px 4px 2.5px 0; font-weight: 700; color: var(--soft-charcoal);">Cloudflare</td><td style="padding: 2.5px 6px; color: var(--soft-charcoal-2);">後端 + 資料庫 + 圖片</td><td style="padding: 2.5px 0; text-align: right; white-space: nowrap;">免費額度</td></tr>
+          <tr style="border-bottom: 1px solid var(--rule);"><td style="padding: 2.5px 4px 2.5px 0; font-weight: 700; color: var(--soft-charcoal);">Airwallex</td><td style="padding: 2.5px 6px; color: var(--soft-charcoal-2);">收款</td><td style="padding: 2.5px 0; text-align: right; white-space: nowrap;">無月費 · 每筆 ~3.3%+$2.35</td></tr>
+          <tr style="border-bottom: 1px solid var(--rule);"><td style="padding: 2.5px 4px 2.5px 0; font-weight: 700; color: var(--soft-charcoal);">GoDaddy</td><td style="padding: 2.5px 6px; color: var(--soft-charcoal-2);">兩個域名 + DNS</td><td style="padding: 2.5px 0; text-align: right; white-space: nowrap;">~$100/年/個</td></tr>
+          <tr><td style="padding: 2.5px 4px 2.5px 0; font-weight: 700; color: var(--soft-charcoal);">Resend</td><td style="padding: 2.5px 6px; color: var(--soft-charcoal-2);">自動寄 email</td><td style="padding: 2.5px 0; text-align: right; white-space: nowrap;">免費或 ~$156/月</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 7.8pt; color: var(--soft-charcoal-2); line-height: 1.45; margin: 8px 0 0;"><b style="color: var(--soft-charcoal);">帳戶由客戶公司名下開立、客戶直接付費</b>,我哋負責設定 + 教學,客戶 100% 擁有。合計約 <b style="color: var(--soft-charcoal);">HK$200–500/月</b>,遠平過 Shopline ~HK$2,499/月,而且無平台佣金。</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 12px; padding: 11px 18px; background: var(--bg-tint); border-left: 3px solid var(--heritage-blue); border-radius: 0 var(--radius-xl) var(--radius-xl) 0;">
+    <div style="font-family: var(--font-sans); font-size: 8pt; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--heritage-blue); margin-bottom: 6px;">修改範圍定義 · REVISION SCOPE</div>
+    <div style="font-size: 8.6pt; color: var(--soft-charcoal); line-height: 1.55;">
+      <b>「階段」</b>= 報價單嘅 Phase:Phase 1(設計、開發、整合)、Phase 2(遷移、上線),<b>每階段含 2 輪 major revision(重大修改)</b>。<br/>
+      <b>Major(重大修改)</b>= 重做一個已確認嘅設計方向 / 版面 / 結構 —— 例如改 homepage 整體概念、重排成個 PDP 框架。<br/>
+      <b>Minor(小改)</b>= 文字、價錢、相片更換、顏色、間距等 —— <b>唔計入限額、唔額外收費</b>。<br/>
+      超出 2 輪 major:HK$600 / 小時,<b>做之前先報個預計鐘數俾客戶 approve</b>,唔會自動計。
+    </div>
+  </div>
+
+  <div class="section-head" style="margin-top: 12px;">
+    <div><div class="ttl">試用後月費對照</div></div>
+    <div class="en">POST-TRIAL RETAINER · 第 7 個月起</div>
+  </div>
+  <table style="width: 100%; border-collapse: collapse; font-size: 8.4pt;">
+    <thead>
+      <tr>
+        <th style="text-align: left; padding: 5px 10px; background: var(--bg-tint); color: var(--heritage-blue-2); font-size: 8pt; border-bottom: 2px solid var(--rule-strong);">項目</th>
+        <th style="text-align: center; padding: 5px 10px; background: var(--bg-tint); color: var(--heritage-blue-2); font-size: 8pt; border-bottom: 2px solid var(--rule-strong); white-space: nowrap;">基本維護 · HK$1,000/月</th>
+        <th style="text-align: center; padding: 5px 10px; background: var(--cool-air-2); color: var(--heritage-blue-2); font-size: 8pt; border-bottom: 2px solid var(--rule-strong); white-space: nowrap;">全包 · 由 HK$3,000/月</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid var(--rule);"><td style="padding: 4px 10px;">網站維護 / 安全 / 監察</td><td style="padding: 4px 10px; text-align: center;">✓</td><td style="padding: 4px 10px; text-align: center; background: var(--cool-air-2);">✓</td></tr>
+      <tr style="border-bottom: 1px solid var(--rule);"><td style="padding: 4px 10px;">上架產品 / 改 PDP / 活動 banner / 政策頁</td><td style="padding: 4px 10px; text-align: center;">✓</td><td style="padding: 4px 10px; text-align: center; background: var(--cool-air-2);">✓</td></tr>
+      <tr style="border-bottom: 1px solid var(--rule);"><td style="padding: 4px 10px;">月度報告 + 季度檢視</td><td style="padding: 4px 10px; text-align: center;">✓</td><td style="padding: 4px 10px; text-align: center; background: var(--cool-air-2);">✓</td></tr>
+      <tr style="border-bottom: 1px solid var(--rule);"><td style="padding: 4px 10px;">Blog 出文 + 配套社交貼文</td><td style="padding: 4px 10px; text-align: center; color: var(--soft-charcoal-3);">—</td><td style="padding: 4px 10px; text-align: center; background: var(--cool-air-2);">✓</td></tr>
+      <tr><td style="padding: 4px 10px;">季度 SEO 策略 + keyword research</td><td style="padding: 4px 10px; text-align: center; color: var(--soft-charcoal-3);">—</td><td style="padding: 4px 10px; text-align: center; background: var(--cool-air-2);">✓</td></tr>
+    </tbody>
+  </table>
+  <div style="font-size: 8pt; color: var(--soft-charcoal-2); margin-top: 6px; line-height: 1.5;">
+    一句:<b style="color: var(--soft-charcoal);">基本維護 = 維護 + 日常更新;全包 = 維護 + 持續內容 / SEO 引擎</b>。6 個月推廣試用 = 全包嘅內容引擎免費試,試用尾一齊睇數據揀 tier。<span class="faint">全包另可包 OCR 文件數碼化(Imarflex 專用,如需)。</span>
+  </div>
+
+  <div class="doc-foot" style="margin-top: 14px;">
+    <span class="left">IMARFLEX × MANY PROFIT × JACK LEUNG · APPENDIX B · IMX-2026-Q02</span>
+    <span>Page 3 / 3</span>
+  </div>
+
+  <div class="accent-strip"></div>
+</div>
+
+<script>
+  (function () {
+    function go() { setTimeout(function () { window.print(); }, 500); }
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(go); }
+    else if (document.readyState === 'complete') { go(); }
+    else { window.addEventListener('load', go); }
+  })();
+</script>
+</body>
+</html>

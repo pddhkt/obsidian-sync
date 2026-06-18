@@ -1,7 +1,7 @@
 # Content-delivery deck v2 — planning note (INTERNAL, not client-facing)
 
 > Purpose: plan the next client presentation doc. Replaces the month-scale Gantt story
-> (Imarflex-Launch-Schedule-zhHK, 2026-06-01: 4 篇/月) with (1) the new few-posts-per-week
+> (../launch-schedule/Imarflex-Launch-Schedule-zhHK, 2026-06-01: 4 篇/月) with (1) the new few-posts-per-week
 > weekly-cycle model and (2) an explicit content-directions menu (節日, showcase, painpoint…).
 > Status: DRAFTED 2026-06-10 → `Imarflex-Content-Directions-zhHK.html` (+ PDF same date).
 > Decisions taken (Jack: "go with recommendation"): hybrid B+C · cadence promise = 3 IG + 2 FB/week
@@ -11,7 +11,7 @@
 
 ## What the old deck promised (the "before")
 
-Source: `pitch/Imarflex-Launch-Schedule-zhHK.html` (+ PDF 2026-06-01)
+Source: `../launch-schedule/Imarflex-Launch-Schedule-zhHK.html` (+ PDF 2026-06-01)
 
 - Slide 2: 7-month overall Gantt (Jul '26 → Jan '27), parallel tracks
 - Slide 3: M0–M6 table — every month「4 篇 blog + IG/FB captions」, AEO audit ≥13/15, 48-grid citation sim

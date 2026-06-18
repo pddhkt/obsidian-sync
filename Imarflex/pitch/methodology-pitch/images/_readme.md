@@ -1,6 +1,6 @@
 ---
 type: folder-readme
-area: online-marketing
+area: pitch
 status: active
 tags:
   - online-marketing
@@ -8,7 +8,7 @@ tags:
   - images
 ---
 
-# pitch / images
+# methodology-pitch / images
 
 Generated hero images for the Methodology pitch deck (`imarflex-pitch-NN-<slot>.png`), produced from `../image-prompts.md`.
 

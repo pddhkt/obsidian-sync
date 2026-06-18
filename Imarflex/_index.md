@@ -8,6 +8,8 @@ status: in-pitch
 
 > 數碼銷售策略 + 網站重建 pitch / build project.
 > Brand 4 維度:外型 / 言行 / 價值 / 行動。
+>
+> 🏢 **Parent distributor:** [[ManyProfit/_index|Many Profit 萬利嘉]] carries Imarflex + 7 other brands. The app is being extended into a shared multi-channel platform — see [[ManyProfit/decisions/multi-brand-app-architecture]].
 
 ---
 
@@ -57,7 +59,9 @@ flowchart LR
 
 ## 📚 Reference docs (the long-form narrative)
 
-- [[pitch]] — client-facing pitch
+- [[reference/pitch|pitch]] — client-facing strategy pitch script
+- [[pitch/_index]] — rendered pitch deliverables, schedules, content-direction decks, and quotations
+- [[client-correspondence/_index]] — client replies, follow-up questions, and exported PDFs
 - [[internal-master]] — internal master spec (full)
 - [[add-ons-discussion]] — 8 add-ons in detail
 - [[funnel-demo-spec]] — HTML/iframe demo spec for the pitch deck
@@ -77,11 +81,17 @@ Imarflex/
 ├── features/                ← ONE NODE PER FEATURE  (31 nodes)
 ├── brand/                   ← 15 brand deliverables + social-samples/
 │   └── guideline/           ← final assets: logos / color-palettes / moodboard
+├── client-correspondence/    ← dated client replies, follow-up questions, exports/
 ├── online-marketing/        ← SEO research, content calendar, social workflow,
 │   │                          sales-content, products, reports/YYYY-MM
 │   ├── blog/                ← sample blog posts
 │   └── funnel/              ← 6 funnel-stage notes (with mermaid)
-├── pitch/                   ← client-facing pitch docs + deck/
+├── pitch/                   ← rendered pitch deliverables + quotations
+│   ├── deck/                ← original digital-sales-strategy deck
+│   ├── methodology-pitch/   ← methodology deck + image prompts + images/
+│   ├── launch-schedule/     ← 6-month SEO launch schedule
+│   ├── content-directions/  ← content direction menu + planning note
+│   └── quotation/           ← versioned quotation folders
 ├── decisions/               ← type:decision notes (feeds _open-questions.base)
 └── reference/               ← long-form narrative docs (8)
 ```
@@ -97,6 +107,8 @@ Imarflex/
 **「What's still open?」** → [[_open-questions.base]]
 **「What hits the purchase stage?」** → [[_features.base]] → "By Funnel Stage" view
 **「Read the full strategy」** → [[reference/internal-master]]
+**「Find client replies」** → [[client-correspondence/_index]]
+**「Find pitch PDFs / quotations」** → [[pitch/_index]]
 **「Brand voice / visual / content guidelines」** → [[brand/_index]]
 **「Final brand assets (logos / palette / moodboard)」** → [[brand/guideline/README]]
 
@@ -154,7 +166,7 @@ metric: ""
 
 ## 🚧 Build status snapshot
 
-> Live sync against `~/Projects/personal/imarflex-app` (Next.js 16 + Payload CMS 3 + Airwallex + Resend + PostHog).
+> Live sync against `~/Projects/personal/imarflex-app` (Next.js 16 on Vercel + Cloudflare Workers/Hono + D1/Drizzle CMS + React/Vite admin + Airwallex + Resend + PostHog).
 > As of 2026-05-14:
 
 | Status | Count | Features |

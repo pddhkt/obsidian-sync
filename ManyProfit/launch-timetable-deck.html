@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<title>Many Profit × Imarflex — 上線時間表</title>
+<style>
+:root {
+  --heritage-blue: #1E4B7A;
+  --heritage-blue-2: #163A5F;
+  --heritage-blue-3: #2C5F8F;
+  --rice-white: #F7F6F2;
+  --rice-white-2: #FFFFFF;
+  --clay-beige: #E7D7C1;
+  --clay-beige-2: #D9C5A6;
+  --steam-grey: #DCE1E6;
+  --steam-grey-2: #C5CCD3;
+  --soft-charcoal: #3C3F42;
+  --soft-charcoal-2: #5A5E62;
+  --soft-charcoal-3: #8A8E92;
+  --cool-air: #BFD7E6;
+  --cool-air-2: #DCE9F1;
+  --bg-tint: #F0EBE3;
+  --rule: #E5E1D9;
+  --rule-strong: #C8C2B5;
+  --accent-warn: #C7383E;
+  --accent-ok: #2C7A4D;
+}
+
+@page { size: 297mm 210mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: "PingFang HK", "Noto Sans HK", "Noto Sans CJK HK", "Source Han Sans HK", "Hiragino Sans HK", "Microsoft JhengHei", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--soft-charcoal);
+  background: var(--rice-white);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.slide {
+  width: 297mm; height: 210mm;
+  page-break-after: always; break-after: page;
+  position: relative; overflow: hidden;
+  padding: 17mm 22mm; background: var(--rice-white);
+}
+.slide:last-child { page-break-after: auto; break-after: auto; }
+
+/* ---- cover / closing (imageless) ---- */
+.slide.cover { padding: 0; background: linear-gradient(135deg, var(--heritage-blue-2) 0%, var(--heritage-blue) 55%, var(--heritage-blue-3) 100%); }
+.slide.cover .overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 36mm; }
+.slide.cover .meta { font-size: 12px; color: var(--clay-beige); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.slide.cover h1 { font-size: 50px; font-weight: 300; letter-spacing: -1px; color: var(--rice-white-2); line-height: 1.15; margin-bottom: 16px; }
+.slide.cover h1 .accent { color: var(--clay-beige); font-weight: 500; display: block; }
+.slide.cover .sub { font-size: 18px; color: var(--cool-air-2); font-weight: 400; margin-bottom: 30px; line-height: 1.6; }
+.slide.cover .foot { font-size: 12px; color: var(--cool-air); font-weight: 500; letter-spacing: 1px; }
+.slide.closing { padding: 0; background: linear-gradient(135deg, var(--heritage-blue-2) 0%, var(--heritage-blue) 100%); }
+.slide.closing .overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 30mm; }
+.slide.closing h1 { font-size: 40px; font-weight: 300; color: var(--rice-white-2); margin-bottom: 14px; }
+.slide.closing h1 .accent { color: var(--clay-beige); font-weight: 500; }
+.slide.closing .sub { font-size: 16px; max-width: 700px; margin: 0 auto 28px; color: var(--cool-air-2); line-height: 1.6; }
+.slide.closing .contact { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 18px 30px; border-radius: 8px; display: inline-flex; flex-direction: column; gap: 7px; font-size: 13.5px; color: var(--rice-white-2); text-align: left; }
+.slide.closing .contact strong { color: var(--clay-beige); font-size: 14px; letter-spacing: 1px; }
+
+.eyebrow { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--heritage-blue); font-weight: 500; padding: 4px 10px; background: var(--cool-air-2); border-radius: 3px; margin-bottom: 12px; }
+.slide h2 { font-size: 27px; font-weight: 500; color: var(--heritage-blue-2); margin-bottom: 6px; letter-spacing: -0.5px; line-height: 1.3; }
+.slide .lede { font-size: 14px; color: var(--soft-charcoal-2); margin-bottom: 14px; max-width: 245mm; line-height: 1.7; }
+
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 14px; }
+.tbl th { text-align: left; font-weight: 600; color: var(--heritage-blue-2); padding: 11px 14px; background: var(--bg-tint); border-bottom: 2px solid var(--rule-strong); font-size: 12px; letter-spacing: 0.5px; }
+.tbl td { padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; line-height: 1.55; }
+.tbl td.c, .tbl th.c { white-space: nowrap; }
+.tbl tr.go-row td { background: var(--cool-air-2); }
+.tbl .wk { font-weight: 700; color: var(--heritage-blue); white-space: nowrap; }
+.tbl .wk small { display: block; font-weight: 400; color: var(--soft-charcoal-3); font-size: 10.5px; letter-spacing: .5px; }
+.tbl .gate { color: var(--accent-warn); font-weight: 600; }
+
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 14px; }
+.card { background: var(--rice-white-2); border: 1px solid var(--rule); border-radius: 6px; padding: 15px 18px; }
+.card.accent { background: var(--cool-air-2); border-color: var(--cool-air); }
+.card.warm { background: var(--clay-beige); border-color: var(--clay-beige-2); }
+.card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--soft-charcoal-3); margin-bottom: 6px; }
+.card .ttl { font-size: 16px; font-weight: 600; color: var(--heritage-blue-2); margin-bottom: 9px; }
+.card ul.tight { margin: 4px 0 0; padding-left: 16px; }
+.card ul.tight li { font-size: 12.5px; margin-bottom: 6px; line-height: 1.5; color: var(--soft-charcoal); }
+.card ul.tight li b { color: var(--heritage-blue-2); }
+
+.callout { background: var(--clay-beige); border-left: 4px solid var(--heritage-blue); padding: 10px 15px; margin-top: 12px; font-size: 12.5px; color: var(--soft-charcoal); border-radius: 0 4px 4px 0; line-height: 1.55; }
+.callout .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--heritage-blue); font-weight: 600; display: block; margin-bottom: 4px; }
+.callout.warn { background: #fbe8e9; border-left-color: var(--accent-warn); }
+.callout.warn .label { color: var(--accent-warn); }
+.callout.info { background: var(--cool-air-2); border-left-color: var(--heritage-blue-3); }
+
+.footer { position: absolute; bottom: 8mm; left: 22mm; right: 22mm; display: flex; justify-content: space-between; font-size: 9.5px; color: var(--soft-charcoal-3); letter-spacing: 0.5px; }
+.hl-blue { color: var(--heritage-blue); font-weight: 600; }
+.muted { color: var(--soft-charcoal-2); }
+
+/* ====== Gantt (5 weeks / 10 sub-cols) ====== */
+.gantt { position: relative; margin-top: 42px; }
+.ghead, .grow { display: grid; grid-template-columns: 158px 1fr; align-items: center; }
+.grow { margin-bottom: 9px; }
+.glabel { font-size: 12px; color: var(--soft-charcoal); text-align: right; padding-right: 14px; font-weight: 600; line-height: 1.25; }
+.glabel .sub { display: block; font-size: 9.5px; color: var(--soft-charcoal-3); font-weight: 400; letter-spacing: .3px; }
+.gtrack { position: relative; display: grid; }
+.ghead .gtrack { grid-template-columns: repeat(5, 1fr); height: 30px; margin-bottom: 6px; }
+.ghead .gtrack .m { text-align: center; font-size: 11px; color: var(--heritage-blue-2); font-weight: 700; border-left: 1px solid var(--rule-strong); padding-top: 3px; }
+.ghead .gtrack .m small { display: block; font-size: 9px; color: var(--soft-charcoal-3); font-weight: 400; letter-spacing: .5px; }
+.grow .gtrack { grid-template-columns: repeat(10, 1fr); height: 26px;
+  background-image: repeating-linear-gradient(90deg, var(--rule) 0, var(--rule) 1px, transparent 1px, transparent calc(100% / 5)); }
+.bar { grid-row: 1; align-self: center; height: 19px; border-radius: 3px; display: flex; align-items: center; justify-content: center; padding: 0 9px; font-size: 9.5px; line-height: 1; white-space: nowrap; overflow: hidden; font-weight: 600; }
+.bar.client { background: var(--clay-beige-2); color: var(--soft-charcoal); }
+.bar.work { background: var(--heritage-blue); color: #fff; }
+.bar.workalt { background: var(--heritage-blue-3); color: #fff; }
+.bar.prep { background: var(--clay-beige); color: var(--soft-charcoal); border: 1px solid var(--clay-beige-2); }
+.bar.phase2 { background: repeating-linear-gradient(45deg, var(--steam-grey) 0 6px, var(--steam-grey-2) 6px 12px); color: var(--soft-charcoal-2); border: 1px dashed var(--soft-charcoal-3); font-weight: 600; }
+.bar.trial { background: linear-gradient(90deg, var(--heritage-blue), var(--heritage-blue-3)); color: #fff; }
+
+.goline { position: absolute; top: 30px; bottom: 4px; left: calc(158px + (100% - 158px) * 0.8); width: 0; border-left: 2px dashed var(--heritage-blue); z-index: 4; }
+.goflag { position: absolute; top: -26px; left: calc(158px + (100% - 158px) * 0.8); transform: translateX(-50%); background: var(--accent-ok); color: #fff; font-size: 10px; padding: 4px 11px; border-radius: 11px; white-space: nowrap; z-index: 6; font-weight: 700; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 20px; font-size: 10.5px; color: var(--soft-charcoal-2); }
+.legend .item { display: inline-flex; align-items: center; gap: 6px; }
+.legend .sw { width: 16px; height: 11px; border-radius: 2px; display: inline-block; }
+.sw.client { background: var(--clay-beige-2); }
+.sw.work { background: var(--heritage-blue); }
+.sw.prep { background: var(--clay-beige); border: 1px solid var(--clay-beige-2); }
+.sw.phase2 { background: repeating-linear-gradient(45deg, var(--steam-grey) 0 4px, var(--steam-grey-2) 4px 8px); border: 1px dashed var(--soft-charcoal-3); }
+.sw.go { background: var(--accent-ok); }
+</style>
+</head>
+<body>
+
+<!-- ====== Slide 1 — Cover ====== -->
+<section class="slide cover">
+  <div class="overlay">
+    <div class="meta">2026 · 上線時間表 · LAUNCH TIMETABLE</div>
+    <h1>Many Profit × Imarflex<span class="accent">雙網店上線時間表</span></h1>
+    <div class="sub">兩個前台網店 + 共用 CMS 後台 —— 由微調、入資料到上線,<br>一張表睇晒邊樣行先、邊樣並行,同你哋要準備啲咩。</div>
+    <div class="foot">目標 ~7 月中上線（待定）· 2026-06-17 製作 · Jack Leung</div>
+  </div>
+</section>
+
+<!-- ====== Slide 2 — Gantt timeline ====== -->
+<section class="slide">
+  <span class="eyebrow">01 · 總時間表</span>
+  <h2>整體上線時間表</h2>
+  <p class="lede">網站同後台大部分<span class="hl-blue">已經起好</span>,7 月做嘅係<span class="hl-blue">微調 + 入資料 + 設定收款 / email + 上線</span>。<span class="hl-blue">產品資料一到手（真正 gate）</span>,網站微調、資料匯入、收款、email 四條線同時並行,唔使排隊。目標 7 月中上線（待定）。</p>
+
+  <div class="gantt">
+    <div class="goline"></div>
+    <div class="goflag">🚀 上線 GO LIVE · ~7 月中（待定）</div>
+
+    <div class="ghead">
+      <div></div>
+      <div class="gtrack">
+        <div class="m">6/16<small>W1</small></div>
+        <div class="m">6/23<small>W2</small></div>
+        <div class="m">6/30<small>W3</small></div>
+        <div class="m">7/7<small>W4</small></div>
+        <div class="m">7/14<small>W5</small></div>
+      </div>
+    </div>
+
+    <div class="grow">
+      <div class="glabel">客戶準備<span class="sub">產品資料</span></div>
+      <div class="gtrack"><div class="bar client" style="grid-column: 1 / 5;">產品資料交收　← 真正 gate</div></div>
+    </div>
+    <div class="grow">
+      <div class="glabel">收款<span class="sub">Airwallex</span></div>
+      <div class="gtrack"><div class="bar client" style="grid-column: 1 / 5;">申請 · ~48h 批核（預留 1–2 週）</div></div>
+    </div>
+    <div class="grow">
+      <div class="glabel">網站微調<span class="sub">兩個站</span></div>
+      <div class="gtrack"><div class="bar work" style="grid-column: 3 / 7;">兩站微調 · 約 2 週（客戶意見）</div></div>
+    </div>
+    <div class="grow">
+      <div class="glabel">資料匯入<span class="sub">產品 / SKU</span></div>
+      <div class="gtrack"><div class="bar workalt" style="grid-column: 3 / 6;">產品 / SKU 匯入 · ~4 日（數量待定）</div></div>
+    </div>
+    <div class="grow">
+      <div class="glabel">Email 設定<span class="sub">Resend</span></div>
+      <div class="gtrack"><div class="bar prep" style="grid-column: 3 / 7;">域名驗證 + 交易通知接線</div></div>
+    </div>
+    <div class="grow">
+      <div class="glabel">遷移 + 測試<span class="sub">Shopline → 新站</span></div>
+      <div class="gtrack"><div class="bar phase2" style="grid-column: 7 / 9;">Shopline 遷移 + 301 + QA / UAT</div></div>
+    </div>
+    <div class="grow">
+      <div class="glabel">上線 + 推廣<span class="sub">6 個月引擎</span></div>
+      <div class="gtrack"><div class="bar trial" style="grid-column: 9 / 11;">🚀 上線 + 推廣開跑</div></div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="sw client"></span> 客戶行動</span>
+    <span class="item"><span class="sw work"></span> 我哋執行</span>
+    <span class="item"><span class="sw prep"></span> 並行準備</span>
+    <span class="item"><span class="sw phase2"></span> 遷移 / 測試</span>
+    <span class="item"><span class="sw go"></span> 上線里程碑</span>
+  </div>
+
+  <div class="footer"><span>Many Profit × Imarflex · 上線時間表</span><span>2 / 5</span></div>
+</section>
+
+<!-- ====== Slide 3 — Calendar ====== -->
+<section class="slide">
+  <span class="eyebrow">02 · 行事曆</span>
+  <h2>逐週行事曆</h2>
+  <p class="lede">每一週你哋要做咩、我哋做咩,一格一格睇清楚。<span class="hl-blue">第 2 週交產品資料</span>係真正開始嘅關鍵。</p>
+
+  <table class="tbl">
+    <thead>
+      <tr><th class="c" style="width:14%">週 · 日期</th><th style="width:43%">客戶行動 · CLIENT</th><th>我哋執行 · WE DELIVER</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="c"><span class="wk">第 1 週<small>6/16–22</small></span></td>
+        <td>付訂金 · 開始準備產品資料 · 申請 Airwallex · 授權兩站 DNS · 決定 email 安排</td>
+        <td>Kickoff · 開工準備 · 確認 SKU 範圍</td>
+      </tr>
+      <tr>
+        <td class="c"><span class="wk">第 2 週<small>6/23–29</small></span></td>
+        <td><span class="gate">交產品資料 ← gate 開</span> · 交品牌素材 · 確認 from-address / 回覆 inbox</td>
+        <td>開始資料匯入 + 網站微調 · Resend 域名驗證 · Airwallex 整合</td>
+      </tr>
+      <tr>
+        <td class="c"><span class="wk">第 3 週<small>6/30–7/6</small></span></td>
+        <td>一輪微調意見 · 敲定 Shopline 遷移方式</td>
+        <td>兩站微調完成 · 資料匯入完成 · email 通知接好 · staging 預覽</td>
+      </tr>
+      <tr>
+        <td class="c"><span class="wk">第 4 週<small>7/7–13</small></span></td>
+        <td>UAT 試用 · 最後確認</td>
+        <td>最終 QA · Shopline 內容 + 301 redirect 遷移 · 上線前檢查</td>
+      </tr>
+      <tr class="go-row">
+        <td class="c"><span class="wk">第 5 週<small>~7/14–18</small></span></td>
+        <td>—</td>
+        <td>🚀 <b>GO LIVE 兩個站</b> · 6 個月推廣 trial 開跑</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <span class="label">時間待定 · 可能順延</span>
+    目標 7 月中,但實際上線日視乎：①<b>產品資料到手時間</b>（真正 gate）②<b>Airwallex 批核</b>快慢 ③<b>域名轉移</b>有冇問題。任何一項遲,上線日順延 —— 但我哋以 7 月中為目標推進。
+  </div>
+
+  <div class="footer"><span>Many Profit × Imarflex · 上線時間表</span><span>3 / 5</span></div>
+</section>
+
+<!-- ====== Slide 4 — Prep: client vs us ====== -->
+<section class="slide">
+  <span class="eyebrow">03 · 開始前準備</span>
+  <h2>你哋要準備 · 我哋負責</h2>
+  <p class="lede">產品資料一到手,各條線並行,全部 7 月內完成。下面係你哋要俾嘅嘢同我哋負責嘅範圍。</p>
+
+  <div class="card-grid">
+    <div class="card warm">
+      <div class="label">客戶要準備 · CLIENT INPUTS</div>
+      <div class="ttl">啟動所需素材</div>
+      <ul class="tight">
+        <li><b>兩站網域 + DNS</b> — Imarflex + Many Profit 管理權（<b>GoDaddy</b>）</li>
+        <li><b>Email 安排</b> — 每站寄件地址 + 客戶回覆入邊個現有 inbox</li>
+        <li><b>Airwallex 申請</b> — 公司註冊證書、身份證、UBO（≥25%）文件</li>
+        <li><b>產品資料 / SKU</b> — 圖片、規格、價錢、SKU code、CSV<span class="muted">（總數待確認）</span></li>
+        <li><b>品牌素材</b> — Many Profit 及旗下品牌 logo / 色彩 / 字型;About / FAQ 文案</li>
+        <li><b>未來 90 日 promo 時間表</b> — 排內容檔期</li>
+      </ul>
+    </div>
+    <div class="card accent">
+      <div class="label">我哋負責 · WE DELIVER</div>
+      <div class="ttl">建置 → 上線 → 推廣</div>
+      <ul class="tight">
+        <li>兩站前台微調 + 共用 CMS</li>
+        <li>產品 / SKU 資料匯入</li>
+        <li>Airwallex 收款整合</li>
+        <li>Email（Resend）設定 + 交易通知</li>
+        <li>Shopline 遷移 + 301 redirect</li>
+        <li>測試 / 性能 + 後台 training</li>
+        <li>上線 + 上線當日起 6 個月推廣（blog 4/月 + 每週 3 IG + 2 FB）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout info">
+    <span class="label">Email 點解決 ·「收到但寄唔到俾客」</span>
+    保留你哋<b>現有 email 收件</b>（員工 inbox 唔郁）;新加 <b>Resend</b> 用<b>認證子網域</b>寄交易 / 推廣 email,客戶<b>回覆自動入返現有 inbox</b>。加上正確 SPF / DKIM / DMARC,直接解決寄唔到嘅問題。
+  </div>
+  <div class="callout">
+    <span class="label">上線前要傾掂 · Shopline 遷移選擇</span>
+    現有官網喺 <b>Shopline</b>,上線前揀：① <b>兩站並行</b>（新站先上,Shopline 行多陣,風險低）;或 ② <b>全面遷移</b>（~7 月中 cutover 去新站）。遷移流程：Shopline 匯出 → 下載圖片 / 規格 → 匯入新站。
+  </div>
+
+  <div class="footer"><span>Many Profit × Imarflex · 上線時間表</span><span>4 / 5</span></div>
+</section>
+
+<!-- ====== Slide 5 — Closing ====== -->
+<section class="slide closing">
+  <div class="overlay">
+    <h1>目標 <span class="accent">7 月中上線</span>（待定）。</h1>
+    <div class="sub">網站大部分已經起好,等嘅係你哋嘅產品資料同少少微調意見。<br>產品資料一到手就開跑,上線當日起 6 個月推廣引擎。</div>
+    <div class="contact">
+      <strong>下一步 · NEXT STEPS</strong>
+      <span>1 · 付訂金 + 開始準備產品資料</span>
+      <span>2 · 申請 Airwallex + 授權兩站 DNS（GoDaddy）+ 決定 email 安排</span>
+      <span>3 · 我哋微調 + 入資料 → ~7 月中上線（待定）</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
