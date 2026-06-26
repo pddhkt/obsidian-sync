@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Timi AI Body/Head Base V1</title>
+    <style>
+      :root {
+        font-family: ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+        background: #fff8ee;
+        color: #082b4a;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background: #fff8ee;
+      }
+
+      main {
+        width: min(96vw, 1280px);
+        display: grid;
+        gap: 20px;
+      }
+
+      h1,
+      p {
+        margin: 0;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .panel {
+        min-height: 520px;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 14px;
+        border: 3px solid rgba(8, 43, 74, 0.14);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .stage {
+        width: min(29vw, 360px);
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+
+      .checker {
+        background:
+          linear-gradient(45deg, rgba(8, 43, 74, 0.08) 25%, transparent 25%),
+          linear-gradient(-45deg, rgba(8, 43, 74, 0.08) 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, rgba(8, 43, 74, 0.08) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(8, 43, 74, 0.08) 75%);
+        background-color: #fff8ee;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+        background-size: 20px 20px;
+      }
+
+      .stage img {
+        max-width: 94%;
+        max-height: 94%;
+        object-fit: contain;
+        filter: drop-shadow(0 18px 0 rgba(8, 43, 74, 0.08));
+      }
+
+      .label {
+        font-size: 20px;
+        font-weight: 800;
+      }
+
+      .note {
+        max-width: 330px;
+        color: rgba(8, 43, 74, 0.76);
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      @media (max-width: 900px) {
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+
+        .stage {
+          width: min(82vw, 380px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Timi AI Body/Head Base V1</h1>
+      <div class="comparison">
+        <section class="panel">
+          <div class="stage">
+            <img src="./timi-reference-cutout.png" alt="Original Timi reference" />
+          </div>
+          <p class="label">Reference</p>
+          <p class="note">Original generated Timi cutout.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage">
+            <img src="./timi-ai-body-head-base-v1-key.png" alt="Generated layer on green key background" />
+          </div>
+          <p class="label">Generated Source</p>
+          <p class="note">Image-generation output on chroma key.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage checker">
+            <img src="./timi-ai-body-head-base-v1.png" alt="Transparent Timi base layer" />
+          </div>
+          <p class="label">Transparent Layer</p>
+          <p class="note">Green removed locally. Candidate base layer for stacking future parts.</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

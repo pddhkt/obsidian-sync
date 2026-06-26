@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Timi AI Layer Stack V2</title>
+    <style>
+      :root {
+        font-family: ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+        background: #fff8ee;
+        color: #082b4a;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background: #fff8ee;
+      }
+
+      main {
+        width: min(97vw, 1380px);
+        display: grid;
+        gap: 20px;
+      }
+
+      h1,
+      p {
+        margin: 0;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(190px, 1fr));
+        gap: 14px;
+      }
+
+      .panel {
+        min-height: 460px;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 12px;
+        border: 3px solid rgba(8, 43, 74, 0.14);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .stage {
+        width: min(18vw, 270px);
+        aspect-ratio: 1;
+        position: relative;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+
+      .checker {
+        background:
+          linear-gradient(45deg, rgba(8, 43, 74, 0.08) 25%, transparent 25%),
+          linear-gradient(-45deg, rgba(8, 43, 74, 0.08) 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, rgba(8, 43, 74, 0.08) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(8, 43, 74, 0.08) 75%);
+        background-color: #fff8ee;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+        background-size: 20px 20px;
+      }
+
+      .stage img {
+        max-width: 94%;
+        max-height: 94%;
+        object-fit: contain;
+        filter: drop-shadow(0 14px 0 rgba(8, 43, 74, 0.08));
+      }
+
+      .stack img {
+        position: absolute;
+        inset: 3%;
+        width: 94%;
+        height: 94%;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+      }
+
+      .stack .cream-layer {
+        transform: translateY(9%) scale(0.88);
+        transform-origin: 50% 50%;
+      }
+
+      .stack .inner-ear-layer {
+        transform: translateY(-18%) scale(0.72);
+        transform-origin: 50% 50%;
+      }
+
+      .stack .eyes-layer {
+        transform: translateY(-9%) scale(0.46);
+        transform-origin: 50% 50%;
+      }
+
+      .label {
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .note {
+        max-width: 280px;
+        color: rgba(8, 43, 74, 0.76);
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      @media (max-width: 1050px) {
+        .comparison {
+          grid-template-columns: repeat(2, minmax(240px, 1fr));
+        }
+
+        .stage {
+          width: min(42vw, 320px);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+
+        .stage {
+          width: min(82vw, 340px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Timi AI Layer Stack V2</h1>
+      <div class="comparison">
+        <section class="panel">
+          <div class="stage">
+            <img src="./timi-reference-cutout.png" alt="Original Timi reference" />
+          </div>
+          <p class="label">Reference</p>
+          <p class="note">Target look.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage checker">
+            <img src="./timi-ai-body-head-base-v1.png" alt="Layer 1 yellow base" />
+          </div>
+          <p class="label">Layer 1: Base</p>
+          <p class="note">Approved for now.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage checker">
+            <img src="./timi-ai-cream-patch-v1.png" alt="Layer 2 cream patch" />
+          </div>
+          <p class="label">Layer 2: Cream Patch</p>
+          <p class="note">Generated separately.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage checker">
+            <img src="./timi-ai-inner-ears-v1.png" alt="Layer 3 inner ears" />
+          </div>
+          <p class="label">Layer 3: Inner Ears</p>
+          <p class="note">Two pink ear patches.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage checker">
+            <img src="./timi-ai-eyes-v1.png" alt="Layer 4 eyes" />
+          </div>
+          <p class="label">Layer 4: Eyes</p>
+          <p class="note">Two glossy eye shapes.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage checker stack" aria-label="Layer 1, Layer 2, and Layer 3 stacked">
+            <img src="./timi-ai-body-head-base-v1.png" alt="" />
+            <img class="cream-layer" src="./timi-ai-cream-patch-v1.png" alt="" />
+            <img class="inner-ear-layer" src="./timi-ai-inner-ears-v1.png" alt="" />
+            <img class="eyes-layer" src="./timi-ai-eyes-v1.png" alt="" />
+          </div>
+          <p class="label">Stacked</p>
+          <p class="note">Checks alignment across approved layers.</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

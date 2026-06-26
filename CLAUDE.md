@@ -13,8 +13,7 @@ Write notes in Obsidian Flavored Markdown (wikilinks, callouts, frontmatter) —
 
 | Folder | What lives there |
 |---|---|
-| `Imarflex/` | Imarflex 伊瑪牌 client project (pitch stage). Project home: `Imarflex/_index.md`. Decisions → `decisions/`, marketing work → `online-marketing/` (blog, funnel, sales-content, products, research-inbox/YYYY-MM, reports/YYYY-MM), brand → `brand/` (+ `brand/guideline/` final assets), pitch docs + deck → `pitch/`. **Parent distributor:** `ManyProfit/`. |
-| `ManyProfit/` | Many Profit 萬利嘉 — parent HK/Macau distributor carrying Imarflex + 7 other brands. Project home: `ManyProfit/_index.md`. Architecture/build decisions → `decisions/`. The app extends `imarflex-app` into a shared multi-channel platform (Many Profit + Imarflex as two channels). |
+| `ManyProfit Group/` | Shared umbrella for the Many Profit / Imarflex platform. Start at `ManyProfit Group/_index.md`. Contains `Imarflex/` for brand-specific storefront, pitch, brand, and marketing work, and `ManyProfit/` for parent-distributor, multi-brand-channel, launch, architecture, and commercial notes. |
 | `ctint/` | CTINT day-job knowledge, by project: `axa/`, `HGC/`, `qhms/`, `shacom/`, `tts/` |
 | `Personal/` | Personal projects & ideas: `App Ideas/<Idea>/`, `Personal Website/`, `Gaming/` |
 | `Learn/` | Learning notes by topic, e.g. `Learn/Dev/...` |
@@ -22,7 +21,7 @@ Write notes in Obsidian Flavored Markdown (wikilinks, callouts, frontmatter) —
 
 Placement rules:
 - A new idea → new folder `Personal/App Ideas/<Idea Name>/` with an index note.
-- A decision or discussion outcome for an existing project → that project's folder (`Imarflex/decisions/`, `ctint/<project>/`, `Personal/App Ideas/<Idea>/`).
+- A decision or discussion outcome for an existing project → that project's folder (`ManyProfit Group/Imarflex/decisions/`, `ManyProfit Group/ManyProfit/decisions/`, `ctint/<project>/`, `Personal/App Ideas/<Idea>/`).
 - A reusable how-to or concept not tied to a project → `Learn/`.
 - If a project has an `_index.md`, add a link to significant new notes there.
 - If this map drifts from reality (folders added/renamed), update this file.

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Timi Body Shape V2</title>
+    <style>
+      :root {
+        font-family: ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+        background: #fff8ee;
+        color: #082b4a;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background: #fff8ee;
+      }
+
+      main {
+        width: min(94vw, 1080px);
+        display: grid;
+        gap: 20px;
+      }
+
+      h1,
+      p {
+        margin: 0;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+        gap: 22px;
+      }
+
+      .panel {
+        min-height: 560px;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 16px;
+        border: 3px solid rgba(8, 43, 74, 0.14);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .stage {
+        width: min(42vw, 430px);
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+      }
+
+      .reference {
+        width: 92%;
+        height: auto;
+        filter: drop-shadow(0 20px 0 rgba(8, 43, 74, 0.08));
+      }
+
+      #body-lottie {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 20px 0 rgba(8, 43, 74, 0.08));
+      }
+
+      .label {
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      .note {
+        max-width: 420px;
+        color: rgba(8, 43, 74, 0.76);
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 760px) {
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+
+        .stage {
+          width: min(82vw, 430px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Timi Body Shape V2</h1>
+      <div class="comparison">
+        <section class="panel">
+          <div class="stage">
+            <img class="reference" src="./timi-reference-cutout.png" alt="Timi visual reference" />
+          </div>
+          <p class="label">Reference</p>
+          <p class="note">Judge only the outer body mass: soft round head, wide cheeks, and flatter bottom.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage">
+            <div id="body-lottie" aria-label="Body-only Lottie shape V2"></div>
+          </div>
+          <p class="label">Body Shape V2</p>
+          <p class="note">Single filled Lottie shape. Ears, face, scarf, paws, badge, and fur highlights come later.</p>
+        </section>
+      </div>
+    </main>
+
+    <script src="./lottie.min.js"></script>
+    <script>
+      function smoothClosedPath(points, tension = 0.22) {
+        return {
+          v: points,
+          i: points.map((point, index) => {
+            const prev = points[(index - 1 + points.length) % points.length];
+            const next = points[(index + 1) % points.length];
+            return [(prev[0] - next[0]) * tension, (prev[1] - next[1]) * tension];
+          }),
+          o: points.map((point, index) => {
+            const prev = points[(index - 1 + points.length) % points.length];
+            const next = points[(index + 1) % points.length];
+            return [(next[0] - prev[0]) * tension, (next[1] - prev[1]) * tension];
+          }),
+          c: true
+        };
+      }
+
+      const bodyPath = smoothClosedPath(
+        [
+          [0, -158],
+          [96, -150],
+          [154, -98],
+          [176, -26],
+          [168, 48],
+          [126, 118],
+          [66, 154],
+          [22, 166],
+          [0, 158],
+          [-22, 166],
+          [-66, 154],
+          [-126, 118],
+          [-168, 48],
+          [-176, -26],
+          [-154, -98],
+          [-96, -150]
+        ],
+        0.18
+      );
+
+      const bodyShapeAnimation = {
+        v: "5.12.2",
+        fr: 30,
+        ip: 0,
+        op: 120,
+        w: 512,
+        h: 512,
+        nm: "Timi body shape v2",
+        ddd: 0,
+        assets: [],
+        layers: [
+          {
+            ddd: 0,
+            ind: 1,
+            ty: 4,
+            nm: "single color body",
+            sr: 1,
+            ks: {
+              o: { a: 0, k: 100 },
+              r: {
+                a: 1,
+                k: [
+                  { t: 0, s: [0], e: [-1], i: { x: [0.42], y: [0] }, o: { x: [0.58], y: [1] } },
+                  { t: 60, s: [-1], e: [0], i: { x: [0.42], y: [0] }, o: { x: [0.58], y: [1] } },
+                  { t: 120, s: [0] }
+                ]
+              },
+              p: {
+                a: 1,
+                k: [
+                  { t: 0, s: [256, 270, 0], e: [256, 260, 0], i: { x: [0.42], y: [0] }, o: { x: [0.58], y: [1] } },
+                  { t: 60, s: [256, 260, 0], e: [256, 270, 0], i: { x: [0.42], y: [0] }, o: { x: [0.58], y: [1] } },
+                  { t: 120, s: [256, 270, 0] }
+                ]
+              },
+              a: { a: 0, k: [0, 0, 0] },
+              s: {
+                a: 1,
+                k: [
+                  { t: 0, s: [100, 100, 100], e: [102, 98, 100], i: { x: [0.42], y: [0] }, o: { x: [0.58], y: [1] } },
+                  { t: 60, s: [102, 98, 100], e: [100, 100, 100], i: { x: [0.42], y: [0] }, o: { x: [0.58], y: [1] } },
+                  { t: 120, s: [100, 100, 100] }
+                ]
+              }
+            },
+            ao: 0,
+            shapes: [
+              {
+                ty: "gr",
+                nm: "soft body silhouette",
+                it: [
+                  {
+                    ty: "sh",
+                    nm: "body path",
+                    ks: {
+                      a: 0,
+                      k: bodyPath
+                    }
+                  },
+                  {
+                    ty: "fl",
+                    c: { a: 0, k: [1, 0.82, 0.28, 1] },
+                    o: { a: 0, k: 100 },
+                    r: 1,
+                    bm: 0
+                  },
+                  {
+                    ty: "st",
+                    c: { a: 0, k: [0.02, 0.12, 0.22, 1] },
+                    o: { a: 0, k: 100 },
+                    w: { a: 0, k: 10 },
+                    lc: 1,
+                    lj: 1,
+                    ml: 4,
+                    bm: 0
+                  },
+                  {
+                    ty: "tr",
+                    p: { a: 0, k: [0, 0] },
+                    a: { a: 0, k: [0, 0] },
+                    s: { a: 0, k: [100, 100] },
+                    r: { a: 0, k: 0 },
+                    o: { a: 0, k: 100 },
+                    sk: { a: 0, k: 0 },
+                    sa: { a: 0, k: 0 }
+                  }
+                ]
+              }
+            ],
+            ip: 0,
+            op: 120,
+            st: 0,
+            bm: 0
+          }
+        ]
+      };
+
+      lottie.loadAnimation({
+        container: document.getElementById("body-lottie"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: bodyShapeAnimation,
+        rendererSettings: {
+          progressiveLoad: true,
+          preserveAspectRatio: "xMidYMid meet"
+        }
+      });
+    </script>
+  </body>
+</html>

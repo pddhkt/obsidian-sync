@@ -20,6 +20,7 @@ Durable workspace for app concepts, product logic, MVP notes, data models, and d
 | Pet Social Vlog | idea | [[Pet Social Vlog/_index|Pet Social Vlog]] |
 | Real Estate Agency System | scoped — POC feature set defined | [[Real Estate Agency System/Real Estate Agency System\|Real Estate Agency System]] |
 | Syntax Gym | designed — ready to build | [[Syntax Gym/Syntax Gym\|Syntax Gym]] |
+| TimeKids | private beta scoped | [[TimeKids/_index|TimeKids]] |
 
 ## Suggested workflow
 

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Timi SVG Trace V1</title>
+    <style>
+      :root {
+        font-family: ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+        background: #fff8ee;
+        color: #082b4a;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background: #fff8ee;
+      }
+
+      main {
+        width: min(94vw, 1080px);
+        display: grid;
+        gap: 20px;
+      }
+
+      h1,
+      p {
+        margin: 0;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+        gap: 22px;
+      }
+
+      .panel {
+        min-height: 560px;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 16px;
+        border: 3px solid rgba(8, 43, 74, 0.14);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.5);
+      }
+
+      .stage {
+        width: min(42vw, 430px);
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+      }
+
+      .stage img {
+        max-width: 92%;
+        max-height: 92%;
+        filter: drop-shadow(0 20px 0 rgba(8, 43, 74, 0.08));
+      }
+
+      .label {
+        font-size: 22px;
+        font-weight: 800;
+      }
+
+      .note {
+        max-width: 420px;
+        color: rgba(8, 43, 74, 0.76);
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 760px) {
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+
+        .stage {
+          width: min(82vw, 430px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Timi SVG Trace V1</h1>
+      <div class="comparison">
+        <section class="panel">
+          <div class="stage">
+            <img src="./timi-reference-cutout.png" alt="Timi visual reference" />
+          </div>
+          <p class="label">Reference</p>
+          <p class="note">Original generated Timi cutout.</p>
+        </section>
+
+        <section class="panel">
+          <div class="stage">
+            <img src="./timi-full-silhouette-traced-v1.svg" alt="Potrace generated SVG silhouette" />
+          </div>
+          <p class="label">Auto-Traced SVG</p>
+          <p class="note">Generated from the image alpha mask using Potrace. Good for silhouette extraction, not final layer cleanup.</p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

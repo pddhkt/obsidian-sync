@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TimeKids Lottie Prototype - Timi Idle</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+        background: #fff8ee;
+        color: #082b4a;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 30% 20%, rgba(255, 208, 96, 0.35), transparent 30%),
+          radial-gradient(circle at 70% 72%, rgba(82, 184, 255, 0.22), transparent 28%),
+          #fff8ee;
+      }
+
+      main {
+        width: min(94vw, 1040px);
+        display: grid;
+        gap: 22px;
+        justify-items: center;
+      }
+
+      .comparison {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        gap: 22px;
+      }
+
+      .panel {
+        min-height: 500px;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        gap: 12px;
+        border: 3px solid rgba(8, 43, 74, 0.12);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.44);
+      }
+
+      .animation {
+        width: min(40vw, 420px);
+        aspect-ratio: 1;
+        filter: drop-shadow(0 22px 0 rgba(8, 43, 74, 0.08));
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: clamp(28px, 4vw, 44px);
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .note {
+        max-width: 760px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.45;
+      }
+
+      code {
+        padding: 3px 6px;
+        border-radius: 8px;
+        background: rgba(8, 43, 74, 0.08);
+      }
+
+      .small {
+        max-width: 360px;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.35;
+        opacity: 0.76;
+      }
+
+      @media (max-width: 760px) {
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+
+        .animation {
+          width: min(78vw, 420px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>TimeKids Lottie Test</h1>
+      <div class="comparison">
+        <section class="panel">
+          <div id="reference-timi" class="animation" aria-label="Animated Timi reference art"></div>
+          <h2>Actual Timi Art</h2>
+          <p class="small">Image-layer Lottie. Much closer to the visual target, but not a full rig.</p>
+        </section>
+        <section class="panel">
+          <div id="technical-timi" class="animation" aria-label="Animated Timi technical Lottie rig"></div>
+          <h2>Technical Shape Rig</h2>
+          <p class="small">Hand-built vector test. Useful for motion logic, not for final art direction.</p>
+        </section>
+      </div>
+      <div class="note">
+        This file now works when opened directly. Final Timi should be built from layered art parts,
+        then exported to Rive or Lottie; the crude shape rig is not the target look.
+      </div>
+    </main>
+
+    <script src="./lottie.min.js"></script>
+    <script src="./timi-idle-loop-data.js"></script>
+    <script src="./timi-reference-art-loop-data.js"></script>
+    <script>
+      const rendererSettings = {
+        progressiveLoad: true,
+        preserveAspectRatio: "xMidYMid meet"
+      };
+
+      lottie.loadAnimation({
+        container: document.getElementById("reference-timi"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: window.timiReferenceArtAnimation,
+        rendererSettings
+      });
+
+      lottie.loadAnimation({
+        container: document.getElementById("technical-timi"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: window.timiIdleAnimation,
+        rendererSettings
+      });
+    </script>
+  </body>
+</html>

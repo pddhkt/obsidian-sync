@@ -1,0 +1,192 @@
+filters:
+  and:
+    - type == "sales-content-post"
+    - file.inFolder("ManyProfit Group/Imarflex/online-marketing/sales-content/cycles")
+formulas:
+  status_icon: if(status == "published", "Published", if(status == "scheduled", "Scheduled", if(status == "draft-ready", "Draft ready", if(status == "drafting", "Drafting", if(status == "planned", "Planned", if(status == "idea", "Idea", if(status == "archived", "Archived", "")))))))
+properties:
+  status:
+    displayName: Status
+  formula.status_icon:
+    displayName: Status
+  publish-month:
+    displayName: Month
+  publish-week:
+    displayName: Week
+  content-level:
+    displayName: Level
+  planned-date:
+    displayName: Planned
+  published-date:
+    displayName: Published
+  channel:
+    displayName: Channel
+  format:
+    displayName: Format
+  topic-type:
+    displayName: Topic Type
+  sales-purpose:
+    displayName: Sales Purpose
+  parent-campaign:
+    displayName: Parent Campaign
+  post-angle:
+    displayName: Post Angle
+  product-category:
+    displayName: Category
+  hero-sku:
+    displayName: Hero SKU
+  destination:
+    displayName: Destination
+  primary-cta:
+    displayName: CTA
+  ad-support:
+    displayName: Ad Support
+  ad_candidate:
+    displayName: Ad Candidate
+  ad-budget-hkd:
+    displayName: Ad Budget HKD
+  published-url:
+    displayName: URL
+  utm-campaign:
+    displayName: UTM
+views:
+  - type: table
+    name: All Sales Content
+    groupBy:
+      property: publish-month
+      direction: DESC
+    order:
+      - file.name
+      - formula.status_icon
+      - content-level
+      - publish-week
+      - channel
+      - format
+      - topic-type
+      - sales-purpose
+      - product-category
+      - destination
+      - ad-support
+    sort:
+      - property: planned-date
+        direction: ASC
+  - type: table
+    name: By Topic Type
+    groupBy:
+      property: topic-type
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icon
+      - content-level
+      - publish-month
+      - publish-week
+      - channel
+      - format
+      - sales-purpose
+      - destination
+      - ad-support
+  - type: table
+    name: By Sales Purpose
+    groupBy:
+      property: sales-purpose
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icon
+      - content-level
+      - publish-month
+      - publish-week
+      - topic-type
+      - product-category
+      - destination
+      - primary-cta
+  - type: table
+    name: Published / Made
+    filters:
+      and:
+        - status == "published"
+    groupBy:
+      property: sales-purpose
+      direction: ASC
+    order:
+      - file.name
+      - published-date
+      - channel
+      - format
+      - topic-type
+      - product-category
+      - published-url
+      - utm-campaign
+  - type: table
+    name: Needs Production
+    filters:
+      or:
+        - status == "planned"
+        - status == "drafting"
+        - status == "draft-ready"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - publish-month
+      - publish-week
+      - channel
+      - format
+      - topic-type
+      - sales-purpose
+      - primary-cta
+  - type: table
+    name: Social Posts by Channel
+    filters:
+      and:
+        - content-level == "social-post"
+    groupBy:
+      property: channel
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icon
+      - planned-date
+      - format
+      - topic-type
+      - sales-purpose
+      - product-category
+      - post-angle
+      - primary-cta
+  - type: table
+    name: Campaign Bundles
+    filters:
+      and:
+        - content-level == "campaign"
+    groupBy:
+      property: publish-week
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icon
+      - planned-date
+      - topic-type
+      - sales-purpose
+      - channel
+      - destination
+  - type: table
+    name: Ad Candidates
+    filters:
+      and:
+        - ad_candidate == true
+    groupBy:
+      property: ad-support
+      direction: ASC
+    order:
+      - file.name
+      - formula.status_icon
+      - content-level
+      - channel
+      - format
+      - product-category
+      - topic-type
+      - sales-purpose
+      - ad-budget-hkd
+      - destination
