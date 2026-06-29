@@ -118,3 +118,5 @@ Every approved topic brief should include:
 | Asset list | Photography / image generation |
 | Publish date | Calendar |
 | KPI | Report |
+
+呢張 brief approve 咗之後,實際喺 CMS calendar 上面 create post、俾 Jack + 客戶 review、iterate 到 confirm、最後 deliver(blog 自動出 / IG・FB 人手出)嘅操作,跟 [[cms-content-pipeline]]。

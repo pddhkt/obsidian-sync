@@ -45,6 +45,7 @@ flowchart LR
 | [[seo-keyword-research]] | 教點樣為 topic 做 SEO | 每個 topic 變成 blog 前 |
 | [[content-calendar]] | 安排 research、writing、social posting | 每週 / 每月 planning |
 | [[channel-production-workflow]] | 一個 topic 拆成 blog、IG、FB | 寫作同排程前 |
+| [[cms-content-pipeline]] | CMS calendar 上 create / review / deliver 嘅實際操作流程 | 每次將 brief 變成 calendar post 時 |
 | [[content-storage-system]] | 規定資料放邊、點命名 | 每次收集或輸出內容時 |
 | [[products/_readme]] | Product info、spec、approved reference images source of truth | 每次做 SKU content / image prompt / PDP copy 前 |
 | [[sales-content/_index]] | 追蹤 sales content assumptions、topic type、sales purpose、post 狀態 | 每次 planning / review sales content |

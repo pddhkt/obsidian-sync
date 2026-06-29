@@ -13,6 +13,9 @@ tags:
 
 呢個 calendar 用嚟安排 SEO research、blog production、Instagram、Facebook、review 同 refresh。實際 topic brief 放入 [[content-briefs/_readme|content-briefs]],已發佈紀錄放入 [[published-content/_readme|published-content]]。
 
+> [!info]
+> 上面講嘅係 planning。真正喺 imarflex-app CMS calendar 上面 create post、收 per-post / per-image feedback、iterate 到 confirm、deliver 嘅操作流程,睇 [[cms-content-pipeline]](API 機制喺 `imarflex-cms` skill)。
+
 ## Planning levels
 
 | Level | 用途 | Output |
