@@ -3,7 +3,7 @@
 Copy-pasteable `curl` for every `/cms` endpoint group. All examples assume:
 
 ```bash
-export CMS="http://localhost:8787"        # prod = <PROD_CMS_ORIGIN> (confirm before use)
+export CMS="http://localhost:8787"        # prod = https://imarflex-checkout.pddhkt.workers.dev
 export TOKEN="$(cat /home/lmt/Projects/personal/imarflex-app/workers/api/.agent-api-token)"
 H_AUTH="Authorization: Bearer $TOKEN"
 H_CHAN="X-Channel-Id: imarflex"           # or: manyprofit

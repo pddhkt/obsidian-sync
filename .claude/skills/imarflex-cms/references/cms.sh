@@ -9,7 +9,7 @@
 #     cms.sh PATCH /cms/content-items/abc123 '{"status":"confirmed"}'
 #
 # Env (set before calling; the script does NOT print the token):
-#   CMS        base origin   — default http://localhost:8787 ; prod = <PROD_CMS_ORIGIN> (confirm first)
+#   CMS        base origin   — default http://localhost:8787 ; prod = https://imarflex-checkout.pddhkt.workers.dev
 #   CHANNEL    X-Channel-Id  — default imarflex ; or manyprofit
 #   TOKEN_FILE path to token — default imarflex-app/workers/api/.agent-api-token
 #

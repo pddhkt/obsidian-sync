@@ -5,7 +5,7 @@ through review → delivery. Maps 1:1 to the 7 stages in [[cms-content-pipeline]
 
 ## Pre-flight (once per session)
 
-- [ ] `CMS` set (local `http://localhost:8787`, or confirmed `<PROD_CMS_ORIGIN>` — **confirm prod origin, don't guess**).
+- [ ] `CMS` set (local `http://localhost:8787`, or prod `https://imarflex-checkout.pddhkt.workers.dev`).
 - [ ] `TOKEN` loaded from `imarflex-app/workers/api/.agent-api-token` (never printed/committed).
 - [ ] `X-Channel-Id` correct: `imarflex` vs `manyprofit`.
 - [ ] `GET /cms/content-categories?active=1` → cache the live `direction` slugs (don't hardcode).

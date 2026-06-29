@@ -29,8 +29,8 @@ X-Channel-Id: imarflex          # or: manyprofit
   **Never echo, print, or commit the token value** — not into notes, logs, or files.
 - **Base URL** (`$CMS`):
   - Local dev → `http://localhost:8787`
-  - Production → `<PROD_CMS_ORIGIN>` ⚠️ **placeholder — must be confirmed.** It is the
-    deployed imarflex-checkout worker origin that serves `/admin` + `/cms`.
+  - Production → `https://imarflex-checkout.pddhkt.workers.dev` (the deployed
+    imarflex-checkout worker origin that serves `/admin` + `/cms`).
 
 Load both into env before any call (see `references/cms.sh` for a wrapper):
 
@@ -78,4 +78,4 @@ Mirrors the 7 stages in [[cms-content-pipeline]]. Stages 1-2 happen in the vault
 
 - Imarflex established **1973**.
 - **LIHKG / Reddit / 論壇 sentiment is internal-only** — never upload it as client-facing post copy.
-- Engagement is **pitch-stage aware** — confirm `<PROD_CMS_ORIGIN>` and that client review access is set up before treating prod calendar as live.
+- Engagement is **pitch-stage aware** — the prod worker (`https://imarflex-checkout.pddhkt.workers.dev`) is deployed and the agent API is live; confirm client review access is set up before treating the prod calendar as a live client-facing surface.
