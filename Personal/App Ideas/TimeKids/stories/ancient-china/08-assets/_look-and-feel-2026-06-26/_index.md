@@ -28,8 +28,8 @@ First look-and-feel pass for the 5 scenes in [[02-scripts/script-v1/01-chinese|S
 
 > AC-S01 · Timi： 我哋嚟到古代中國喇！你見唔見到啲紅色燈籠？
 
-| Take A — Timi under the lanterns | Take B — panoramic town |
-|---|---|
+| Take A — Timi under the lanterns        | Take B — panoramic town                 |
+| --------------------------------------- | --------------------------------------- |
 | ![[ac-s01-arrival-lanterns-a.png\|360]] | ![[ac-s01-arrival-lanterns-b.png\|360]] |
 
 **Which is better?**

@@ -1,0 +1,36 @@
+{
+  "image_generation_request": {
+    "instructions": "Generate a high-quality product poster. Use the file 'style_reference.jpeg' as the strict visual style guide (colors, lighting, composition). Use the file 'subject_reference_X.jpeg' (where X is 1, 2, or 3) as the definitive subject to be featured.",
+    "input_files": {
+      "style_reference": "style_reference.jpeg",
+      "subject_reference": "subject_reference_1.jpeg" 
+    },
+    "subject_definition": {
+      "source": "From 'subject_reference' image",
+      "action": "Stationary, presented as a hero object",
+      "position": "Centered in the lower two-thirds of the frame"
+    },
+    "style_definition": {
+      "source": "From 'style_reference' image",
+      "visual_style": "Minimalist Product Poster",
+      "color_palette": "Match the 'style_reference' exactly",
+      "mood": "Professional, Bold, Innovative"
+    },
+    "composition": {
+      "layout": "Vertical poster layout (2:3 aspect ratio)",
+      "negative_space": "Ample negative space at the top",
+      "background": "Solid color or subtle gradient consistent with style_reference"
+    },
+    "text_integration": {
+      "enabled": true,
+      "text_content": "BRUCE",
+      "placement": "Top center, large headline size",
+      "font_style": "Match the typographic feel of the style_reference if visible, otherwise Bold Sans-serif"
+    },
+    "technical_parameters": {
+      "aspect_ratio": "2:3",
+      "resolution": "4k",
+      "seed": 42
+    }
+  }
+}
